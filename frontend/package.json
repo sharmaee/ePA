@@ -26,7 +26,8 @@
     "typescript": "^5.0.3",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",
-    "webpack": "^5.78.0"
+    "webpack": "^5.78.0",
+    "humps": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
