@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
-MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
+# MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,7 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portal.wsgi.application'
 
-AUTH_USER_MODEL = 'portal.User'
+# AUTH_USER_MODEL = 'portal.User'
 
 
 # Password validation
