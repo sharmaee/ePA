@@ -8,6 +8,11 @@ django = "*"
 psycopg2-binary = "*"
 django-split-settings = "*"
 tendo = "*"
+djangorestframework = "*"
+djangorestframework-simplejwt = "*"
+django-extensions = "*"
+django-rest-passwordreset = "*"
+drf-yasg = "*"
 
 [dev-packages]
 black = "*"
