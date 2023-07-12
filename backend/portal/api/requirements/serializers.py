@@ -18,3 +18,10 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
             'requirements_flow',
         )
         read_only_fields = fields
+
+
+class AvailablePriorAuthRequirementsSerializer(ObjSerializer):
+    insurance_providers = serializers.ListField(child=serializers.CharField())
+    insurance_plan_numbers = serializers.ListField(child=serializers.CharField())
+    insurance_coverage_states = serializers.ListField(child=serializers.CharField())
+    medications = serializers.ListField(child=serializers.CharField())
