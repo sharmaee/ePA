@@ -6,10 +6,15 @@ from portal.models.requirements import (
 )
 from portal.api.common import ObjSerializer, UnvalidatedField
 
+
 class PriorAuthRequirementSerializer(serializers.ModelSerializer):
-     class Meta:
+    class Meta:
         model = PriorAuthRequirement
         fields = (
-            'insurance_provider', 'insurance_plan_number', 'insurance_coverage_state', 'medication', 'requirements_flow'
+            'insurance_provider',
+            'insurance_plan_number',
+            'insurance_coverage_state',
+            'medication',
+            'requirements_flow',
         )
         read_only_fields = fields

@@ -4,7 +4,6 @@ from rest_framework import views
 from portal.exceptions import PortalException
 
 
-
 def api_exception_handler(exc: Exception, context: dict[str, Any]) -> views.Response:
     """Custom API exception handler."""
 
