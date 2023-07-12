@@ -1,16 +1,11 @@
-from django.utils import timezone
-from django.contrib.postgres.indexes import GinIndex
-from django.contrib.postgres.search import SearchVectorField, SearchRank
 from django.db import models
-from django.db.models import F
 
-
-from ._common import PortalModelBase, SearchQuerySet, prep_search_query
+from ._common import PortalModelBase
 
 
 class PriorAuthRequirement(PortalModelBase):
-    insurance_provider = models.TextField()
-    insurance_plan_number = models.TextField()
-    insurance_coverage_state = models.TextField()
-    medication = models.TextField()
-    requirements_flow = models.TextField()
+    insurance_provider = models.TextField(blank=True, null=True)
+    insurance_plan_number = models.TextField(blank=True, null=True)
+    insurance_coverage_state = models.TextField(blank=True, null=True)
+    medication = models.TextField(blank=True, null=True)
+    requirements_flow = models.TextField(blank=True, null=True)

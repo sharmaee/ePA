@@ -13,6 +13,7 @@ djangorestframework-simplejwt = "*"
 django-extensions = "*"
 django-rest-passwordreset = "*"
 drf-yasg = "*"
+dotmap = "*"
 
 [dev-packages]
 black = "*"
