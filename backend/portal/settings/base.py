@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
-# MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
+MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
