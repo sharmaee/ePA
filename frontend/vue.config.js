@@ -9,6 +9,17 @@ process.env.VUE_APP_VERSION = gitInfo.distance ? gitInfo.raw : gitInfo.tag;
 module.exports = {
   outputDir: "../frontend_assets",
   assetsDir: "static",
+
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@import "~@/styles/variables"`,
+      },
+      scss: {
+        additionalData: `@import "~@/styles/variables";`,
+      },
+    },
+  },
   
   devServer: {
     proxy: {

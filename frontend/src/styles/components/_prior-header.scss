@@ -3,15 +3,18 @@ header {
     justify-content: space-between;
 
     .header-menu {
-        width: 40%;
         display: flex;
+        width: 325px;
         justify-content: space-around;
     }
 
       ul {
           display: flex;
-          width: 60%;
+          width: inherit;
           justify-content: space-between;
+          color: $gray-1000;
+          font-size: 18px;
+          font-weight: 500;
       }
 
 }

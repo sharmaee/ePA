@@ -1,15 +1,16 @@
 <template>
   <header>
-    <div class="logo">Insurance</div>
-    <div class="header-menu">
+    <div class="logo">
+      <img src="../assets/images/logo.svg" alt="logo" />
+    </div>
+    <nav class="header-menu">
       <ul>
-        <li>About</li>
+        <li>Mission</li>
         <li>Services</li>
         <li>FAQ</li>
         <li>Contact</li>
       </ul>
-      <button>Get Started</button>
-    </div>
+    </nav>
   </header>
 </template>
 
