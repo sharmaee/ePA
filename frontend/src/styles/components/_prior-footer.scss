@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    padding: 20px 0;
+
+    .left-footer {}
+
+    .right-footer {}
+
+      ul {
+          display: flex;
+      }
+
+}

@@ -1,42 +1,50 @@
 <template>
-  <div class="landing-page-wrapper">
-    <FormKit
-      type="form"
-      :value="{
-        location: 'New York City',
-        duration: '2 weeks',
-        price: 'average',
-      }"
-      submit-label="Save"
-      @submit="save">
-      <h2>Edit request</h2>
-      <p>Edit your housing request below.</p>
-      <FormKit
-        type="text"
-        name="location"
-        label="Location"
-        help="Where would you like to stay?"
-        validation="required" />
-      <FormKit
-        type="text"
-        name="duration"
-        label="Duration"
-        help="How long would you like to stay?"
-        validation="required" />
-      <FormKit
-        type="radio"
-        name="price"
-        label="Pricing"
-        help="How much are you able to pay"
-        :options="{
-          low: 'Below average',
-          average: 'Average',
-          high: 'Super luxe',
-        }" />
-    </FormKit>
+  <PriorHeader />
+  <div class="home-page-content">
+    <div class="left-content">
+      <h2>Neque porro <span>Auisquam</span> est hui dolorem ipsum.</h2>
+    </div>
+    <div class="right-content">
+      <h2>Start a New Request</h2>
+    </div>
   </div>
+  <PriorFooter />
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted, ref } from "vue";
+import { mainServices } from "@/services/mainServices";
+import PriorHeader from "@/components/PriorHeader";
+import PriorFooter from "@/components/PriorFooter";
 
-<style lang="sass" scoped></style>
+const availableSearchOptions = ref(null);
+
+onMounted(() => {
+  getAvailableSearchOptions();
+});
+async function getAvailableSearchOptions() {
+  availableSearchOptions.value = await mainServices.availableSearchOptions();
+}
+</script>
+
+<style lang="sass" scoped>
+
+.home-page-content
+  display: flex
+
+  .left-content
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+
+    h2
+      font-size: 64px
+      font-weight: 700
+      width: 90%
+
+      span
+        color: #556FF3
+  .right-content
+    width: 50%
+</style>
