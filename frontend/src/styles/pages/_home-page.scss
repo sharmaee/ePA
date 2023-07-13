@@ -9,8 +9,8 @@
         font-weight: 700;
         text-align: center;
 
-        .lilac-text {
-            color: $lilac
+        .blue-text {
+            color: $blue;
         }
     }
 
@@ -22,8 +22,26 @@
             width: 50%;
         }
 
-        .home-page-form {
+        .home-page-form-wrapper {
             width: 50%;
+
+            .home-form {
+                padding: 25px 50px;
+                border-radius: 34px;
+                border: 1px solid $gray-600;
+
+                h2 {
+                    color: $gray-1000;                    
+                    font-size: 24px;                   
+                    font-weight: 700;                   
+                }
+
+                hr {
+                    height: 1px;
+                    border: none;
+                    background-color: $gray-600;
+                }
+            }
         }
     }
 }
