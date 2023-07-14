@@ -30,7 +30,7 @@
               <label for="medication-name">Medication Name*</label>
               <input id="medication-name" type="text" placeholder="Search for medication name or NDC number" />
             </div>
-            <button @click.prevent="showCoverageBlock">Check My Coverage</button>
+            <button @click.prevent="showCoverageBlock" @click="getPriorAuthRequirements">Check My Coverage</button>
           </form>
         </div>
 
@@ -70,6 +70,8 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { usaStates } from "@/utils/usaStates";
 const availableSearchOptions = ref(null);
+const priorAuthRequirementsResult = ref(null);
+
 const coverageBlock = ref(false);
 let states = [];
 
@@ -83,6 +85,10 @@ onMounted(() => {
 
 async function getAvailableSearchOptions() {
   availableSearchOptions.value = await mainServices.availableSearchOptions();
+}
+
+async function getPriorAuthRequirements() {
+  priorAuthRequirementsResult.value = await mainServices.searchRequirements();
 }
 
 function showCoverageBlock() {

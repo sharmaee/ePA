@@ -6,7 +6,7 @@ export const mainServices = {
   availableSearchOptions() {
     return get("");
   },
-  insuranceProvider(searchTerm) {
+  searchRequirements(searchTerm) {
     return post(`search/`, searchTerm);
   },
 };
