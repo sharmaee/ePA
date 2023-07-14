@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+
+    .header-menu {
+        display: flex;
+        width: 325px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+      ul {
+          display: flex;
+          width: inherit;
+          justify-content: space-between;
+          color: $gray-1000;
+          font-size: 18px;
+          font-weight: 500;
+      }
+
+}

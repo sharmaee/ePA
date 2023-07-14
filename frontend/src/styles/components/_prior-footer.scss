@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $gray-600;
+    padding: 20px 0;
+    font-size: 14px;
+
+    .right-footer {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 280px;
+        }
+    }   
+
+}

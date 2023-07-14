@@ -8,7 +8,7 @@ process.env.VUE_APP_VERSION = gitInfo.distance ? gitInfo.raw : gitInfo.tag;
 
 module.exports = {
   outputDir: "../frontend_assets",
-  transpileDependencies: true,
+  assetsDir: "static",
 
   css: {
     loaderOptions: {
@@ -19,5 +19,19 @@ module.exports = {
         additionalData: `@import "~@/styles/variables";`,
       },
     },
-  }
+  },
+  
+  devServer: {
+    proxy: {
+      "/api*": {
+        // Forward frontend dev server request for /api to django dev server
+        target: "http://localhost:8000/",
+      },
+      "/admin-*": {
+        // Forward frontend dev server request for /api to django dev server
+        target: "http://localhost:8000/",
+      },
+    },
+  },
+
 };
