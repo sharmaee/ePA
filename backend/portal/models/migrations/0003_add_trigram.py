@@ -7,4 +7,6 @@ class Migration(migrations.Migration):
         ("portal", "0002_alter_priorauthrequirement_insurance_coverage_state_and_more"),
     ]
 
-    operations = [TrigramExtension(),]
+    operations = [
+        TrigramExtension(),
+    ]

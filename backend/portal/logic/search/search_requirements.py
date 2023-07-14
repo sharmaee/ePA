@@ -5,7 +5,7 @@ def run_search(search_params):
     search_params = {k + '__trigram_similar': v for k, v in search_params.items() if v is not None}
     return PriorAuthRequirement.objects.filter(**search_params)
 
- 
+
 def get_available_search_options():
     available = PriorAuthRequirement.objects.all()
     insurance_providers = list(available.values_list('insurance_provider', flat=True).distinct())
