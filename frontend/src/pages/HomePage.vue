@@ -17,17 +17,45 @@
               <input id="insurance-number" type="text" placeholder="Enter Provider Number" />
             </div>
             <div class="insurance-provider-and-state">
-              <label for="insurance-provider">Insurance Provider*</label>
-              <input id="insurance-provider" type="text" placeholder="Insurance provider" />
-              <label for="insurance-state">Patient Insurance State*</label>
-              <input id="insurance-state" type="select" placeholder="City/Area" />
+              <div class="insurance-provider">
+                <label for="insurance-provider">Insurance Provider*</label>
+                <input id="insurance-provider" type="text" placeholder="Insurance provider" />
+              </div>
+              <div class="insurance-state">
+                <label for="insurance-state">Patient Insurance State*</label>
+                <input id="insurance-state" type="select" placeholder="City/Area" />
+              </div>
             </div>
             <div class="insurance-medication-name">
               <label for="medication-name">Medication Name*</label>
               <input id="medication-name" type="text" placeholder="Search for medication name or NDC number" />
             </div>
-            <button>Check My Coverage</button>
+            <button @click.prevent="showCoverageBlock">Check My Coverage</button>
           </form>
+        </div>
+
+        <div v-if="coverageBlock" class="coverage">
+          <div class="request-text">
+            <p class="bold">Aetna Commercial Califomia Universal Prescription Drug Prior Authorization</p>
+            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu</p>
+            <div class="coverage-btn-wrapper">
+              <a class="btn-blue" href="">start Request</a>
+            </div>
+          </div>
+          <div class="request-text">
+            <p class="bold">Aetna Commercial Califomia Universal Prescription Drug Prior Authorization</p>
+            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu</p>
+            <div class="coverage-btn-wrapper">
+              <a class="btn-blue" href="">start Request</a>
+            </div>
+          </div>
+          <div class="request-text">
+            <p class="bold">Aetna Commercial Califomia Universal Prescription Drug Prior Authorization</p>
+            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu</p>
+            <div class="coverage-btn-wrapper">
+              <a class="btn-blue" href="">Start Request</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -42,6 +70,7 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { usaStates } from "@/utils/usaStates";
 const availableSearchOptions = ref(null);
+const coverageBlock = ref(false);
 let states = [];
 
 onMounted(() => {
@@ -54,6 +83,10 @@ onMounted(() => {
 
 async function getAvailableSearchOptions() {
   availableSearchOptions.value = await mainServices.availableSearchOptions();
+}
+
+function showCoverageBlock() {
+  coverageBlock.value = true;
 }
 </script>
 

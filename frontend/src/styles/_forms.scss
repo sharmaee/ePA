@@ -8,9 +8,14 @@ form {
     }
 
     input {
+        width: 100%;
         border-radius: 46px;
-        padding: 20px;
+        padding: 20px 0;
         border: 1px solid $gray-600;
+
+        &::placeholder {
+            padding-left: 20px;
+        }
     }
 
     button {
