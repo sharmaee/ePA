@@ -11,6 +11,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "@viz-js/viz": "^3.0.1",
     "@volar-plugins/prettier": "^1.2.0",
     "@vueuse/head": "^1.1.23",
     "axios": "^0.27.2",
