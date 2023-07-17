@@ -51,7 +51,7 @@ services:
       - certbot_var:/var/lib/letsencrypt
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/lib/letsencrypt --email dev@lamarhealth.com --agree-tos --no-eff-email --force-renewal -d ${SUBDOMAIN}.lamarhealth.com -d www.${SUBDOMAIN}.lamarhealth.com
+    command: certonly --webroot --webroot-path=/var/lib/letsencrypt --email dev@lamarhealth.com --agree-tos --no-eff-email --force-renewal -d ${SUBDOMAIN}.dopriorauth.com -d www.${SUBDOMAIN}.dopriorauth.com
   redis:
     image: redis:alpine
     restart: always
