@@ -5,16 +5,15 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-import { mainServices } from "@/services/mainServices";
+import { onMounted, onUnmounted, ref } from "vue";
+import { useFlowRequirements } from "@/stores";
+import { storeToRefs } from "pinia";
+import { instance } from "@viz-js/viz";
+
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 
-import { instance } from "@viz-js/viz";
-
-const availableSearchOptions = ref(null);
-const priorAuthRequirementsResult = ref(null);
-const dataForGraph = ref(null);
+const { flowRequirements } = storeToRefs(useFlowRequirements());
 const graphContainer = ref(null);
 
 onMounted(() => {
@@ -22,21 +21,17 @@ onMounted(() => {
   getPriorAuthRequirements();
 });
 
-availableSearchOptions.value = {
-  insurance_provider: "UnitedHealthcare Pharmacy",
-  insurance_plan_number: "2023 P 1114-12",
-  insurance_coverage_state: "New York",
-  medication: "Wegovy",
-};
+onUnmounted(() => {
+  flowRequirements.value = null;
+});
 
 async function getPriorAuthRequirements() {
-  priorAuthRequirementsResult.value = await mainServices.searchRequirements(availableSearchOptions.value);
-  dataForGraph.value = priorAuthRequirementsResult.value[0].requirementsFlow;
-
   instance().then(function (viz) {
-    graphContainer.value.appendChild(viz.renderSVGElement(dataForGraph.value));
+    graphContainer.value.appendChild(viz.renderSVGElement(`${flowRequirements.value}`));
   });
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@import "../styles/pages/_flow-requirements-page"
+</style>
