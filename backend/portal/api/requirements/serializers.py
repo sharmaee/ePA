@@ -25,3 +25,4 @@ class AvailablePriorAuthRequirementsSerializer(ObjSerializer):
     insurance_plan_numbers = serializers.ListField(child=serializers.CharField())
     insurance_coverage_states = serializers.ListField(child=serializers.CharField())
     medications = serializers.ListField(child=serializers.CharField())
+    insurance_plans_by_provider = serializers.DictField(child=serializers.ListField(child=serializers.CharField()))
