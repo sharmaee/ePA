@@ -1,24 +1,24 @@
 <template>
   <PriorHeader />
-  <div class="graph-page-wrapper"></div>
+  <div id="graph-page-wrapper" class="graph-page-wrapper"></div>
   <PriorFooter />
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from "vue";
+import { onMounted, ref } from "vue";
 import { mainServices } from "@/services/mainServices";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 
-// import Viz from "viz.js";
 import { instance } from "@viz-js/viz";
 
 const availableSearchOptions = ref(null);
 const priorAuthRequirementsResult = ref(null);
 const dataForGraph = ref(null);
-let image = ref(null);
+const graphContainer = ref(null);
 
 onMounted(() => {
+  graphContainer.value = document.getElementById("graph-page-wrapper");
   getPriorAuthRequirements();
 });
 
@@ -34,7 +34,7 @@ async function getPriorAuthRequirements() {
   dataForGraph.value = priorAuthRequirementsResult.value[0].requirementsFlow;
 
   instance().then(function (viz) {
-    document.body.appendChild(viz.renderSVGElement(dataForGraph.value));
+    graphContainer.value.appendChild(viz.renderSVGElement(dataForGraph.value));
   });
 }
 </script>
