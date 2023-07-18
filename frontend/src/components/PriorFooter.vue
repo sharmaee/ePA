@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="left-footer">
-      <span>©2023 insurance.co </span>
+      <span>©2023 dopriorauth.com </span>
     </div>
     <div class="right-footer">
       <ul>

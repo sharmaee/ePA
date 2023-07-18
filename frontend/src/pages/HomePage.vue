@@ -54,7 +54,7 @@
             <p>{{ item.medication }}</p>
             <div class="coverage-btn-wrapper">
               <router-link
-                :to="{ name: 'flow-requirements' }"
+                :to="{ name: 'check-my-coverage' }"
                 class="btn-blue"
                 @click="requirementsFlowToStore(item.requirementsFlow)">
                 Start Request
@@ -88,7 +88,7 @@ const userFormData = ref({
   insuranceProvider: null,
   insurancePlanNumber: null,
   insuranceCoverageState: null,
-  medication: null,
+  medication: "Wegovy",
 });
 const states = ref([]);
 

@@ -15,10 +15,10 @@ const publicAccessRoutes = [
       title: "home-page",
     },
     {
-      path: "/flow-requirements",
-      name: "flow-requirements",
+      path: "/check-my-coverage",
+      name: "check-my-coverage",
       component: FlowRequirementsPage,
-      title: "flow-requirements",
+      title: "check-my-coverage",
     },
   ];
 
