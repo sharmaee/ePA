@@ -13,21 +13,21 @@
 
           <form action="">
             <div class="insurance-plan-number">
-              <label for="insurance-number">Insurance Provider Plan Number*</label>
+              <label for="insurance-provider">Insurance Provider*</label>
               <input
-                id="insurance-number"
-                v-model="userFormData.insurancePlanNumber"
+                id="insurance-provider"
+                v-model="userFormData.insuranceProvider"
                 type="text"
-                placeholder="Enter Provider Number" />
+                placeholder="Insurance provider" />
             </div>
             <div class="insurance-provider-and-state">
               <div class="insurance-provider">
-                <label for="insurance-provider">Insurance Provider*</label>
+                <label for="insurance-number">Insurance Provider Plan Number*</label>
                 <input
-                  id="insurance-provider"
-                  v-model="userFormData.insuranceProvider"
+                  id="insurance-number"
+                  v-model="userFormData.insurancePlanNumber"
                   type="text"
-                  placeholder="Insurance provider" />
+                  placeholder="Enter Provider Number" />
               </div>
               <div class="insurance-state">
                 <label for="insurance-state">Patient Insurance State*</label>

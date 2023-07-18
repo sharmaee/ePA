@@ -28,6 +28,9 @@ onUnmounted(() => {
 async function getPriorAuthRequirements() {
   instance().then(function (viz) {
     graphContainer.value.appendChild(viz.renderSVGElement(`${flowRequirements.value}`));
+    let graph = document.getElementsByTagName("svg")[0];
+    graph.style.width = 900 + "pt";
+    graph.style.height = 550 + "pt";
   });
 }
 </script>
