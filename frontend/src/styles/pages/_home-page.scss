@@ -21,6 +21,10 @@
 
         .home-page-img {
             width: 50%;
+
+            img {             
+                image-rendering: pixelated;
+              }
         }
 
         .home-page-form-wrapper {

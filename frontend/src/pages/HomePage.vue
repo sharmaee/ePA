@@ -4,7 +4,7 @@
     <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator.</h1>
     <div class="home-page-main-block">
       <div class="home-page-img">
-        <img src="../assets/images/woman-with-stethoscope.svg" alt="doctor" />
+        <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
       </div>
       <div class="home-page-form-wrapper">
         <div class="home-form">
