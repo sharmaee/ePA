@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <img src="../assets/images/logo.svg" alt="logo" />
+      <img @click="redirectTOMainPage" src="../assets/images/logo.svg" alt="logo" />
     </div>
     <nav class="header-menu">
       <ul>
@@ -14,7 +14,15 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+function redirectTOMainPage() {
+  router.push({ name: "home-page" });
+}
+</script>
 
 <style lang="sass" scoped>
 @import "@/styles/components/_prior-header"
