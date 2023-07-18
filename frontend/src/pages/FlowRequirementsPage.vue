@@ -5,10 +5,11 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useFlowRequirements } from "@/stores";
 import { storeToRefs } from "pinia";
 import { instance } from "@viz-js/viz";
+import { onBeforeRouteLeave } from "vue-router";
 
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
@@ -21,10 +22,6 @@ onMounted(() => {
   getPriorAuthRequirements();
 });
 
-onUnmounted(() => {
-  flowRequirements.value = null;
-});
-
 async function getPriorAuthRequirements() {
   instance().then(function (viz) {
     graphContainer.value.appendChild(viz.renderSVGElement(`${flowRequirements.value}`));
@@ -33,6 +30,10 @@ async function getPriorAuthRequirements() {
     graph.style.height = 550 + "pt";
   });
 }
+
+onBeforeRouteLeave(() => {
+  flowRequirements.value = null;
+});
 </script>
 
 <style lang="sass" scoped>
