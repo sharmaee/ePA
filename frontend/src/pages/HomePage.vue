@@ -44,7 +44,7 @@
                 type="text"
                 placeholder="Search for medication name or NDC number" />
             </div>
-            <button @click.prevent="showCoverageBlock" @click="getPriorAuthRequirements">Check My Coverage</button>
+            <button @click.prevent="getPriorAuthRequirements">Check My Coverage</button>
           </form>
         </div>
 
@@ -62,6 +62,8 @@
             </div>
           </div>
         </div>
+        <GreenCirclePreloader v-else-if="preloader" />
+        <p v-else-if="errMessage">Try it later please: {{ errMessage }}</p>
       </div>
     </div>
   </div>
@@ -77,12 +79,15 @@ import { useFlowRequirements } from "@/stores";
 
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
+import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
 const { flowRequirements } = storeToRefs(useFlowRequirements());
 const availableSearchOptions = ref(null);
 const priorAuthRequirementsResult = ref(null);
 
 const coverageBlock = ref(false);
+const preloader = ref(false);
+const errMessage = ref(null);
 
 const userFormData = ref({
   insuranceProvider: null,
@@ -100,16 +105,24 @@ onMounted(() => {
   }
 });
 
-function showCoverageBlock() {
-  coverageBlock.value = true;
-}
-
 async function getAvailableSearchOptions() {
   availableSearchOptions.value = await mainServices.availableSearchOptions();
 }
 
 async function getPriorAuthRequirements() {
-  priorAuthRequirementsResult.value = await mainServices.searchRequirements(userFormData.value);
+  preloader.value = true;
+  window.scrollTo({
+    top: 1000,
+    behavior: "smooth",
+  });
+  try {
+    priorAuthRequirementsResult.value = await mainServices.searchRequirements(userFormData.value);
+    preloader.value = false;
+    coverageBlock.value = true;
+  } catch (err) {
+    preloader.value = false;
+    errMessage.value = err;
+  }
 }
 
 function requirementsFlowToStore(data) {
