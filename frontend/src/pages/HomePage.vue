@@ -1,7 +1,7 @@
 <template>
   <PriorHeader />
   <div class="home-page-wrapper">
-    <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator.</h1>
+    <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
     <div class="home-page-main-block">
       <div class="home-page-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
@@ -47,25 +47,24 @@
             <button @click.prevent="getPriorAuthRequirements">Check My Coverage</button>
           </form>
         </div>
-
-        <div v-if="coverageBlock" class="coverage">
-          <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
-            <p class="bold">{{ item.insuranceProvider }}</p>
-            <p>{{ item.medication }}</p>
-            <div class="coverage-btn-wrapper">
-              <router-link
-                :to="{ name: 'check-my-coverage' }"
-                class="btn-blue"
-                @click="requirementsFlowToStore(item.requirementsFlow)">
-                Start Request
-              </router-link>
-            </div>
-          </div>
-        </div>
-        <GreenCirclePreloader v-else-if="preloader" />
-        <p v-else-if="errMessage">Try it later please: {{ errMessage }}</p>
       </div>
     </div>
+    <div v-if="coverageBlock" class="coverage">
+      <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
+        <p class="bold">{{ item.insuranceProvider }}</p>
+        <p>{{ item.medication }}</p>
+        <div class="coverage-btn-wrapper">
+          <router-link
+            :to="{ name: 'check-my-coverage' }"
+            class="btn-blue"
+            @click="requirementsFlowToStore(item.requirementsFlow)">
+            Start Request
+          </router-link>
+        </div>
+      </div>
+    </div>
+    <GreenCirclePreloader v-else-if="preloader" />
+    <p v-else-if="errMessage">Try it later please: {{ errMessage }}</p>
   </div>
   <PriorFooter />
 </template>
