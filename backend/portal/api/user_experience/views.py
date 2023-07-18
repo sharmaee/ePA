@@ -1,23 +1,16 @@
 from rest_framework import status
-from rest_framework import views
+from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 
+from .serializers import UXFeedbackSerializer, RequestUnavailableRequirementsSerializer
 
-class PostUserExperienceView(views.APIView):
+
+class LeaveUXFeedbackView(CreateAPIView):
     permission_classes = (AllowAny,)
-
-    def post(self, request):
-        # TODO
-        # create UserExperience object
-        return Response({}, status=status.HTTP_200_OK)
+    serializer_class = UXFeedbackSerializer
 
 
-class RequestUnavailableRequirementsView(views.APIView):
+class RequestUnavailableRequirementsView(CreateAPIView):
     permission_classes = (AllowAny,)
-
-    def post(self, request):
-        # TODO
-        # create RequestUnavailableRequirements object
-        # send email notification
-        return Response({}, status=status.HTTP_200_OK)
+    serializer_class = RequestUnavailableRequirementsSerializer

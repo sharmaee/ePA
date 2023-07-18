@@ -1,10 +1,9 @@
-from dotmap import DotMap
 from rest_framework import serializers
 
 from portal.models.requirements import (
     PriorAuthRequirement,
 )
-from portal.api.common import ObjSerializer, UnvalidatedField
+from portal.api.common import ObjSerializer
 
 
 class PriorAuthRequirementSerializer(serializers.ModelSerializer):

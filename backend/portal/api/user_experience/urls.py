@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import PostUserExperienceView, RequestUnavailableRequirementsView
+from .views import LeaveUXFeedbackView, RequestUnavailableRequirementsView
 
 ux_urls = [
-    path('', PostUserExperienceView.as_view()),
+    path('', LeaveUXFeedbackView.as_view()),
     path('request-requirements/', RequestUnavailableRequirementsView.as_view()),
 ]
