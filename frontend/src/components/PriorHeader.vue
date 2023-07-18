@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <img @click="redirectTOMainPage" src="../assets/images/logo.svg" alt="logo" />
+      <img alt="logo" src="../assets/images/logo.svg" @click="redirectTOMainPage" />
     </div>
     <nav class="header-menu">
       <ul>
