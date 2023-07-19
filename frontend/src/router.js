@@ -2,7 +2,10 @@
 /* eslint-disable */
 import { createWebHistory, createRouter } from 'vue-router';
 
+
 import HomePage from '@/pages/HomePage';
+import FlowRequirementsPage from '@/pages/FlowRequirementsPage';
+
 
 const publicAccessRoutes = [
     {
@@ -10,6 +13,12 @@ const publicAccessRoutes = [
       name: "home-page",
       component: HomePage,
       title: "home-page",
+    },
+    {
+      path: "/check-my-coverage/:id",
+      name: "check-my-coverage",
+      component: FlowRequirementsPage,
+      title: "check-my-coverage",
     },
   ];
 

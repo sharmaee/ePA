@@ -3,6 +3,12 @@ header {
     justify-content: space-between;
     padding: 15px 0;
 
+    .logo {
+        img {
+            cursor: pointer;
+        }
+    }
+
     .header-menu {
         display: flex;
         width: 325px;

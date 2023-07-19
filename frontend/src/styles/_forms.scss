@@ -2,20 +2,16 @@ form {
 
     label {
         display: block;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 500;
         color: $gray-1000;
     }
 
-    input {
+    input, select {
         width: 100%;
         border-radius: 46px;
-        padding: 20px 0;
+        padding: 20px 0 20px 20px;
         border: 1px solid $gray-600;
-
-        &::placeholder {
-            padding-left: 20px;
-        }
     }
 
     button {
