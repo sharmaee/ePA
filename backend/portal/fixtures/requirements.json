@@ -18,7 +18,33 @@
             "insurance_plan_number": "2023 P 1114-12",
             "insurance_coverage_state": "New York",
             "medication": "Wegovy",
-            "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [shape = box]\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients, do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\", shape=ellipse]\n\teligible [label=\"Eligible\", shape=ellipse]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}"
+            "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [shape = box]\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients, do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\", shape=ellipse]\n\teligible [label=\"Eligible\", shape=ellipse]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
+            "requirements_checklist": {
+                "Treatment is being requested for appetite suppression or weight loss": {
+                    "y": {
+                        "Patient is ≥ 12 years of age": {
+                            "y": {
+                                "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)": {
+                                    "y": {
+                                        "One of the following:": {
+                                            "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile": {
+                                                "y": "Eligible"
+                                            },
+                                            "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)": {
+                                                "y": "Eligible"
+                                            }
+                                        }
+                                    },
+                                    "n": "Ineligible"
+                                }
+                            },
+                            "n": "Ineligible"
+                        },
+                        "n": "Ineligible"
+                    },
+                    "n": "Ineligible"
+                }
+            }
         }
     },
     {
@@ -30,6 +56,33 @@
             "insurance_coverage_state": "New Mexico",
             "medication": "Wegovy",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [shape = box]\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients, do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\", shape=ellipse]\n\teligible [label=\"Eligible\", shape=ellipse]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}"
+            ,
+            "requirements_checklist": {
+                "Treatment is being requested for appetite suppression or weight loss": {
+                    "y": {
+                        "Patient is ≥ 12 years of age": {
+                            "y": {
+                                "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)": {
+                                    "y": {
+                                        "One of the following:": {
+                                            "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile": {
+                                                "y": "Eligible"
+                                            },
+                                            "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)": {
+                                                "y": "Eligible"
+                                            }
+                                        }
+                                    },
+                                    "n": "Ineligible"
+                                }
+                            },
+                            "n": "Ineligible"
+                        },
+                        "n": "Ineligible"
+                    },
+                    "n": "Ineligible"
+                }
+            }
         }
     },
     {
@@ -41,6 +94,33 @@
             "insurance_coverage_state": "Maryland",
             "medication": "Wegovy",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [shape = box]\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients, do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\", shape=ellipse]\n\teligible [label=\"Eligible\", shape=ellipse]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}"
+            ,
+            "requirements_checklist": {
+                "Treatment is being requested for appetite suppression or weight loss": {
+                    "y": {
+                        "Patient is ≥ 12 years of age": {
+                            "y": {
+                                "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)": {
+                                    "y": {
+                                        "One of the following:": {
+                                            "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile": {
+                                                "y": "Eligible"
+                                            },
+                                            "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)": {
+                                                "y": "Eligible"
+                                            }
+                                        }
+                                    },
+                                    "n": "Ineligible"
+                                }
+                            },
+                            "n": "Ineligible"
+                        },
+                        "n": "Ineligible"
+                    },
+                    "n": "Ineligible"
+                }
+            }
         }
     },
     {
@@ -52,6 +132,33 @@
             "insurance_coverage_state": "California",
             "medication": "Wegovy",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [shape = box]\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients, do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\", shape=ellipse]\n\teligible [label=\"Eligible\", shape=ellipse]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}"
+            ,
+            "requirements_checklist": {
+                "Treatment is being requested for appetite suppression or weight loss": {
+                    "y": {
+                        "Patient is ≥ 12 years of age": {
+                            "y": {
+                                "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)": {
+                                    "y": {
+                                        "One of the following:": {
+                                            "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile": {
+                                                "y": "Eligible"
+                                            },
+                                            "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)": {
+                                                "y": "Eligible"
+                                            }
+                                        }
+                                    },
+                                    "n": "Ineligible"
+                                }
+                            },
+                            "n": "Ineligible"
+                        },
+                        "n": "Ineligible"
+                    },
+                    "n": "Ineligible"
+                }
+            }
         }
     }
 ]

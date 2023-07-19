@@ -8,3 +8,4 @@ class PriorAuthRequirement(PortalModelBase):
     insurance_coverage_state = models.TextField(blank=True, null=True, db_index=True)
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_flow = models.TextField(blank=True, null=True)
+    requirements_checklist = models.JSONField(null=True)
