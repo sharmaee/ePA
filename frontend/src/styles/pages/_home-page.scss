@@ -65,6 +65,45 @@
                     .insurance-provider, .insurance-state {
                         width: 47%;                       
                     }
+
+                    select {
+                        appearance: none;
+                    }
+
+                    .custom-select-arrow {     
+                        background: none;                   
+                            background-image:
+                              linear-gradient(45deg, transparent 50%, $white 50%),
+                              linear-gradient(135deg, $white 50%, transparent 50%),
+                              radial-gradient($gray-900 70%, transparent 72%);
+                            background-position:
+                              calc(100% - 16.5px) calc(1em + 10px),
+                              calc(100% - 11.5px) calc(1em + 10px),
+                              calc(100% - .5em) 1.2em;
+                            background-size:
+                              5px 5px,
+                              5px 5px,
+                              1.5em 1.5em;
+                            background-repeat: no-repeat;
+                            
+                            &:focus {
+                              background-image:
+                                linear-gradient(45deg, $gray-800 50%, transparent 50%),
+                                linear-gradient(135deg, transparent 50%, $gray-800 50%),
+                                radial-gradient($gray-300 70%, transparent 72%);
+                              background-position:
+                                calc(100% - 11.5px) 1.7em,
+                                calc(100% - 16.5px) 1.7em,
+                                calc(100% - .5em) 1.2em;
+                              background-size:
+                                5px 5px,
+                                5px 5px,
+                                1.5em 1.5em;
+                              background-repeat: no-repeat;                           
+                              outline: 0;                        
+                            }
+                        }
+                          
                 }
 
                 button {

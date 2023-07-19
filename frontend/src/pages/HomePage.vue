@@ -12,29 +12,34 @@
           <hr />
 
           <form action="">
-            <div class="insurance-plan-number">
-              <label for="insurance-provider">Insurance Provider*</label>
-              <input
-                id="insurance-provider"
-                v-model="userFormData.insuranceProvider"
-                type="text"
-                placeholder="Insurance provider" />
-            </div>
             <div class="insurance-provider-and-state">
-              <div class="insurance-provider">
-                <label for="insurance-number">Insurance Provider Plan Number*</label>
+              <div class="insurance-plan-number">
+                <label for="insurance-provider">Insurance Provider*</label>
                 <input
-                  id="insurance-number"
-                  v-model="userFormData.insurancePlanNumber"
+                  id="insurance-provider"
+                  v-model="userFormData.insuranceProvider"
                   type="text"
-                  placeholder="Enter Provider Number" />
+                  placeholder="Insurance provider" />
               </div>
               <div class="insurance-state">
                 <label for="insurance-state">Patient Insurance State*</label>
-                <select id="insurance-state" v-model="userFormData.insuranceCoverageState" placeholder="City/Area">
+                <select
+                  id="insurance-state"
+                  v-model="userFormData.insuranceCoverageState"
+                  class="custom-select-arrow"
+                  placeholder="City/Area">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
               </div>
+            </div>
+
+            <div class="insurance-provider">
+              <label for="insurance-number">Insurance Provider Plan Number*</label>
+              <input
+                id="insurance-number"
+                v-model="userFormData.insurancePlanNumber"
+                type="text"
+                placeholder="Enter Provider Number" />
             </div>
             <div class="insurance-medication-name">
               <label for="medication-name">Medication Name*</label>
