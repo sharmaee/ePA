@@ -2,7 +2,7 @@ from portal.models import PriorAuthRequirement
 
 
 def run_search(search_params):
-    search_params = {k + '__trigram_similar': v for k, v in search_params.items() if v is not None}
+    search_params = {k + '__trigram_similar': v for k, v in search_params.items() if v is not None and v != ''}
     return PriorAuthRequirement.objects.filter(**search_params)
 
 

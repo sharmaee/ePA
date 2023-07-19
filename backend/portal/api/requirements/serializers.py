@@ -11,16 +11,25 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
     class Meta:
         model = PriorAuthRequirement
         fields = (
+            'id',
             'insurance_provider',
             'insurance_plan_number',
             'insurance_coverage_state',
             'medication',
-            'requirements_flow',
         )
         read_only_fields = fields
 
 
-class AvailablePriorAuthRequirementsSerializer(ObjSerializer):
+class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
+    class Meta:
+        model = PriorAuthRequirement
+        fields = PriorAuthRequirementSerializer.Meta.fields + (
+            'requirements_flow',
+            'requirements_checklist',
+        )
+
+
+class AvailableSearchOptionsSerializer(ObjSerializer):
     insurance_providers = serializers.ListField(child=serializers.CharField())
     insurance_plan_numbers = serializers.ListField(child=serializers.CharField())
     insurance_coverage_states = serializers.ListField(child=serializers.CharField())
