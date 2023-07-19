@@ -9,4 +9,7 @@ export const mainServices = {
   searchRequirements(searchTerm) {
     return post(`search/`, searchTerm);
   },
+  getGraphData(id) {
+    return get(`detail/${id}`);
+  },
 };

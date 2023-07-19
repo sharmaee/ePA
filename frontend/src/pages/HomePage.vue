@@ -59,10 +59,7 @@
         <p class="bold">{{ item.insuranceProvider }}</p>
         <p>{{ item.medication }}</p>
         <div class="coverage-btn-wrapper">
-          <router-link
-            :to="{ name: 'check-my-coverage' }"
-            class="btn-blue"
-            @click="requirementsFlowToStore(item.requirementsFlow)">
+          <router-link :to="{ name: 'check-my-coverage', params: { id: item.id } }" class="btn-blue">
             Start Request
           </router-link>
         </div>
@@ -78,16 +75,15 @@
 import { onMounted, ref } from "vue";
 import { mainServices } from "@/services/mainServices";
 import { usaStates } from "@/utils/usaStates";
-import { storeToRefs } from "pinia";
-import { useFlowRequirements } from "@/stores";
 
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
-const { flowRequirements } = storeToRefs(useFlowRequirements());
-const availableSearchOptions = ref(null);
 const priorAuthRequirementsResult = ref(null);
+
+// not used yet for auto-filling
+const availableSearchOptions = ref(null);
 
 const coverageBlock = ref(false);
 const preloader = ref(false);
@@ -127,10 +123,6 @@ async function getPriorAuthRequirements() {
     preloader.value = false;
     errMessage.value = err;
   }
-}
-
-function requirementsFlowToStore(data) {
-  flowRequirements.value = data;
 }
 </script>
 

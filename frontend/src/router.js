@@ -15,7 +15,7 @@ const publicAccessRoutes = [
       title: "home-page",
     },
     {
-      path: "/check-my-coverage",
+      path: "/check-my-coverage/:id",
       name: "check-my-coverage",
       component: FlowRequirementsPage,
       title: "check-my-coverage",
