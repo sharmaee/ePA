@@ -37,7 +37,7 @@
 
       <div v-else-if="parseData.class === 'SubCheckListQuestion'">
         <div>
-          <span>--- {{ parseData.question_or }}</span>
+          <span>{{ parseData.question_or }}</span>
           <input v-model="parseData.value_or" type="checkbox" />
         </div>
       </div>
