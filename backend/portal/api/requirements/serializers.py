@@ -11,7 +11,8 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
     class Meta:
         model = PriorAuthRequirement
         fields = (
-            'id',
+            'url_slug',
+            'description',
             'insurance_provider',
             'insurance_plan_number',
             'insurance_coverage_state',

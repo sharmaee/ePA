@@ -57,9 +57,9 @@
     <div v-if="coverageBlock" class="coverage">
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
         <p class="bold">{{ item.insuranceProvider }}</p>
-        <p>{{ item.medication }}</p>
+        <p>{{ item.description }}</p>
         <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'check-my-coverage', params: { id: item.id } }" class="btn-blue">
+          <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
             Start Request
           </router-link>
         </div>

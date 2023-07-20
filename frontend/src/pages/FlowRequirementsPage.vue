@@ -3,8 +3,7 @@
   <div class="graph-page-wrapper">
     <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
     <p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es Sed ut
-      perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, to
+      {{ graphData }}
     </p>
 
     <button v-if="!preloader" class="switch-map" @click="mapSwitcher">{{ showMap }}</button>
