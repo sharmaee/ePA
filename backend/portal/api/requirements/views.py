@@ -35,6 +35,9 @@ class PriorAuthRequirementSearchView(views.APIView):
 class PriorAuthRequirementDetailView(views.APIView):
     permission_classes = (AllowAny,)
 
-    def get(self, request, requirement_id):
-        requirement = PriorAuthRequirementDetailSerializer(PriorAuthRequirement.objects.get(id=requirement_id)).data
+    def get(self, request, url_slug):
+        try:
+            requirement = PriorAuthRequirementDetailSerializer(PriorAuthRequirement.objects.get(url_slug=url_slug)).data
+        except PriorAuthRequirement.DoesNotExist:
+            requirement = None
         return Response(requirement, status=status.HTTP_200_OK)
