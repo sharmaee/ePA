@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <div>
-      <div v-if="parseData.class === 'InteractiveSelect'">
-        <fieldset>
-          <legend>{{ parseData.label }}</legend>
-          <div v-for="option in parseData.children" :key="option.label">
-            <RecursiveComponent :data="option" />
-          </div>
-        </fieldset>
-      </div>
+  <div class="recursive-wrapper">
+    <div v-if="parseData.class === 'InteractiveSelect'">
+      <fieldset>
+        <legend>{{ parseData.label }}</legend>
+        <div v-for="option in parseData.children" :key="option.label">
+          <RecursiveComponent :data="option" />
+        </div>
+      </fieldset>
+    </div>
 
-      <div v-else-if="parseData.class === 'SelectOption'">
-        <div>
-          <h3>{{ parseData.label }}</h3>
-          <input v-model="parseData.value" :type="parseData.type" />
-          <div v-if="parseData.type === 'radio' && parseData.value">
-            <div v-for="child in parseData.children" :key="child.label">
-              <RecursiveComponent :data="child" />
-            </div>
+    <div v-else-if="parseData.class === 'SelectOption'">
+      <div>
+        <h3>{{ parseData.label }}</h3>
+        <input v-model="parseData.value" :type="parseData.type" />
+        <div v-if="parseData.type === 'radio' && parseData.value">
+          <div v-for="child in parseData.children" :key="child.label">
+            <RecursiveComponent :data="child" :parent-node="'radio'" />
           </div>
-          <div>
-            <div v-if="parseData.type === 'checkbox'">
-              <div v-for="child in parseData.children" :key="child.label">
-                <RecursiveComponent :data="child" />
-              </div>
+        </div>
+        <div>
+          <div v-if="parseData.type === 'checkbox'">
+            <div v-for="child in parseData.children" :key="child.label" class="ofset">
+              <RecursiveComponent :data="child" :parent-node="'checkbox'" />
             </div>
           </div>
         </div>
@@ -42,6 +40,10 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  parentNode: {
+    type: String,
+    required: true,
+  },
 });
 
 const parseData = ref({});
@@ -49,4 +51,6 @@ const parseData = ref({});
 parseData.value = props.data;
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../styles/pages/_recursive-component.scss";
+</style>
