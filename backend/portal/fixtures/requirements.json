@@ -68,7 +68,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -114,7 +114,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -250,7 +250,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -296,7 +296,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -432,7 +432,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -478,7 +478,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -614,7 +614,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
@@ -660,7 +660,7 @@
                                                 "question": "One of the following",
                                                 "type": "checkbox",
                                                 "value": false,
-                                                "subchecklist": [
+                                                "children": [
                                                     {
                                                         "class": "SubCheckListQuestion",
                                                         "question_or": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
