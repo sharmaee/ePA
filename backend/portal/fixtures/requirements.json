@@ -36,7 +36,7 @@
                         "children": [
                             {
                                 "class": "InteractiveSelect",
-                                "legend": "Age of patient starting therapy",
+                                "label": "Age of patient starting therapy",
                                 "type": "fieldset",
                                 "children": [
                                     {
@@ -218,7 +218,7 @@
                         "children": [
                             {
                                 "class": "InteractiveSelect",
-                                "legend": "Age of patient starting therapy",
+                                "label": "Age of patient starting therapy",
                                 "type": "fieldset",
                                 "children": [
                                     {
@@ -400,7 +400,7 @@
                         "children": [
                             {
                                 "class": "InteractiveSelect",
-                                "legend": "Age of patient starting therapy",
+                                "label": "Age of patient starting therapy",
                                 "type": "fieldset",
                                 "children": [
                                     {
@@ -582,7 +582,7 @@
                         "children": [
                             {
                                 "class": "InteractiveSelect",
-                                "legend": "Age of patient starting therapy",
+                                "label": "Age of patient starting therapy",
                                 "type": "fieldset",
                                 "children": [
                                     {
