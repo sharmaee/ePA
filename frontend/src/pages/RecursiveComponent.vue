@@ -10,20 +10,18 @@
     </div>
 
     <div v-else-if="parseData.class === 'SelectOption'">
-      <div>
-        <h3>{{ parseData.label }}</h3>
-        <input v-model="parseData.value" :type="parseData.type" />
-        <div v-if="parseData.type === 'radio' && parseData.value">
-          <div v-for="child in parseData.children" :key="child.label">
-            <RecursiveComponent :data="child" :parent-node="'radio'" />
-          </div>
+      <h3>{{ parseData.label }}</h3>
+      <input v-model="parseData.value" :type="parseData.type" :checked="isChecked" />
+
+      <div v-if="parseData.type === 'radio' && parseData.value">
+        <div v-for="child in parseData.children" :key="child.label">
+          <RecursiveComponent :data="child" />
         </div>
-        <div>
-          <div v-if="parseData.type === 'checkbox'">
-            <div v-for="child in parseData.children" :key="child.label" class="ofset">
-              <RecursiveComponent :data="child" :parent-node="'checkbox'" />
-            </div>
-          </div>
+      </div>
+
+      <div v-else-if="parseData.type === 'checkbox'">
+        <div v-for="child in parseData.children" :key="child.label" class="offset">
+          <RecursiveComponent :data="child" />
         </div>
       </div>
     </div>
@@ -31,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import RecursiveComponent from "@/pages/RecursiveComponent";
 
@@ -40,15 +38,19 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  parentNode: {
-    type: String,
-    required: true,
-  },
 });
 
 const parseData = ref({});
+
 // eslint-disable-next-line vue/no-setup-props-destructure
 parseData.value = props.data;
+
+const isChecked = computed(() => {
+  if (parseData.value.type === "checkbox" && parseData.value.children) {
+    return parseData.value.children.some((child) => child.value === true);
+  }
+  return false;
+});
 </script>
 
 <style lang="scss" scoped>
