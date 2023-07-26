@@ -16,7 +16,7 @@
       v-if="graphData && graphData.requirementsChecklist"
       :class="{ hidden: showMap === 'graph' }"
       class="questionaire-wrapper">
-      <RecursiveComponent :data="graphData.requirementsChecklist" />
+      <ShowCheckList :data="graphData.requirementsChecklist" />
     </div>
   </div>
 
@@ -33,6 +33,7 @@ import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import RecursiveComponent from "@/pages/RecursiveComponent";
+import ShowCheckList from "@/pages/ShowCheckList";
 
 const graphContainer = ref(null);
 const route = useRoute();

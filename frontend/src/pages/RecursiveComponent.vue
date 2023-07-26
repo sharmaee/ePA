@@ -1,37 +1,57 @@
 <template>
-  <div class="recursive-wrapper">
-    <div v-if="parseData.class === 'InteractiveSelect'">
-      <fieldset>
-        <legend>{{ parseData.label }}</legend>
-        <div v-for="option in parseData.children" :key="option.label">
-          <RecursiveComponent :data="option" />
-        </div>
-      </fieldset>
-    </div>
+  <div>
+    <div class="recursive-wrapper">
+      <input
+        :id="parseData.label"
+        :checked="isChecked"
+        :type="parseData.type"
+        :value="parseData.label"
+        @click="emit('selectedTerm', parseData.children)" />
+      <label :for="parseData.label"> {{ parseData.label }}</label>
 
-    <div v-else-if="parseData.class === 'SelectOption'">
-      <h3>{{ parseData.label }}</h3>
-      <input v-model="parseData.value" :type="parseData.type" :checked="isChecked" />
-
-      <div v-if="parseData.type === 'radio' && parseData.value">
-        <div v-for="child in parseData.children" :key="child.label">
-          <RecursiveComponent :data="child" />
-        </div>
-      </div>
-
-      <div v-else-if="parseData.type === 'checkbox'">
+      <div v-if="parseData.children && parseData.type === 'checkbox'">
         <div v-for="child in parseData.children" :key="child.label" class="offset">
           <RecursiveComponent :data="child" />
         </div>
       </div>
     </div>
   </div>
+
+  <!-- <div class="recursive-wrapper">
+    <div v-if="checkListChild.class === 'InteractiveSelect'">
+      <fieldset>
+        <legend>{{ checkListChild.label }}</legend>
+        <div v-for="option in checkListChild.children" :key="option.label">
+          <RecursiveComponent :data="option" />
+        </div>
+      </fieldset>
+    </div>
+
+    <div v-else-if="checkListChild.class === 'SelectOption'">
+      <h3>{{ checkListChild.label }}</h3>
+      <input v-model="checkListChild.value" :type="checkListChild.type" :checked="isChecked" />
+
+      <div v-if="checkListChild.type === 'radio' && checkListChild.value">
+        <div v-for="child in checkListChild.children" :key="child.label">
+          <RecursiveComponent :data="child" />
+        </div>
+      </div>
+
+      <div v-else-if="checkListChild.type === 'checkbox'">
+        <div v-for="child in checkListChild.children" :key="child.label" class="offset">
+          <RecursiveComponent :data="child" />
+        </div>
+      </div>
+    </div>
+  </div> -->
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-
+import { computed, ref } from "vue";
 import RecursiveComponent from "@/pages/RecursiveComponent";
+
+const emit = defineEmits(["selectedTerm"]);
+const parseData = ref({});
 
 const props = defineProps({
   data: {
@@ -39,8 +59,6 @@ const props = defineProps({
     required: true,
   },
 });
-
-const parseData = ref({});
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 parseData.value = props.data;
