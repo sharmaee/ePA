@@ -1,21 +1,17 @@
 <template>
   <div>
-    <div v-if="checkListChild.class === 'InteractiveSelect' && !selectedData">
+    <div v-if="!selectedData">
       <h3>{{ checkListChild.label }}</h3>
       <div v-for="option in checkListChild.children" :key="option.label">
         <RecursiveComponent :data="option" @selected-term="selectedTerm" />
       </div>
     </div>
 
-    <div v-else-if="selectedData[0].class === 'InteractiveSelect'">
-      <h3>{{ selectedData[0].label }}</h3>
-      <div v-for="option in selectedData[0].children" :key="option.label">
-        <RecursiveComponent :data="option" @selected-term="selectedTerm" />
-      </div>
-    </div>
-
-    <div v-else-if="selectedData[0].class === 'SelectOption'">
-      <div v-for="item in selectedData" :key="item.label">
+    <div v-else>
+      <h3 v-if="selectedData[0].class === 'InteractiveSelect'">{{ selectedData[0].label }}</h3>
+      <div
+        v-for="item in selectedData[0].class === 'InteractiveSelect' ? selectedData[0].children : selectedData"
+        :key="item.label">
         <RecursiveComponent :data="item" @selected-term="selectedTerm" />
       </div>
     </div>
@@ -45,6 +41,7 @@ const selectedData = ref(null);
 
 function selectedTerm(item) {
   selectedData.value = item;
+  console.log(selectedData.value);
 }
 </script>
 
