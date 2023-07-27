@@ -119,21 +119,21 @@ class AES256Field(models.BinaryField):
         if not value:
             return value
 
-        return self.aes_prefix + self._encrypt(value) 
-  
+        return self.aes_prefix + self._encrypt(value)
+
     def from_db_value(self, value, expression, connection):
         if not value.startswith(self.aes_prefix):
             return value
         if value is None:
             return value
-        return self._decrypt(value[len(self.aes_prefix):])
+        return self._decrypt(value[len(self.aes_prefix) :])
 
     def to_python(self, value):
         if not value.startswith(self.aes_prefix):
             return value
         if value is None:
             return value
-        return self._decrypt(value[len(self.aes_prefix):])
+        return self._decrypt(value[len(self.aes_prefix) :])
 
     def _encrypt(self, data):
         data = pad(data.encode(), 16)
