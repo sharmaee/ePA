@@ -1,31 +1,29 @@
 <template>
-  <div>
-    <div class="recursive-wrapper">
-      <input
-        v-if="parseData.type === 'radio'"
-        :id="parseData.label"
-        v-model="parseData.value"
-        :checked="isChecked"
-        :type="parseData.type"
-        :value="parseData.value"
-        @click="emit('selectedTerm', parseData.children)" />
-      <input
-        v-else-if="parseData.type === 'checkbox'"
-        :id="parseData.label"
-        v-model="parseData.value"
-        :checked="isChecked"
-        :type="parseData.type"
-        :value="isChecked" />
-      <label
-        :for="parseData.label"
-        :class="{ red: parseData.value === false && !props.childCheckboxes && buttonClicked }">
-        {{ parseData.label }}
-      </label>
+  <div class="recursive-wrapper">
+    <input
+      v-if="parseData.type === 'radio'"
+      :id="parseData.label"
+      v-model="parseData.value"
+      :checked="isChecked"
+      :type="parseData.type"
+      :value="parseData.value"
+      @click="emit('selectedTerm', parseData.children)" />
+    <input
+      v-else-if="parseData.type === 'checkbox'"
+      :id="parseData.label"
+      v-model="parseData.value"
+      :checked="isChecked"
+      :type="parseData.type"
+      :value="isChecked" />
+    <label
+      :for="parseData.label"
+      :class="{ red: parseData.value === false && !props.childCheckboxes && buttonClicked }">
+      {{ parseData.label }}
+    </label>
 
-      <div v-if="parseData.children && parseData.type === 'checkbox'">
-        <div v-for="child in parseData.children" :key="child.label" class="offset">
-          <RecursiveComponent :data="child" :child-checkboxes="true" />
-        </div>
+    <div v-if="parseData.children && parseData.type === 'checkbox'">
+      <div v-for="child in parseData.children" :key="child.label" class="offset">
+        <RecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
     </div>
   </div>

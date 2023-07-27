@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="checklist-wrapper">
     <div v-if="!selectedData">
       <h3>{{ checkListChild.label }}</h3>
       <div v-for="option in checkListChild.children" :key="option.label">
