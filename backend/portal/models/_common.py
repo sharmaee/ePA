@@ -105,7 +105,7 @@ def custom_bulk_update_or_create(records, model, existing_ids, pk_field, update_
 
 
 def encrypt_data(data):
-    data = pad(data, 16)
+    data = pad(data.encode(), 16)
     cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
     return base64.b64encode(cipher.encrypt(data)).decode()
 
@@ -113,7 +113,7 @@ def encrypt_data(data):
 def decrypt_data(data):
     data = base64.b64decode(data)
     cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
-    return unpad(cipher.decrypt(data), 16)
+    return unpad(cipher.decrypt(data), 16).decode()
 
 
 class AES256Field(models.BinaryField):
