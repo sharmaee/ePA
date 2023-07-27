@@ -15,7 +15,7 @@
         v-model="parseData.value"
         :checked="isChecked"
         :type="parseData.type"
-        :value="parseData.value" />
+        :value="isChecked" />
       <label
         :for="parseData.label"
         :class="{ red: parseData.value === false && !props.childCheckboxes && buttonClicked }">
@@ -58,9 +58,10 @@ parseData.value = props.data;
 
 const isChecked = computed(() => {
   if (parseData.value.type === "checkbox" && parseData.value.children) {
-    return parseData.value.children.some((child) => child.value === true);
+    // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+    parseData.value.value = parseData.value.children.some((child) => child.value === true);
   }
-  return false;
+  return parseData.value.value;
 });
 </script>
 

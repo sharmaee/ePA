@@ -32,7 +32,6 @@ import { mainServices } from "@/services/mainServices";
 import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-import RecursiveComponent from "@/pages/RecursiveComponent";
 import ShowCheckList from "@/pages/ShowCheckList";
 
 const graphContainer = ref(null);
