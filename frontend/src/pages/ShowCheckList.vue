@@ -12,8 +12,9 @@
       <div
         v-for="item in selectedData[0].class === 'InteractiveSelect' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <RecursiveComponent :data="item" @selected-term="selectedTerm" />
+        <RecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
+      <button v-if="selectedData[0].type === 'checkbox'" @click="checkSelectedCheckBoxes">Send Result</button>
     </div>
   </div>
 </template>
@@ -38,10 +39,22 @@ const props = defineProps({
 checkListChild.value = props.data;
 
 const selectedData = ref(null);
+const buttonClicked = ref(false);
 
 function selectedTerm(item) {
   selectedData.value = item;
-  console.log(selectedData.value);
+}
+
+function checkSelectedCheckBoxes() {
+  buttonClicked.value = true;
+
+  for (const obj of selectedData.value) {
+    if (obj.hasOwnProperty("value") && obj.value === false) {
+      return console.log("Should be select all checkboxes");
+    }
+  }
+
+  return console.log("Some result");
 }
 </script>
 
