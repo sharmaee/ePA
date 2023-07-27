@@ -1,32 +1,24 @@
 import re
-<<<<<<< HEAD
 import xxhash
 import datetime
 import logging
-
-from tqdm import tqdm
-||||||| parent of f33481d (Install dependency and add draft AES256Field)
-=======
 import base64
 
+from tqdm import tqdm
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
->>>>>>> f33481d (Install dependency and add draft AES256Field)
 
 from django.db import models
 from django.db.models.base import ModelBase
 from django.contrib.postgres.search import SearchQuery, SearchRank
-
-<<<<<<< HEAD
-logger = logging.getLogger(__name__)
-||||||| parent of f33481d (Install dependency and add draft AES256Field)
-=======
+from django.utils.encoding import smart_str
 from django.conf import settings
 
 
+logger = logging.getLogger(__name__)
+
 AES_SECRET_KEY = bytes(settings.AES_SECRET_KEY, 'utf-8')
 AES_IV = bytes(settings.AES_IV, 'utf-8')
->>>>>>> f33481d (Install dependency and add draft AES256Field)
 
 punctuation_exp = re.compile(r"[\-!:@#$%^&*()|]")
 plus_search_exp = re.compile(r" +")
@@ -104,26 +96,16 @@ def custom_bulk_update_or_create(records, model, existing_ids, pk_field, update_
     model.objects.bulk_update(updated_entries, update_fields)
 
 
-def encrypt_data(data):
-    data = pad(data.encode(), 16)
-    cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
-    return base64.b64encode(cipher.encrypt(data)).decode()
-
-
-def decrypt_data(data):
-    data = base64.b64decode(data)
-    cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
-    return unpad(cipher.decrypt(data), 16).decode()
-
-
 class AES256Field(models.BinaryField):
     description = "AES256 encrypted value"
 
     def __init__(self, *args, **kwargs):
+        self.aes_prefix = smart_str(kwargs.pop('aes_prefix', u'aes:'))
+        if not self.aes_prefix:
+            raise ValueError('AES Prefix cannot be null.')
         kwargs['max_length'] = 255
         kwargs['blank'] = True
         kwargs['null'] = True
-        self.model_class = kwargs.pop('model_class', None)
         super().__init__(*args, **kwargs)
 
     def deconstruct(self):
@@ -134,16 +116,31 @@ class AES256Field(models.BinaryField):
         return name, path, args, kwargs
 
     def get_prep_value(self, value):
-        return encrypt_data(value) 
+        if not value:
+            return value
+
+        return self.aes_prefix + self._encrypt(value) 
   
     def from_db_value(self, value, expression, connection):
+        if not value.startswith(self.aes_prefix):
+            return value
         if value is None:
             return value
-        return decrypt_data(value)
+        return self._decrypt(value[len(self.aes_prefix):])
 
     def to_python(self, value):
-        if isinstance(value, self.model_class):
+        if not value.startswith(self.aes_prefix):
             return value
         if value is None:
             return value
-        return decrypt_data(value)
+        return self._decrypt(value[len(self.aes_prefix):])
+
+    def _encrypt(self, data):
+        data = pad(data.encode(), 16)
+        cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
+        return base64.b64encode(cipher.encrypt(data)).decode()
+
+    def _decrypt(self, data):
+        data = base64.b64decode(data)
+        cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
+        return unpad(cipher.decrypt(data), 16).decode()
