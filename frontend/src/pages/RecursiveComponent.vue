@@ -19,8 +19,8 @@
       <label
         :for="parseData.label"
         :class="{ red: parseData.value === false && !props.childCheckboxes && buttonClicked }">
-        {{ parseData.label }}</label
-      >
+        {{ parseData.label }}
+      </label>
 
       <div v-if="parseData.children && parseData.type === 'checkbox'">
         <div v-for="child in parseData.children" :key="child.label" class="offset">
@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import RecursiveComponent from "@/pages/RecursiveComponent";
 
 const emit = defineEmits(["selectedTerm"]);
@@ -58,10 +58,13 @@ parseData.value = props.data;
 
 const isChecked = computed(() => {
   if (parseData.value.type === "checkbox" && parseData.value.children) {
-    // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-    parseData.value.value = parseData.value.children.some((child) => child.value === true);
+    return parseData.value.children.some((child) => child.value === true);
   }
   return parseData.value.value;
+});
+
+watch(isChecked, (newValue) => {
+  parseData.value.value = newValue;
 });
 </script>
 
