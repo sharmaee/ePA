@@ -50,11 +50,8 @@ function checkSelectedCheckBoxes() {
 
   for (const obj of selectedData.value) {
     if (obj.hasOwnProperty("value") && obj.value === false) {
-      return console.log("Should be select all checkboxes");
     }
   }
-
-  return console.log("Some result");
 }
 </script>
 
