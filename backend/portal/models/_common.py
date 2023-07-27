@@ -1,15 +1,32 @@
 import re
+<<<<<<< HEAD
 import xxhash
 import datetime
 import logging
 
 from tqdm import tqdm
+||||||| parent of f33481d (Install dependency and add draft AES256Field)
+=======
+import base64
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+>>>>>>> f33481d (Install dependency and add draft AES256Field)
 
 from django.db import models
 from django.db.models.base import ModelBase
 from django.contrib.postgres.search import SearchQuery, SearchRank
 
+<<<<<<< HEAD
 logger = logging.getLogger(__name__)
+||||||| parent of f33481d (Install dependency and add draft AES256Field)
+=======
+from django.conf import settings
+
+
+AES_SECRET_KEY = bytes(settings.AES_SECRET_KEY, 'utf-8')
+AES_IV = bytes(settings.AES_IV, 'utf-8')
+>>>>>>> f33481d (Install dependency and add draft AES256Field)
 
 punctuation_exp = re.compile(r"[\-!:@#$%^&*()|]")
 plus_search_exp = re.compile(r" +")
@@ -85,3 +102,48 @@ def custom_bulk_update_or_create(records, model, existing_ids, pk_field, update_
 
     logger.info(f"Updating {len(updated_entries)} {model.__name__} records")
     model.objects.bulk_update(updated_entries, update_fields)
+
+
+def encrypt_data(data):
+    data = pad(data, 16)
+    cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
+    return base64.b64encode(cipher.encrypt(data)).decode()
+
+
+def decrypt_data(data):
+    data = base64.b64decode(data)
+    cipher = AES.new(AES_SECRET_KEY, AES.MODE_CBC, AES_IV)
+    return unpad(cipher.decrypt(data), 16)
+
+
+class AES256Field(models.BinaryField):
+    description = "AES256 encrypted value"
+
+    def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 255
+        kwargs['blank'] = True
+        kwargs['null'] = True
+        self.model_class = kwargs.pop('model_class', None)
+        super().__init__(*args, **kwargs)
+
+    def deconstruct(self):
+        name, path, args, kwargs = super().deconstruct()
+        del kwargs["max_length"]
+        del kwargs["blank"]
+        del kwargs["null"]
+        return name, path, args, kwargs
+
+    def get_prep_value(self, value):
+        return encrypt_data(value) 
+  
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return value
+        return decrypt_data(value)
+
+    def to_python(self, value):
+        if isinstance(value, self.model_class):
+            return value
+        if value is None:
+            return value
+        return decrypt_data(value)

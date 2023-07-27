@@ -17,6 +17,7 @@ dotmap = "*"
 xxhash = "*"
 gunicorn = "*"
 tqdm = "*"
+pycryptodome = "*"
 
 [dev-packages]
 black = "*"
