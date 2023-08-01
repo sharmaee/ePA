@@ -1,0 +1,17 @@
+.checklist-wrapper {
+    h3 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 150%;
+        margin: 10px 0;
+    }
+
+    button {
+        background-color: $blue;
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 46px;
+        padding: 16px 48px;
+    }
+}

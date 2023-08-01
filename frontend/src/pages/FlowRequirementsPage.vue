@@ -1,12 +1,25 @@
 <template>
   <PriorHeader />
-  <div id="graph-page-wrapper" class="graph-page-wrapper">
+  <div class="graph-page-wrapper">
     <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
-    <p>
-      {{ graphData }}
+    <p v-if="graphData && graphData.description">
+      {{ graphData.description }}
     </p>
+
+    <button v-if="!preloader" class="switch-map" @click="mapSwitcher">{{ showMap }}</button>
+
     <GreenCirclePreloader v-if="preloader" />
+
+    <div id="graph-wrapper" :class="{ hidden: showMap === 'checklist' }" class="graph-wrapper"></div>
+
+    <div
+      v-if="graphData && graphData.requirementsChecklist"
+      :class="{ hidden: showMap === 'graph' }"
+      class="questionaire-wrapper">
+      <ShowCheckList :data="graphData.requirementsChecklist" />
+    </div>
   </div>
+
   <PriorFooter />
 </template>
 
@@ -19,15 +32,17 @@ import { mainServices } from "@/services/mainServices";
 import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import ShowCheckList from "@/pages/ShowCheckList";
 
 const graphContainer = ref(null);
 const route = useRoute();
+const showMap = ref("graph");
 
 const graphData = ref(null);
 const preloader = ref(false);
 
 onMounted(() => {
-  graphContainer.value = document.getElementById("graph-page-wrapper");
+  graphContainer.value = document.getElementById("graph-wrapper");
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
@@ -45,6 +60,9 @@ async function getPriorAuthRequirements(id) {
   });
 
   preloader.value = false;
+}
+function mapSwitcher() {
+  showMap.value = showMap.value === "graph" ? "checklist" : "graph";
 }
 </script>
 

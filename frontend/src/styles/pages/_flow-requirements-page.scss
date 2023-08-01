@@ -30,4 +30,48 @@
     .wrapper {
         margin-top: 60px;
     }
+
+
+    .graphAlternative {
+        display: flex;
+
+        .initiationVsContinuation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .quiz-btn {
+                display: flex;
+
+                span {
+                    cursor: pointer;
+                    background-color: $blue;
+                    color: $white;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 46px;
+                    padding: 16px 48px;
+                }
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .switch-map {
+        cursor: pointer;
+        background-color: $blue;
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 46px;
+        padding: 16px 48px;
+        margin-bottom: 60px;
+    }
+
+    .questionaire-wrapper {
+        width: 100%;
+    }
 }
