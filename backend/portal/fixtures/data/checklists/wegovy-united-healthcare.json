@@ -1,0 +1,64 @@
+{
+    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "Start of therapy",
+            "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 4 months",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Treatment is being requested for appetite suppression or weight loss",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Patient is ≥ 12 years of age",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "One of the following",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Continuation of therapy",
+            "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Continuation of lifestyle modification",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        }
+    ]
+}

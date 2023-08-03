@@ -1,27 +1,27 @@
 <template>
   <div class="recursive-wrapper">
     <input
-      v-if="parseData.type === 'radio'"
+      v-if="parseData.nodeType === 'radio'"
       :id="parseData.label"
-      v-model="parseData.value"
+      v-model="parseData.nodeValue"
       :checked="isChecked"
-      :type="parseData.type"
-      :value="parseData.value"
+      :type="parseData.nodeType"
+      :value="parseData.nodeValue"
       @click="emit('selectedTerm', parseData.children)" />
     <input
-      v-else-if="parseData.type === 'checkbox'"
+      v-else-if="parseData.nodeType === 'checkbox'"
       :id="parseData.label"
-      v-model="parseData.value"
+      v-model="parseData.nodeValue"
       :checked="isChecked"
-      :type="parseData.type"
+      :type="parseData.nodeType"
       :value="isChecked" />
     <label
       :for="parseData.label"
-      :class="{ red: parseData.value === false && !props.childCheckboxes && buttonClicked }">
+      :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
       {{ parseData.label }}
     </label>
 
-    <div v-if="parseData.children && parseData.type === 'checkbox'">
+    <div v-if="parseData.children && parseData.nodeType === 'checkbox'">
       <div v-for="child in parseData.children" :key="child.label" class="offset">
         <RecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
@@ -55,14 +55,17 @@ const props = defineProps({
 parseData.value = props.data;
 
 const isChecked = computed(() => {
-  if (parseData.value.type === "checkbox" && parseData.value.children) {
-    return parseData.value.children.some((child) => child.value === true);
+  if (parseData.value.nodeType === "checkbox" && parseData.value.children && parseData.value.allRequired) {
+    return parseData.value.children.every((child) => child.nodeValue === true);
   }
-  return parseData.value.value;
+  if (parseData.value.nodeType === "checkbox" && parseData.value.children) {
+    return parseData.value.children.some((child) => child.nodeValue === true);
+  }
+  return parseData.value.nodeValue;
 });
 
 watch(isChecked, (newValue) => {
-  parseData.value.value = newValue;
+  parseData.value.nodeValue = newValue;
 });
 </script>
 

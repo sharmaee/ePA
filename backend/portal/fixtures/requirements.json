@@ -12,73 +12,64 @@
             "requirements_flow_file_location": "graphs/wegovy-united-healthcare.svg",
             "requirements_flow": "digraph G {rankstep=1;node [shape=box,style = \"filled,rounded\",color = \"steelblue4\"fontcolor = \"mintcream\",fontname = \"Arial\",margin = 0.1fontsize = 40,width = 0.2,height = 0.2,];edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"];q1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]q2 [label=\"Patient at least 18 years of age?\"]q3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]q4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]q5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]q6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]q7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]q8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]q9 [label=\"Patient continues to meet initial review criteria?\"]q10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]ineligible [label=\"Ineligible\", color=\"red\"]eligible [label=\"Eligible\", color=\"darkgreen\"]q1 -> q2 [label=\"Yes\"]q1 -> ineligible [label=\"No\"]q2 -> q3 [label=\"Yes\"]q2 -> ineligible [label=\"No\"]q3 -> q4 [label=\"Yes\"]q3 -> ineligible [label=\"No\"]q4 -> q5 [label=\"Yes\"]q4 -> ineligible [label=\"No\"]q5 -> q6 [label=\"Yes\"]q5 -> ineligible [label=\"No\"]q6 -> q7 [label=\"Yes\"]q6 -> ineligible [label=\"No\"]q7 -> q8 [label=\"Yes\"]q7 -> ineligible [label=\"No\"]q8 -> q9 [label=\"Yes\"]q8 -> ineligible [label=\"No\"]q9 -> q10 [label=\"Yes\"]q9 -> ineligible [label=\"No\"]q10 -> eligible [label=\"Yes\"]q10 -> ineligible [label=\"No\"]}",
             "requirements_checklist": {
-                "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
-                "type": "fieldset",
+                "node_type": "fieldset",
                 "children": [
                     {
-                        "class": "SelectOption",
                         "label": "Start of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 4 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Treatment is being requested for appetite suppression or weight loss",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Patient is ≥ 12 years of age",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "One of the following",
-                                "type": "checkbox",
-                                "value": false,
+                                "node_type": "checkbox",
+                                "node_value": false,
                                 "children": [
                                     {
-                                        "class": "SelectOption",
                                         "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     },
                                     {
-                                        "class": "SelectOption",
                                         "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "class": "SelectOption",
                         "label": "Continuation of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Continuation of lifestyle modification",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             }
                         ]
                     }
@@ -99,73 +90,64 @@
             "requirements_flow": "digraph G {rankstep=1;node [shape=box,style = \"filled,rounded\",color = \"steelblue4\"fontcolor = \"mintcream\",fontname = \"Arial\",margin = 0.1fontsize = 40,width = 0.2,height = 0.2,];edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"];q1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]q2 [label=\"Patient at least 18 years of age?\"]q3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]q4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]q5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]q6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]q7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]q8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]q9 [label=\"Patient continues to meet initial review criteria?\"]q10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]ineligible [label=\"Ineligible\", color=\"red\"]eligible [label=\"Eligible\", color=\"darkgreen\"]q1 -> q2 [label=\"Yes\"]q1 -> ineligible [label=\"No\"]q2 -> q3 [label=\"Yes\"]q2 -> ineligible [label=\"No\"]q3 -> q4 [label=\"Yes\"]q3 -> ineligible [label=\"No\"]q4 -> q5 [label=\"Yes\"]q4 -> ineligible [label=\"No\"]q5 -> q6 [label=\"Yes\"]q5 -> ineligible [label=\"No\"]q6 -> q7 [label=\"Yes\"]q6 -> ineligible [label=\"No\"]q7 -> q8 [label=\"Yes\"]q7 -> ineligible [label=\"No\"]q8 -> q9 [label=\"Yes\"]q8 -> ineligible [label=\"No\"]q9 -> q10 [label=\"Yes\"]q9 -> ineligible [label=\"No\"]q10 -> eligible [label=\"Yes\"]q10 -> ineligible [label=\"No\"]}",
             "requirements_flow_file_location": "graphs/wegovy-united-healthcare.svg",
             "requirements_checklist": {
-                "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
-                "type": "fieldset",
+                "node_type": "fieldset",
                 "children": [
                     {
-                        "class": "SelectOption",
                         "label": "Start of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 4 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Treatment is being requested for appetite suppression or weight loss",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Patient is ≥ 12 years of age",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "One of the following",
-                                "type": "checkbox",
-                                "value": false,
+                                "node_type": "checkbox",
+                                "node_value": false,
                                 "children": [
                                     {
-                                        "class": "SelectOption",
                                         "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     },
                                     {
-                                        "class": "SelectOption",
                                         "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "class": "SelectOption",
                         "label": "Continuation of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Continuation of lifestyle modification",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             }
                         ]
                     }
@@ -186,73 +168,64 @@
             "requirements_flow": "digraph G {rankstep=1;node [shape=box,style = \"filled,rounded\",color = \"steelblue4\"fontcolor = \"mintcream\",fontname = \"Arial\",margin = 0.1fontsize = 40,width = 0.2,height = 0.2,];edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"];q1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]q2 [label=\"Patient at least 18 years of age?\"]q3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]q4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]q5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]q6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]q7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]q8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]q9 [label=\"Patient continues to meet initial review criteria?\"]q10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]ineligible [label=\"Ineligible\", color=\"red\"]eligible [label=\"Eligible\", color=\"darkgreen\"]q1 -> q2 [label=\"Yes\"]q1 -> ineligible [label=\"No\"]q2 -> q3 [label=\"Yes\"]q2 -> ineligible [label=\"No\"]q3 -> q4 [label=\"Yes\"]q3 -> ineligible [label=\"No\"]q4 -> q5 [label=\"Yes\"]q4 -> ineligible [label=\"No\"]q5 -> q6 [label=\"Yes\"]q5 -> ineligible [label=\"No\"]q6 -> q7 [label=\"Yes\"]q6 -> ineligible [label=\"No\"]q7 -> q8 [label=\"Yes\"]q7 -> ineligible [label=\"No\"]q8 -> q9 [label=\"Yes\"]q8 -> ineligible [label=\"No\"]q9 -> q10 [label=\"Yes\"]q9 -> ineligible [label=\"No\"]q10 -> eligible [label=\"Yes\"]q10 -> ineligible [label=\"No\"]}",
             "requirements_flow_file_location": "graphs/wegovy-united-healthcare.svg",
             "requirements_checklist": {
-                "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
-                "type": "fieldset",
+                "node_type": "fieldset",
                 "children": [
                     {
-                        "class": "SelectOption",
                         "label": "Start of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 4 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Treatment is being requested for appetite suppression or weight loss",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Patient is ≥ 12 years of age",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "One of the following",
-                                "type": "checkbox",
-                                "value": false,
+                                "node_type": "checkbox",
+                                "node_value": false,
                                 "children": [
                                     {
-                                        "class": "SelectOption",
                                         "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     },
                                     {
-                                        "class": "SelectOption",
                                         "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "class": "SelectOption",
                         "label": "Continuation of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Continuation of lifestyle modification",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             }
                         ]
                     }
@@ -273,73 +246,64 @@
             "requirements_flow": "digraph G {rankstep=1;node [shape=box,style = \"filled,rounded\",color = \"steelblue4\"fontcolor = \"mintcream\",fontname = \"Arial\",margin = 0.1fontsize = 40,width = 0.2,height = 0.2,];edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"];q1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]q2 [label=\"Patient at least 18 years of age?\"]q3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]q4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]q5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]q6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]q7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]q8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]q9 [label=\"Patient continues to meet initial review criteria?\"]q10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]ineligible [label=\"Ineligible\", color=\"red\"]eligible [label=\"Eligible\", color=\"darkgreen\"]q1 -> q2 [label=\"Yes\"]q1 -> ineligible [label=\"No\"]q2 -> q3 [label=\"Yes\"]q2 -> ineligible [label=\"No\"]q3 -> q4 [label=\"Yes\"]q3 -> ineligible [label=\"No\"]q4 -> q5 [label=\"Yes\"]q4 -> ineligible [label=\"No\"]q5 -> q6 [label=\"Yes\"]q5 -> ineligible [label=\"No\"]q6 -> q7 [label=\"Yes\"]q6 -> ineligible [label=\"No\"]q7 -> q8 [label=\"Yes\"]q7 -> ineligible [label=\"No\"]q8 -> q9 [label=\"Yes\"]q8 -> ineligible [label=\"No\"]q9 -> q10 [label=\"Yes\"]q9 -> ineligible [label=\"No\"]q10 -> eligible [label=\"Yes\"]q10 -> ineligible [label=\"No\"]}",
             "requirements_flow_file_location": "graphs/wegovy-united-healthcare.svg",
             "requirements_checklist": {
-                "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
-                "type": "fieldset",
+                "node_type": "fieldset",
                 "children": [
                     {
-                        "class": "SelectOption",
                         "label": "Start of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 4 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Treatment is being requested for appetite suppression or weight loss",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Patient is ≥ 12 years of age",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "One of the following",
-                                "type": "checkbox",
-                                "value": false,
+                                "node_type": "checkbox",
+                                "node_value": false,
                                 "children": [
                                     {
-                                        "class": "SelectOption",
                                         "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     },
                                     {
-                                        "class": "SelectOption",
                                         "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                        "type": "checkbox",
-                                        "value": false
+                                        "node_type": "checkbox",
+                                        "node_value": false
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "class": "SelectOption",
                         "label": "Continuation of therapy",
-                        "type": "radio",
-                        "value": false,
+                        "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+                        "node_type": "radio",
+                        "node_value": false,
                         "children": [
                             {
-                                "class": "SelectOption",
                                 "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             },
                             {
-                                "class": "SelectOption",
                                 "label": "Continuation of lifestyle modification",
-                                "type": "checkbox",
-                                "value": false
+                                "node_type": "checkbox",
+                                "node_value": false
                             }
                         ]
                     }
@@ -349,7 +313,7 @@
     },
     {
         "model": "portal.PriorAuthRequirement",
-        "pk": 1,
+        "pk": 5,
         "fields": {
             "url_slug": "117b9ebfe4f23327",
             "description": "Kaiser Permenante Prior Authorization Requirements for Wegovy",
@@ -359,12 +323,181 @@
             "medication": "Wegovy",
             "requirements_flow_file_location": "graphs/wegovy-kaiser-permenante.svg",
             "requirements_flow": "digraph G { node[shape=box, style = \"filled,rounded\", color = \"steelblue4\" fontcolor = \"mintcream\", fontname = \"Arial\", margin = 0.1 fontsize = 40, width = 0.2, height = 0.2, ]; edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"]; node1 [label=\"Who is the prescriber?\", shape=box]; node2 [label=\"What is the patient's age?\", shape=box]; node3 [label=\"What is the starting BMI?\", shape=box]; node4 [label=\"Does the patient have an additional diagnosis from this list?\n cardiovascular disease,\n stroke,\n hypertension,\n Type 2 DM,\n CKD,\n CHD,\n obstructive sleep apnea,\n polycystic ovarian syndrome,\n dyslipidemia,\n non-alcoholic fatty liver disease,\n idiopathic intracranial hypertension,\n osteoarthritis in weight-bearing joints\", shape=box]; node5 [label=\"Is the starting weight in your records?\", shape=box]; node6 [label=\"Patient enrolled in KP-approved weight loss program?\", shape=box]; node7 [label=\"Failure to lose 5% weight after 3-month trial of the following medications?\n (Xenical,\n Contrave,\n Qsymia,\n Saxenda)\", shape=box]; node8 [label=\"Wegovy used with another weight loss drug?\", shape=box]; node9 [label=\"Initial Wegovy prescription is 30-day supply with 2 refills?\", shape=box]; node10 [label=\"Does patient have Type 2 DM?\", shape=box]; node11 [label=\"Following KP National Adult DM Guidelines?\", shape=box]; node12 [label=\"Failed to reach goal A1c after 6-month trial of Victoza and Ozempic?\", shape=box]; node13 [label=\"Does the patient continue to meet the initial review criteria?\", shape=box]; node14 [label=\"What is the percentage of weight loss from starting weight in the last 3 months?\", shape=box]; notEligible [label=\"Not Eligible\", shape=box, color=red]; eligible [label=\"Eligible\", shape=box, color=darkgreen]; node1 -> node2 [label=\"Endocrinologist or Weight Management Specialist\"]; node1 -> notEligible [label=\"Other\"]; node2 -> node3 [label=\"18 or older\"]; node2 -> notEligible [label=\"Younger than 18\"]; node3 -> node4 [label=\"30 kg/m^2 or greater\"]; node3 -> notEligible [label=\"Less than 30 kg/m^2\"]; node4 -> node5 [label=\"Yes\"]; node4 -> notEligible [label=\"No\"]; node5 -> node6 [label=\"Yes\"]; node5 -> notEligible [label=\"No\"]; node6 -> node7 [label=\"Yes\"]; node6 -> notEligible [label=\"No\"]; node7 -> node8 [label=\"Yes\"]; node7 -> notEligible [label=\"No\"]; node8 -> node9 [label=\"No\"]; node8 -> notEligible [label=\"Yes\"]; node9 -> node10 [label=\"Yes\"]; node9 -> notEligible [label=\"No\"]; node10 -> node11 [label=\"Yes\"]; node10 -> node13 [label=\"No\"]; node11 -> node12 [label=\"Yes\"]; node11 -> notEligible [label=\"No\"]; node12 -> node13 [label=\"Yes\"]; node12 -> notEligible [label=\"No\"]; node13 -> node14 [label=\"Yes\"]; node13 -> notEligible [label=\"No\"]; node14 -> eligible [label=\"At least 10%\"]; node14 -> notEligible [label=\"Less than 10%\"]; }",
-            "requirements_checklist": {}
+            "requirements_checklist": {
+                "label": "Is this request for starting or continued therapy with Wegovy™ (semaglutide)?",
+                "node_type": "fieldset",
+                "children": [
+                    {
+                        "label": "Initial review criteria",
+                        "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 3 months",
+                        "node_type": "radio",
+                        "node_value": false,
+                        "children": [
+                            {
+                                "label": "Prescribed by Endocrinologist or Weight Management Specialist",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Patient at least 18 years of age",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Baseline BMI 30 kg/m2 or greater with at least one of the following weight-related comorbidities:",
+                                "node_type": "checkbox",
+                                "node_value": false,
+                                "children": [
+                                    {
+                                        "label": "Established cardiovascular disease or stroke",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Hypertension",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Type 2 DM",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "CKD",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "CHD",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Obstructive sleep apnea",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Polycystic ovarian syndrome",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Dyslipidemia",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Non-alcoholic fatty liver disease",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Idiopathic intracranial hypertension",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Osteoarthritis in weight-bearing joints",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Documented baseline weight",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications indicated for chronic weight management:",
+                                "node_type": "checkbox",
+                                "node_value": false,
+                                "all_required": true,
+                                "children": [
+                                    {
+                                        "label": "Xenical (orlistat)",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Contrave (naltrexone + bupropion)",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Qsymia (phentermine + topiramate)",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Saxenda (liraglutide)",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Wegovy is not being used in combination with another weight loss drug or GLP-1 receptor agonist",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Initial prescription is limited to a maximum of 30-day supply with 2 refills",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "For patients with Type 2 DM and BMI of 30 kg/m2 or greater, must meet both additional criteria below:",
+                                "node_type": "checkbox",
+                                "node_value": false,
+                                "all_required": true,
+                                "children": [
+                                    {
+                                        "label": "Must follow KP National Adult DM Guidelines and CBC step therapy criteria for use of preferred agents for DM control",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Documented intolerance, contraindication, or failure to reach goal A1c after at least 6 month trial of Victoza and Ozempic",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Continuation of therapy",
+                        "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 6 months",
+                        "node_type": "radio",
+                        "node_value": false,
+                        "children": [
+                            {
+                                "label": "Patient continues to meet initial review criteria",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "Documented weight loss within the previous 3 months of at least 10% from baseline weight",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     },
     {
         "model": "portal.PriorAuthRequirement",
-        "pk": 1,
+        "pk": 6,
         "fields": {
             "url_slug": "845c97103fa2b215",
             "description": "CVS Caremark Prior Authorization Requirements for Wegovy",
@@ -374,7 +507,82 @@
             "medication": "Wegovy",
             "requirements_flow_file_location": "graphs/wegovy-cvs-caremark.svg",
             "requirements_flow": "digraph G {ranksep=1; node[shape=box, style=\"filled,rounded\", color=\"steelblue4\", fontcolor=\"mintcream\", fontname=\"Arial\", margin=0.1, fontsize=40, width=0.2, height=0.2];edge [arrowhead=vee,fontname=\"Arial\",fontsize=40,color=\"steelblue4\"];notEligible [label=\"Not Eligible\", shape=box, color=red];eligible [label=\"Eligible\", shape=box, color=darkgreen];start [label=\"Starting or Continuing Therapy?\", shape=box]; {    rank=same;     node1 [label=\"Is Wegovy being used with reduced-calorie diet and increased physical activity?\", shape=box];     node5 [label=\"Has the patient completed at least 3 months of therapy with Wegovy at a stable maintenance dose?\", shape=box];}{    rank=same;     node2 [label=\"Has the patient participated in a comprehensive weight management program for at least 6 months prior?\", shape=box];     node6 [label=\"What is the percentage of weight loss from the baseline body weight?\", shape=box];}node3 [label=\"What is the patient's BMI?\", shape=box];{    rank=same;     node4 [label=\"Does the patient have a weight-related comorbidity? \n (e.g., hypertension, type 2 diabetes mellitus, dyslipidemia)\", shape=box];     node7 [label=\"Is there a documentation of the above weight loss?\", shape=box];}start -> node1 [label=\"Starting\", weight=1];start -> node5 [label=\"Continuing\", weight=1];node1 -> node2 [label=\"Yes\", weight=1];node1 -> notEligible [label=\"No\", weight=1];node2 -> node3 [label=\"Yes\", weight=1];node2 -> notEligible [label=\"No\", weight=1];node3 -> node4 [label=\">=27 and <=29 kg/m^2\", weight=1];node3 -> eligible [label=\">=30 kg/m^2\", weight=1];node3 -> notEligible [label=\"<27 kg/m^2\", weight=1];node4 -> eligible [label=\"Yes\", weight=1];node4 -> notEligible [label=\"No\", weight=1];node5 -> node6 [label=\"Yes\", weight=1];node5 -> notEligible [label=\"No\", weight=1];node6 -> node7 [label=\">=5% weight loss\nor\nMaintained initial 5% weight loss\", weight=1];node6 -> notEligible [label=\"Weight loss criteria not met\", weight=1];node7 -> eligible [label=\"Yes\", weight=1];node7 -> notEligible [label=\"No\", weight=1];}",
-            "requirements_checklist": {}
+            "requirements_checklist": {
+                "label": "Is this request for starting or continued therapy with Wegovy™ (semaglutide)?",
+                "node_type": "fieldset",
+                "children": [
+                    {
+                        "label": "Starting therapy",
+                        "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization",
+                        "node_type": "radio",
+                        "node_value": false,
+                        "children": [
+                            {
+                                "label": "The requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "The patient's Body Mass Index (BMI) meets one of the following conditions:",
+                                "node_type": "checkbox",
+                                "node_value": false,
+                                "children": [
+                                    {
+                                        "label": "The patient has a BMI greater than or equal to 30 kg/m²",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "The patient has a BMI greater than or equal to 27 kg/m² AND has at least one weight-related comorbid condition (e.g., hypertension, type 2 diabetes mellitus, or dyslipidemia)",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Continuation of therapy",
+                        "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization",
+                        "node_type": "radio",
+                        "node_value": false,
+                        "children": [
+                            {
+                                "label": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            },
+                            {
+                                "label": "The patient has either:",
+                                "node_type": "checkbox",
+                                "node_value": false,
+                                "children": [
+                                    {
+                                        "label": "Lost at least 5 percent of baseline body weight",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    },
+                                    {
+                                        "label": "Continued to maintain their initial 5 percent weight loss",
+                                        "node_type": "checkbox",
+                                        "node_value": false
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Documentation of the above weight loss is provided.",
+                                "node_type": "checkbox",
+                                "node_value": false
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     }
 ]

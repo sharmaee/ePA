@@ -8,13 +8,15 @@
     </div>
 
     <div v-else>
-      <h3 v-if="selectedData[0].class === 'InteractiveSelect'">{{ selectedData[0].label }}</h3>
+      <h3 v-if="selectedData[0].nodeType === 'fieldset'">
+        {{ selectedData[0].label }}
+      </h3>
       <div
-        v-for="item in selectedData[0].class === 'InteractiveSelect' ? selectedData[0].children : selectedData"
+        v-for="item in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
         <RecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
-      <button v-if="selectedData[0].type === 'checkbox'" @click="checkSelectedCheckBoxes">Send Result</button>
+      <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button>
     </div>
   </div>
 </template>
@@ -49,7 +51,7 @@ function checkSelectedCheckBoxes() {
   buttonClicked.value = true;
 
   for (const obj of selectedData.value) {
-    if (obj.hasOwnProperty("value") && obj.value === false) {
+    if (obj.hasOwnProperty("nodeValue") && obj.nodeValue === false) {
     }
   }
 }
