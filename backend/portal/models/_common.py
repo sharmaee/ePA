@@ -56,5 +56,6 @@ class SearchQuerySet(models.QuerySet):
         rank = SearchRank(models.F('search_vector'), query)
         return self.annotate(rank=rank).filter(search_vector=query).order_by('-rank')
 
+
 def generate_url_slug():
     return str(xxhash.xxh64(datetime.datetime.now().isoformat()).hexdigest())
