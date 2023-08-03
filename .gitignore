@@ -27,3 +27,5 @@ dump.rdb
 deployment/.env
 */.DS_Store
 backend/portal/settings/local_settings.py
+backend/notebooks/*
+!backend/notebooks/notebook_utils.py

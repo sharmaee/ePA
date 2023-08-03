@@ -1,5 +1,3 @@
-import xxhash
-import datetime
 from django.db import models
 from ._common import PortalModelBase
 
@@ -21,6 +19,3 @@ class PriorAuthRequirement(PortalModelBase):
             if not self.objects.filter(url_slug=url_slug).exists():
                 self.url_slug = url_slug
         super().save(*args, **kwargs)
-
-    def generate_url_slug(self):
-        return str(xxhash.xxh64(datetime.datetime.now().isoformat()).hexdigest())

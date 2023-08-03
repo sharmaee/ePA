@@ -26,6 +26,7 @@ class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
         model = PriorAuthRequirement
         fields = PriorAuthRequirementSerializer.Meta.fields + (
             'requirements_flow',
+            'requirements_flow_file_location',
             'requirements_checklist',
         )
 
