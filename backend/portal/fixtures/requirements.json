@@ -3,25 +3,13 @@
         "model": "portal.PriorAuthRequirement",
         "pk": 1,
         "fields": {
-            "url_slug": "c6b82ea7d5fa0591",
-            "description": "Aetna Prior Authorization Requirements for Repatha in the state of Texas",
-            "insurance_provider": "Aetna",
-            "insurance_plan_number": "Aetna Non-Medicare Prescription Drug Plan",
-            "insurance_coverage_state": "Texas",
-            "medication": "Repatha",
-            "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n}"
-        }
-    },
-    {
-        "model": "portal.PriorAuthRequirement",
-        "pk": 2,
-        "fields": {
-            "url_slug": "ba9bcdb91a7fbe33",
-            "description": "UnitedHealthcare Pharmacy Prior Authorization Requirements for Wegovy in the state of New York",
+            "url_slug": "bf465e610535eb38",
+            "description": "UnitedHealthcare Pharmacy Prior Authorization Requirements for Wegovy in the state of California",
             "insurance_provider": "UnitedHealthcare Pharmacy",
             "insurance_plan_number": "2023 P 1114-12",
-            "insurance_coverage_state": "New York",
+            "insurance_coverage_state": "California",
             "medication": "Wegovy",
+            "requirements_flow_file_location": "/graphs/wegovy-united-healthcare.svg",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\"]\n\teligible [label=\"Eligible\"]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
             "requirements_checklist": {
                 "class": "InteractiveSelect",
@@ -35,101 +23,40 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient starting therapy",
-                                "type": "fieldset",
+                                "class": "SelectOption",
+                                "label": "Treatment is being requested for appetite suppression or weight loss",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Patient is ≥ 12 years of age",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "One of the following",
+                                "type": "checkbox",
+                                "value": false,
                                 "children": [
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                                        "type": "checkbox",
+                                        "value": false
                                     },
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                                        "type": "checkbox",
+                                        "value": false
                                     }
                                 ]
                             }
@@ -142,51 +69,103 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient continuing therapy",
-                                "type": "fieldset",
+                                "class": "SelectOption",
+                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Continuation of lifestyle modification",
+                                "type": "checkbox",
+                                "value": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "model": "portal.PriorAuthRequirement",
+        "pk": 2,
+        "fields": {
+            "url_slug": "ba9bcdb91a7fbe33",
+            "description": "UnitedHealthcare Pharmacy Prior Authorization Requirements for Wegovy in the state of New York",
+            "insurance_provider": "UnitedHealthcare Pharmacy",
+            "insurance_plan_number": "2023 P 1114-12",
+            "insurance_coverage_state": "New York",
+            "medication": "Wegovy",
+            "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\"]\n\teligible [label=\"Eligible\"]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
+            "requirements_flow_file_location": "/graphs/wegovy-united-healthcare.svg",
+            "requirements_checklist": {
+                "class": "InteractiveSelect",
+                "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                "type": "fieldset",
+                "children": [
+                    {
+                        "class": "SelectOption",
+                        "label": "Start of therapy",
+                        "type": "radio",
+                        "value": false,
+                        "children": [
+                            {
+                                "class": "SelectOption",
+                                "label": "Treatment is being requested for appetite suppression or weight loss",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Patient is ≥ 12 years of age",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "One of the following",
+                                "type": "checkbox",
+                                "value": false,
                                 "children": [
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
+                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                                        "type": "checkbox",
+                                        "value": false
                                     },
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
+                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                                        "type": "checkbox",
+                                        "value": false
                                     }
                                 ]
+                            }
+                        ]
+                    },
+                    {
+                        "class": "SelectOption",
+                        "label": "Continuation of therapy",
+                        "type": "radio",
+                        "value": false,
+                        "children": [
+                            {
+                                "class": "SelectOption",
+                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Continuation of lifestyle modification",
+                                "type": "checkbox",
+                                "value": false
                             }
                         ]
                     }
@@ -205,6 +184,7 @@
             "insurance_coverage_state": "New Mexico",
             "medication": "Wegovy",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\"]\n\teligible [label=\"Eligible\"]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
+            "requirements_flow_file_location": "/graphs/wegovy-united-healthcare.svg",
             "requirements_checklist": {
                 "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
@@ -217,101 +197,40 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient starting therapy",
-                                "type": "fieldset",
+                                "class": "SelectOption",
+                                "label": "Treatment is being requested for appetite suppression or weight loss",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Patient is ≥ 12 years of age",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "One of the following",
+                                "type": "checkbox",
+                                "value": false,
                                 "children": [
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                                        "type": "checkbox",
+                                        "value": false
                                     },
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                                        "type": "checkbox",
+                                        "value": false
                                     }
                                 ]
                             }
@@ -324,51 +243,16 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient continuing therapy",
-                                "type": "fieldset",
-                                "children": [
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "class": "SelectOption",
+                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Continuation of lifestyle modification",
+                                "type": "checkbox",
+                                "value": false
                             }
                         ]
                     }
@@ -387,6 +271,7 @@
             "insurance_coverage_state": "Maryland",
             "medication": "Wegovy",
             "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\"]\n\teligible [label=\"Eligible\"]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
+            "requirements_flow_file_location": "/graphs/wegovy-united-healthcare.svg",
             "requirements_checklist": {
                 "class": "InteractiveSelect",
                 "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
@@ -399,101 +284,40 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient starting therapy",
-                                "type": "fieldset",
+                                "class": "SelectOption",
+                                "label": "Treatment is being requested for appetite suppression or weight loss",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Patient is ≥ 12 years of age",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                                "type": "checkbox",
+                                "value": false
+                            },
+                            {
+                                "class": "SelectOption",
+                                "label": "One of the following",
+                                "type": "checkbox",
+                                "value": false,
                                 "children": [
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                                        "type": "checkbox",
+                                        "value": false
                                     },
                                     {
                                         "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                                        "type": "checkbox",
+                                        "value": false
                                     }
                                 ]
                             }
@@ -506,233 +330,16 @@
                         "value": false,
                         "children": [
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient continuing therapy",
-                                "type": "fieldset",
-                                "children": [
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    },
-    {
-        "model": "portal.PriorAuthRequirement",
-        "pk": 5,
-        "fields": {
-            "url_slug": "bf465e610535eb38",
-            "description": "UnitedHealthcare Pharmacy Prior Authorization Requirements for Wegovy in the state of California",
-            "insurance_provider": "UnitedHealthcare Pharmacy",
-            "insurance_plan_number": "2023 P 1114-12",
-            "insurance_coverage_state": "California",
-            "medication": "Wegovy",
-            "requirements_flow": "digraph G {\n\trankdir=TB;\n\tnode [\n\t\tshape=box,\n\t\tstyle = \"filled,rounded\",\n\t\tcolor = \"steelblue4\"\n\t\tfontcolor = \"mintcream\",\n\t\tfontname = \"Arial\",\n\t\tmargin = 0.1\n\t\tfontsize = 40,\n\t\twidth = 0.2,\n\t\theight = 0.2,\n\t];\n\tedge [\n\t\tarrowhead=vee,\n\t\tfontname=\"Arial\",\n\t\tfontsize=40,\n\t\tcolor=\"steelblue4\"\n\t];\n\tq1 [label=\"Prescription from Endocrinologist or Weight Management Specialist?\"]\n\tq2 [label=\"Patient at least 18 years of age?\"]\n\tq3 [label=\"Baseline BMI 30 kg/m2 or greater with at least one weight-related comorbidity?\"]\n\tq4 [label=\"Patient has attempted to lose weight through KP-approved weight loss program?\"]\n\tq5 [label=\"Patient has documented intolerance or contraindication to all listed medications?\"]\n\tq6 [label=\"Wegovy not used with another weight loss drug or GLP-1 receptor agonist?\"]\n\tq7 [label=\"Initial prescription is limited to a maximum of 30-day supply with 2 refills?\"]\n\tq8 [label=\"For Type 2 DM patients,do they meet both additional criteria?\"]\n\tq9 [label=\"Patient continues to meet initial review criteria?\"]\n\tq10 [label=\"Documented weight loss of at least 10% from baseline weight in the past 3 months?\"]\n\tineligible [label=\"Ineligible\"]\n\teligible [label=\"Eligible\"]\n\tq1 -> q2 [label=\"Yes\"]\n\tq1 -> ineligible [label=\"No\"]\n\tq2 -> q3 [label=\"Yes\"]\n\tq2 -> ineligible [label=\"No\"]\n\tq3 -> q4 [label=\"Yes\"]\n\tq3 -> ineligible [label=\"No\"]\n\tq4 -> q5 [label=\"Yes\"]\n\tq4 -> ineligible [label=\"No\"]\n\tq5 -> q6 [label=\"Yes\"]\n\tq5 -> ineligible [label=\"No\"]\n\tq6 -> q7 [label=\"Yes\"]\n\tq6 -> ineligible [label=\"No\"]\n\tq7 -> q8 [label=\"Yes\"]\n\tq7 -> ineligible [label=\"No\"]\n\tq8 -> q9 [label=\"Yes\"]\n\tq8 -> ineligible [label=\"No\"]\n\tq9 -> q10 [label=\"Yes\"]\n\tq9 -> ineligible [label=\"No\"]\n\tq10 -> eligible [label=\"Yes\"]\n\tq10 -> ineligible [label=\"No\"]\n}",
-            "requirements_checklist": {
-                "class": "InteractiveSelect",
-                "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
-                "type": "fieldset",
-                "children": [
-                    {
-                        "class": "SelectOption",
-                        "label": "Start of therapy",
-                        "type": "radio",
-                        "value": false,
-                        "children": [
+                                "class": "SelectOption",
+                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                                "type": "checkbox",
+                                "value": false
+                            },
                             {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient starting therapy",
-                                "type": "fieldset",
-                                "children": [
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "type": "radio",
-                                        "value": false,
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Treatment is being requested for appetite suppression or weight loss",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Patient is ≥ 12 years of age",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "One of the following",
-                                                "type": "checkbox",
-                                                "value": false,
-                                                "children": [
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    },
-                                                    {
-                                                        "class": "SelectOption",
-                                                        "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
-                                                        "type": "checkbox",
-                                                        "value": false
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "class": "SelectOption",
-                        "label": "Continuation of therapy",
-                        "type": "radio",
-                        "value": false,
-                        "children": [
-                            {
-                                "class": "InteractiveSelect",
-                                "label": "Age of patient continuing therapy",
-                                "type": "fieldset",
-                                "children": [
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age 12 to 17 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "class": "SelectOption",
-                                        "label": "Age >18 y.o.",
-                                        "value": false,
-                                        "type": "radio",
-                                        "children": [
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
-                                                "type": "checkbox",
-                                                "value": false
-                                            },
-                                            {
-                                                "class": "SelectOption",
-                                                "label": "Continuation of lifestyle modification",
-                                                "type": "checkbox",
-                                                "value": false
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "class": "SelectOption",
+                                "label": "Continuation of lifestyle modification",
+                                "type": "checkbox",
+                                "value": false
                             }
                         ]
                     }

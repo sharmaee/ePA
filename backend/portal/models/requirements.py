@@ -13,6 +13,7 @@ class PriorAuthRequirement(PortalModelBase):
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_flow = models.TextField(blank=True, null=True)
     requirements_checklist = models.JSONField(null=True)
+    requirements_flow_file_location = models.TextField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         while not self.url_slug:
