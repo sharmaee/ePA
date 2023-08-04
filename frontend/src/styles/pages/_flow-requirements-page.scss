@@ -64,7 +64,7 @@
         display: none;
     }
 
-    .switch-map {
+    .switch-tab {
         cursor: pointer;
         background-color: $blue;
         color: $white;
@@ -73,6 +73,16 @@
         border-radius: 46px;
         padding: 16px 48px;
         margin-bottom: 60px;
+
+        &:hover {
+            background-color: $blue;
+            color: $white;
+        }
+
+        .active-tab {
+            background-color: $white;
+            color: $blue;
+        }
     }
 
     .questionaire-wrapper {

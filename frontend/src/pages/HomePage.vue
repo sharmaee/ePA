@@ -106,10 +106,14 @@ onMounted(() => {
 });
 
 async function getAvailableSearchOptions() {
-  availableSearchOptions.value = await mainServices.availableSearchOptions();
+  const availableRequirementOptions = await mainServices.availableSearchOptions();
+  availableSearchOptions.value = availableRequirementOptions.availableSearchOptions;
+  priorAuthRequirementsResult.value = availableRequirementOptions.requirements;
+  coverageBlock.value = true;
 }
 
 async function getPriorAuthRequirements() {
+  coverageBlock.value = false;
   preloader.value = true;
   window.scrollTo({
     top: 1000,

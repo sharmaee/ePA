@@ -2,27 +2,50 @@
   <PriorHeader />
   <div class="graph-page-wrapper">
     <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
-    <p v-if="graphData && graphData.description">
-      {{ graphData.description }}
+    <p v-if="requirementsData && requirementsData.description">
+      {{ requirementsData.description }}
     </p>
 
-    <button v-if="!preloader" class="switch-map" @click="mapSwitcher">{{ showMap }}</button>
+    <div v-if="!preloader" class="switch-tab">
+      <b-button-group>
+        <b-button class="switch-tab" :class="{ 'active-tab': activeTab === 'graph' }" @click="activeTab = 'graph'">
+          Graph
+        </b-button>
+        <b-button
+          class="switch-tab"
+          :class="{ 'active-tab': activeTab === 'questionnaire' }"
+          @click="activeTab = 'questionnaire'">
+          Questionnaire
+        </b-button>
+        <b-button
+          class="switch-tab"
+          :class="{ 'active-tab': activeTab === 'checklist' }"
+          @click="activeTab = 'checklist'">
+          Checklist
+        </b-button>
+      </b-button-group>
+    </div>
 
     <GreenCirclePreloader v-if="preloader" />
 
-    <div id="graph-wrapper" :class="{ hidden: showMap === 'graph' }" class="graph-wrapper">
+    <div id="graph-wrapper" :class="{ hidden: activeTab !== 'graph' }" class="graph-wrapper">
       <img
-        v-if="graphData && graphData.requirementsFlowFileLocation"
-        :src="`${s3StorageUrl}/${graphData.requirementsFlowFileLocation}`"
+        v-if="requirementsData && requirementsData.requirementsFlowFileLocation"
+        :src="`${s3StorageUrl}/${requirementsData.requirementsFlowFileLocation}`"
         alt="graph"
         class="graph-image-from-file" />
     </div>
-
     <div
-      v-if="graphData && graphData.requirementsChecklist"
-      :class="{ hidden: showMap === 'checklist' }"
+      v-if="requirementsData && requirementsData.requirementsChecklist"
+      :class="{ hidden: activeTab !== 'questionnaire' }"
       class="questionaire-wrapper">
-      <ShowCheckList :data="graphData.requirementsChecklist" />
+      <ShowCheckList :data="requirementsData.requirementsChecklist" />
+    </div>
+    <div
+      v-if="requirementsData && requirementsData.requirementsChecklist"
+      :class="{ hidden: activeTab !== 'checklist' }"
+      class="questionaire-wrapper">
+      <ShowAllRequirements :data="requirementsData.requirementsChecklist" />
     </div>
   </div>
 
@@ -39,13 +62,14 @@ import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import ShowCheckList from "@/pages/ShowCheckList";
+import ShowAllRequirements from "@/pages/ShowAllRequirements";
 
 // const graphContainer = ref(null);
 const route = useRoute();
-const showMap = ref("checklist");
+const activeTab = ref("graph");
 const s3StorageUrl = "https://dopriorauth-portal-public.s3.amazonaws.com/media";
 
-const graphData = ref(null);
+const requirementsData = ref(null);
 const preloader = ref(false);
 
 onMounted(() => {
@@ -57,19 +81,16 @@ onMounted(() => {
 
 async function getPriorAuthRequirements(id) {
   preloader.value = true;
-  graphData.value = await mainServices.getGraphData(id);
+  requirementsData.value = await mainServices.getRequirementsData(id);
 
   // instance().then(function (viz) {
-  //   graphContainer.value.appendChild(viz.renderSVGElement(`${graphData.value.requirementsFlow}`));
+  //   graphContainer.value.appendChild(viz.renderSVGElement(`${requirementsData.value.requirementsFlow}`));
   //   let graph = document.getElementsByTagName("svg")[0];
   //   graph.style.width = 900 + "pt";
   //   graph.style.height = 550 + "pt";
   // });
 
   preloader.value = false;
-}
-function mapSwitcher() {
-  showMap.value = showMap.value === "checklist" ? "graph" : "checklist";
 }
 </script>
 
