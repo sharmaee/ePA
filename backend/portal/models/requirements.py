@@ -1,5 +1,3 @@
-import xxhash
-import datetime
 from django.db import models
 from ._common import PortalModelBase
 
@@ -13,6 +11,7 @@ class PriorAuthRequirement(PortalModelBase):
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_flow = models.TextField(blank=True, null=True)
     requirements_checklist = models.JSONField(null=True)
+    requirements_flow_file_location = models.TextField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         while not self.url_slug:
@@ -20,6 +19,3 @@ class PriorAuthRequirement(PortalModelBase):
             if not self.objects.filter(url_slug=url_slug).exists():
                 self.url_slug = url_slug
         super().save(*args, **kwargs)
-
-    def generate_url_slug(self):
-        return str(xxhash.xxh64(datetime.datetime.now().isoformat()).hexdigest())

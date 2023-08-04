@@ -2,21 +2,50 @@
   <PriorHeader />
   <div class="graph-page-wrapper">
     <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
-    <p v-if="graphData && graphData.description">
-      {{ graphData.description }}
+    <p v-if="requirementsData && requirementsData.description">
+      {{ requirementsData.description }}
     </p>
 
-    <button v-if="!preloader" class="switch-map" @click="mapSwitcher">{{ showMap }}</button>
+    <div v-if="!preloader" class="tabs-container">
+      <b-button-group>
+        <b-button class="switch-tab" :class="{ 'active-tab': activeTab === 'graph' }" @click="activeTab = 'graph'">
+          Graph
+        </b-button>
+        <b-button
+          class="switch-tab"
+          :class="{ 'active-tab': activeTab === 'questionnaire' }"
+          @click="activeTab = 'questionnaire'">
+          Questionnaire
+        </b-button>
+        <b-button
+          class="switch-tab"
+          :class="{ 'active-tab': activeTab === 'checklist' }"
+          @click="activeTab = 'checklist'">
+          Checklist
+        </b-button>
+      </b-button-group>
+    </div>
 
     <GreenCirclePreloader v-if="preloader" />
 
-    <div id="graph-wrapper" :class="{ hidden: showMap === 'checklist' }" class="graph-wrapper"></div>
-
+    <div id="graph-wrapper" :class="{ hidden: activeTab !== 'graph' }" class="graph-wrapper">
+      <img
+        v-if="requirementsData && requirementsData.requirementsFlowFileLocation"
+        :src="`${s3StorageUrl}/${requirementsData.requirementsFlowFileLocation}`"
+        alt="graph"
+        class="graph-image-from-file" />
+    </div>
     <div
-      v-if="graphData && graphData.requirementsChecklist"
-      :class="{ hidden: showMap === 'graph' }"
+      v-if="requirementsData && requirementsData.requirementsChecklist"
+      :class="{ hidden: activeTab !== 'questionnaire' }"
       class="questionaire-wrapper">
-      <ShowCheckList :data="graphData.requirementsChecklist" />
+      <ShowCheckList :data="requirementsData.requirementsChecklist" />
+    </div>
+    <div
+      v-if="requirementsData && requirementsData.requirementsChecklist"
+      :class="{ hidden: activeTab !== 'checklist' }"
+      class="questionaire-wrapper">
+      <ShowAllRequirements :data="requirementsData.requirementsChecklist" />
     </div>
   </div>
 
@@ -25,7 +54,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { instance } from "@viz-js/viz";
+// import { instance } from "@viz-js/viz";
 import { useRoute } from "vue-router";
 import { mainServices } from "@/services/mainServices";
 
@@ -33,16 +62,18 @@ import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import ShowCheckList from "@/pages/ShowCheckList";
+import ShowAllRequirements from "@/pages/ShowAllRequirements";
 
-const graphContainer = ref(null);
+// const graphContainer = ref(null);
 const route = useRoute();
-const showMap = ref("graph");
+const activeTab = ref("graph");
+const s3StorageUrl = "https://dopriorauth-portal-public.s3.amazonaws.com/media";
 
-const graphData = ref(null);
+const requirementsData = ref(null);
 const preloader = ref(false);
 
 onMounted(() => {
-  graphContainer.value = document.getElementById("graph-wrapper");
+  // graphContainer.value = document.getElementById("graph-wrapper");
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
@@ -50,19 +81,16 @@ onMounted(() => {
 
 async function getPriorAuthRequirements(id) {
   preloader.value = true;
-  graphData.value = await mainServices.getGraphData(id);
+  requirementsData.value = await mainServices.getRequirementsData(id);
 
-  instance().then(function (viz) {
-    graphContainer.value.appendChild(viz.renderSVGElement(`${graphData.value.requirementsFlow}`));
-    let graph = document.getElementsByTagName("svg")[0];
-    graph.style.width = 900 + "pt";
-    graph.style.height = 550 + "pt";
-  });
+  // instance().then(function (viz) {
+  //   graphContainer.value.appendChild(viz.renderSVGElement(`${requirementsData.value.requirementsFlow}`));
+  //   let graph = document.getElementsByTagName("svg")[0];
+  //   graph.style.width = 900 + "pt";
+  //   graph.style.height = 550 + "pt";
+  // });
 
   preloader.value = false;
-}
-function mapSwitcher() {
-  showMap.value = showMap.value === "graph" ? "checklist" : "graph";
 }
 </script>
 

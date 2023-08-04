@@ -15,6 +15,7 @@ django-rest-passwordreset = "*"
 drf-yasg = "*"
 dotmap = "*"
 xxhash = "*"
+gunicorn = "*"
 
 [dev-packages]
 black = "*"

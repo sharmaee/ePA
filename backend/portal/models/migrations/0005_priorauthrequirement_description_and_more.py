@@ -17,8 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="priorauthrequirement",
             name="url_slug",
-            field=models.TextField(
-                db_index=True, editable=False, null=True, unique=True
-            ),
+            field=models.TextField(db_index=True, editable=False, null=True, unique=True),
         ),
     ]

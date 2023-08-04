@@ -31,6 +31,10 @@
         margin-top: 60px;
     }
 
+    .graph-image-from-file {
+        width: 1200px;
+        height: auto;
+    }
 
     .graphAlternative {
         display: flex;
@@ -60,15 +64,26 @@
         display: none;
     }
 
-    .switch-map {
-        cursor: pointer;
-        background-color: $blue;
-        color: $white;
-        font-size: 18px;
-        border: none;
+    .tabs-container {
         border-radius: 46px;
         padding: 16px 48px;
         margin-bottom: 60px;
+        cursor: pointer;
+        background-color: $blue;
+        color: $white;
+
+        .switch-tab {
+            border-radius: 46px;
+            padding: 16px 48px;
+            margin-bottom: 60px;
+            font-size: 18px;
+            border: none;
+    
+            &.active-tab {
+                background-color: $blue-100;
+                color: $blue;
+            }
+        }
     }
 
     .questionaire-wrapper {
