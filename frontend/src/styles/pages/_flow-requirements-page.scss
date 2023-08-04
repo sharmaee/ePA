@@ -64,24 +64,25 @@
         display: none;
     }
 
-    .switch-tab {
-        cursor: pointer;
-        background-color: $blue;
-        color: $white;
-        font-size: 18px;
-        border: none;
+    .tabs-container {
         border-radius: 46px;
         padding: 16px 48px;
         margin-bottom: 60px;
+        cursor: pointer;
+        background-color: $blue;
+        color: $white;
 
-        &:hover {
-            background-color: $blue;
-            color: $white;
-        }
-
-        .active-tab {
-            background-color: $white;
-            color: $blue;
+        .switch-tab {
+            border-radius: 46px;
+            padding: 16px 48px;
+            margin-bottom: 60px;
+            font-size: 18px;
+            border: none;
+    
+            &.active-tab {
+                background-color: $blue-100;
+                color: $blue;
+            }
         }
     }
 

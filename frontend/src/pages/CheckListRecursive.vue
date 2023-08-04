@@ -8,6 +8,7 @@
       :type="parseData.nodeType"
       :value="isChecked" />
     <label
+      v-if="parseData.nodeType !== 'fieldset'"
       :for="parseData.label"
       :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
       {{ parseData.label }}

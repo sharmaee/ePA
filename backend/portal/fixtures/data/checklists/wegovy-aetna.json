@@ -1,0 +1,157 @@
+{
+    "label": "Age of patient?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "For patients 18 years or older",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient is 18 years of age or older",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has either:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "A body mass index (BMI) greater than or equal to 30 kilogram per square meter",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "A body mass index (BMI) greater than or equal to 27 kilogram per square meter AND has at least one weight-related comorbid condition (e.g., hypertension, type 2 diabetes mellitus or dyslipidemia)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has either:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Lost at least 5 percent of baseline body weight",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Continued to maintain their initial 5 percent weight loss (Documentation is required)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "For patients aged 12 to 17 years",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient is 12 to 17 years of age",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient has either",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "A reduction from their baseline body mass index (BMI)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Continued to maintain their reduction in BMI from baseline (Documentation is required)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

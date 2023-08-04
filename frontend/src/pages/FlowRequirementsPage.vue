@@ -6,7 +6,7 @@
       {{ requirementsData.description }}
     </p>
 
-    <div v-if="!preloader" class="switch-tab">
+    <div v-if="!preloader" class="tabs-container">
       <b-button-group>
         <b-button class="switch-tab" :class="{ 'active-tab': activeTab === 'graph' }" @click="activeTab = 'graph'">
           Graph
