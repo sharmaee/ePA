@@ -1,23 +1,53 @@
 <template>
-  <header>
+  <header :class="{ 'mobile-header': screenWidth < 835 }">
     <div class="logo">
       <img alt="logo" src="../assets/images/logo.svg" @click="redirectTOMainPage" />
     </div>
-    <nav class="header-menu">
+    <img
+      v-if="screenWidth < 835"
+      src="@/assets/images/mobile-menu.svg"
+      alt="mobile-menu"
+      class="mobile-menu-img"
+      @click="showHideMenu" />
+    <nav class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
       <ul>
-        <li>Mission</li>
-        <li>Services</li>
-        <li>FAQ</li>
-        <li>Contact</li>
+        <li>
+          <a href="">Mission</a>
+        </li>
+        <li>
+          <a href="">Patients</a>
+        </li>
+        <li>
+          <a href="">Providers</a>
+        </li>
+        <li>
+          <a href="">Contact</a>
+        </li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+
+const screenWidth = ref(null);
+const mobileMenu = ref(true);
+
+function displayWindowSize() {
+  screenWidth.value = document.documentElement.clientWidth;
+}
+
+window.addEventListener("resize", displayWindowSize);
+
+displayWindowSize();
+
+function showHideMenu() {
+  mobileMenu.value = mobileMenu.value ? false : true;
+}
 
 function redirectTOMainPage() {
   router.push({ name: "home-page" });
