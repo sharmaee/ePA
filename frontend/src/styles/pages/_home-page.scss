@@ -24,15 +24,28 @@
         }
     }
 
+    .hide {
+        display: none;
+    }
+
     .home-page-main-block {
         display: flex;
         width: 100%;
+        
+        @media (max-width: 835px) {
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
         .home-page-img {
             width: 50%;
 
             @media (max-width: 1280px) {
                 width: 40%;
+            }
+
+            @media (max-width: 835px) {
+                width: 50%;
             }
 
             img {             
@@ -42,8 +55,12 @@
                     width: 335px;
                     height: 500px;
                 }
-              }
+            }
+        }
 
+        h1 {
+            width: 50%;
+            text-align: left;
         }
 
         .home-page-form-wrapper {
@@ -51,6 +68,11 @@
 
             @media (max-width: 1280px) {
                 width: 60%;
+            }
+
+            @media (max-width: 835px) {
+                width: 95%;
+                margin: 0 auto 25px auto;
             }
 
             .home-form {
@@ -148,11 +170,16 @@
             }
         }
     }
+
     .coverage {
         width: 85%;
         padding: 25px 50px;
         border-radius: 34px;
         border: 1px solid $gray-600;
+
+        @media (max-width: 835px) {
+            width: 82%;
+        }
 
         .request-text {
             border-bottom: 1px solid $gray-600;

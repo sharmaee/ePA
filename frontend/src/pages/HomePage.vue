@@ -1,11 +1,13 @@
 <template>
   <PriorHeader />
   <div class="home-page-wrapper">
-    <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+    <h1 :class="{ hide: screenWidth < 835 }">The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
     <div class="home-page-main-block">
       <div class="home-page-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
       </div>
+      <h1 :class="{ hide: screenWidth > 835 }">The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+
       <div class="home-page-form-wrapper">
         <div class="home-form">
           <h2>Check if you are Eligible for coverage</h2>
@@ -81,7 +83,15 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
 const priorAuthRequirementsResult = ref(null);
+const screenWidth = ref(null);
 
+function displayWindowSize() {
+  screenWidth.value = document.documentElement.clientWidth;
+}
+
+window.addEventListener("resize", displayWindowSize);
+
+displayWindowSize();
 // not used yet for auto-filling
 const availableSearchOptions = ref(null);
 
