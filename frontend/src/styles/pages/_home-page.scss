@@ -2,17 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0 60px 0;
+    padding: 0 0 60px 0;
     width: 100%;
 
     h1 {
-        width: 80%;
         font-size: 64px;
         font-weight: 700;
         text-align: center;
 
         .blue-text {
             color: $blue;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 56px;
+            line-height: 0.3;
         }
     }
 
@@ -23,23 +27,42 @@
         .home-page-img {
             width: 50%;
 
+            @media (max-width: 1280px) {
+                width: 40%;
+            }
+
             img {             
                 image-rendering: pixelated;
+
+                @media (max-width: 1280px) {
+                    width: 335px;
+                    height: 500px;
+                }
               }
+
         }
 
         .home-page-form-wrapper {
             width: 50%;
+
+            @media (max-width: 1280px) {
+                width: 60%;
+            }
 
             .home-form {
                 padding: 25px 50px;
                 border-radius: 34px;
                 border: 1px solid $gray-600;
 
+                @media (max-width: 1280px) {
+                    padding: 15px 50px;
+                }
+
                 h2 {
                     color: $gray-1000;                    
                     font-size: 24px;                   
-                    font-weight: 700;                   
+                    font-weight: 700;  
+                    line-height: 0;                 
                 }
 
                 hr {
@@ -50,6 +73,10 @@
 
                 label {
                     margin: 25px 0 18px 0;
+
+                    @media (max-width: 1280px) {
+                        margin: 8px 0 8px 0;
+                    }
                 }
 
                 .insurance-plan-number {
@@ -123,21 +150,24 @@
             border-bottom: 1px solid $gray-600;
             padding: 0 10px;
       
-            p {
+            span {
+                display: block;
                 line-height: 150%;
                 font-size: 18px;
                 color: $gray-800;
             }
 
             .bold {
+                margin: 20px 0 10px 0;
                 color: $black;
+                font-size: 24px;
                 font-weight: 500;
             }
 
             .coverage-btn-wrapper {
                 display: flex;
                 justify-content: flex-end;
-                margin-bottom: 40px;
+                margin-bottom: 25px;
 
                 .btn-blue {
                     text-decoration: none;
