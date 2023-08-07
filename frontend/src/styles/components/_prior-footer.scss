@@ -5,12 +5,26 @@ footer {
     padding: 20px 0;
     font-size: 14px;
 
+    @media (max-width: 605px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .right-footer {
+        @media (max-width: 605px) {
+            margin-top: 20px;
+        }
         ul {
             display: flex;
             justify-content: space-between;
             width: 280px;
+
+            @media (max-width: 605px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
+
     }   
 
 }

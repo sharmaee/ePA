@@ -38,6 +38,7 @@
         }
 
         .home-page-img {
+            display: flex;
             width: 50%;
 
             @media (max-width: 1280px) {
@@ -55,19 +56,37 @@
                     width: 335px;
                     height: 500px;
                 }
+
+                @media (max-width: 605px) {
+                    width: 167px;
+                    height: 234px;
+                }
             }
         }
 
-        h1 {
+        .h1-wrapper {
             width: 50%;
-            text-align: left;
+
+            h1 {
+                text-align: left;
+                margin: 0 0 0 20px;
+
+                @media (max-width: 605px) {
+                    font-size: 32px;
+                }
+
+                @media (max-width: 405px) {
+                    margin: 0;
+                }
+            }
+
         }
 
         .home-page-form-wrapper {
             width: 50%;
 
             @media (max-width: 1280px) {
-                width: 60%;
+                width: 57%;
             }
 
             @media (max-width: 835px) {
@@ -84,6 +103,10 @@
                     padding: 15px 50px;
                 }
 
+                @media (max-width: 605px) {
+                    padding: 10px 20px;
+                }
+
                 h2 {
                     color: $gray-1000;                    
                     font-size: 24px;                   
@@ -92,6 +115,10 @@
                     
                     @media (max-width: 885px) {
                         line-height: 1;
+                    }
+
+                    @media (max-width: 605px) {
+                        font-size: 16px;
                     }
                 }
 
@@ -107,20 +134,31 @@
                     @media (max-width: 1280px) {
                         margin: 8px 0 8px 0;
                     }
+
+                    @media (max-width: 605px) {
+                        font-size: 14px;
+                    }     
                 }
 
                 .insurance-plan-number {
                     display: flex;
                     flex-direction: column;
-
                 }
 
                 .insurance-provider-and-state {
                     display: flex;
                     justify-content: space-between;
 
+                    @media (max-width: 605px) {
+                        flex-direction: column;
+                    }  
+
                     .insurance-provider, .insurance-state {
-                        width: 47%;                       
+                        width: 47%;       
+
+                        @media (max-width: 605px) {
+                            width: 100%;
+                        }                
                     }
 
                     select {
@@ -172,15 +210,15 @@
     }
 
     .coverage {
-        width: 85%;
+        width: 95%;
         padding: 25px 50px;
         border-radius: 34px;
         border: 1px solid $gray-600;
+        box-sizing: border-box;
 
-        @media (max-width: 835px) {
-            width: 82%;
-        }
-
+        @media (max-width: 605px) {
+            padding: 12px 20px;
+        } 
         .request-text {
             border-bottom: 1px solid $gray-600;
             padding: 0 10px;
@@ -190,6 +228,10 @@
                 line-height: 150%;
                 font-size: 18px;
                 color: $gray-800;
+                
+                @media (max-width: 605px) {
+                    font-size: 16px;
+                } 
             }
 
             .bold {
@@ -197,6 +239,10 @@
                 color: $black;
                 font-size: 24px;
                 font-weight: 500;
+
+                @media (max-width: 605px) {
+                    font-size: 16px;
+                } 
             }
 
             .coverage-btn-wrapper {

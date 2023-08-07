@@ -6,7 +6,9 @@
       <div class="home-page-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
       </div>
-      <h1 :class="{ hide: screenWidth > 835 }">The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+      <div :class="{ hide: screenWidth > 835 }" class="h1-wrapper">
+        <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+      </div>
 
       <div class="home-page-form-wrapper">
         <div class="home-form">

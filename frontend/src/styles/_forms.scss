@@ -10,6 +10,7 @@ form {
     input, select {
         width: 100%;
         border-radius: 46px;
+        box-sizing: border-box;
         padding: 20px 0 20px 20px;
         border: 1px solid $gray-600;
 
@@ -29,5 +30,9 @@ form {
         @media (max-width: 1280px) {
             padding: 13px 26px;
         }
+
+        @media (max-width: 605px) {
+            font-size: 16px;
+        } 
     }
 }
