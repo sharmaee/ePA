@@ -133,6 +133,8 @@
                 padding: 32px 54px;
                 border-radius: 34px;
                 border: 1px solid $gray-600;
+                background-color: $white;
+                z-index: 100;
 
                 h2 {
                     color: $gray-1000;                    
