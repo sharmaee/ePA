@@ -1,0 +1,64 @@
+{
+    "label": "Age of patient?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "For patients 18 years or older",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Adjunct to a reduced calorie diet and increased physical activity for chronic weight management",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Initial body mass index (BMI) of",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "Greater than or equal to 30 kg/m^2 (obese)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Greater than or equal to 27 kg/m^2 (overweight) in the presence of at least one weight-related comorbidity (e.g., hypertension, type 2 diabetes mellitus, or dyslipidemia)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        },
+        {
+            "label": "For patients aged 12 to 17 years",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Adjunct to a reduced calorie diet and increased physical activity for chronic weight management",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Initial BMI at the 95th percentile or greater, standardized for age and sex (obesity)",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        }
+    ]
+}

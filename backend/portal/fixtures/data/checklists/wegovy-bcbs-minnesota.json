@@ -1,0 +1,41 @@
+{
+    "label": "Eligibility Criteria for Wegovy™ (semaglutide)",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "Eligibility Criteria for Wegovy™ (semaglutide)",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Initial body mass index (BMI) should be either:",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "≥30 kg/m2 (obese)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "≥27 kg/m2 (overweight) in the presence of at least one weight-related comorbidity (e.g., hypertension, type 2 diabetes mellitus, or dyslipidemia)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        }
+    ]
+}
