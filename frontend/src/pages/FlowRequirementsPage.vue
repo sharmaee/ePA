@@ -5,6 +5,8 @@
     <p v-if="requirementsData && requirementsData.description">
       {{ requirementsData.description }}
     </p>
+    <div class="shadow-ellipse shadow-ellipse-right"></div>
+    <div class="shadow-ellipse shadow-ellipse-left"></div>
 
     <div v-if="!preloader" class="tabs-container">
       <b-button-group>
