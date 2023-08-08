@@ -5,16 +5,17 @@
     <div class="home-page-main-block">
       <div class="home-page-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
+        <div class="shadow-ellipse"></div>
       </div>
       <div :class="{ hide: screenWidth > 835 }" class="h1-wrapper">
         <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
       </div>
 
       <div class="home-page-form-wrapper">
+        <div class="shadow-ellipse"></div>
         <div class="home-form">
           <h2>Check if you are Eligible for coverage</h2>
           <hr />
-
           <form action="">
             <div class="insurance-provider-and-state">
               <div class="insurance-plan-number">
