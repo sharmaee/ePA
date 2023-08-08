@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from .requirements.urls import requirements_urls
-from user_experience.urls import ux_urls
+from .user_experience.urls import ux_urls
 
 
 api_url_patterns = [

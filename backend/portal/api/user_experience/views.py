@@ -7,4 +7,3 @@ from .serializers import UXFeedbackSerializer
 class LeaveUXFeedbackView(CreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = UXFeedbackSerializer
-
