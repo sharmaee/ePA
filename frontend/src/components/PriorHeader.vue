@@ -15,13 +15,13 @@
           <a href="">Mission</a>
         </li>
         <li>
-          <a href="">Patients</a>
+          <a href="">Services</a>
         </li>
         <li>
-          <a href="">Providers</a>
+          <a href="">FAQ</a>
         </li>
         <li>
-          <a href="">Contact</a>
+          <a href="https://www.dopriorauth.com/company/contact">Contact</a>
         </li>
       </ul>
     </nav>

@@ -186,73 +186,15 @@
 
                     select {
                         appearance: none;
+                        background-color: $snowy-whte !important;
+                        cursor: pointer;
                     }
 
-                    .custom-select-arrow {     
-                        background: none;                   
-                        background-image:
-                          linear-gradient(45deg, transparent 50%, $white 50%),
-                          linear-gradient(135deg, $white 50%, transparent 50%),
-                          radial-gradient($gray-900 70%, transparent 72%);
-                          background-position:              
-                              calc(100% - 24.5px) calc(1em + 6px), 
-                              calc(100% - 19.5px) calc(1em + 6px), 
-                              calc(100% - 0.7em) 0.7em;    
-                        background-size:
-                          5px 5px,
-                          5px 5px,
-                          1.5em 1.5em;
-                        background-repeat: no-repeat;
-
-                        @media (max-width: 1280px) {                         
-                            background-position:              
-                              calc(100% - 24.5px) calc(1em + 6px), 
-                              calc(100% - 20px) calc(1em + 6px), 
-                              calc(100% - 0.7em) 0.7em;
-                        }
-
-                        @media (max-width: 605px) {
-                            background-position:              
-                              calc(100% - 19.5px) calc(1em + 6px), 
-                              calc(100% - 15px) calc(1em + 6px), 
-                              calc(100% - 0.7em) 0.7em
-                        }
-                            
-                        &:focus {
-                          background-image:
-                            linear-gradient(45deg, $gray-800 50%, transparent 50%),
-                            linear-gradient(135deg, transparent 50%, $gray-800 50%),
-                            radial-gradient($gray-300 70%, transparent 72%);
-                            background-position: calc(100% - 20.5px) 1.2em, calc(100% - 25px) 1.2em, calc(100% - 0.7em);    
-                          background-size:
-                            5px 5px,
-                            5px 5px,
-                            1.5em 1.5em;
-                          background-repeat: no-repeat;                           
-                          outline: 0;   
-                          
-                          @media (max-width: 1280px) {
-                            background-image:
-                                linear-gradient(45deg, $gray-800 50%, transparent 50%),
-                                linear-gradient(135deg, transparent 50%, $gray-800 50%),
-                                radial-gradient($gray-300 70%, transparent 72%);
-                                background-position: 
-                                    calc(100% - 20.5px) 1.2em, 
-                                    calc(100% - 25px) 1.2em, 
-                                    calc(100% - 0.7em);
-                           }
-
-                           @media (max-width: 605px) {
-                            background-image:
-                            linear-gradient(45deg, $gray-800 50%, transparent 50%),
-                            linear-gradient(135deg, transparent 50%, $gray-800 50%),
-                            radial-gradient($gray-300 70%, transparent 72%);
-                            background-position: 
-                                calc(100% - 14.5px) 1.4em, 
-                                calc(100% - 19px) 1.4em, 
-                                calc(100% - 0.7em);
-                           }
-                        }
+                    .custom-select-arrow {
+                        background-image: url('@/assets/images/select-arrow.svg');
+                        background-repeat: no-repeat, repeat;
+                        background-position: right 1.2em top 50%, 0 0;
+                        background-size: 1.3em auto, 100%;
                     }
                           
                 }
