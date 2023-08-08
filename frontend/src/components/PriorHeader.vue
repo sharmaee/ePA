@@ -12,16 +12,16 @@
     <nav class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
       <ul>
         <li>
-          <a href="">Mission</a>
+          <a href="https://www.dopriorauth.com/">For Providers</a>
         </li>
         <li>
-          <a href="">Services</a>
+          <a href="https://www.dopriorauth.com/product/for-life-science-companies">For life science companies</a>
         </li>
         <li>
-          <a href="">FAQ</a>
+          <a href="https://www.dopriorauth.com/company/about">About</a>
         </li>
         <li>
-          <a href="https://www.dopriorauth.com/company/contact">Contact</a>
+          <a href="https://www.dopriorauth.com/company/careers">Careers</a>
         </li>
       </ul>
     </nav>

@@ -41,13 +41,13 @@
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'questionnaire' }"
       class="questionaire-wrapper">
-      <ShowCheckList :data="requirementsData.requirementsChecklist" />
+      <QuestionnairePage :data="requirementsData.requirementsChecklist" />
     </div>
     <div
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'checklist' }"
       class="questionaire-wrapper">
-      <ShowAllRequirements :data="requirementsData.requirementsChecklist" />
+      <ChecklistPage :data="requirementsData.requirementsChecklist" />
     </div>
   </div>
 
@@ -63,8 +63,8 @@ import { mainServices } from "@/services/mainServices";
 import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-import ShowCheckList from "@/pages/ShowCheckList";
-import ShowAllRequirements from "@/pages/ShowAllRequirements";
+import QuestionnairePage from "@/pages/QuestionnairePage";
+import ChecklistPage from "@/pages/ChecklistPage";
 
 // const graphContainer = ref(null);
 const route = useRoute();
@@ -97,5 +97,5 @@ async function getPriorAuthRequirements(id) {
 </script>
 
 <style lang="sass" scoped>
-@import "../styles/pages/_flow-requirements-page"
+@import "../styles/pages/_requirements-page"
 </style>

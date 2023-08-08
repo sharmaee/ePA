@@ -2,14 +2,14 @@
   <div class="checklist-wrapper">
     <div v-if="props.data && props.data.children">
       <div v-for="option in props.data.children" :key="option.label">
-        <CheckListRecursive :data="option" />
+        <ChecklistRecursiveComponent :data="option" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import CheckListRecursive from "@/pages/CheckListRecursive";
+import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 const props = defineProps({
   data: {
     type: Object,
@@ -19,5 +19,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_show-checklist.scss";
+@import "../styles/pages/_questionnaire-page.scss";
 </style>

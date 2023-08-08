@@ -1,29 +1,22 @@
 <template>
   <div class="recursive-wrapper">
     <input
-      v-if="parseData.nodeType === 'radio'"
-      :id="parseData.label"
-      v-model="parseData.nodeValue"
-      :checked="isChecked"
-      :type="parseData.nodeType"
-      :value="parseData.nodeValue"
-      @click="emit('selectedTerm', parseData.children)" />
-    <input
-      v-else-if="parseData.nodeType === 'checkbox'"
+      v-if="parseData.nodeType === 'checkbox'"
       :id="parseData.label"
       v-model="parseData.nodeValue"
       :checked="isChecked"
       :type="parseData.nodeType"
       :value="isChecked" />
     <label
+      v-if="parseData.nodeType !== 'fieldset'"
       :for="parseData.label"
       :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
       {{ parseData.label }}
     </label>
 
-    <div v-if="parseData.children && parseData.nodeType === 'checkbox'">
+    <div v-if="parseData.children">
       <div v-for="child in parseData.children" :key="child.label" class="offset">
-        <RecursiveComponent :data="child" :child-checkboxes="true" />
+        <ChecklistRecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
     </div>
   </div>
@@ -31,9 +24,8 @@
 
 <script setup>
 import { computed, ref, watch } from "vue";
-import RecursiveComponent from "@/pages/RecursiveComponent";
+import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 
-const emit = defineEmits(["selectedTerm"]);
 const parseData = ref({});
 
 const props = defineProps({
@@ -70,5 +62,5 @@ watch(isChecked, (newValue) => {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_recursive-component.scss";
+@import "../styles/pages/_questionnaire-recursive-component.scss";
 </style>
