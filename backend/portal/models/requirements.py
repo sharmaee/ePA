@@ -7,6 +7,7 @@ class PriorAuthRequirement(PortalModelBase):
     description = models.TextField(blank=True, null=True, db_index=True)
     insurance_provider = models.TextField(blank=True, null=True, db_index=True)
     insurance_plan_number = models.TextField(blank=True, null=True, db_index=True)
+    insurance_plan_type = models.TextField(blank=True, null=True, db_index=True)
     insurance_coverage_state = models.TextField(blank=True, null=True, db_index=True)
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_flow = models.TextField(blank=True, null=True)
