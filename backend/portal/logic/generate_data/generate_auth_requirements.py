@@ -1,6 +1,6 @@
-from portal.models._common import slugify
 import json
-
+from portal.models._common import slugify, custom_bulk_update_or_create
+from portal.models.requirements import PriorAuthRequirement
 
 HEADER_FIELDS = [
     'medication',
@@ -36,41 +36,49 @@ def get_raw_requirements(raw_data):
 
 
 def get_cleaned_requirements(requirements):
-    requirements_cleaned = []
+    requirements_cleaned = {}
     for r in requirements:
         states = r['state'].split('; ')
         for state in states:
             insurance_plan_types = r['plan_type'].split('; ')
             for plan_type in insurance_plan_types:
                 slug = slugify(r['medication'] + '_' + r['provider'] + '_' + plan_type + '_' + state)
-                checklist = (read_data_from_json('portal/fixtures' + r['checklist']) if r['checklist'] else "")
-                graph = (read_data_from_json('portal/fixtures' + r['graph']) if r['graph'] else "")
-                requirements_dict = get_requirement_dict(
-                    slug, plan_type, state, graph, checklist, r['provider'], r['file_location']
+                checklist = read_data_from_json('portal/fixtures' + r['checklist']) if r['checklist'] else ""
+                graph = read_data_from_json('portal/fixtures' + r['graph']) if r['graph'] else ""
+                requirements_cleaned[slug] = get_requirement_dict(
+                    slug, plan_type, state, graph, checklist, r['provider'], r['file_location'], r['medication']
                 )
-                requirements_cleaned.append(requirements_dict)
-    for i, requirement in enumerate(requirements_cleaned):
-        requirement['pk'] = i + 1
     return requirements_cleaned
 
 
 def write_requirements(requirements):
+    fixture_requirements = []
+    for requirement in requirements.values():
+        fixture_requirement = {}
+        fixture_requirement["model"] = "portal.PriorAuthRequirement"
+        fixture_requirement['pk'] = requirement['url_slug']
+        fixture_requirement["fields"] = requirement
+        fixture_requirements.append(fixture_requirement)
     with open('portal/fixtures/requirements.json', 'w') as f:
-        f.write(json.dumps(requirements, indent=4))
+        f.write(json.dumps(fixture_requirements, indent=4))
 
 
-def get_requirement_dict(url_slug, plan_type, state, graph, checklist, provider, file_location):
+def get_requirement_dict(url_slug, plan_type, state, graph, checklist, provider, file_location, medication):
+    description = (
+        f'{provider} Prior Authorization Requirements for {medication} in the state of {state}'
+        if state
+        else f'{provider} Prior Authorization Requirements for {medication}'
+    )
     return {
-        'model': 'portal.PriorAuthRequirement',
-        'fields': {
-            'url_slug': url_slug,
-            'insurance_provider': provider,
-            'insurance_plan_type': plan_type,
-            'insurance_coverage_state': state,
-            'requirements_flow': graph,
-            'requirements_checklist': checklist,
-            'requirements_flow_file_location': file_location,
-        },
+        'url_slug': url_slug,
+        'medication': medication,
+        'description': description,
+        'insurance_provider': provider,
+        'insurance_plan_type': plan_type,
+        'insurance_coverage_state': state,
+        'requirements_flow': graph,
+        'requirements_checklist': checklist,
+        'requirements_flow_file_location': file_location,
     }
 
 
@@ -79,3 +87,24 @@ def generate_requirements_fixture():
     requirements = get_raw_requirements(raw_data)
     requirements_cleaned = get_cleaned_requirements(requirements)
     write_requirements(requirements_cleaned)
+
+
+def generate_requirements_objects():
+    raw_data = read_data_from_csv()
+    requirements = get_raw_requirements(raw_data)
+    requirements_cleaned = get_cleaned_requirements(requirements)
+
+    existing_requirements = PriorAuthRequirement.objects.values_list("url_slug", flat=True)
+    updated_fields = [
+        'medication',
+        'description',
+        'insurance_provider',
+        'insurance_plan_type',
+        'insurance_coverage_state',
+        'requirements_flow',
+        'requirements_checklist',
+        'requirements_flow_file_location',
+    ]
+    custom_bulk_update_or_create(
+        requirements_cleaned, PriorAuthRequirement, existing_requirements, 'url_slug', updated_fields
+    )

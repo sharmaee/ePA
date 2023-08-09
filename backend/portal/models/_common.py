@@ -1,11 +1,15 @@
 import re
 import xxhash
 import datetime
+import logging
+
+from tqdm import tqdm
 
 from django.db import models
 from django.db.models.base import ModelBase
 from django.contrib.postgres.search import SearchQuery, SearchRank
 
+logger = logging.getLogger(__name__)
 
 punctuation_exp = re.compile(r"[\-!:@#$%^&*()|]")
 plus_search_exp = re.compile(r" +")
@@ -61,3 +65,23 @@ def slugify(hashable_text=None):
     if not hashable_text:
         hashable_text = datetime.datetime.now().isoformat()
     return str(xxhash.xxh64(hashable_text).hexdigest())
+
+
+def custom_bulk_update_or_create(records, model, existing_ids, pk_field, update_fields):
+    new_records = set(records.keys()) - set(existing_ids)
+    updated_records = set(records.keys()) & set(existing_ids)
+
+    new_entries = []
+    updated_entries = []
+
+    for record in tqdm(records.values(), unit=" records"):
+        if record[pk_field] in new_records:
+            new_entries.append(model(**record))
+        elif record[pk_field] in updated_records:
+            updated_entries.append(model(**record))
+
+    logger.info(f"Creating {len(new_entries)} new {model.__name__} records")
+    model.objects.bulk_create(new_entries)
+
+    logger.info(f"Updating {len(updated_entries)} {model.__name__} records")
+    model.objects.bulk_update(updated_entries, update_fields)
