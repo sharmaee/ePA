@@ -1,28 +1,86 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
+
+    @media (max-width: 1170px) {
+        padding: 15px 5px;
+    }    
 
     .logo {
         img {
             cursor: pointer;
         }
     }
-
-    .header-menu {
+    
+    .nav {
         display: flex;
-        width: 325px;
-        justify-content: space-around;
+        width: 50%;
+        justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 1150px) {
+            width: 55%;
+        }
+        
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            
+            a {
+                color: $gray-1000;
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        }
     }
 
-      ul {
-          display: flex;
-          width: inherit;
-          justify-content: space-between;
-          color: $gray-1000;
-          font-size: 18px;
-          font-weight: 500;
-      }
+}
+
+.mobile-header {
+    padding: 21px 0;
+
+        .logo {
+            margin-left: 14px;
+        }
+
+        .mobile-menu-img {
+            cursor: pointer;
+            margin-right: 14px;
+            z-index: 10;
+        }
+
+        .mobile-menu {
+            align-items: normal;
+            position: absolute;
+            padding: 20px 0;
+            background-color: $white;
+            height: 100vh;
+            z-index: 2;
+            width: 100%;
+
+            ul {
+                flex-direction: column;
+                justify-content: normal;
+                width: 90%;
+                margin-top: 30px;
+                
+                li {
+                    margin-top: 10px;
+                    border-bottom: 1px solid $gray-300;
+                    padding-bottom: 10px;
+
+                    a {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .hide {
+            display: none;
+        }
 
 }

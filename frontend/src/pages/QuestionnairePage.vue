@@ -3,7 +3,7 @@
     <div v-if="!selectedData">
       <h3>{{ checkListChild.label }}</h3>
       <div v-for="option in checkListChild.children" :key="option.label">
-        <RecursiveComponent :data="option" @selected-term="selectedTerm" />
+        <QuestionnaireRecursiveComponent :data="option" @selected-term="selectedTerm" />
       </div>
     </div>
 
@@ -14,7 +14,7 @@
       <div
         v-for="item in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <RecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
+        <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
       <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button>
     </div>
@@ -28,7 +28,7 @@ import { useCheckListStore } from "@/stores/checkListStore";
 import { storeToRefs } from "pinia";
 
 const { checkListChild } = storeToRefs(useCheckListStore());
-import RecursiveComponent from "@/pages/RecursiveComponent";
+import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 
 const props = defineProps({
   data: {
@@ -58,5 +58,5 @@ function checkSelectedCheckBoxes() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_show-checklist.scss";
+@import "../styles/pages/_questionnaire-page.scss";
 </style>

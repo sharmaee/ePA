@@ -4,7 +4,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 
 import HomePage from '@/pages/HomePage';
-import FlowRequirementsPage from '@/pages/FlowRequirementsPage';
+import RequirementsPage from '@/pages/RequirementsPage';
 
 
 const publicAccessRoutes = [
@@ -17,7 +17,7 @@ const publicAccessRoutes = [
     {
       path: "/check-my-coverage/:id",
       name: "check-my-coverage",
-      component: FlowRequirementsPage,
+      component: RequirementsPage,
       title: "check-my-coverage",
     },
   ];

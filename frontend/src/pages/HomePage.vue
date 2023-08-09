@@ -1,16 +1,21 @@
 <template>
   <PriorHeader />
   <div class="home-page-wrapper">
-    <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+    <h1 :class="{ hide: screenWidth < 835 }">The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
     <div class="home-page-main-block">
       <div class="home-page-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
+        <div class="shadow-ellipse"></div>
       </div>
+      <div :class="{ hide: screenWidth > 835 }" class="h1-wrapper">
+        <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+      </div>
+
       <div class="home-page-form-wrapper">
+        <div class="shadow-ellipse"></div>
         <div class="home-form">
           <h2>Check if you are Eligible for coverage</h2>
           <hr />
-
           <form action="">
             <div class="insurance-provider-and-state">
               <div class="insurance-plan-number">
@@ -56,8 +61,8 @@
     </div>
     <div v-if="coverageBlock" class="coverage">
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
-        <p class="bold">{{ item.insuranceProvider }}</p>
-        <p>{{ item.description }}</p>
+        <span class="bold">{{ item.insuranceProvider }}</span>
+        <span>{{ item.description }}</span>
         <div class="coverage-btn-wrapper">
           <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
             Start Request
@@ -81,7 +86,15 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
 const priorAuthRequirementsResult = ref(null);
+const screenWidth = ref(null);
 
+function displayWindowSize() {
+  screenWidth.value = document.documentElement.clientWidth;
+}
+
+window.addEventListener("resize", displayWindowSize);
+
+displayWindowSize();
 // not used yet for auto-filling
 const availableSearchOptions = ref(null);
 

@@ -27,6 +27,27 @@
         text-transform: capitalize;
     }
 
+    .shadow-ellipse {
+        width: 677px;
+        height: 677px;
+        position: absolute;
+        z-index: -1;
+        border-radius: 677px;
+        filter: blur(53.5px);
+    }
+    
+    .shadow-ellipse-left {
+        background: rgba(225, 230, 255, 0.26);
+        top: 250px;
+        left: 0;
+    }
+
+    .shadow-ellipse-right {
+        background: rgba(225, 255, 253, 0.26);  
+        top: -100px;
+        right: 0;
+    }
+
     .wrapper {
         margin-top: 60px;
     }

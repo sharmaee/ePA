@@ -2,44 +2,149 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0 60px 0;
+    padding: 0 0 60px 0;
     width: 100%;
 
     h1 {
-        width: 80%;
         font-size: 64px;
+        width: 65%;
         font-weight: 700;
         text-align: center;
+        line-height: 115%;
 
         .blue-text {
             color: $blue;
         }
+
+        @media (max-width: 1280px) {
+            font-size: 56px;
+        }
+
+        @media (max-width: 885px) {
+            line-height: 1;
+        }
+    }
+
+    .hide {
+        display: none;
     }
 
     .home-page-main-block {
         display: flex;
         width: 100%;
+        
+        @media (max-width: 835px) {
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
         .home-page-img {
+            display: flex;
+            position: relative;
             width: 50%;
+
+            @media (max-width: 1280px) {
+                width: 40%;
+            }
+
+            @media (max-width: 835px) {
+                width: 50%;
+            }
 
             img {             
                 image-rendering: pixelated;
-              }
+
+                @media (max-width: 1280px) {
+                    width: 335px;
+                    height: 500px;
+                }
+
+                @media (max-width: 605px) {
+                    width: 167px;
+                    height: 234px;
+                }
+            }
+
+            .shadow-ellipse {
+                width: 663px;
+                height: 664px;
+                position: absolute;
+                z-index: -1;
+                border-radius: 664px;
+                background: rgba(225, 230, 255, 0.26);
+                filter: blur(53.5px);
+
+                @media (max-width: 834px) {
+                    width: 150%;
+                    height: 100%;
+                    border-radius: 100%;
+                    background: rgba(225, 230, 255, 0.26);
+                    filter: blur(53.5px);
+                }
+            }
+        }
+
+        .h1-wrapper {
+            width: 50%;
+
+            h1 {
+                text-align: left;
+                margin: 0 0 0 20px;
+
+                @media (max-width: 605px) {
+                    font-size: 32px;
+                }
+
+                @media (max-width: 405px) {
+                    margin: 0;
+                }
+            }
+
         }
 
         .home-page-form-wrapper {
             width: 50%;
 
+            @media (max-width: 1280px) {
+                width: 57%;
+            }
+
+            @media (max-width: 835px) {
+                width: 95%;
+                margin: 0 auto 25px auto;
+            }
+
+            .shadow-ellipse {
+                position: absolute;
+                width: 677px;
+                height: 677px;
+                z-index: -1;
+                top: -100px;
+                border-radius: 677px;
+                background: rgba(225, 255, 253, 0.26);
+                filter: blur(53.5px);
+
+                @media (max-width: 834px) {
+                    display: none;
+                }
+            }
+
             .home-form {
-                padding: 25px 50px;
+                padding: 32px 54px;
                 border-radius: 34px;
                 border: 1px solid $gray-600;
+                background-color: $white;
+                z-index: 100;
 
                 h2 {
                     color: $gray-1000;                    
                     font-size: 24px;                   
-                    font-weight: 700;                   
+                    font-weight: 700;  
+                    line-height: 32px;    
+                   
+                    @media (max-width: 605px) {
+                        font-size: 16px;
+                    }
                 }
 
                 hr {
@@ -49,60 +154,48 @@
                 }
 
                 label {
-                    margin: 25px 0 18px 0;
+                    margin: 16px 0 12px 0;
+                   
+                    color: $gray-1000;
+
+                    @media (max-width: 605px) {
+                        font-size: 14px;
+                    }     
                 }
 
                 .insurance-plan-number {
                     display: flex;
                     flex-direction: column;
-
                 }
 
                 .insurance-provider-and-state {
                     display: flex;
                     justify-content: space-between;
 
+                    @media (max-width: 605px) {
+                        flex-direction: column;
+                    }  
+
                     .insurance-provider, .insurance-state {
-                        width: 47%;                       
+                        width: 47%;       
+
+                        @media (max-width: 605px) {
+                            width: 100%;
+                        }                
                     }
 
                     select {
                         appearance: none;
+                        background-color: $snowy-whte !important;
+                        cursor: pointer;
                     }
 
-                    .custom-select-arrow {     
-                        background: none;                   
-                            background-image:
-                              linear-gradient(45deg, transparent 50%, $white 50%),
-                              linear-gradient(135deg, $white 50%, transparent 50%),
-                              radial-gradient($gray-900 70%, transparent 72%);
-                            background-position:
-                              calc(100% - 16.5px) calc(1em + 10px),
-                              calc(100% - 11.5px) calc(1em + 10px),
-                              calc(100% - .5em) 1.2em;
-                            background-size:
-                              5px 5px,
-                              5px 5px,
-                              1.5em 1.5em;
-                            background-repeat: no-repeat;
-                            
-                            &:focus {
-                              background-image:
-                                linear-gradient(45deg, $gray-800 50%, transparent 50%),
-                                linear-gradient(135deg, transparent 50%, $gray-800 50%),
-                                radial-gradient($gray-300 70%, transparent 72%);
-                              background-position:
-                                calc(100% - 11.5px) 1.7em,
-                                calc(100% - 16.5px) 1.7em,
-                                calc(100% - .5em) 1.2em;
-                              background-size:
-                                5px 5px,
-                                5px 5px,
-                                1.5em 1.5em;
-                              background-repeat: no-repeat;                           
-                              outline: 0;                        
-                            }
-                        }
+                    .custom-select-arrow {
+                        background-image: url('@/assets/images/select-arrow.svg');
+                        background-repeat: no-repeat, repeat;
+                        background-position: right 1.2em top 50%, 0 0;
+                        background-size: 1.3em auto, 100%;
+                    }
                           
                 }
 
@@ -113,31 +206,50 @@
             }
         }
     }
+
     .coverage {
-        width: 85%;
+        width: 95%;
         padding: 25px 50px;
         border-radius: 34px;
+        margin-top: 56px;
         border: 1px solid $gray-600;
+        box-sizing: border-box;
+
+        @media (max-width: 605px) {
+            padding: 42px 24px;
+            margin-top: 24px;
+        } 
 
         .request-text {
             border-bottom: 1px solid $gray-600;
             padding: 0 10px;
       
-            p {
+            span {
+                display: block;
                 line-height: 150%;
                 font-size: 18px;
                 color: $gray-800;
+                
+                @media (max-width: 605px) {
+                    font-size: 16px;
+                } 
             }
 
             .bold {
+                margin: 20px 0 10px 0;
                 color: $black;
+                font-size: 24px;
                 font-weight: 500;
+
+                @media (max-width: 605px) {
+                    font-size: 16px;
+                } 
             }
 
             .coverage-btn-wrapper {
                 display: flex;
                 justify-content: flex-end;
-                margin-bottom: 40px;
+                margin-bottom: 25px;
 
                 .btn-blue {
                     text-decoration: none;
