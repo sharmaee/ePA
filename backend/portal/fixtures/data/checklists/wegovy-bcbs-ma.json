@@ -1,0 +1,96 @@
+{
+    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "Start of therapy",
+            "outcome": "Authorization for Wegovy™ (semaglutide) may be approved for up to 20 weeks",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Members 18 years of age or older",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "As an adjunct to a reduced-calorie diet and increased physical activity",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "For chronic weight management in patients",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "with an initial body mass index (BMI) of ≥ 30 kg/m2 (obese)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "≥ 27 kg/m2 (overweight) in the presence of at least one weight-related comorbid condition (e.g., hypertension, dyslipidemia, type 2 diabetes)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Documentation that the member has been and is currently following a dietary and behavior modification program for weight loss",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        },
+        {
+            "label": "Continuation of therapy",
+            "outcome": "Authorization for Wegovy™ (semaglutide) may be approved for up to an additional 6 months of therapy",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Demonstrate significant weight loss* after initiation of therapy",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Adhering to a reduced-calorie diet",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Adhering to increased physical activity",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Requires documented weight loss",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "of at least 4% of baseline body weight after the initiation of treatment (first 16 weeks of treatment)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "must demonstrate continued weight loss",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "maintain the plateau weight achieved with diet and exercise treatment",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Member must be on the 2.4mg dose",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        }
+    ]
+}

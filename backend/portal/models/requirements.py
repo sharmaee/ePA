@@ -3,10 +3,11 @@ from ._common import PortalModelBase
 
 
 class PriorAuthRequirement(PortalModelBase):
-    url_slug = models.TextField(editable=False, db_index=True, null=True, unique=True)
+    url_slug = models.TextField(primary_key=True, db_index=True)
     description = models.TextField(blank=True, null=True, db_index=True)
     insurance_provider = models.TextField(blank=True, null=True, db_index=True)
     insurance_plan_number = models.TextField(blank=True, null=True, db_index=True)
+    insurance_plan_type = models.TextField(blank=True, null=True, db_index=True)
     insurance_coverage_state = models.TextField(blank=True, null=True, db_index=True)
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_flow = models.TextField(blank=True, null=True)

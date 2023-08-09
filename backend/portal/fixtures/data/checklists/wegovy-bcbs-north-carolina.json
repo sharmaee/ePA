@@ -1,0 +1,203 @@
+{
+    "label": "Age of patient?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "For patients 18 years or older",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 18 weeks when all of the following criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient has taken the medication for less than 18 weeks (For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient is 18 years of age or older, and has one of the following",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "A diagnosis of obesity and a BMI ≥ 30 kg/m2",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "A diagnosis of obesity and a BMI ≥ 25 kg/m2, and is of South Asian, Southeast Asian, or East Asian descent",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "A documented BMI ≥ 27 kg/m2 with at least one weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with insulin",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with another weight loss medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The provider has addressed the requirement for lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has anti-obesity medication coverage benefits",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Continuation of Wegovy™ (semaglutide) therapy may be approved for up to an additional 365 days (1 year) when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient was approved through Blue Cross NC initial coverage criteria, or is new to the plan, meets the initial coverage requirements listed above, and has taken the medication greater than 18 weeks",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient is 18 years of age or older and has achieved and maintained a weight loss of ≥4% from baseline (prior to the initiation of requested medication)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has anti-obesity medication coverage benefits",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "For patients aged 12 to 17 years",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 18 weeks when all of the following criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient has taken the medication for less than 18 weeks (For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), with a diagnosis of obesity and a BMI > 95th percentile for age and sex",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with insulin",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The requested medication will not be used concurrently with another weight loss medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The provider has addressed the requirement for lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has anti-obesity medication coverage benefits",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Continuation of Wegovy™ (semaglutide) therapy may be approved for up to an additional 365 days (1 year) when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "The patient was approved through Blue Cross NC initial coverage criteria, or is new to the plan, meets the initial coverage requirements listed above, and has taken the medication greater than 18 weeks",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), and has achieved and maintained a BMI reduction of ≥ 5% from baseline (prior to the initiation of requested medication)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has anti-obesity medication coverage benefits",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

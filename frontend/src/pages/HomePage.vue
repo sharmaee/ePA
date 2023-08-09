@@ -61,7 +61,7 @@
     </div>
     <div v-if="coverageBlock" class="coverage">
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
-        <span class="bold">{{ item.insuranceProvider }}</span>
+        <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
         <span>{{ item.description }}</span>
         <div class="coverage-btn-wrapper">
           <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">

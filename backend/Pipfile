@@ -16,6 +16,7 @@ drf-yasg = "*"
 dotmap = "*"
 xxhash = "*"
 gunicorn = "*"
+tqdm = "*"
 
 [dev-packages]
 black = "*"

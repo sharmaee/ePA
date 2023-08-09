@@ -1,0 +1,320 @@
+{
+    "label": "Age of patient?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "For patients 18 years or older",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy for weight management",
+                            "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 16 weeks when all of the following criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Member meets one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "BMI ≥ 30 kg/m2",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "BMI ≥ 27 kg/m2 with at least one indicator of increased cardiovascular risk (e.g., coronary artery/heart disease, hypertension, dyslipidemia, diabetes, elevated waist circumference) or other obesity-related medical condition (e.g., sleep apnea)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Age ≥ 18 years",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Documentation that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Dose does not exceed the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Week 1 through 4: 0.25 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 5 through 8: 0.5 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 9 through 12: 1 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 13 through 16: 1.7 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Continuation of Wegovy™ (semaglutide) therapy may be approved for up to an additional 365 days (1 year) when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Member meets one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Currently receiving medication via Centene benefit or member has previously met initial approval criteria",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Member is currently receiving medication and is enrolled in a state and product with continuity of care regulations",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Member is responding positively to therapy as evidenced by one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "If this is the first renewal request, member has lost ≥ 5% of baseline body weight (adults)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "If this is a second or subsequent renewal request, member has lost weight and/or maintained weight loss on therapy",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Documentation that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Request meets both of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "all_required": true,
+                                    "children": [
+                                        {
+                                            "label": "Dose does not exceed 2.4 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "After the initial dose escalation period, one of the following:",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "Maintenance dose is 2.4 mg",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                },
+                                                {
+                                                    "label": "A temporary dose reduction to 1.7 mg is needed for a maximum of 4 weeks",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "For patients aged 12 to 17 years",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy for weight management",
+                            "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 16 weeks when all of the following criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "BMI ≥ 95th percentile standardized for age and sex",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Age ≥ 12 years",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Documentation that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Dose does not exceed the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Week 1 through 4: 0.25 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 5 through 8: 0.5 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 9 through 12: 1 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Week 13 through 16: 1.7 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Continuation of Wegovy™ (semaglutide) therapy may be approved for up to an additional 365 days (1 year) when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Member meets one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Currently receiving medication via Centene benefit or member has previously met initial approval criteria",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Member is currently receiving medication and is enrolled in a state and product with continuity of care regulations",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Member is responding positively to therapy as evidenced by one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "If this is the first renewal request, member has lost ≥ 5% of baseline BMI (pediatrics)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "If this is a second or subsequent renewal request, member has lost weight and/or maintained weight loss on therapy",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Documentation that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Request meets both of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "all_required": true,
+                                    "children": [
+                                        {
+                                            "label": "Dose does not exceed 2.4 mg once weekly",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "After the initial dose escalation period, one of the following:",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "Maintenance dose is 2.4 mg",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                },
+                                                {
+                                                    "label": "Maintenance dose is 1.7 mg",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

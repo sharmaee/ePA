@@ -1,0 +1,170 @@
+{
+    "label": "Is this request for starting or continued therapy with Wegovy™ (semaglutide)?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "Initial review criteria",
+            "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 3 months",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Prescribed by Endocrinologist or Weight Management Specialist",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Patient at least 18 years of age",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Baseline BMI 30 kg/m2 or greater with at least one of the following weight-related comorbidities:",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "Established cardiovascular disease or stroke",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Hypertension",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Type 2 DM",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "CKD",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "CHD",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Obstructive sleep apnea",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Polycystic ovarian syndrome",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Dyslipidemia",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Non-alcoholic fatty liver disease",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Idiopathic intracranial hypertension",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Osteoarthritis in weight-bearing joints",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Documented baseline weight",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications indicated for chronic weight management:",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "all_required": true,
+                    "children": [
+                        {
+                            "label": "Xenical (orlistat)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Contrave (naltrexone + bupropion)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Qsymia (phentermine + topiramate)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Saxenda (liraglutide)",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                },
+                {
+                    "label": "Wegovy is not being used in combination with another weight loss drug or GLP-1 receptor agonist",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Initial prescription is limited to a maximum of 30-day supply with 2 refills",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "For patients with Type 2 DM and BMI of 30 kg/m2 or greater, must meet both additional criteria below:",
+                    "node_type": "checkbox",
+                    "node_value": false,
+                    "all_required": true,
+                    "children": [
+                        {
+                            "label": "Must follow KP National Adult DM Guidelines and CBC step therapy criteria for use of preferred agents for DM control",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        },
+                        {
+                            "label": "Documented intolerance, contraindication, or failure to reach goal A1c after at least 6 month trial of Victoza and Ozempic",
+                            "node_type": "checkbox",
+                            "node_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Continuation of therapy",
+            "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 6 months",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Patient continues to meet initial review criteria",
+                    "node_type": "checkbox",
+                    "node_value": false
+                },
+                {
+                    "label": "Documented weight loss within the previous 3 months of at least 10% from baseline weight",
+                    "node_type": "checkbox",
+                    "node_value": false
+                }
+            ]
+        }
+    ]
+}
