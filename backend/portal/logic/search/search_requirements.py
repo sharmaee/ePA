@@ -9,7 +9,7 @@ def run_search(search_params):
         'insurance_plan_type',
         'insurance_plan_number',
         'insurance_coverage_state',
-        'medication'
+        'medication',
     )
 
 
