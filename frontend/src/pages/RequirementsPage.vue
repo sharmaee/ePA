@@ -33,7 +33,7 @@
     <div id="graph-wrapper" :class="{ hidden: activeTab !== 'graph' }" class="graph-wrapper">
       <img
         v-if="requirementsData && requirementsData.requirementsFlowFileLocation"
-        :src="`${s3StorageUrl}/${requirementsData.requirementsFlowFileLocation}`"
+        :src="`${s3StorageUrl}${requirementsData.requirementsFlowFileLocation}`"
         alt="graph"
         class="graph-image-from-file" />
     </div>
@@ -70,7 +70,7 @@ import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuesti
 // const graphContainer = ref(null);
 const route = useRoute();
 const activeTab = ref("graph");
-const s3StorageUrl = "https://dopriorauth-portal-public.s3.amazonaws.com/media";
+const s3StorageUrl = "https://dopriorauth-portal-public.s3.amazonaws.com";
 
 const requirementsData = ref(null);
 const preloader = ref(false);

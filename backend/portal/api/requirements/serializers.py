@@ -15,6 +15,7 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
             'description',
             'insurance_provider',
             'insurance_plan_number',
+            'insurance_plan_type',
             'insurance_coverage_state',
             'medication',
         )
@@ -33,6 +34,7 @@ class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
 
 class AvailableSearchOptionsSerializer(ObjSerializer):
     insurance_providers = serializers.ListField(child=serializers.CharField())
+    insurance_plan_types = serializers.ListField(child=serializers.CharField())
     insurance_plan_numbers = serializers.ListField(child=serializers.CharField())
     insurance_coverage_states = serializers.ListField(child=serializers.CharField())
     medications = serializers.ListField(child=serializers.CharField())
