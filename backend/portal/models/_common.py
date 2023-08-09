@@ -57,5 +57,7 @@ class SearchQuerySet(models.QuerySet):
         return self.annotate(rank=rank).filter(search_vector=query).order_by('-rank')
 
 
-def generate_url_slug():
-    return str(xxhash.xxh64(datetime.datetime.now().isoformat()).hexdigest())
+def slugify(hashable_text=None):
+    if not hashable_text:
+        hashable_text = datetime.datetime.now().isoformat()
+    return str(xxhash.xxh64(hashable_text).hexdigest())
