@@ -50,7 +50,7 @@
       <ChecklistPage :data="requirementsData.requirementsChecklist" />
     </div>
   </div>
-
+  <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
 
@@ -65,6 +65,7 @@ import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ChecklistPage from "@/pages/ChecklistPage";
+import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
 
 // const graphContainer = ref(null);
 const route = useRoute();
