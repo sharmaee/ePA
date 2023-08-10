@@ -13,6 +13,8 @@ class PriorAuthRequirement(PortalModelBase):
     requirements_flow = models.TextField(blank=True, null=True)
     requirements_checklist = models.JSONField(null=True)
     requirements_flow_file_location = models.TextField(blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True, db_index=True)
+    date_modified = models.DateTimeField(auto_now=True, db_index=True)
 
     def save(self, *args, **kwargs):
         while not self.url_slug:

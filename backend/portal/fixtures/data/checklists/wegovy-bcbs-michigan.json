@@ -1,0 +1,182 @@
+{
+    "label": "Age of patient?",
+    "node_type": "fieldset",
+    "children": [
+        {
+            "label": "For adults (age 18 years and older)",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Initial Authorization for Wegovy™ (semaglutide) may be granted for 4 months when the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Member is ≥ 18 years old",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Member’s body mass index (BMI) meets either requirement:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "A body mass index (BMI) greater than or equal to 30 kilogram per square meter",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "A body mass index (BMI) greater than or equal to 27 kilogram per square meter AND has one weight-related comorbid condition",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Member’s current weight must be submitted to the plan for review (within 30 days)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Lifestyle Modification Program participation:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Provider can submit documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) if the member does not have access to a covered BCBSM/BCN program",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Not to be used in combination with other weight loss products",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Continued coverage will be reviewed annually",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The member has maintained at least a 5% weight loss from baseline",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Requires documentation of continued participation in lifestyle modification program",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "For adolescents (12 to 17 years of age)",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Initial Authorization for Wegovy™ (semaglutide) may be granted for 4 months when the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Member’s age is 12 to 17 years",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Member’s body mass index (BMI) is ≥ 95th percentile, standardized for age and sex",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Member’s current weight must be submitted to the plan for review (within 30 days)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Lifestyle Modification Program participation:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Provider can submit documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) if the member does not have access to a covered BCBSM/BCN program",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Not to be used in combination with other weight loss products",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Continuation of therapy",
+                            "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "Continued coverage will be reviewed annually",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The member has maintained at least a 1% reduction in BMI from baseline",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Requires documentation of continued participation in lifestyle modification program",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
