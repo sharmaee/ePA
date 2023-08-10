@@ -1,10 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "82330a6bbc341a436e184c503c844130398f10371817af9b718e21171b11ae51",
-            "sha256": "f6d0416a861feeb986ea71944d10dff552ecf7ff3658414caf7d3d2b5d17b9bb",
-            "sha256": "a7d96aebc0a140272a8cea8961a8bba8fd9a3dfce0c944c3ff8b38c5cd45180b",
-            "sha256": "dcc89abc5a3722c7f20e484db4daf39c7ef01dbb611180079bb5a38c806e574a"
+            "sha256": "b1f2771a8d5577112efc5748aecdb84ca4bd35e1bb1fc5e7a317dbd6849d509a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -89,7 +86,6 @@
                 "sha256:f85642072c35e684356475781b7ecf5d218fff2c6185c040664dd49f0a4be181"
             ],
             "index": "pypi",
-<<<<<<< HEAD
             "version": "==1.21.7"
         },
         "gunicorn": {
@@ -99,11 +95,6 @@
             ],
             "index": "pypi",
             "version": "==21.2.0"
-||||||| parent of f33481d (Install dependency and add draft AES256Field)
-            "version": "==1.21.6"
-=======
-            "version": "==1.21.7"
->>>>>>> f33481d (Install dependency and add draft AES256Field)
         },
         "inflection": {
             "hashes": [
@@ -312,11 +303,11 @@
         },
         "tqdm": {
             "hashes": [
-                "sha256:39d459c7140b7890174e69d4d68d6291bc774a55b4bc5d93c0b760798ac5a03e",
-                "sha256:cc6e7e52202d894e66632c5c8a9330bd0e3ff35d2965c93ca832114a3d865362"
+                "sha256:d302b3c5b53d47bce91fea46679d9c3c6508cf6332229aa1e7d8653723793386",
+                "sha256:d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
             ],
             "index": "pypi",
-            "version": "==4.66.0"
+            "version": "==4.66.1"
         },
         "typing-extensions": {
             "hashes": [
@@ -681,11 +672,6 @@
                 "sha256:d7c24979f292f916dc9cbf8648319032f551ea8c49a4c9bf2fb556a02070ec1d"
             ],
             "markers": "python_version >= '3.7'",
-<<<<<<< HEAD
-            "version": "==3.10.0"
-||||||| parent of fc75f19 (Install pytest and add tests for encrypting/decrypting)
-            "version": "==3.9.1"
-=======
             "version": "==3.10.0"
         },
         "pluggy": {
@@ -695,7 +681,6 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==1.2.0"
->>>>>>> fc75f19 (Install pytest and add tests for encrypting/decrypting)
         },
         "prompt-toolkit": {
             "hashes": [

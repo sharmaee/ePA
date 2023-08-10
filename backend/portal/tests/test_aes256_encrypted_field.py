@@ -11,7 +11,7 @@ from portal.models import AES256EncryptedField
         ("alert@lamarhealth.com", "alert@lamarhealth.com"),
         ("test123", "test123"),
         ("1990.01.01", "1990.01.01"),
-    ]
+    ],
 )
 def test_encrypt_decrypt(value, expected):
     field = AES256EncryptedField()
