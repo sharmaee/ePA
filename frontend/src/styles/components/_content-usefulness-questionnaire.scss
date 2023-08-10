@@ -1,12 +1,13 @@
 .usefulness-questionnaire-wrapper {
     width: 70%;
-    z-index: 10;
+    z-index: 2;
     padding: 13px 50px 50px 50px;
     background-color: $blue-200;
     border-radius: 24px;
     margin: 50px auto 120px auto;
 
     h2 {
+        z-index: 2;
         font-size: 48px;
         font-weight: 700;
         color: $blue;
@@ -22,7 +23,7 @@
         justify-content: space-between;
         margin: 0 auto;
         max-width: 270px;
-        z-index: 10;
+        z-index: 3;
 
 
         .action-btn {
@@ -32,7 +33,7 @@
             padding: 12px 32px;
             background-color: $blue;
             border-radius: 5px;
-            z-index: 10;
+            z-index: 4;
 
             
             img {
