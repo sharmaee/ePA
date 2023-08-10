@@ -17,10 +17,14 @@ dotmap = "*"
 xxhash = "*"
 gunicorn = "*"
 tqdm = "*"
+pycryptodome = "*"
 
 [dev-packages]
 black = "*"
 flake8 = "*"
+ipykernel = "*"
+pytest = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.9"
