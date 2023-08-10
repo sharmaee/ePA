@@ -1,6 +1,6 @@
 <template>
   <div class="usefulness-questionnaire-wrapper">
-    <h2>Is the flow chart helpful ?</h2>
+    <h2>Was this helpful?</h2>
     <div class="buttons-wrapper">
       <span class="action-btn like-button">
         <img src="@/assets/images/thumbs-up.svg" alt="like" />
