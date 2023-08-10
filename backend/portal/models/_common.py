@@ -96,7 +96,7 @@ def custom_bulk_update_or_create(records, model, existing_ids, pk_field, update_
     model.objects.bulk_update(updated_entries, update_fields)
 
 
-class AES256Field(models.BinaryField):
+class AES256EncryptedField(models.BinaryField):
     description = "AES256 encrypted value"
 
     def __init__(self, *args, **kwargs):
