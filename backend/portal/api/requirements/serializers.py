@@ -18,7 +18,6 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
             'url_slug',
             'description',
             'insurance_provider',
-            'insurance_plan_number',
             'insurance_plan_type',
             'insurance_coverage_state',
             'medication',
