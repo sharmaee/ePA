@@ -2,11 +2,14 @@ from rest_framework import status
 from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
+from rest_framework.generics import CreateAPIView
+
 
 from .serializers import (
     PriorAuthRequirementSerializer,
     AvailableSearchOptionsSerializer,
     PriorAuthRequirementDetailSerializer,
+    RequestNewPriorAuthRequirementsSerializer,
 )
 from portal.logic.search.search_requirements import run_search, get_available_search_options
 from portal.models import PriorAuthRequirement
@@ -16,10 +19,8 @@ class PriorAuthRequirementsView(views.APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
-        requirements = get_available_search_options()
-        result = {}
-        result["available_search_options"] = AvailableSearchOptionsSerializer(requirements).data
-        result["requirements"] = PriorAuthRequirementSerializer(PriorAuthRequirement.objects.all(), many=True).data
+        available_providers = get_available_search_options()
+        result = AvailableSearchOptionsSerializer(available_providers).data
         return Response(result, status=status.HTTP_200_OK)
 
 
@@ -41,3 +42,8 @@ class PriorAuthRequirementDetailView(views.APIView):
         except PriorAuthRequirement.DoesNotExist:
             requirement = None
         return Response(requirement, status=status.HTTP_200_OK)
+
+
+class RequestNewPriorAuthRequirementsView(CreateAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = RequestNewPriorAuthRequirementsSerializer

@@ -37,15 +37,6 @@
                 </select>
               </div>
             </div>
-
-            <div class="insurance-provider">
-              <label for="insurance-number">Insurance Provider Plan Number*</label>
-              <input
-                id="insurance-number"
-                v-model="userFormData.insurancePlanNumber"
-                type="text"
-                placeholder="Enter Provider Number" />
-            </div>
             <div class="insurance-medication-name">
               <label for="medication-name">Medication Name*</label>
               <input
@@ -104,7 +95,6 @@ const errMessage = ref(null);
 
 const userFormData = ref({
   insuranceProvider: null,
-  insurancePlanNumber: null,
   insuranceCoverageState: null,
   medication: "Wegovy",
 });
@@ -119,14 +109,10 @@ onMounted(() => {
 });
 
 async function getAvailableSearchOptions() {
-  const availableRequirementOptions = await mainServices.availableSearchOptions();
-  availableSearchOptions.value = availableRequirementOptions.availableSearchOptions;
-  priorAuthRequirementsResult.value = availableRequirementOptions.requirements;
-  coverageBlock.value = true;
+  availableSearchOptions.value = await mainServices.availableSearchOptions();
 }
 
 async function getPriorAuthRequirements() {
-  coverageBlock.value = false;
   preloader.value = true;
   window.scrollTo({
     top: 1000,
