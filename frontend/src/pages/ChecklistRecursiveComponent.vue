@@ -2,14 +2,14 @@
   <div class="recursive-wrapper">
     <input
       v-if="parseData.nodeType === 'checkbox'"
-      :id="parseData.label"
+      :id="checkboxId"
       v-model="parseData.nodeValue"
       :checked="isChecked"
       :type="parseData.nodeType"
       :value="isChecked" />
     <label
       v-if="parseData.nodeType !== 'fieldset'"
-      :for="parseData.label"
+      :for="checkboxId"
       :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
       {{ parseData.label }}
     </label>
@@ -27,6 +27,7 @@ import { computed, ref, watch } from "vue";
 import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 
 const parseData = ref({});
+const checkboxId = generateRandom4DigitNumber();
 
 const props = defineProps({
   data: {
@@ -59,6 +60,10 @@ const isChecked = computed(() => {
 watch(isChecked, (newValue) => {
   parseData.value.nodeValue = newValue;
 });
+
+function generateRandom4DigitNumber() {
+  return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+}
 </script>
 
 <style lang="scss" scoped>

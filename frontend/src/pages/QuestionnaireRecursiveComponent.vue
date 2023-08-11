@@ -2,7 +2,7 @@
   <div class="recursive-wrapper">
     <input
       v-if="parseData.nodeType === 'radio'"
-      :id="parseData.label"
+      :id="checkboxId"
       v-model="parseData.nodeValue"
       :checked="isChecked"
       :type="parseData.nodeType"
@@ -10,14 +10,12 @@
       @click="emit('selectedTerm', parseData.children)" />
     <input
       v-else-if="parseData.nodeType === 'checkbox'"
-      :id="parseData.label"
+      :id="checkboxId"
       v-model="parseData.nodeValue"
       :checked="isChecked"
       :type="parseData.nodeType"
       :value="isChecked" />
-    <label
-      :for="parseData.label"
-      :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
+    <label :for="checkboxId" :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
       {{ parseData.label }}
     </label>
 
@@ -35,6 +33,7 @@ import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveCompo
 
 const emit = defineEmits(["selectedTerm"]);
 const parseData = ref({});
+const checkboxId = generateRandom4DigitNumber();
 
 const props = defineProps({
   data: {
@@ -67,6 +66,10 @@ const isChecked = computed(() => {
 watch(isChecked, (newValue) => {
   parseData.value.nodeValue = newValue;
 });
+
+function generateRandom4DigitNumber() {
+  return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+}
 </script>
 
 <style lang="scss" scoped>
