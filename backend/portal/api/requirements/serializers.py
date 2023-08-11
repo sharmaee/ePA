@@ -29,8 +29,8 @@ class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
     class Meta:
         model = PriorAuthRequirement
         fields = PriorAuthRequirementSerializer.Meta.fields + (
-            'requirements_flow',
-            'requirements_flow_file_location',
+            'requirements_flow',  # TODO delete once confirmed not needed
+            'requirements_flow_file_location',  # TODO delete once confirmed not needed
             'requirements_checklist',
         )
 
@@ -73,7 +73,6 @@ class RequestNewPriorAuthRequirementsSerializer(serializers.ModelSerializer):
             member_details=member_details,
         )
         requirements_request.save()
-
 
         subject = "Request for New Prior Auth Requirements"
         message = f"""

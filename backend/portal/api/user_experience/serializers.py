@@ -12,7 +12,7 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
         model = UXFeedback
         fields = ('is_helpful', 'comment', 'release_version', 'submission_date', 'requirements_date_modified')
         read_only_fields = fields
-    
+
     def create(self, validated_data):
         is_helpful = validated_data.get('is_helpful', '')
         email = validated_data.get('email', '')
@@ -24,13 +24,13 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
             release_version=validated_data.get('release_version', ''),
             requirements_date_modified=validated_data.get('requirements_date_modified', ''),
             prior_auth_requirements_id=validated_data.get('prior_auth_requirements', ''),
-            email=validated_data.get('email', '')
+            email=validated_data.get('email', ''),
         )
         feedback.save()
 
         if email and is_helpful == False:
-            requirements = PriorAuthRequirement.objects.filter(url_slug = feedback.prior_auth_requirements).first()
-            
+            requirements = PriorAuthRequirement.objects.filter(url_slug=feedback.prior_auth_requirements).first()
+
             subject = "User Experience Feedback"
             message = f"""
             DoPriorAuth user submitted feedback.\n\n
