@@ -28,11 +28,7 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
 class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
     class Meta:
         model = PriorAuthRequirement
-        fields = PriorAuthRequirementSerializer.Meta.fields + (
-            'requirements_flow',  # TODO delete once confirmed not needed
-            'requirements_flow_file_location',  # TODO delete once confirmed not needed
-            'requirements_checklist',
-        )
+        fields = PriorAuthRequirementSerializer.Meta.fields + ('requirements_checklist',)
 
 
 class AvailableSearchOptionsSerializer(ObjSerializer):
