@@ -51,7 +51,9 @@ class RequestNewPriorAuthRequirementsView(views.APIView):
         member_details = MemberDetailsSerializer(data=request.data)
         if member_details.is_valid(raise_exception=True):
             member_details.save()
-            request_new_prior_auth_requirements = RequestNewPriorAuthRequirementsSerializer(data=request.data, partial=True)
+            request_new_prior_auth_requirements = RequestNewPriorAuthRequirementsSerializer(
+                data=request.data, partial=True
+            )
             if request_new_prior_auth_requirements.is_valid(raise_exception=True):
                 request_new_prior_auth_requirements.save(member_details=member_details.instance)
                 send_new_request_notification(request_new_prior_auth_requirements.instance)

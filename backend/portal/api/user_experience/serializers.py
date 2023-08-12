@@ -39,4 +39,3 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL], fail_silently=False)
 
         return feedback
-
