@@ -2,14 +2,14 @@ from rest_framework import status
 from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from rest_framework.generics import CreateAPIView
-
+from portal.api.utils import send_new_request_notification
 
 from .serializers import (
     PriorAuthRequirementSerializer,
     AvailableSearchOptionsSerializer,
     PriorAuthRequirementDetailSerializer,
     RequestNewPriorAuthRequirementsSerializer,
+    MemberDetailsSerializer,
 )
 from portal.logic.search.search_requirements import run_search, get_available_search_options
 from portal.models import PriorAuthRequirement
@@ -44,6 +44,16 @@ class PriorAuthRequirementDetailView(views.APIView):
         return Response(requirement, status=status.HTTP_200_OK)
 
 
-class RequestNewPriorAuthRequirementsView(CreateAPIView):
+class RequestNewPriorAuthRequirementsView(views.APIView):
     permission_classes = (AllowAny,)
-    serializer_class = RequestNewPriorAuthRequirementsSerializer
+
+    def post(self, request):
+        member_details = MemberDetailsSerializer(data=request.data)
+        if member_details.is_valid(raise_exception=True):
+            member_details.save()
+            request_new_prior_auth_requirements = RequestNewPriorAuthRequirementsSerializer(data=request.data, partial=True)
+            if request_new_prior_auth_requirements.is_valid(raise_exception=True):
+                request_new_prior_auth_requirements.save(member_details=member_details.instance)
+                send_new_request_notification(request_new_prior_auth_requirements.instance)
+                return Response(request_new_prior_auth_requirements.data, status=status.HTTP_200_OK)
+        return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -13,7 +13,6 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        print(validated_data)
         is_helpful = validated_data['is_helpful']
         email = validated_data.get('email', '')
 
@@ -21,7 +20,7 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
             is_helpful=is_helpful,
             comment=validated_data.get('comment', ''),
             release_version=validated_data.get('release_version', ''),
-            prior_auth_requirements_id=validated_data.get('prior_auth_requirements', ''),
+            prior_auth_requirements=validated_data.get('prior_auth_requirements', ''),
             email=email,
         )
         feedback.save()
@@ -33,11 +32,11 @@ class UXFeedbackSerializer(serializers.ModelSerializer):
             How can we improve: {feedback.comment}\n\n
             App Release Version: {feedback.release_version}\n
             Submission Date: {feedback.submission_date}\n
-            Prior Auth Details: {feedback.prior_auth_requirements.insurance_provider} | 
-            {feedback.prior_auth_requirements.insurance_plan_type},
-            {feedback.prior_auth_requirements.insurance_coverage_state}\n
+            Insurance Provider: {feedback.prior_auth_requirements.insurance_provider}\n
+            Plan Type: {feedback.prior_auth_requirements.insurance_plan_type}\n
+            Coverage State: {feedback.prior_auth_requirements.insurance_coverage_state}\n
             """
-            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, settings.DEFAULT_TO_EMAIL, fail_silently=False)
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL], fail_silently=False)
 
         return feedback
 
