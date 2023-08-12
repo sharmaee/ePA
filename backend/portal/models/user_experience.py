@@ -9,6 +9,5 @@ class UXFeedback(PortalModelBase):
     comment = models.TextField(blank=True, null=True)
     submission_date = models.DateTimeField(auto_now_add=True)
     release_version = models.TextField(blank=True, null=True)
-    requirements_date_modified = models.DateTimeField(blank=True, null=True)
     prior_auth_requirements = models.ForeignKey(PriorAuthRequirement, on_delete=models.CASCADE)
     email = AES256EncryptedField(blank=True, null=True)
