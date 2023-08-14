@@ -25,6 +25,7 @@
 <script setup>
 import { computed, ref, watch } from "vue";
 import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
+import { generateRandom4DigitNumber } from "@/utils";
 
 const parseData = ref({});
 const checkboxId = generateRandom4DigitNumber();
@@ -60,10 +61,6 @@ const isChecked = computed(() => {
 watch(isChecked, (newValue) => {
   parseData.value.nodeValue = newValue;
 });
-
-function generateRandom4DigitNumber() {
-  return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-}
 </script>
 
 <style lang="scss" scoped>
