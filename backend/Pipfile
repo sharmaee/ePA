@@ -18,6 +18,7 @@ xxhash = "*"
 gunicorn = "*"
 tqdm = "*"
 pycryptodome = "*"
+django-filter = "==2.4.0"
 
 [dev-packages]
 black = "*"

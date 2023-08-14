@@ -2,14 +2,13 @@ import json
 from portal.models._common import slugify, custom_bulk_update_or_create
 from portal.models.requirements import PriorAuthRequirement
 
+
 HEADER_FIELDS = [
     'medication',
     'provider',
     'plan_type',
     'state',
-    'graph',
     'checklist',
-    'file_location',
 ]
 
 
@@ -42,11 +41,10 @@ def get_cleaned_requirements(requirements):
         for state in states:
             insurance_plan_types = r['plan_type'].split('; ')
             for plan_type in insurance_plan_types:
-                slug = slugify(r['medication'] + '_' + r['provider'] + '_' + plan_type + '_' + state)
+                url_slug = slugify(r['medication'] + '_' + r['provider'] + '_' + plan_type + '_' + state)
                 checklist = read_data_from_json('portal/fixtures' + r['checklist']) if r['checklist'] else ""
-                graph = read_data_from_json('portal/fixtures' + r['graph']) if r['graph'] else ""
-                requirements_cleaned[slug] = get_requirement_dict(
-                    slug, plan_type, state, graph, checklist, r['provider'], r['file_location'], r['medication']
+                requirements_cleaned[url_slug] = get_requirement_dict(
+                    url_slug, plan_type, state, checklist, r['provider'], r['medication']
                 )
     return requirements_cleaned
 
@@ -63,7 +61,7 @@ def write_requirements(requirements):
         f.write(json.dumps(fixture_requirements, indent=4))
 
 
-def get_requirement_dict(url_slug, plan_type, state, graph, checklist, provider, file_location, medication):
+def get_requirement_dict(url_slug, plan_type, state, checklist, provider, medication):
     description = (
         f'{provider} Prior Authorization Requirements for {medication} in the state of {state}'
         if state
@@ -76,9 +74,7 @@ def get_requirement_dict(url_slug, plan_type, state, graph, checklist, provider,
         'insurance_provider': provider,
         'insurance_plan_type': plan_type,
         'insurance_coverage_state': state,
-        'requirements_flow': graph,
         'requirements_checklist': checklist,
-        'requirements_flow_file_location': file_location,
     }
 
 
@@ -101,9 +97,7 @@ def generate_requirements_objects():
         'insurance_provider',
         'insurance_plan_type',
         'insurance_coverage_state',
-        'requirements_flow',
         'requirements_checklist',
-        'requirements_flow_file_location',
     ]
     custom_bulk_update_or_create(
         requirements_cleaned, PriorAuthRequirement, existing_requirements, 'url_slug', updated_fields
