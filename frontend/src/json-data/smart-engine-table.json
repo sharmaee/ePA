@@ -1,45 +1,114 @@
-{
-  "ICD-10 Codes": [
-    "I25, I48, I50, I63, I65, I67, I73",
-    "I10, I11",
-    "E11",
-    "N18",
-    "I25, I48, I50, I63, I65, I67, I73",
-    "G47.33",
-    "E28.2",
-    "E78.5",
-    "K76",
-    "G93.2",
-    "M16, M17",
-    "E66, Z68.XX"
-  ],
-  "Diagnosis": [
-    "Established cardiovascular disease or stroke",
-    "Hypertension",
-    "Type 2 DM",
-    "Chronic Kidney Disease",
-    "Coronary Heart Disease",
-    "Obstructive sleep apnea",
-    "Polycystic ovarian syndrome",
-    "Dyslipidemia",
-    "Non-alcoholic fatty liver disease",
-    "Idiopathic intracranial hypertension",
-    "Osteoarthritis in weight-bearing joints",
-    "Obesity"
-  ],
-  "Lab Results to Attach": [
-    "EKG, CT scan, CT coronary angiogram, cardiac catheterization, stress test, high blood pressure, LDL-C, HDL-C levels",
-    "Blood pressure",
-    "Alc, Fasting Plasma Glucose (FPG), Oral Glucose Tolerance Test (OGTT)",
-    "eGFR, uACR",
-    "EKG, CT scan, CT coronary angiogram, cardiac catheterization, stress test, high blood pressure, LDL-C, HDL-C levels",
-    "Polysomnography (PSG), or sleep study",
-    "FSH and LH Hormone Levels, Ultrasound",
-    "Total Cholesterol (TC), TGs, HDL-C, and LDL-C",
-    "alanine aminotransferase (ALT) and aspartate aminotransferase (AST)",
-    "baseline complete blood count, electrolytes, bicarbonate, and coagulation profile (PT, PTT)",
-    "sedimentation rate, rheumatoid factor, and synovial fluid examination, white blood cell count",
-    "BMI"
-  ],
-  "Supporting documents": ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]
-}
+[
+  {
+    "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
+    "diagnosis": "Established cardiovascular disease or stroke",
+    "lab_results_to_attach": [
+      "EKG",
+      "CT scan",
+      "CT coronary angiogram",
+      "Cardiac catheterization",
+      "Stress test",
+      "High blood pressure",
+      "LDL-C",
+      "HDL-C levels"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["I10", "I11"],
+    "diagnosis": "Hypertension",
+    "lab_results_to_attach": ["Blood pressure"],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["E11"],
+    "diagnosis": "Type 2 diabetes (DM)",
+    "lab_results_to_attach": [
+      "Alc",
+      "Fasting Plasma Glucose (FPG)",
+      "Oral Glucose Tolerance Test (OGTT)"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["N18"],
+    "diagnosis": "Chronic Kidney Disease (CKD)",
+    "lab_results_to_attach": ["eGFR", "uACR"],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
+    "diagnosis": "Coronary Heart Disease (CHD)",
+    "lab_results_to_attach": [
+      "EKG",
+      "CT scan",
+      "CT coronary angiogram",
+      "Cardiac catheterization",
+      "Stress test",
+      "High blood pressure",
+      "LDL-C",
+      "HDL-C levels"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["G47.33"],
+    "diagnosis": "Obstructive sleep apnea",
+    "lab_results_to_attach": ["Polysomnography (PSG)", "Sleep study"],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["E28.2"],
+    "diagnosis": "Polycystic ovarian syndrome",
+    "lab_results_to_attach": ["FSH and LH Hormone Levels", "Ultrasound"],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["E78.5"],
+    "diagnosis": "Dyslipidemia",
+    "lab_results_to_attach": [
+      "Total Cholesterol (TC)",
+      "TGs",
+      "HDL-C",
+      "LDL-C"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["K76"],
+    "diagnosis": "Non-alcoholic fatty liver disease",
+    "lab_results_to_attach": [
+      "Alanine aminotransferase (ALT)",
+      "Aspartate aminotransferase (AST)"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["G93.2"],
+    "diagnosis": "Idiopathic intracranial hypertension",
+    "lab_results_to_attach": [
+      "Baseline complete blood count",
+      "Electrolytes",
+      "Bicarbonate",
+      "Coagulation profile (PT, PTT)"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["M16", "M17"],
+    "diagnosis": "Osteoarthritis in weight-bearing joints",
+    "lab_results_to_attach": [
+      "Sedimentation rate",
+      "Rheumatoid factor",
+      "Synovial fluid examination",
+      "White blood cell count"
+    ],
+    "supporting_documents": "#"
+  },
+  {
+    "icd_10_codes": ["E66", "Z68.XX"],
+    "diagnosis": "Obesity",
+    "lab_results_to_attach": ["BMI"],
+    "supporting_documents": "#"
+  }
+]

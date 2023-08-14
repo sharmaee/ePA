@@ -70,17 +70,32 @@
       <table>
         <thead>
           <tr>
-            <th v-for="column in Object.keys(smartEngineTable)" :key="column">
-              {{ column }}
+            <th>
+              <div class="square">
+                <div class="check-box-square"></div>
+              </div>
             </th>
+            <th>ICD-10 Codes</th>
+            <th>Diagnosis</th>
+            <th>Lab Results to Attach</th>
+            <th>Supporting documents</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="index in numRows" :key="index">
-            <td>{{ smartEngineTable["ICD-10 Codes"][index] }}</td>
-            <td>{{ smartEngineTable["Diagnosis"][index] }}</td>
-            <td>{{ smartEngineTable["Lab Results to Attach"][index] }}</td>
-            <td>{{ smartEngineTable["Supporting documents"][index] }}</td>
+          <tr v-for="item in smartEngineTable" :key="item.diagnosis">
+            <td>
+              <div class="table-input-wrapper">
+                <input type="checkbox" />
+              </div>
+            </td>
+            <td>{{ item.icd_10_codes.join(", ") }}</td>
+            <td>{{ item.diagnosis }}</td>
+            <td>{{ item.lab_results_to_attach.join(", ") }}</td>
+            <td>
+              <div class="download">
+                <a :href="item.supporting_documents">Download</a>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -89,9 +104,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 import smartEngineTable from "@/json-data/smart-engine-table";
+
 const props = defineProps({
   data: {
     type: Object,
@@ -103,22 +119,6 @@ const smartEngine = ref(false);
 function showSmartEngineContent() {
   smartEngine.value = !smartEngine.value;
 }
-
-// Find the longer group in Object for table building accordingly this length
-const numRows = computed(() => {
-  let longestSubobjectLength = 0;
-
-  for (const key in smartEngineTable) {
-    if (smartEngineTable.hasOwnProperty(key)) {
-      const subobject = smartEngineTable[key];
-      if (Array.isArray(subobject) && subobject.length > longestSubobjectLength) {
-        longestSubobjectLength = subobject.length;
-      }
-    }
-  }
-
-  return longestSubobjectLength;
-});
 </script>
 
 <style lang="scss" scoped>
