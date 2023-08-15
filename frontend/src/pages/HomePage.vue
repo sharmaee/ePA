@@ -51,6 +51,15 @@
       </div>
     </div>
     <div v-if="coverageBlock" class="coverage">
+      <div class="request-text missing-requirements-block">
+        <span class="bold">Missing: Aetna Commercial California Universal Prescription Drug Prior Authorization</span>
+        <span>Let’s get the exact steps you need.</span>
+        <div class="coverage-btn-wrapper">
+          <router-link :to="{ name: 'request-without-requirements' }" class="btn-blue">
+            Request Call for Criteria
+          </router-link>
+        </div>
+      </div>
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
         <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
         <span>{{ item.description }}</span>
