@@ -1,0 +1,20 @@
+[
+    {
+      "header": "Step 1: Search and attach any of the following as evidence supporting pre-diabetes.",
+      "items": [
+        "check if the patient has an ICD-10 code for R73.03",
+        "Check if the doctor has mentioned pre-diabetes in the patient’s chart",
+        "Check if the patient has A1C lab result of 5.7% or Higher",
+        "Check if the patient has fasting glucose levels of 100mg/dL or higher"
+      ]
+    },
+    {
+      "header": "Step 2: search and attach evidence of any of the risk factors in the table below",
+      "items": [
+        "For each code found attach the supporting documents provided",
+        "For each code found check and attach the lab results suggested in the table",
+        "Edit this sentence to have ALL of the patients diagnosis and Request that a provider add it to the patients chart or in a letter of medical necessity."
+      ]
+    }
+  ]
+  
