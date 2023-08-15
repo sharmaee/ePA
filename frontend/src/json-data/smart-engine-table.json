@@ -12,13 +12,13 @@
       "LDL-C",
       "HDL-C levels"
     ],
-    "supporting_documents": "#"
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
   },
   {
     "icd_10_codes": ["I10", "I11"],
     "diagnosis": "Hypertension",
     "lab_results_to_attach": ["Blood pressure"],
-    "supporting_documents": "#"
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
   },
   {
     "icd_10_codes": ["E11"],
@@ -49,7 +49,7 @@
       "LDL-C",
       "HDL-C levels"
     ],
-    "supporting_documents": "#"
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
   },
   {
     "icd_10_codes": ["G47.33"],
@@ -72,7 +72,7 @@
       "HDL-C",
       "LDL-C"
     ],
-    "supporting_documents": "#"
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
   },
   {
     "icd_10_codes": ["K76"],
