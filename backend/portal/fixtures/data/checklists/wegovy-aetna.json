@@ -24,27 +24,109 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy",
+                                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has either:",
+                                    "label": "The patient has either one of the following",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "A body mass index (BMI) greater than or equal to 30 kilogram per square meter",
+                                            "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "A body mass index (BMI) greater than or equal to 27 kilogram per square meter AND has at least one weight-related comorbid condition (e.g., hypertension, type 2 diabetes mellitus or dyslipidemia)",
+                                            "label": "Documented baseline body mass index (BMI) and comorbidity requirements:",
+                                            "all_required": true,
                                             "node_type": "checkbox",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "children": [
+                
+                                                {
+                                                    "label": "Body mass index (BMI) ≥ 27 kg/m^2",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                },
+                                                {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
-                                }
+                                }                                
                             ]
                         },
                         {
@@ -64,12 +146,12 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Lost at least 5 percent of baseline body weight",
+                                            "label": "Documentated loss of at least 5 percent of baseline body weight",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "Continued to maintain their initial 5 percent weight loss (Documentation is required)",
+                                            "label": "Documented continued maintainance of their initial 5 percent weight loss",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
@@ -108,17 +190,17 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management",
+                                    "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy",
+                                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity)",
+                                    "label": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -136,12 +218,12 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "A reduction from their baseline body mass index (BMI)",
+                                            "label": "A documented reduction from their baseline body mass index (BMI)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "Continued to maintain their reduction in BMI from baseline (Documentation is required)",
+                                            "label": "Documented continued reduction in BMI from baseline",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }

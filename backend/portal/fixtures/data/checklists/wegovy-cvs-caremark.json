@@ -19,19 +19,101 @@
                     "node_value": false
                 },
                 {
-                    "label": "The patient's Body Mass Index (BMI) meets one of the following conditions:",
+                    "label": "The patient's body mass index (BMI) meets one of the following conditions:",
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "The patient has a BMI greater than or equal to 30 kg/m²",
+                            "label": "The patient has a body mass index (BMI) greater than or equal to 30 kg/m^2",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "The patient has a BMI greater than or equal to 27 kg/m² AND has at least one weight-related comorbid condition (e.g., hypertension, type 2 diabetes mellitus, or dyslipidemia)",
+                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
+                            "all_required": true,
                             "node_type": "checkbox",
-                            "node_value": false
+                            "node_value": false,
+                            "children": [
+
+                                {
+                                    "label": "A documented body mass index (BMI) ≥ 27 kg/m^2",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

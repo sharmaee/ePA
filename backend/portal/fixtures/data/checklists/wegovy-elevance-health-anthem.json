@@ -14,17 +14,99 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "BMI ≥ 30, if no applicable risk factors",
+                            "label": "A body mass index (BMI) ≥ 30 kg/m^2, if no applicable risk factors",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "BMI ≥ 27 with two or more of the following risk factors: coronary heart disease, dyslipidemia, hypertension, sleep apnea, type II diabetes",
+                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
+                            "all_required": true,
                             "node_type": "checkbox",
-                            "node_value": false
+                            "node_value": false,
+                            "children": [
+
+                                {
+                                    "label": "A body mass index (BMI) ≥ 27 kg/m^2",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "label": "Body weight above 60 kg and an initial BMI corresponding to 30 kg/m² for adults (obese) by international cut-offs (excluding Saxenda® in pediatric patients 12 years of age and older)",
+                            "label": "Body weight above 60 kg and an initial BMI corresponding to 30 kg/m^2 for adults (obese) by international cut-offs (excluding Saxenda® in pediatric patients 12 years of age and older)",
                             "node_type": "checkbox",
                             "node_value": false
                         }
