@@ -22,7 +22,7 @@
                 <label for="insurance-provider">Insurance Provider*</label>
                 <input
                   id="insurance-provider"
-                  v-model="userFormData.insuranceProvider"
+                  v-model="mainFormData.insuranceProvider"
                   type="text"
                   placeholder="Insurance provider" />
               </div>
@@ -30,7 +30,7 @@
                 <label for="insurance-state">Patient Insurance State*</label>
                 <select
                   id="insurance-state"
-                  v-model="userFormData.insuranceCoverageState"
+                  v-model="mainFormData.insuranceCoverageState"
                   class="custom-select-arrow"
                   placeholder="City/Area">
                   <option v-for="state in states" :key="state">{{ state }}</option>
@@ -41,7 +41,7 @@
               <label for="medication-name">Medication Name*</label>
               <input
                 id="medication-name"
-                v-model="userFormData.medication"
+                v-model="mainFormData.medication"
                 type="text"
                 placeholder="Search for medication name or NDC number" />
             </div>
@@ -80,10 +80,12 @@
 import { onMounted, ref } from "vue";
 import { mainServices } from "@/services/mainServices";
 import { usaStates } from "@/utils/usaStates";
-
+import { storeToRefs } from "pinia";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import { useMainFormStore } from "@/stores/mainFormStore";
+const { mainFormData } = storeToRefs(useMainFormStore());
 
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
@@ -102,11 +104,6 @@ const coverageBlock = ref(false);
 const preloader = ref(false);
 const errMessage = ref(null);
 
-const userFormData = ref({
-  insuranceProvider: null,
-  insuranceCoverageState: null,
-  medication: "Wegovy",
-});
 const states = ref([]);
 
 onMounted(() => {
@@ -128,7 +125,7 @@ async function getPriorAuthRequirements() {
     behavior: "smooth",
   });
   try {
-    priorAuthRequirementsResult.value = await mainServices.searchRequirements(userFormData.value);
+    priorAuthRequirementsResult.value = await mainServices.searchRequirements(mainFormData.value);
     preloader.value = false;
     coverageBlock.value = true;
   } catch (err) {

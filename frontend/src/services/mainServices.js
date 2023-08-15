@@ -12,4 +12,7 @@ export const mainServices = {
   getRequirementsData(id) {
     return get(`detail/${id}`);
   },
+  requestRequirements(data) {
+    return post(`request-requirements/`, data);
+  },
 };
