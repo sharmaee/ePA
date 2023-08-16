@@ -90,6 +90,7 @@ const data = ref({
   medication: searchFormData.value.medication,
   insuranceProvider: searchFormData.value.insuranceProvider,
   insuranceCoverageState: searchFormData.value.insuranceCoverageState,
+  coverMyMedsKey: "",
   lastName: "",
   dob: "",
   memberId: "",
@@ -138,6 +139,11 @@ async function sendRequirements() {
       await mainServices.requestRequirements(data.value);
 
       formButtonClicked.value = false;
+      data.value.coverMyMedsKey = "";
+      data.value.lastName = "";
+      data.value.dob = "";
+      data.value.memberId = "";
+      data.value.maEmail = "";
     } catch (err) {
       errMessage.value = err;
     }
