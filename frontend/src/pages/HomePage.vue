@@ -87,8 +87,8 @@ import { storeToRefs } from "pinia";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-import { useMainFormStore } from "@/stores/mainFormStore";
-const { searchFormData } = storeToRefs(useMainFormStore());
+import { useSearchFormStore } from "@/stores/searchFormStore";
+const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);

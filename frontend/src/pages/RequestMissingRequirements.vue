@@ -69,17 +69,17 @@ import PriorFooter from "@/components/PriorFooter";
 import { mainServices } from "@/services/mainServices";
 
 import { storeToRefs } from "pinia";
-import { useMainFormStore } from "@/stores/mainFormStore";
+import { useSearchFormStore } from "@/stores/searchFormStore";
 
-const { searchFormData } = storeToRefs(useMainFormStore());
+const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const screenWidth = ref(null);
 const formButtonClicked = ref(null);
 
 const data = ref({
-  medication: searchFormData.medication,
-  insuranceProvider: searchFormData.insuranceProvider,
-  insuranceCoverageState: searchFormData.insuranceCoverageState,
+  medication: searchFormData.value.medication,
+  insuranceProvider: searchFormData.value.insuranceProvider,
+  insuranceCoverageState: searchFormData.value.insuranceCoverageState,
   lastName: "",
   dob: "",
   memberId: "",
