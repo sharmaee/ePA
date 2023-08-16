@@ -17,8 +17,8 @@
         <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
       <!-- <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button> -->
+      <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
     </div>
-    <button @click="submitChecklist">Submit</button>
   </div>
 </template>
 

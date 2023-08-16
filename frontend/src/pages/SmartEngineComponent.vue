@@ -8,17 +8,14 @@
         <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item }}</label>
       </span>
-      <span v-if="section.additional_info" class="additional-info">{{ section.additional_info }}</span>
+      <md-block v-if="section.additional_info" class="additional-info">
+        {{ section.additional_info }}
+      </md-block>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th>
-            <div class="square">
-              <div class="check-box-square"></div>
-            </div>
-          </th>
           <th>ICD-10 Codes</th>
           <th>Diagnosis</th>
           <th>Lab Results to Attach</th>
@@ -27,11 +24,6 @@
       </thead>
       <tbody>
         <tr v-for="item in smartEngineTable" :key="item.diagnosis">
-          <td>
-            <div class="table-input-wrapper">
-              <input type="checkbox" />
-            </div>
-          </td>
           <td>{{ item.icd_10_codes.join(", ") }}</td>
           <td>{{ item.diagnosis }}</td>
           <td>{{ item.lab_results_to_attach.join(", ") }}</td>

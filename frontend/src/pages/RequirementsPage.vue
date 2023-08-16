@@ -40,9 +40,7 @@
       <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
   </div>
-
   <SmartEngineComponent v-if="smartEngine" />
-
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -74,9 +72,11 @@ onMounted(() => {
 });
 
 async function showSmartEngine() {
-  console.log(smartEngine.value);
+  window.scrollTo({
+    top: 1000,
+    behavior: "smooth",
+  });
   smartEngine.value = true;
-  console.log(smartEngine.value);
 }
 
 async function getPriorAuthRequirements(id) {
