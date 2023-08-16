@@ -31,16 +31,18 @@
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'questionnaire' }"
       class="questionaire-wrapper">
-      <QuestionnairePage :data="requirementsData.requirementsChecklist" />
+      <QuestionnairePage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
     <div
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'checklist' }"
       class="questionaire-wrapper">
-      <ChecklistPage :data="requirementsData.requirementsChecklist" />
+      <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
   </div>
-  <SmartEngineComponent @show-smart-engine="showSmartEngine" />
+
+  <SmartEngineComponent v-if="smartEngine" />
+
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -56,7 +58,7 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ChecklistPage from "@/pages/ChecklistPage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
-import SmartEngineComponent from "./SmartEngineComponent.vue";
+import SmartEngineComponent from "@/pages/SmartEngineComponent";
 
 const route = useRoute();
 const activeTab = ref("questionnaire");
@@ -72,7 +74,9 @@ onMounted(() => {
 });
 
 async function showSmartEngine() {
+  console.log(smartEngine.value);
   smartEngine.value = true;
+  console.log(smartEngine.value);
 }
 
 async function getPriorAuthRequirements(id) {

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="smartEngine" class="smart-engine-wrapper">
+  <div class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
 
     <div v-for="(section, index) in smartEngineCheckboxContent" :key="index" class="smart-engine-list">
@@ -52,5 +52,5 @@ import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-conten
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_questionnaire-page.scss";
+@import "../styles/pages/_smart-engine-container.scss";
 </style>

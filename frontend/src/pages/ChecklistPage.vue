@@ -5,12 +5,12 @@
         <ChecklistRecursiveComponent :data="option" />
       </div>
     </div>
-    <button @click="showSmartEngineContent">Submit</button>
+    <button @click="submitChecklist">Submit</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { defineEmits } from "vue";
 import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 
 const props = defineProps({
@@ -19,10 +19,11 @@ const props = defineProps({
     required: true,
   },
 });
-const smartEngine = ref(false);
 
-function showSmartEngineContent() {
-  smartEngine.value = !smartEngine.value;
+const emit = defineEmits(["show-smart-engine"]);
+
+function submitChecklist() {
+  emit("show-smart-engine");
 }
 </script>
 

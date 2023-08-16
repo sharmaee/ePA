@@ -16,13 +16,14 @@
         :key="item.label">
         <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
-      <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button>
+      <!-- <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button> -->
     </div>
+    <button @click="submitChecklist">Submit</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 
 import { useCheckListStore } from "@/stores/checkListStore";
 import { storeToRefs } from "pinia";
@@ -47,13 +48,19 @@ function selectedTerm(item) {
   selectedData.value = item;
 }
 
-function checkSelectedCheckBoxes() {
-  buttonClicked.value = true;
+// function checkSelectedCheckBoxes() {
+//   buttonClicked.value = true;
 
-  for (const obj of selectedData.value) {
-    if (obj.hasOwnProperty("nodeValue") && obj.nodeValue === false) {
-    }
-  }
+//   for (const obj of selectedData.value) {
+//     if (obj.hasOwnProperty("nodeValue") && obj.nodeValue === false) {
+//     }
+//   }
+// }
+
+const emit = defineEmits(["show-smart-engine"]);
+
+function submitChecklist() {
+  emit("show-smart-engine");
 }
 </script>
 
