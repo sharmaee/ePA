@@ -88,12 +88,16 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { mainServices } from "@/services/mainServices";
 
+import { useVuelidate } from "@vuelidate/core";
+import { required, minLength } from "@vuelidate/validators";
+
 import { storeToRefs } from "pinia";
 import { useMainFormStore } from "@/stores/mainFormStore";
 
 const { mainFormData } = storeToRefs(useMainFormStore());
 
 const screenWidth = ref(null);
+
 const data = ref({
   medication: mainFormData.medication,
   insurance_provider: mainFormData.insuranceProvider,
@@ -130,6 +134,23 @@ const data = ref({
 // insurance_plan_type;
 // referring_doctor;
 // ma_email;
+
+const rules = computed(() => {
+  return {
+    // Here will be rules for validation
+  };
+});
+
+async function checkTheFormFields() {
+  // Here need to check result, if all good than call sendRequirements()
+  const result = await v$.value.$validate();
+
+  if (result) {
+    sendRequirements();
+  }
+}
+
+const v$ = useVuelidate(rules, formData.value);
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
