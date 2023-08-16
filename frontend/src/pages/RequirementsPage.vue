@@ -40,6 +40,7 @@
       <ChecklistPage :data="requirementsData.requirementsChecklist" />
     </div>
   </div>
+  <SmartEngineComponent @show-smart-engine="showSmartEngine" />
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -55,18 +56,24 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ChecklistPage from "@/pages/ChecklistPage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
+import SmartEngineComponent from "./SmartEngineComponent.vue";
 
 const route = useRoute();
 const activeTab = ref("questionnaire");
 
 const requirementsData = ref(null);
 const preloader = ref(false);
+const smartEngine = ref(false);
 
 onMounted(() => {
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
 });
+
+async function showSmartEngine() {
+  smartEngine.value = true;
+}
 
 async function getPriorAuthRequirements(id) {
   preloader.value = true;
