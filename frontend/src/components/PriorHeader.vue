@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'mobile-header': screenWidth < 835 }">
     <div class="logo">
-      <img alt="logo" src="../assets/images/logo.svg" @click="redirectTOMainPage" />
+      <img alt="logo" src="../assets/images/logo.png" @click="redirectTOMainPage" />
     </div>
     <img
       v-if="screenWidth < 835"

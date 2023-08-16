@@ -5,6 +5,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 import HomePage from '@/pages/HomePage';
 import RequirementsPage from '@/pages/RequirementsPage';
+import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
 
 
 const publicAccessRoutes = [
@@ -19,6 +20,12 @@ const publicAccessRoutes = [
       name: "check-my-coverage",
       component: RequirementsPage,
       title: "check-my-coverage",
+    },
+    {
+      path: "/request-missing-requirements",
+      name: "request-without-requirements",
+      component: RequestMissingRequirements,
+      title: "request-missing-requirements",
     },
   ];
 

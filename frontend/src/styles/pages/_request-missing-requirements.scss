@@ -1,0 +1,150 @@
+.missing-requirements-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 60px 0;
+    width: 100%;
+
+    h1 {
+        font-size: 64px;
+        width: 65%;
+        font-weight: 700;
+        text-align: center;
+        line-height: 115%;
+        margin-bottom: 0;
+        color: $gray-1000;
+
+        .blue-text {
+            color: $blue;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 56px;
+        }
+
+        @media (max-width: 885px) {
+            line-height: 1;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        width: 55%;
+        font-weight: 400;
+        text-align: center;
+        line-height: 140%;
+        color: $gray-1000;
+    }
+
+    .request-missing-requirements-form-wrapper {
+        width: 60%;
+
+        @media (max-width: 1280px) {
+            width: 60%;
+        }
+
+        @media (max-width: 835px) {
+            width: 95%;
+            margin: 0 auto 25px auto;
+        }
+
+        .missing-requirements-form {
+            padding: 32px 54px;
+            border-radius: 34px;
+            border: 1px solid $gray-600;
+            background-color: $white;
+            z-index: 100;
+
+            h2 {
+                color: $gray-1000;                    
+                font-size: 24px;                   
+                font-weight: 700;  
+                line-height: 32px;    
+               
+                @media (max-width: 605px) {
+                    font-size: 16px;
+                }
+            }
+
+            hr {
+                height: 1px;
+                border: none;
+                background-color: $gray-600;
+            }
+
+            label {
+                margin: 16px 0 12px 0;
+               
+                color: $gray-1000;
+
+                @media (max-width: 605px) {
+                    font-size: 14px;
+                }     
+            }
+
+            .row-with-two-input {
+                display: flex;
+                justify-content: space-between;
+
+                @media (max-width: 605px) {
+                    flex-direction: column;
+                }  
+
+                .patient-first-name, .patient-last-name, .date-of-birth, .patient-member-id, .referring-doctor, .your-email {
+                    width: 49%;       
+
+                    @media (max-width: 605px) {
+                        width: 100%;
+                    }                
+                }
+                      
+            }
+
+            .row-with-one-input {
+                display: flex;
+                flex-direction: column;                      
+            }
+
+            .agreement {
+                display: block;
+                margin: 16px 0;
+                font-size: 16px;
+                font-weight: 500;
+                color: $gray-700;
+            }
+
+            .agreement a {
+                color: $gray-700;
+            }
+
+            button {
+                margin-top: 28px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .shadow-ellipse {
+        position: absolute;
+        width: 663px;
+        height: 664px;
+        z-index: -1;
+        border-radius: 663px;
+        background: rgba(225, 255, 253, 0.26);
+        filter: blur(53.5px);
+
+        @media (max-width: 940px) {
+            display: none;
+        }
+    }
+
+    .shadow-ellipse-left {
+        top: 150px;
+        left: 0;
+    }
+
+    .shadow-ellipse-right {
+        top: -250px;
+        right: 0;
+    }
+}
