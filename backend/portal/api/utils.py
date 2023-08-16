@@ -22,8 +22,8 @@ def send_new_request_notification(requirements_request):
     DoPriorAuth user requested new prior auth requirements.\n\n
     Medication: {requirements_request.medication}\n
     Insurance Provider: {requirements_request.insurance_provider}\n
-    Insurance Plan Type: {requirements_request.insurance_plan_type}\n
     Insurance Coverage State: {requirements_request.insurance_coverage_state}\n
+    CoverMyMeds Key: {requirements_request.member_details.cover_my_meds_key}\n
     App Release Version: {requirements_request.release_version}\n
     Submission Date: {requirements_request.submission_date}\n
     """
