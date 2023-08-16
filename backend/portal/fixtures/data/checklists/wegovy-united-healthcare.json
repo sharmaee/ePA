@@ -19,7 +19,7 @@
                     "node_value": false
                 },
                 {
-                    "label": "Used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
+                    "label": "Document that the medication will be used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -29,14 +29,96 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Body Mass Index (BMI) ≥ 30 kg/m2 or for pediatric patients a BMI > 95th percentile",
+                            "label": "Document baseline body mass index (BMI) ≥ 30 kg/m^2 or for pediatric patients a BMI > 95th percentile",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "BMI ≥ 27 kg/m2 and patient has a weight-related comorbidity (e.g., dyslipidemia, hypertension, type 2 diabetes, sleep apnea)",
+                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
+                            "all_required": true,
                             "node_type": "checkbox",
-                            "node_value": false
+                            "node_value": false,
+                            "children": [
+
+                                {
+                                    "label": "Document baseline body mass index (BMI) ≥ 27 kg/m^2",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -49,12 +131,12 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Weight loss of ≥ 4% of baseline body weight for Wegovy",
+                    "label": "Document weight loss of ≥ 4% of baseline body weight for Wegovy",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Continuation of lifestyle modification",
+                    "label": "Document continuation of lifestyle modification",
                     "node_type": "checkbox",
                     "node_value": false
                 }
