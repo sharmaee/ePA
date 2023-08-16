@@ -1,8 +1,8 @@
 <template>
   <PriorHeader />
   <div class="missing-requirements-wrapper">
-    <h1 :class="{ hide: screenWidth < 835 }">Request Call for Critera</h1>
-    <p>Our Agents are On Stand-By to Find what you need to submit.<br />Current expected Turnaround: &lt; 24 hours</p>
+    <h1 :class="{ hide: screenWidth < 835 }">Request Call For Criteria</h1>
+    <p>Our Agents Are On Stand-By To Find What You Need To Submit.<br />Current expected Turnaround: &lt; 24 hours</p>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
     <div class="request-missing-requirements-form-wrapper">
       <div class="missing-requirements-form">
