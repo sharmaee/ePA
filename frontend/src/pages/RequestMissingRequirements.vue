@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { mainServices } from "@/services/mainServices";
@@ -98,7 +98,7 @@ displayWindowSize();
 // Validators
 const isEmailValid = computed(() => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(data.value.email);
+  return emailPattern.test(data.value.maEmail);
 });
 
 const isDobValid = computed(() => {
