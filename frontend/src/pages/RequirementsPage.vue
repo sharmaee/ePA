@@ -31,15 +31,16 @@
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'questionnaire' }"
       class="questionaire-wrapper">
-      <QuestionnairePage :data="requirementsData.requirementsChecklist" />
+      <QuestionnairePage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
     <div
       v-if="requirementsData && requirementsData.requirementsChecklist"
       :class="{ hidden: activeTab !== 'checklist' }"
       class="questionaire-wrapper">
-      <ChecklistPage :data="requirementsData.requirementsChecklist" />
+      <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
   </div>
+  <SmartEngineComponent v-if="smartEngine" />
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -55,18 +56,28 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ChecklistPage from "@/pages/ChecklistPage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
+import SmartEngineComponent from "@/pages/SmartEngineComponent";
 
 const route = useRoute();
 const activeTab = ref("questionnaire");
 
 const requirementsData = ref(null);
 const preloader = ref(false);
+const smartEngine = ref(false);
 
 onMounted(() => {
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
 });
+
+async function showSmartEngine() {
+  window.scrollTo({
+    top: 1000,
+    behavior: "smooth",
+  });
+  smartEngine.value = true;
+}
 
 async function getPriorAuthRequirements(id) {
   preloader.value = true;

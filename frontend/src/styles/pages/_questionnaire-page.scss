@@ -8,10 +8,11 @@
 
     button {
         background-color: $blue;
+        cursor: pointer;
         color: $white;
         font-size: 18px;
         border: none;
-        border-radius: 46px;
+        border-radius: 5px;
         padding: 16px 48px;
     }
 }

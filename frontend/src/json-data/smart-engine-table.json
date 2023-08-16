@@ -1,0 +1,114 @@
+[
+  {
+    "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
+    "diagnosis": "Established cardiovascular disease or stroke",
+    "lab_results_to_attach": [
+      "EKG",
+      "CT scan",
+      "CT coronary angiogram",
+      "Cardiac catheterization",
+      "Stress test",
+      "High blood pressure",
+      "LDL-C",
+      "HDL-C levels"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
+  },
+  {
+    "icd_10_codes": ["I10", "I11"],
+    "diagnosis": "Hypertension",
+    "lab_results_to_attach": ["Blood pressure"],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
+  },
+  {
+    "icd_10_codes": ["E11"],
+    "diagnosis": "Type 2 diabetes (DM)",
+    "lab_results_to_attach": [
+      "Alc",
+      "Fasting Plasma Glucose (FPG)",
+      "Oral Glucose Tolerance Test (OGTT)"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/FDA_wegovy.pdf"
+  },
+  {
+    "icd_10_codes": ["N18"],
+    "diagnosis": "Chronic Kidney Disease (CKD)",
+    "lab_results_to_attach": ["eGFR", "uACR"],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_CKD.pdf"
+  },
+  {
+    "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
+    "diagnosis": "Coronary Heart Disease (CHD)",
+    "lab_results_to_attach": [
+      "EKG",
+      "CT scan",
+      "CT coronary angiogram",
+      "Cardiac catheterization",
+      "Stress test",
+      "High blood pressure",
+      "LDL-C",
+      "HDL-C levels"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
+  },
+  {
+    "icd_10_codes": ["G47.33"],
+    "diagnosis": "Obstructive sleep apnea",
+    "lab_results_to_attach": ["Polysomnography (PSG)", "Sleep study"],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_heartconditions_sleepapnea.pdf"
+  },
+  {
+    "icd_10_codes": ["E28.2"],
+    "diagnosis": "Polycystic ovarian syndrome",
+    "lab_results_to_attach": ["FSH and LH Hormone Levels", "Ultrasound"],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_heartconditions_sleepapnea.pdf"
+  },
+  {
+    "icd_10_codes": ["E78.5"],
+    "diagnosis": "Dyslipidemia",
+    "lab_results_to_attach": [
+      "Total Cholesterol (TC)",
+      "TGs",
+      "HDL-C",
+      "LDL-C"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Wegovy_CardiacRisk_Highcholesterol.pdf"
+  },
+  {
+    "icd_10_codes": ["K76"],
+    "diagnosis": "Non-alcoholic fatty liver disease",
+    "lab_results_to_attach": [
+      "Alanine aminotransferase (ALT)",
+      "Aspartate aminotransferase (AST)"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_NASH.pdf"
+  },
+  {
+    "icd_10_codes": ["G93.2"],
+    "diagnosis": "Idiopathic intracranial hypertension",
+    "lab_results_to_attach": [
+      "Baseline complete blood count",
+      "Electrolytes",
+      "Bicarbonate",
+      "Coagulation profile (PT, PTT)"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_Idiopathic_intracranial_hypertension.pdf"
+  },
+  {
+    "icd_10_codes": ["M16", "M17"],
+    "diagnosis": "Osteoarthritis in weight-bearing joints",
+    "lab_results_to_attach": [
+      "Sedimentation rate",
+      "Rheumatoid factor",
+      "Synovial fluid examination",
+      "White blood cell count"
+    ],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/knee_weightloss.pdf"
+  },
+  {
+    "icd_10_codes": ["E66", "Z68.XX"],
+    "diagnosis": "Obesity",
+    "lab_results_to_attach": ["BMI"],
+    "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/FDA_wegovy.pdf"
+  }
+]
