@@ -23,6 +23,9 @@
           <div class="row-with-two-input">
             <div class="date-of-birth">
               <label for="date-of-birth">Date Of Birth</label>
+              <span v-for="error in v$?.dob?.$errors" :key="error.$uid" class="input-error-notification">
+                {{ error.$message }}
+              </span>
               <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
             </div>
             <div class="patient-member-id">
@@ -83,13 +86,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { mainServices } from "@/services/mainServices";
-
-import { useVuelidate } from "@vuelidate/core";
-import { required, minLength } from "@vuelidate/validators";
 
 import { storeToRefs } from "pinia";
 import { useMainFormStore } from "@/stores/mainFormStore";
@@ -114,43 +114,6 @@ const data = ref({
   ma_email: "",
   release_version: "",
 });
-// from props
-// =========
-// medication;
-// insurance_provider;
-// insurance_coverage_state;
-// =========
-
-// submission_date; -
-// release_version; -
-
-// first_name;
-// last_name;
-// dob;
-// email;
-// member_id;
-// phone_number;
-// address;
-// insurance_plan_type;
-// referring_doctor;
-// ma_email;
-
-// const rules = computed(() => {
-//   return {
-// Here will be rules for validation
-//   };
-// });
-
-// async function checkTheFormFields() {
-// Here need to check result, if all good than call sendRequirements()
-//   const result = await v$.value.$validate();
-
-//   if (result) {
-//     sendRequirements();
-//   }
-// }
-
-// const v$ = useVuelidate(rules, formData.value);
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
