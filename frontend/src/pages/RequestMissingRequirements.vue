@@ -71,15 +71,15 @@ import { mainServices } from "@/services/mainServices";
 import { storeToRefs } from "pinia";
 import { useMainFormStore } from "@/stores/mainFormStore";
 
-const { mainFormData } = storeToRefs(useMainFormStore());
+const { searchFormData } = storeToRefs(useMainFormStore());
 
 const screenWidth = ref(null);
 const formButtonClicked = ref(null);
 
 const data = ref({
-  medication: mainFormData.medication,
-  insuranceProvider: mainFormData.insuranceProvider,
-  insuranceCoverageState: mainFormData.insuranceCoverageState,
+  medication: searchFormData.medication,
+  insuranceProvider: searchFormData.insuranceProvider,
+  insuranceCoverageState: searchFormData.insuranceCoverageState,
   lastName: "",
   dob: "",
   memberId: "",

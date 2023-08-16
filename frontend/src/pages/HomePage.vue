@@ -22,7 +22,7 @@
                 <label for="insurance-provider">Insurance Provider*</label>
                 <input
                   id="insurance-provider"
-                  v-model="mainFormData.insuranceProvider"
+                  v-model="searchFormData.insuranceProvider"
                   type="text"
                   placeholder="Insurance provider" />
               </div>
@@ -30,7 +30,7 @@
                 <label for="insurance-state">Patient Insurance State*</label>
                 <select
                   id="insurance-state"
-                  v-model="mainFormData.insuranceCoverageState"
+                  v-model="searchFormData.insuranceCoverageState"
                   class="custom-select-arrow"
                   placeholder="City/Area">
                   <option v-for="state in states" :key="state">{{ state }}</option>
@@ -41,7 +41,7 @@
               <label for="medication-name">Medication Name*</label>
               <input
                 id="medication-name"
-                v-model="mainFormData.medication"
+                v-model="searchFormData.medication"
                 type="text"
                 placeholder="Search for medication name or NDC number" />
             </div>
@@ -52,7 +52,10 @@
     </div>
     <div v-if="coverageBlock" class="coverage">
       <div class="request-text missing-requirements-block">
-        <span class="bold">Missing: Aetna Commercial California Universal Prescription Drug Prior Authorization</span>
+        <span class="bold">
+          Missing: {{ searchFormData.insuranceProvider }} {{ searchFormData.insuranceCoverageState }} Wegovy Prior
+          Authorization
+        </span>
         <span>Let’s get the exact steps you need.</span>
         <div class="coverage-btn-wrapper">
           <router-link :to="{ name: 'request-without-requirements' }" class="btn-blue">
@@ -85,7 +88,7 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useMainFormStore } from "@/stores/mainFormStore";
-const { mainFormData } = storeToRefs(useMainFormStore());
+const { searchFormData } = storeToRefs(useMainFormStore());
 
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
@@ -125,7 +128,7 @@ async function getPriorAuthRequirements() {
     behavior: "smooth",
   });
   try {
-    priorAuthRequirementsResult.value = await mainServices.searchRequirements(mainFormData.value);
+    priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
     preloader.value = false;
     coverageBlock.value = true;
   } catch (err) {
