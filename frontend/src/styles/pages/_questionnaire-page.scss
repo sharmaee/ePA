@@ -154,15 +154,15 @@
                 font-weight: 700;
             }
 
+            .additional-info {
+                display: block;
+                font-size: 22px;
+                line-height: 150%;
+                width: 95%;
+                margin: 0 auto;
+            }
         }
         
-        .additional-info {
-            font-size: 22px;
-            line-height: 150%;
-            width: 95%;
-            margin: 0 auto;
-        }
-
         table {
             border: 1px dashed $pink;
             border-radius: 5px;

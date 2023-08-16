@@ -16,22 +16,7 @@
           <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
           <label :for="`item-${index}-${itemIndex}`">{{ item }}</label>
         </span>
-      </div>
-      <div class="additional-info">
-        <p>
-          “On examination, the patient's symptoms at their most severe, included
-          <b>[insert symptoms from patients chart]</b>, abnormal lab results including
-          <b>[list the lab results consistent with the diagnosis]</b>, and causing marked difficulty in performing daily
-          activities. It is of vital importance to underline that the patient's condition has reached a critical stage
-          where immediate intervention is no longer optional but a necessity. Failure to prescribe the indicated
-          medication and initiate comprehensive care will likely lead to catastrophic consequences for the patient's
-          health. This assessment is in accordance with clinical guidelines and best practice standards, as evidenced by
-          the documents and research studies that my assistant will attach to this note. Should appropriate care not be
-          initiated promptly, the patient is at imminent risk for serious complications such as heart attack, stroke,
-          renal failure, severe infection, loss of limb due to peripheral arterial disease, and other life-threatening
-          conditions. The urgency of this matter cannot be overstated, and I strongly urge that the necessary steps be
-          taken without delay to prevent further deterioration of the patient's health.”
-        </p>
+        <span v-if="section.additional_info" class="additional-info">{{ section.additional_info }}</span>
       </div>
 
       <table>

@@ -1,20 +1,29 @@
 [
-    {
-      "header": "Step 1: Search and attach any of the following as evidence supporting pre-diabetes.",
-      "items": [
-        "check if the patient has an ICD-10 code for R73.03",
-        "Check if the doctor has mentioned pre-diabetes in the patient’s chart",
-        "Check if the patient has A1C lab result of 5.7% or Higher",
-        "Check if the patient has fasting glucose levels of 100mg/dL or higher"
-      ]
-    },
-    {
-      "header": "Step 2: search and attach evidence of any of the risk factors in the table below",
-      "items": [
-        "For each code found attach the supporting documents provided",
-        "For each code found check and attach the lab results suggested in the table",
-        "Edit this sentence to have ALL of the patients diagnosis and Request that a provider add it to the patients chart or in a letter of medical necessity."
-      ]
-    }
-  ]
-  
+  {
+    "header": "Step 1: Check and Attach Any of the Following as Evidence Supporting Pre-Diabetes.",
+    "items": [
+      "Patient Has an ICD-10 Code for R73.03",
+      "Doctor Has Mentioned Pre-Diabetes in Patient’s Chart",
+      "Patient Has A1C Lab Result of 5.7% or Higher",
+      "Patient Has Fasting Glucose Levels of 100mg/dL or Higher"
+    ]
+  },
+  {
+    "header": "Step 2: Add a Statement of Medical Necessity to the Patient’s Documentation",
+    "items": [
+      "Edit this Sentence to Include ALL of the Patient's Diagnoses from the Table Below and Request That a Provider Add It to the Patient's Chart or in a Letter of Medical Necessity."
+    ],
+    "additional_info": "On examination, the patient's symptoms at their most severe included [insert symptoms from patient's chart], abnormal lab results including [list the lab results consistent with the diagnosis], and causing marked difficulty in performing daily activities. It is of vital importance to underline that the patient's condition has reached a critical stage where immediate intervention is no longer optional but a necessity. Failure to prescribe the indicated medication and initiate comprehensive care will likely lead to catastrophic consequences for the patient's health. This assessment is in accordance with clinical guidelines and best practice standards, as evidenced by the documents and research studies that my assistant will attach to this note. Should appropriate care not be initiated promptly, the patient is at imminent risk for serious complications such as heart attack, stroke, renal failure, severe infection, loss of limb due to peripheral arterial disease, and other life-threatening conditions. The urgency of this matter cannot be overstated, and I strongly urge that the necessary steps be taken without delay to prevent further deterioration of the patient's health."
+  },
+  {
+    "header": "Step 3: Search and Attach Evidence of Any of the Risk Factors in the Table Below",
+    "items": [
+      "For Each Code Found, Attach the Supporting Documents Provided",
+      "For Each Code Found, Check and Attach the Lab Results Suggested in the Table"
+    ]
+  }
+]
+
+
+
+
