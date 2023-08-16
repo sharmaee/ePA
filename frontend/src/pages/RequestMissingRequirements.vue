@@ -8,7 +8,7 @@
       <div class="missing-requirements-form">
         <h2>Get the exact preparation steps your patient needs.</h2>
         <hr />
-        <form action="">
+        <div class="form">
           <div class="row-with-two-input">
             <div class="patient-first-name">
               <label for="patient-first-name">Patient First Name</label>
@@ -23,8 +23,8 @@
           <div class="row-with-two-input">
             <div class="date-of-birth">
               <label for="date-of-birth">Date Of Birth</label>
-              <span v-for="error in v$?.dob?.$errors" :key="error.$uid" class="input-error-notification">
-                {{ error.$message }}
+              <span v-if="!isDobValid && formButtonClicked" class="input-error-notification">
+                Please enter a valid date of birth (MM/DD/YYYY).
               </span>
               <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
             </div>
@@ -64,6 +64,9 @@
             </div>
             <div class="your-email">
               <label for="your-email">Your Email</label>
+              <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
+                Please add the correct email
+              </span>
               <input id="your-email" v-model="data.email" type="text" placeholder="example@findsunrise.com" />
             </div>
           </div>
@@ -77,7 +80,7 @@
             can revoke my authorization at any time by emailing my revocation to security@lamarhealth.com.
           </span>
           <button @click="sendRequirements">Email me info</button>
-        </form>
+        </div>
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
@@ -97,6 +100,7 @@ import { useMainFormStore } from "@/stores/mainFormStore";
 const { mainFormData } = storeToRefs(useMainFormStore());
 
 const screenWidth = ref(null);
+const formButtonClicked = ref(null);
 
 const data = ref({
   medication: mainFormData.medication,
@@ -123,8 +127,29 @@ window.addEventListener("resize", displayWindowSize);
 
 displayWindowSize();
 
+// Validators
+const isEmailValid = computed(() => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(data.value.email);
+});
+
+const isDobValid = computed(() => {
+  const dobPattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
+  return dobPattern.test(data.value.dob);
+});
+
 async function sendRequirements() {
-  await mainServices.requestRequirements(data.value);
+  formButtonClicked.value = true;
+
+  if (isEmailValid.value && isDobValid.value) {
+    try {
+      await mainServices.requestRequirements(data.value);
+
+      formButtonClicked.value = false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 </script>
 
