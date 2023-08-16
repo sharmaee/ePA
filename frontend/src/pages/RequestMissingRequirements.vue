@@ -61,7 +61,7 @@
             </div>
             <div class="your-email">
               <label for="your-email">Your Email</label>
-              <input v-model="data.email" id="your-email" type="text" placeholder="example@findsunrise.com" />
+              <input id="your-email" v-model="data.email" type="text" placeholder="example@findsunrise.com" />
             </div>
           </div>
           <span class="agreement">
@@ -135,22 +135,22 @@ const data = ref({
 // referring_doctor;
 // ma_email;
 
-const rules = computed(() => {
-  return {
-    // Here will be rules for validation
-  };
-});
+// const rules = computed(() => {
+//   return {
+// Here will be rules for validation
+//   };
+// });
 
-async function checkTheFormFields() {
-  // Here need to check result, if all good than call sendRequirements()
-  const result = await v$.value.$validate();
+// async function checkTheFormFields() {
+// Here need to check result, if all good than call sendRequirements()
+//   const result = await v$.value.$validate();
 
-  if (result) {
-    sendRequirements();
-  }
-}
+//   if (result) {
+//     sendRequirements();
+//   }
+// }
 
-const v$ = useVuelidate(rules, formData.value);
+// const v$ = useVuelidate(rules, formData.value);
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
