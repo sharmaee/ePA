@@ -13,10 +13,16 @@
             <div class="cover-my-meds-key">
               <label for="cover-my-meds-key">CoverMyMeds Key</label>
               <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="eg. B4HL4T2E" />
+              <span v-if="!isCoverMyMedsKeyValid && formButtonClicked" class="input-error-notification">
+                Please enter a valid CoverMyMeds Key.
+              </span>
             </div>
             <div class="patient-last-name">
               <label for="patient-last-name">Patient Last Name</label>
               <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="eg. Snow" />
+              <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
+                Please enter ALL fields to search.
+              </span>
             </div>
           </div>
 
@@ -31,6 +37,9 @@
             <div class="patient-member-id">
               <label for="patient-member-id">Patient Member ID</label>
               <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="eg. H3485045" />
+              <span v-if="!isPatientMemberIdValid && formButtonClicked" class="input-error-notification">
+                Please add the correct email
+              </span>
             </div>
           </div>
 
@@ -74,7 +83,8 @@ import { useMainFormStore } from "@/stores/mainFormStore";
 const { searchFormData } = storeToRefs(useMainFormStore());
 
 const screenWidth = ref(null);
-const formButtonClicked = ref(null);
+const formButtonClicked = ref(false);
+const errMessage = ref(null);
 
 const data = ref({
   medication: searchFormData.medication,
@@ -106,16 +116,30 @@ const isDobValid = computed(() => {
   return dobPattern.test(data.value.dob);
 });
 
+const isCoverMyMedsKeyValid = computed(() => {
+  const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
+  return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
+});
+
+const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
+const isPatientMemberIdValid = computed(() => data.value.memberId.trim() !== "");
+
 async function sendRequirements() {
   formButtonClicked.value = true;
 
-  if (isEmailValid.value && isDobValid.value) {
+  if (
+    isEmailValid.value &&
+    isDobValid.value &&
+    isCoverMyMedsKeyValid.value &&
+    isLastNameValid.value &&
+    isPatientMemberIdValid.value
+  ) {
     try {
       await mainServices.requestRequirements(data.value);
 
       formButtonClicked.value = false;
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      errMessage.value = err;
     }
   }
 }

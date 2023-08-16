@@ -16,7 +16,7 @@
         <div class="home-form">
           <h2>Check if you are Eligible for coverage</h2>
           <hr />
-          <form action="">
+          <div class="form">
             <div class="insurance-provider-and-state">
               <div class="insurance-plan-number">
                 <label for="insurance-provider">Insurance Provider*</label>
@@ -25,6 +25,9 @@
                   v-model="searchFormData.insuranceProvider"
                   type="text"
                   placeholder="Insurance provider" />
+                <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
+                  Please enter ALL fields to search.
+                </span>
               </div>
               <div class="insurance-state">
                 <label for="insurance-state">Patient Insurance State*</label>
@@ -35,6 +38,9 @@
                   placeholder="City/Area">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
+                <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
+                  Please enter ALL fields to search.
+                </span>
               </div>
             </div>
             <div class="insurance-medication-name">
@@ -44,9 +50,12 @@
                 v-model="searchFormData.medication"
                 type="text"
                 placeholder="Search for medication name or NDC number" />
+              <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
+                Please enter ALL fields to search.
+              </span>
             </div>
             <button @click.prevent="getPriorAuthRequirements">Check My Coverage</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -80,7 +89,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { mainServices } from "@/services/mainServices";
 import { usaStates } from "@/utils/usaStates";
 import { storeToRefs } from "pinia";
@@ -92,6 +101,7 @@ const { searchFormData } = storeToRefs(useMainFormStore());
 
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
+const formButtonClicked = ref(false);
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
@@ -121,19 +131,39 @@ async function getAvailableSearchOptions() {
   availableSearchOptions.value = await mainServices.availableSearchOptions();
 }
 
+// Validators
+const isInsuranceProviderValid = computed(() => {
+  const value = searchFormData.value.insuranceProvider;
+  return value !== null && value.trim() !== "";
+});
+
+const isInsuranceCoverageStateValid = computed(() => {
+  const value = searchFormData.value.insuranceCoverageState;
+  return value !== null && value.trim() !== "";
+});
+
+const isMedicationValid = computed(() => {
+  const value = searchFormData.value.medication;
+  return value !== null && value.trim() !== "";
+});
+
 async function getPriorAuthRequirements() {
-  preloader.value = true;
-  window.scrollTo({
-    top: 1000,
-    behavior: "smooth",
-  });
-  try {
-    priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
-    preloader.value = false;
-    coverageBlock.value = true;
-  } catch (err) {
-    preloader.value = false;
-    errMessage.value = err;
+  formButtonClicked.value = true;
+
+  if (isInsuranceProviderValid.value && isInsuranceCoverageStateValid.value && isMedicationValid.value) {
+    preloader.value = true;
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth",
+    });
+    try {
+      priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
+      preloader.value = false;
+      coverageBlock.value = true;
+    } catch (err) {
+      preloader.value = false;
+      errMessage.value = err;
+    }
   }
 }
 </script>
