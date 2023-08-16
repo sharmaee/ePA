@@ -23,10 +23,10 @@
           <div class="row-with-two-input">
             <div class="date-of-birth">
               <label for="date-of-birth">Date Of Birth</label>
+              <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
               <span v-if="!isDobValid && formButtonClicked" class="input-error-notification">
                 Please enter a valid date of birth (MM/DD/YYYY).
               </span>
-              <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
             </div>
             <div class="patient-member-id">
               <label for="patient-member-id">Patient Member ID</label>
@@ -64,10 +64,10 @@
             </div>
             <div class="your-email">
               <label for="your-email">Your Email</label>
+              <input id="your-email" v-model="data.email" type="text" placeholder="example@findsunrise.com" />
               <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
                 Please add the correct email
               </span>
-              <input id="your-email" v-model="data.email" type="text" placeholder="example@findsunrise.com" />
             </div>
           </div>
           <span class="agreement">
