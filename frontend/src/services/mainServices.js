@@ -15,4 +15,7 @@ export const mainServices = {
   requestRequirements(data) {
     return post(`request-requirements/`, data);
   },
+  requestDenialReport(data) {
+    return post(`denials/`, data);
+  },
 };

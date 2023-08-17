@@ -6,6 +6,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 import HomePage from '@/pages/HomePage';
 import RequirementsPage from '@/pages/RequirementsPage';
 import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
+import RequestDenialReport from '@/pages/RequestDenialReport';
 
 
 const publicAccessRoutes = [
@@ -26,6 +27,12 @@ const publicAccessRoutes = [
       name: "request-without-requirements",
       component: RequestMissingRequirements,
       title: "request-missing-requirements",
+    },
+    {
+      path: "/request-denial-report",
+      name: "request-denial-report",
+      component: RequestDenialReport,
+      title: "request-denial-report",
     },
   ];
 
