@@ -63,6 +63,11 @@
             <a href="mailto:security@lamarhealth.com">security@lamarhealth.com</a>.
           </span>
           <button @click="sendRequirements">Email me steps</button>
+          <br />
+          <span v-if="errMessage" class="input-error-notification"
+            >Sorry, something went wrong. Please contact us at <a href="mailto:error@gmail.com">error@gmail.com</a> or
+            try again later</span
+          >
         </div>
       </div>
     </div>
@@ -146,13 +151,9 @@ async function sendRequirements() {
         behavior: "smooth",
       });
       successModalWindow.value = true;
-
-      data.value.coverMyMedsKey = "";
-      data.value.lastName = "";
-      data.value.dob = "";
-      data.value.memberId = "";
-      data.value.maEmail = "";
+      clearTheForm();
     } catch (err) {
+      clearTheForm();
       errMessage.value = err;
     }
   }
@@ -160,6 +161,14 @@ async function sendRequirements() {
 
 function closeSuccessModalWindow() {
   successModalWindow.value = false;
+}
+
+function clearTheForm() {
+  data.value.coverMyMedsKey = "";
+  data.value.lastName = "";
+  data.value.dob = "";
+  data.value.memberId = "";
+  data.value.maEmail = "";
 }
 </script>
 
