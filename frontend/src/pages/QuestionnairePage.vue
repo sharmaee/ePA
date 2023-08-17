@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from "vue";
+import { ref, defineEmits, defineProps } from "vue";
 
 import { useCheckListStore } from "@/stores/checkListStore";
 import { storeToRefs } from "pinia";

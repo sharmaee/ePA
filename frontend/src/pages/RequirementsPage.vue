@@ -87,6 +87,6 @@ async function getPriorAuthRequirements(id) {
 }
 </script>
 
-<style lang="sass" scoped>
-@import "../styles/pages/_requirements-page"
+<style lang="scss" scoped>
+@import "../styles/pages/_requirements-page";
 </style>

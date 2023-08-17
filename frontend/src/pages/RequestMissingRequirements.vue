@@ -67,6 +67,7 @@
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
+    <ModalWindowForSuccessRequestVue v-if="successModalWindow" @close-modal-window="closeSuccessModalWindow" />
   </div>
   <PriorFooter />
 </template>
@@ -76,15 +77,16 @@ import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import { mainServices } from "@/services/mainServices";
-
 import { storeToRefs } from "pinia";
 import { useSearchFormStore } from "@/stores/searchFormStore";
+import ModalWindowForSuccessRequestVue from "@/components/ModalWindowForSuccessRequest";
 
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
 const errMessage = ref(null);
+const successModalWindow = ref(false);
 
 const data = ref({
   medication: searchFormData.value.medication,
@@ -139,6 +141,12 @@ async function sendRequirements() {
       await mainServices.requestRequirements(data.value);
 
       formButtonClicked.value = false;
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      successModalWindow.value = true;
+
       data.value.coverMyMedsKey = "";
       data.value.lastName = "";
       data.value.dob = "";
@@ -149,8 +157,12 @@ async function sendRequirements() {
     }
   }
 }
+
+function closeSuccessModalWindow() {
+  successModalWindow.value = false;
+}
 </script>
 
-<style lang="sass" scoped>
-@import "../styles/pages/_request-missing-requirements"
+<style lang="scss" scoped>
+@import "../styles/pages/_request-missing-requirements";
 </style>
