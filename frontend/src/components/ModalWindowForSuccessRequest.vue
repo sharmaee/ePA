@@ -5,10 +5,10 @@
     </div>
     <div class="modal-content-wrapper">
       <div class="main-window-img-wrapper">
-        <img :src="props.modalWindow.img" alt="modal-img" />
+        <img :src="props.modalImg" alt="modal-img" />
       </div>
-      <span class="modal-header">{{ props.modalWindow.header }}</span>
-      <span class="model-content">{{ props.modalWindow.content }}</span>
+      <span class="modal-header">{{ props.modalContent.header }}</span>
+      <span class="model-content">{{ props.modalContent.content }}</span>
     </div>
   </div>
 </template>
@@ -17,14 +17,13 @@
 import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
-  modalWindow: {
+  modalImg: {
+    type: String,
+    default: require("@/assets/images/modal-green-checkmark.svg"),
+  },
+  modalContent: {
     type: Object,
     required: true,
-    default: () => ({
-      img: require("@/assets/images/modal-green-checkmark.svg"),
-      header: "Submission Received!",
-      content: "Our team is on it. Expect instructions within 24 hours.",
-    }),
   },
 });
 

@@ -4,8 +4,12 @@
     <h1 :class="{ hide: screenWidth < 835 }">Request Call For Criteria</h1>
     <p>Our Agents Are On Stand-By To Find What You Need To Submit.<br />Current expected Turnaround: &lt; 24 hours</p>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
+    <div v-if="showPreloader" class="preloader-wrapper">
+      <GreenCirclePreloader />
+    </div>
+
     <div class="request-missing-requirements-form-wrapper">
-      <div class="missing-requirements-form">
+      <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
         <h2>Get the exact preparation steps your patient needs.</h2>
         <hr />
         <div class="form">
@@ -65,14 +69,17 @@
           <button @click="sendRequirements">Email me steps</button>
           <br />
           <span v-if="errMessage" class="input-error-notification"
-            >Sorry, something went wrong. Please contact us at <a href="mailto:error@gmail.com">error@gmail.com</a> or
-            try again later</span
+            >Sorry, something went wrong. Please contact us at
+            <a href="mailto:dev@lamarhealth.com">dev@lamarhealth.com</a> or try again later</span
           >
         </div>
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
-    <ModalWindowForSuccessRequestVue v-if="successModalWindow" @close-modal-window="closeSuccessModalWindow" />
+    <ModalWindowForSuccessRequestVue
+      v-if="successModalWindow"
+      :modal-content="modalContent"
+      @close-modal-window="closeSuccessModalWindow" />
   </div>
   <PriorFooter />
 </template>
@@ -85,13 +92,20 @@ import { mainServices } from "@/services/mainServices";
 import { storeToRefs } from "pinia";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 import ModalWindowForSuccessRequestVue from "@/components/ModalWindowForSuccessRequest";
+import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
-const errMessage = ref(null);
+const errMessage = ref(false);
 const successModalWindow = ref(false);
+const showPreloader = ref(false);
+
+const modalContent = {
+  header: "Submission Received!",
+  content: "Our team is on it. Expect instructions within 24 hours.",
+};
 
 const data = ref({
   medication: searchFormData.value.medication,
@@ -135,6 +149,11 @@ const isPatientMemberIdValid = computed(() => data.value.memberId.trim() !== "")
 async function sendRequirements() {
   formButtonClicked.value = true;
 
+  window.scrollTo({
+    top: 100,
+    behavior: "smooth",
+  });
+
   if (
     isEmailValid.value &&
     isDobValid.value &&
@@ -143,19 +162,17 @@ async function sendRequirements() {
     isPatientMemberIdValid.value
   ) {
     try {
+      showPreloader.value = true;
       await mainServices.requestRequirements(data.value);
 
       formButtonClicked.value = false;
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-      successModalWindow.value = true;
       clearTheForm();
     } catch (err) {
       clearTheForm();
       errMessage.value = err;
     }
+    showPreloader.value = false;
+    successModalWindow.value = true;
   }
 }
 

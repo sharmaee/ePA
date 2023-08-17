@@ -36,8 +36,13 @@
         color: $gray-1000;
     }
 
+    .preloader-wrapper {
+        margin-top: 80px;
+    }
+
     .request-missing-requirements-form-wrapper {
         width: 755px;
+        min-height: 250px;
         margin-top: 70px;
 
         @media (max-width: 1280px) {
@@ -121,6 +126,7 @@
             button {
                 margin-top: 28px;
                 cursor: pointer;
+                margin-bottom: 10px;
             }
         }
     }
