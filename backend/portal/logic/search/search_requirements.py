@@ -1,6 +1,7 @@
 from portal.models import PriorAuthRequirement
 import datetime
 
+
 def run_search(search_params):
     return (
         PriorAuthRequirement.objects.filter(medication=search_params['medication'])
