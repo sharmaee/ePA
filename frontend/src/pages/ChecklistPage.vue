@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from "vue";
 import ChecklistRecursiveComponent from "@/pages/ChecklistRecursiveComponent";
 
 const props = defineProps({

@@ -7,6 +7,10 @@
     <div v-if="showPreloader" class="preloader-wrapper">
       <GreenCirclePreloader />
     </div>
+    <ModalWindowForSuccessRequestVue
+      v-if="successModalWindow"
+      :modal-content="modalContent"
+      @close-modal-window="closeSuccessModalWindow" />
 
     <div class="request-missing-requirements-form-wrapper">
       <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
@@ -76,11 +80,8 @@
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
-    <ModalWindowForSuccessRequestVue
-      v-if="successModalWindow"
-      :modal-content="modalContent"
-      @close-modal-window="closeSuccessModalWindow" />
   </div>
+
   <PriorFooter />
 </template>
 
@@ -99,7 +100,7 @@ const { searchFormData } = storeToRefs(useSearchFormStore());
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
 const errMessage = ref(false);
-const successModalWindow = ref(false);
+const successModalWindow = ref(true);
 const showPreloader = ref(false);
 
 const modalContent = {

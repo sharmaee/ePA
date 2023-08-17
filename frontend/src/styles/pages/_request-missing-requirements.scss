@@ -4,6 +4,7 @@
     align-items: center;
     padding: 0 0 60px 0;
     width: 100%;
+    min-height: 700px;
 
     h1 {
         font-size: 64px;
@@ -128,6 +129,11 @@
                 cursor: pointer;
                 margin-bottom: 10px;
             }
+        }
+
+        .modal-window {
+            position: absolute;
+            
         }
     }
 
