@@ -1,7 +1,7 @@
 <template>
   <div class="success-request-modal-window">
     <div class="cross-wrapper">
-      <img @click="closeModalWindow" src="@/assets/images/cross-for-the-close.svg" alt="cross" />
+      <img src="@/assets/images/cross-for-the-close.svg" alt="cross" @click="closeModalWindow" />
     </div>
     <div class="modal-content-wrapper">
       <div class="main-window-img-wrapper">
