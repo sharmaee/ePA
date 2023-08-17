@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-    <GreenCirclePreloader v-else-if="preloader" />
+    <GreenCirclePreloader v-if="preloader" />
     <p v-else-if="errMessage">Try it later please: {{ errMessage }}</p>
   </div>
   <PriorFooter />
@@ -151,7 +151,9 @@ async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
 
   if (isInsuranceProviderValid.value && isInsuranceCoverageStateValid.value && isMedicationValid.value) {
+    coverageBlock.value = false;
     preloader.value = true;
+    priorAuthRequirementsResult.value = null;
     window.scrollTo({
       top: 1000,
       behavior: "smooth",
