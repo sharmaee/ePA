@@ -100,7 +100,7 @@ const { searchFormData } = storeToRefs(useSearchFormStore());
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
 const errMessage = ref(false);
-const successModalWindow = ref(true);
+const successModalWindow = ref(false);
 const showPreloader = ref(false);
 
 const modalContent = {
