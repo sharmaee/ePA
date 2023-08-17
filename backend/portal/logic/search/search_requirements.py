@@ -1,5 +1,4 @@
 from portal.models import PriorAuthRequirement
-import datetime
 
 
 def run_search(search_params):
