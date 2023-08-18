@@ -78,57 +78,6 @@
                 border: none;
                 background-color: $gray-600;
             }
-
-            label {
-                margin: 16px 0 12px 0;
-               
-                color: $gray-1000;
-
-                @media (max-width: 605px) {
-                    font-size: 14px;
-                }     
-            }
-
-            .row-with-two-input {
-                display: flex;
-                justify-content: space-between;
-
-                @media (max-width: 605px) {
-                    flex-direction: column;
-                }  
-
-                .patient-first-name, .patient-last-name, .date-of-birth, .patient-member-id, .referring-doctor, .your-email {
-                    width: 49%;       
-
-                    @media (max-width: 605px) {
-                        width: 100%;
-                    }                
-                }
-                      
-            }
-
-            .row-with-one-input {
-                display: flex;
-                flex-direction: column;                      
-            }
-
-            .agreement {
-                display: block;
-                margin: 16px 0;
-                font-size: 16px;
-                font-weight: 500;
-                color: $gray-700;
-            }
-
-            .agreement a {
-                color: $gray-700;
-            }
-
-            button {
-                margin-top: 28px;
-                cursor: pointer;
-                margin-bottom: 10px;
-            }
         }
 
         .modal-window {
