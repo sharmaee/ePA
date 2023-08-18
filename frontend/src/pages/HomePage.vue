@@ -1,7 +1,7 @@
 <template>
   <PriorHeader />
   <div class="home-page-wrapper">
-    <h1>Prepare Prior Authorizations For Approval <span class="blue-text">Approval</span></h1>
+    <h1>Prepare Prior Authorizations For <span class="blue-text">Approval</span></h1>
 
     <div class="home-page-btn-wrapper">
       <router-link :to="{ name: 'insurance-navigator-page' }" class="btn-blue"> Get Started </router-link>
