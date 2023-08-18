@@ -69,7 +69,7 @@
             can revoke my authorization at any time by emailing my revocation to
             <a href="mailto:security@lamarhealth.com">security@lamarhealth.com</a>.
           </span>
-          <button @click="sendRequirements">Email me steps</button>
+          <button @click="sendRequirements">Submit</button>
           <br />
           <span v-if="errMessage" class="input-error-notification"
             >Sorry, something went wrong. Please contact us at
@@ -103,14 +103,12 @@ const successModalWindow = ref(false);
 const showPreloader = ref(false);
 
 const modalContent = {
-  header: "Submission Received!",
-  content: "Our team is on it. Expect instructions within 24 hours.",
+  header: "",
+  content: "Thanks for sharing! Your input aids us in preventing this denial for you next time.",
 };
 
 const data = ref({
   medication: searchFormData.value.medication,
-  insuranceProvider: searchFormData.value.insuranceProvider,
-  insuranceCoverageState: searchFormData.value.insuranceCoverageState,
   coverMyMedsKey: "",
   lastName: "",
   dob: "",
@@ -163,7 +161,7 @@ async function sendRequirements() {
   ) {
     try {
       showPreloader.value = true;
-      await mainServices.requestRequirements(data.value);
+      await mainServices.requestDenialReport(data.value);
 
       formButtonClicked.value = false;
       clearTheForm();
@@ -190,5 +188,5 @@ function clearTheForm() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_request-missing-requirements";
+@import "../styles/pages/_request-denial-report";
 </style>

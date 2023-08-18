@@ -160,11 +160,19 @@ async function getPriorAuthRequirements() {
       priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
+      clearTheForm();
     } catch (err) {
+      clearTheForm();
       preloader.value = false;
       errMessage.value = err;
     }
   }
+}
+
+function clearTheForm() {
+  searchFormData.value.insuranceProvider = "";
+  searchFormData.value.insuranceCoverageState = "";
+  searchFormData.value.medication = "";
 }
 </script>
 
