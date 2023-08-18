@@ -47,12 +47,25 @@ class DisplayMemberDetailsAdmin(AnalyticsAdminBase):
 
 @admin.register(RequestNewPriorAuthRequirements)
 class RequestNewPriorAuthRequirementsAdmin(DisplayMemberDetailsAdmin):
-    list_display = base_display_fields + base_display_member_details_fields + (
+    list_display = (
+        base_display_fields
+        + base_display_member_details_fields
+        + (
+            'insurance_provider',
+            'insurance_coverage_state',
+        )
+    )
+    list_filter = (
         'insurance_provider',
         'insurance_coverage_state',
+        'submission_date',
     )
-    list_filter = ('insurance_provider', 'insurance_coverage_state', 'submission_date',)
-    search_fields = ('insurance_provider', 'insurance_coverage_state', 'member_details__last_name',)
+    search_fields = (
+        'insurance_provider',
+        'insurance_coverage_state',
+        'member_details__last_name',
+    )
+
 
 @admin.register(PriorAuthDenial)
 class PriorAuthDenialAdmin(DisplayMemberDetailsAdmin):
