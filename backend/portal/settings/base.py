@@ -26,6 +26,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 WEBSITE_URL = ''
 ALLOWED_HOSTS = ['*']
 
+SUPERUSER_USERNAME = 'dopriorauth'
+SUPERUSER_PASSWORD = ''
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -57,6 +60,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_rest_passwordreset',
     'drf_yasg',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_static',
 ]
 
 MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
@@ -69,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_otp.middleware.OTPMiddleware',
 ]
 
 ROOT_URLCONF = 'portal.urls'
