@@ -121,6 +121,7 @@ const states = ref([]);
 
 onMounted(() => {
   getAvailableSearchOptions();
+  clearTheForm();
 
   for (let stateData of Object.values(usaStates)) {
     states.value.push(stateData.name);
@@ -160,7 +161,6 @@ async function getPriorAuthRequirements() {
       priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
-      clearTheForm();
     } catch (err) {
       clearTheForm();
       preloader.value = false;

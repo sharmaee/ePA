@@ -88,13 +88,9 @@
 import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
-import { mainServices } from "@/services/mainServices";
-import { storeToRefs } from "pinia";
-import { useSearchFormStore } from "@/stores/searchFormStore";
+import { denialService } from "@/services/denialService";
 import ModalWindowForSuccessRequestVue from "@/components/ModalWindowForSuccessRequest";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-
-const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
@@ -108,7 +104,7 @@ const modalContent = {
 };
 
 const data = ref({
-  medication: searchFormData.value.medication,
+  medication: "Wegovy (semaglutide)",
   coverMyMedsKey: "",
   lastName: "",
   dob: "",
@@ -161,7 +157,7 @@ async function sendRequirements() {
   ) {
     try {
       showPreloader.value = true;
-      await mainServices.requestDenialReport(data.value);
+      await denialService.requestDenialReport(data.value);
 
       formButtonClicked.value = false;
       clearTheForm();
