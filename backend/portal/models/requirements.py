@@ -22,6 +22,9 @@ class MemberDetails(PortalModelBase):
     member_id = AES256EncryptedField(blank=True, null=True)
     ma_email = AES256EncryptedField(blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.cover_my_meds_key} - {self.last_name} - {self.dob} - {self.member_id} - {self.ma_email}'
+
 
 class RequestNewPriorAuthRequirements(PortalModelBase):
     medication = models.TextField(blank=True, null=True)
@@ -30,3 +33,4 @@ class RequestNewPriorAuthRequirements(PortalModelBase):
     submission_date = models.DateTimeField(auto_now_add=True)
     release_version = models.TextField(blank=True, null=True)
     member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)

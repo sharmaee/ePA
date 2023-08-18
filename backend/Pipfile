@@ -19,6 +19,8 @@ gunicorn = "*"
 tqdm = "*"
 pycryptodome = "*"
 django-filter = "==2.4.0"
+django-otp = "*"
+qrcode = "*"
 
 [dev-packages]
 black = "*"
