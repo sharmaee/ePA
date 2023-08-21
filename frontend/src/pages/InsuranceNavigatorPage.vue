@@ -67,7 +67,7 @@
         </span>
         <span>Let’s get the exact steps you need.</span>
         <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'request-without-requirements' }" class="btn-blue">
+          <router-link :to="{ name: 'request-missing-requirements' }" class="btn-blue">
             Request Call for Criteria
           </router-link>
         </div>

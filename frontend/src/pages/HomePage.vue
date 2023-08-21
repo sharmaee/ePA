@@ -5,7 +5,7 @@
 
     <div class="home-page-btn-wrapper">
       <router-link :to="{ name: 'insurance-navigator-page' }" class="btn-blue"> Get Started </router-link>
-      <router-link :to="{ name: 'request-denial-report' }" class="btn-blue"> Report Denial </router-link>
+      <router-link :to="{ name: 'report-denial' }" class="btn-blue"> Report Denial </router-link>
     </div>
   </div>
   <PriorFooter />

@@ -75,7 +75,7 @@ const { searchFormData } = storeToRefs(useSearchFormStore());
 const route = useRoute();
 
 const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
-const btnText = route.name === "request-without-requirements" ? "Email me steps" : "Submit";
+const btnText = route.name === "request-missing-requirements" ? "Email me steps" : "Submit";
 
 const formButtonClicked = ref(false);
 const errMessage = ref(false);
@@ -129,8 +129,8 @@ async function sendRequirements() {
     try {
       showPreloader.value = true;
 
-      const service = route.name === "request-without-requirements" ? mainServices : denialService;
-      await service[route.name === "request-without-requirements" ? "requestRequirements" : "requestDenialReport"](
+      const service = route.name === "request-missing-requirements" ? mainServices : denialService;
+      await service[route.name === "request-missing-requirements" ? "requestRequirements" : "requestDenialReport"](
         data.value
       );
 

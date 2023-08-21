@@ -31,7 +31,7 @@ const publicAccessRoutes = [
     },
     {
       path: "/request-missing-requirements",
-      name: "request-without-requirements",
+      name: "request-missing-requirements",
       component: RequestMissingRequirements,
       title: "request-missing-requirements",
     },
