@@ -81,10 +81,9 @@ const formButtonClicked = ref(false);
 const errMessage = ref(false);
 
 const data = ref({
-  medication: route.name === "request-without-requirements" ? searchFormData.value.medication : "Wegovy (semaglutide)",
-  insuranceProvider: route.name === "request-without-requirements" ? searchFormData.value.insuranceProvider : "",
-  insuranceCoverageState:
-    route.name === "request-without-requirements" ? searchFormData.value.insuranceCoverageState : "",
+  medication: searchFormData.value.medication,
+  insuranceProvider: searchFormData.value.insuranceProvider,
+  insuranceCoverageState: searchFormData.value.insuranceCoverageState,
   coverMyMedsKey: "",
   lastName: "",
   dob: "",
