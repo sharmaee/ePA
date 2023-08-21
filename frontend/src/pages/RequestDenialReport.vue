@@ -1,8 +1,7 @@
 <template>
   <PriorHeader />
   <div class="missing-requirements-wrapper">
-    <h1 :class="{ hide: screenWidth < 835 }">Request Call For Criteria</h1>
-    <p>Our Agents Are On Stand-By To Find What You Need To Submit.<br />Current expected Turnaround: &lt; 24 hours</p>
+    <h1 :class="{ hide: screenWidth < 835 }">Denial Report</h1>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
     <div v-if="showPreloader" class="preloader-wrapper">
       <GreenCirclePreloader />
@@ -14,7 +13,7 @@
 
     <div class="request-missing-requirements-form-wrapper">
       <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
-        <h2>Get the exact preparation steps your patient needs.</h2>
+        <h2>Get updated criteria for improving first time approval rates.</h2>
         <hr />
         <RequestForm />
       </div>
@@ -27,12 +26,14 @@
 
 <script setup>
 import { ref } from "vue";
-import PriorHeader from "@/components/PriorHeader";
-import PriorFooter from "@/components/PriorFooter";
-import { storeToRefs } from "pinia";
 import ModalWindowForSuccessRequestVue from "@/components/ModalWindowForSuccessRequest";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import { storeToRefs } from "pinia";
+
+import PriorHeader from "@/components/PriorHeader";
+import PriorFooter from "@/components/PriorFooter";
 import RequestForm from "@/components/RequestForm";
+
 import { useUiElementsStore } from "@/stores/uiElementsStore";
 
 const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
@@ -40,8 +41,8 @@ const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
 const screenWidth = ref(null);
 
 const modalContent = {
-  header: "Submission Received!",
-  content: "Our team is on it. Expect instructions within 24 hours.",
+  header: "",
+  content: "Thanks for sharing! Your input aids us in preventing this denial for you next time.",
 };
 
 function displayWindowSize() {
@@ -58,5 +59,5 @@ function closeSuccessModalWindow() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/pages/_request-missing-requirements";
+@import "../styles/pages/_request-denial-report";
 </style>
