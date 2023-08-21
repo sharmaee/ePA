@@ -56,9 +56,9 @@
     <button @click="sendRequirements">{{ btnText }}</button>
     <br />
     <span v-if="errMessage" class="input-error-notification"
-      >Sorry, something went wrong. Please contact us at <a href="mailto:dev@lamarhealth.com">dev@lamarhealth.com</a> or
-      try again later</span
-    >
+      >Sorry, something went wrong. Please contact us at
+      <a href="mailto:dev@lamarhealth.com"> dev@lamarhealth.com</a> or try again later
+    </span>
   </div>
 </template>
 

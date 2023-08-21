@@ -36,10 +36,10 @@ const publicAccessRoutes = [
       title: "request-missing-requirements",
     },
     {
-      path: "/request-denial-report",
-      name: "request-denial-report",
+      path: "/report-denial",
+      name: "report-denial",
       component: RequestDenialReport,
-      title: "request-denial-report",
+      title: "report-denial",
     },
   ];
 
