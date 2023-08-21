@@ -69,25 +69,22 @@ import { denialService } from "@/services/denialService";
 import { storeToRefs } from "pinia";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 import { useUiElementsStore } from "@/stores/uiElementsStore";
+import { useRoute } from "vue-router";
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
+const route = useRoute();
+
 const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
-const btnText = props.requestType === "denialReport" ? "Email me steps" : "Submit";
-const props = defineProps({
-  requestType: {
-    type: String,
-    default: "",
-  },
-});
+const btnText = route.name === "request-without-requirements" ? "Email me steps" : "Submit";
 
 const formButtonClicked = ref(false);
 const errMessage = ref(false);
 
 const data = ref({
-  medication: props.requestType === "missingRequirements" ? searchFormData.value.medication : "Wegovy (semaglutide)",
-  insuranceProvider: props.requestType === "missingRequirements" ? searchFormData.value.insuranceProvider : "",
+  medication: route.name === "request-without-requirements" ? searchFormData.value.medication : "Wegovy (semaglutide)",
+  insuranceProvider: route.name === "request-without-requirements" ? searchFormData.value.insuranceProvider : "",
   insuranceCoverageState:
-    props.requestType === "missingRequirements" ? searchFormData.value.insuranceCoverageState : "",
+    route.name === "request-without-requirements" ? searchFormData.value.insuranceCoverageState : "",
   coverMyMedsKey: "",
   lastName: "",
   dob: "",
@@ -133,8 +130,8 @@ async function sendRequirements() {
     try {
       showPreloader.value = true;
 
-      const service = props.requestType === "missingRequirements" ? mainServices : denialService;
-      await service[props.requestType === "missingRequirements" ? "requestRequirements" : "requestDenialReport"](
+      const service = route.name === "request-without-requirements" ? mainServices : denialService;
+      await service[route.name === "request-without-requirements" ? "requestRequirements" : "requestDenialReport"](
         data.value
       );
 

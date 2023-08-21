@@ -15,7 +15,7 @@
       <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
         <h2>Get updated criteria for improving first time approval rates.</h2>
         <hr />
-        <RequestForm :request-type="denialReport" />
+        <RequestForm />
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>

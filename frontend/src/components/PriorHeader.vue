@@ -50,7 +50,7 @@ function showHideMenu() {
 }
 
 function redirectToInsuranceNavigatorPage() {
-  router.push({ name: "insurance-navigator-page" });
+  router.push({ name: "home-page" });
 }
 </script>
 
