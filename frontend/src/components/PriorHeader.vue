@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'mobile-header': screenWidth < 835 }">
     <div class="logo">
-      <img alt="logo" src="../assets/images/logo.png" @click="redirectToInsuranceNavigatorPage" />
+      <img alt="logo" src="../assets/images/logo.png" @click="redirectToHomePage" />
     </div>
     <img
       v-if="screenWidth < 835"
@@ -49,7 +49,7 @@ function showHideMenu() {
   mobileMenu.value = mobileMenu.value ? false : true;
 }
 
-function redirectToInsuranceNavigatorPage() {
+function redirectToHomePage() {
   router.push({ name: "home-page" });
 }
 </script>

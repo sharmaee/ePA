@@ -172,7 +172,6 @@ async function getPriorAuthRequirements() {
 function clearTheForm() {
   searchFormData.value.insuranceProvider = "";
   searchFormData.value.insuranceCoverageState = "";
-  searchFormData.value.medication = "";
 }
 </script>
 
