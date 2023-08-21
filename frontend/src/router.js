@@ -4,8 +4,10 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 
 import HomePage from '@/pages/HomePage';
+import InsuranceNavigatorPage from '@/pages/InsuranceNavigatorPage';
 import RequirementsPage from '@/pages/RequirementsPage';
 import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
+import RequestDenialReport from '@/pages/RequestDenialReport';
 
 
 const publicAccessRoutes = [
@@ -16,6 +18,12 @@ const publicAccessRoutes = [
       title: "home-page",
     },
     {
+      path: "/insurance-navigator-page",
+      name: "insurance-navigator-page",
+      component: InsuranceNavigatorPage,
+      title: "insurance-navigator-page",
+    },
+    {
       path: "/check-my-coverage/:id",
       name: "check-my-coverage",
       component: RequirementsPage,
@@ -23,9 +31,15 @@ const publicAccessRoutes = [
     },
     {
       path: "/request-missing-requirements",
-      name: "request-without-requirements",
+      name: "request-missing-requirements",
       component: RequestMissingRequirements,
       title: "request-missing-requirements",
+    },
+    {
+      path: "/report-denial",
+      name: "report-denial",
+      component: RequestDenialReport,
+      title: "report-denial",
     },
   ];
 
