@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 WEBSITE_URL = ''
 ALLOWED_HOSTS = ['*']
+ENABLE_2FA = False
 
 SUPERUSER_USERNAME = 'dopriorauth'
 SUPERUSER_PASSWORD = ''
