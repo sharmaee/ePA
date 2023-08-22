@@ -37,7 +37,9 @@
       <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
   </div>
-  <SmartEngineComponent v-if="smartEngine" />
+  <div id="smart-engine-wrapper">
+    <SmartEngineComponent v-if="smartEngine" />
+  </div>
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -69,8 +71,9 @@ onMounted(() => {
 });
 
 async function showSmartEngine() {
-  window.scrollTo({
-    top: 1000,
+  const smartEngineWrapper = document.getElementById("smart-engine-wrapper");
+  smartEngineWrapper.scrollIntoView({
+    block: "start",
     behavior: "smooth",
   });
   smartEngine.value = true;
