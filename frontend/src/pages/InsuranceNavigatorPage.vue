@@ -60,24 +60,21 @@
       </div>
     </div>
     <div v-if="coverageBlock" class="coverage">
-      <div class="request-text missing-requirements-block">
-        <span class="bold">
-          Missing: {{ searchFormData.insuranceProvider }} {{ searchFormData.insuranceCoverageState }} Wegovy Prior
-          Authorization
-        </span>
-        <span>Let’s get the exact steps you need.</span>
-        <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'request-missing-requirements' }" class="btn-blue">
-            Request Call for Criteria
-          </router-link>
-        </div>
-      </div>
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
         <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
         <span>{{ item.description }}</span>
         <div class="coverage-btn-wrapper">
           <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
             Start Request
+          </router-link>
+        </div>
+      </div>
+      <div class="request-text missing-requirements-block">
+        <span class="bold"> Not seeing the plan you’re looking for? </span>
+        <span>Let’s get the exact steps you need. </span>
+        <div class="coverage-btn-wrapper">
+          <router-link :to="{ name: 'request-missing-requirements' }" class="btn-blue">
+            Request Call for Criteria
           </router-link>
         </div>
       </div>
