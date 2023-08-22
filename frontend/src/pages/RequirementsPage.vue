@@ -59,6 +59,7 @@ import SmartEngineComponent from "@/pages/SmartEngineComponent";
 
 const route = useRoute();
 const activeTab = ref("questionnaire");
+const smartEngineWrapper = ref(null);
 
 const requirementsData = ref(null);
 const preloader = ref(false);
@@ -68,11 +69,12 @@ onMounted(() => {
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
+
+  smartEngineWrapper.value = document.getElementById("smart-engine-wrapper");
 });
 
 async function showSmartEngine() {
-  const smartEngineWrapper = document.getElementById("smart-engine-wrapper");
-  smartEngineWrapper.scrollIntoView({
+  smartEngineWrapper.value.scrollIntoView({
     block: "start",
     behavior: "smooth",
   });
