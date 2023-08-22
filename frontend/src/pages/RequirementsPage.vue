@@ -9,20 +9,17 @@
     <div class="shadow-ellipse shadow-ellipse-left"></div>
 
     <div v-if="!preloader" class="tabs-container">
-      <b-button-group>
-        <b-button
+      <span class="toggle-button-wrapper">
+        <span
           class="switch-tab"
           :class="{ 'active-tab': activeTab === 'questionnaire' }"
           @click="activeTab = 'questionnaire'">
           Questionnaire
-        </b-button>
-        <b-button
-          class="switch-tab"
-          :class="{ 'active-tab': activeTab === 'checklist' }"
-          @click="activeTab = 'checklist'">
+        </span>
+        <span class="switch-tab" :class="{ 'active-tab': activeTab === 'checklist' }" @click="activeTab = 'checklist'">
           Checklist
-        </b-button>
-      </b-button-group>
+        </span>
+      </span>
     </div>
 
     <GreenCirclePreloader v-if="preloader" />

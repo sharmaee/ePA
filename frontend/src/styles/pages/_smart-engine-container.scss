@@ -144,53 +144,64 @@
             margin: 0 auto;
         }
     }
-    
-    table {
-        border: 1px dashed $pink;
-        border-radius: 5px;
-        padding: 10px 5px 50px 5px;
-        border-spacing: 19px;
-        
-        thead {
-            tr {
-                th {
-                    background-color: $blue;
-                    color: $white;
-                    font-size: 14px;
-                    font-weight: 400;
-                    text-align: left;
-                    padding-left: 8px;
-                    border-bottom: 1px solid $gray-700;
+   
+    .smart-engine-table-wrapper {
+        overflow: hidden; 
+        border: 1px solid $blue;
+        border-radius: 10px;
+
+        table {
+            padding: 10px 5px 50px 5px;
+            border-collapse: collapse;
+            
+            thead {
+               
+                tr {
+                    th {
+                        background-color: $blue;
+                        color: $white;
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-align: left;
+                        padding: 12px 0 12px 8px;
+                        border-bottom: 1px solid $blue;
+                    }
                 }
             }
-        }
-
-        tbody {
-            tr {
-                td {
-                    padding-bottom: 20px;
-                    font-size: 14px;
-                    font-weight: 400;
-                    text-align: left;
-                    border-bottom: 1px solid $gray-700;
-                    
-                    .download {
-                        text-align: center;
-
-                        a {
-                            text-decoration: none;
-                            background-color: $blue-300;
-                            padding: 4px 8px;
-                            border-radius: 4px;
-                            color: $blue-800;
+    
+            tbody {              
+    
+                tr {
+                    td {
+                        vertical-align: top;
+                        background-color: $blue-200;
+                        padding: 20px 0 20px 8px;
+                        font-size: 16px;
+                        border-top: 1px solid $blue;
+                        font-weight: 400;
+                        text-align: left;
+                        
+                        .download {
+                            text-align: center;
+    
+                            a {
+                                text-decoration: none;
+                                background-color: $blue-400;
+                                padding: 11px 20px;
+                                border-radius: 59px;
+                                color: $blue;
+                                font-size: 16px;
+                                font-weight: 500;
+                            }
+                        }
+                        .table-input-wrapper {
+                            text-align: center;
                         }
                     }
-                    .table-input-wrapper {
-                        text-align: center;
-                    }
+    
                 }
-
             }
         }
+
     }
 }

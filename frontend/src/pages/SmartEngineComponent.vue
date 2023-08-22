@@ -13,28 +13,30 @@
       </md-block>
     </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>ICD-10 Codes</th>
-          <th>Diagnosis</th>
-          <th>Lab Results to Attach</th>
-          <th>Supporting documents</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in smartEngineTable" :key="item.diagnosis">
-          <td>{{ item.icd_10_codes.join(", ") }}</td>
-          <td>{{ item.diagnosis }}</td>
-          <td>{{ item.lab_results_to_attach.join(", ") }}</td>
-          <td>
-            <div class="download">
-              <a :href="item.supporting_documents" target="_blank">Download</a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="smart-engine-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ICD-10 Codes</th>
+            <th>Diagnosis</th>
+            <th>Lab Results to Attach</th>
+            <th>Supporting documents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in smartEngineTable" :key="item.diagnosis">
+            <td>{{ item.icd_10_codes.join(", ") }}</td>
+            <td>{{ item.diagnosis }}</td>
+            <td>{{ item.lab_results_to_attach.join(", ") }}</td>
+            <td>
+              <div class="download">
+                <a :href="item.supporting_documents" target="_blank">Download</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 

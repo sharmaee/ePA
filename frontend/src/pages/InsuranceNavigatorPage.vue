@@ -1,7 +1,7 @@
 <template>
   <PriorHeader />
   <div class="insurance-navigator-wrapper">
-    <h1 :class="{ hide: screenWidth < 835 }">The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+    <h1 :class="{ hide: screenWidth < 835 }">Prepare PA For <span class="blue-text">Approval</span></h1>
     <div class="insurance-navigator-main-block">
       <div class="insurance-navigator-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
@@ -14,7 +14,7 @@
       <div class="insurance-navigator-form-wrapper">
         <div class="shadow-ellipse"></div>
         <div class="home-form">
-          <h2>Check if you are Eligible for coverage</h2>
+          <h2>Get Prior Authorization Criteria</h2>
           <hr />
           <div class="form">
             <div class="insurance-provider-and-state">
@@ -54,7 +54,7 @@
                 Please enter ALL fields to search.
               </span>
             </div>
-            <button @click.prevent="getPriorAuthRequirements">Check My Coverage</button>
+            <button @click.prevent="getPriorAuthRequirements">Get Criteria</button>
           </div>
         </div>
       </div>
