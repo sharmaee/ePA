@@ -64,6 +64,13 @@ class UserManager(BaseUserManager):
         return self._create_user(**kwargs)
 
 
+class ClientCompany(PortalModelBase):
+    company_name = models.TextField(blank=True, null=True)
+    email_domain = models.TextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    number_of_seats = models.IntegerField(default=0)
+
+
 class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     first_name = models.TextField()
     middle_name = models.TextField()
@@ -73,6 +80,8 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     is_active = models.BooleanField('Active', default=False)
     is_email_verified = models.BooleanField('Verified', default=False)
     is_2fa_verified = models.BooleanField('Google Auth Verified', default=False)
+    client_company = models.ForeignKey(ClientCompany, related_name="user_client_company", on_delete=models.CASCADE,
+                                       blank=True, null=True)
     secret_code = models.CharField(max_length=32, blank=True)
     auth_url = models.CharField(max_length=255, blank=True)
     mobapp_id = models.UUIDField(unique=True, default=uuid.uuid1)
