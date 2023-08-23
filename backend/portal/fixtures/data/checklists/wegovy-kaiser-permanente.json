@@ -9,7 +9,7 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Prescribed by Endocrinologist or Weight Management Specialist",
+                    "label": "Make sure prescription is by Endocrinologist or Weight Management Specialist. Otherwise make a referral.",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -25,12 +25,12 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Baseline body mass index (BMI) 30 kg/m^2 or greater",
+                            "label": "Document baseline body mass index (BMI) 30 kg/m^2 or greater",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "The patient has at least one weight-related comorbid condition:",
+                            "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                             "node_type": "checkbox",
                             "node_value": false,
                             "children": [
@@ -110,7 +110,7 @@
                     "node_value": false
                 },
                 {
-                    "label": "Patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy",
+                    "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -143,7 +143,7 @@
                     ]
                 },
                 {
-                    "label": "Wegovy is not being used in combination with another weight loss drug or GLP-1 receptor agonist",
+                    "label": "Document Wegovy is not being used in combination with another weight loss drug or GLP-1 receptor agonist",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -159,7 +159,7 @@
                     "all_required": true,
                     "children": [
                         {
-                            "label": "Must follow KP National Adult DM Guidelines and CBC step therapy criteria for use of preferred agents for DM control",
+                            "label": "Document patient is following KP National Adult DM Guidelines and CBC step therapy criteria for use of preferred agents for DM control",
                             "node_type": "checkbox",
                             "node_value": false
                         },

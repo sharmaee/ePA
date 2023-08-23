@@ -14,7 +14,7 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Body mass index (BMI) ≥ 30 kg/m^2, if no applicable risk factors",
+                            "label": "Document body mass index (BMI) ≥ 30 kg/m^2, if no applicable risk factors",
                             "node_type": "checkbox",
                             "node_value": false
                         },
@@ -26,12 +26,12 @@
                             "children": [
 
                                 {
-                                    "label": "Body mass index (BMI) ≥ 27 kg/m^2",
+                                    "label": "Document body mass index (BMI) ≥ 27 kg/m^2",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least two weight-related comorbid condition:",
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -118,22 +118,22 @@
                     "node_value": false
                 },
                 {
-                    "label": "No contraindications to use",
+                    "label": "Document no contraindications to use",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "No malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
+                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "No history of an eating disorder (e.g., anorexia, bulimia)",
+                    "label": "Document no history of an eating disorder (e.g., anorexia, bulimia)",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Previous failure of a weight loss treatment plan (e.g., nutritional counseling, an exercise regimen and a calorie/fat-restricted diet) in the past 6 months and will continue to follow as part of the treatment plan",
+                    "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, an exercise regimen and a calorie/fat-restricted diet) in the past 6 months and will continue to follow as part of the treatment plan",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -148,27 +148,17 @@
                     "node_value": false
                 },
                 {
-                    "label": "Current accurate height and weight measurements",
+                    "label": "Document current accurate height and weight measurements",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "No medical contraindications to use a reversible lipase inhibitor (Xenical®)",
+                    "label": "Document current weight loss plan or program including diet and exercise plan",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Current weight loss plan or program including diet and exercise plan",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "No chronic opioid use concurrently with Contrave®",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Member is not concurrently on Victoza or Ozempic or other GLP-1 inhibitors",
+                    "label": "Document member is not concurrently on Victoza or Ozempic or other GLP-1 inhibitors",
                     "node_type": "checkbox",
                     "node_value": false
                 }
@@ -181,12 +171,12 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "The member has achieved a weight loss of at least 5% of baseline weight",
+                    "label": "Document the member has achieved a weight loss of at least 5% of baseline weight",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "The member’s BMI is > 24",
+                    "label": "Document the member’s BMI is > 24",
                     "node_type": "checkbox",
                     "node_value": false
                 }

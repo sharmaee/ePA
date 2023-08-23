@@ -14,7 +14,7 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "A body mass index (BMI) ≥ 30 kg/m^2, if no applicable risk factors",
+                            "label": "Documented body mass index (BMI) ≥ 30 kg/m^2",
                             "node_type": "checkbox",
                             "node_value": false
                         },
@@ -26,12 +26,12 @@
                             "children": [
 
                                 {
-                                    "label": "A body mass index (BMI) ≥ 27 kg/m^2",
+                                    "label": "Documented body mass index (BMI) ≥ 27 kg/m^2",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "label": "Document that the patient has at least one weight-related comorbid condition:",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -106,7 +106,7 @@
                             ]
                         },
                         {
-                            "label": "Body weight above 60 kg and an initial BMI corresponding to 30 kg/m^2 for adults (obese) by international cut-offs (excluding Saxenda® in pediatric patients 12 years of age and older)",
+                            "label": "For pediatric patients a documented body weight above 60 kg and an initial BMI corresponding to 30 kg/m^2 for adults (obese) by international cut-offs",
                             "node_type": "checkbox",
                             "node_value": false
                         }
@@ -118,42 +118,37 @@
                     "node_value": false
                 },
                 {
-                    "label": "No contraindications to use",
+                    "label": "Document no contraindications to use (personal or family history of medullary thyroid carcinoma or multiple endocrine neoplasia syndrome type 2)",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "No malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
+                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "No history of an eating disorder (for example, anorexia, bulimia)",
+                    "label": "Document no history of an eating disorder (for example, anorexia, bulimia)",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Previous failure of a weight loss treatment plan (e.g., nutritional counseling, exercise regimen, calorie/fat-restricted diet) in the past six months and will continue to follow as part of the treatment plan",
+                    "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, exercise regimen, calorie/fat-restricted diet) in the past six months and will continue to follow as part of the treatment plan",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Current medical status including nutritional or dietetic assessment",
+                    "label": "Document current medical status including nutritional or dietetic assessment",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Current therapy for all medical conditions (including obesity), identifying specific treatments including medications",
+                    "label": "Document current therapy for all medical conditions (including obesity), identifying specific treatments including medications",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Current accurate height and weight measurements",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "No chronic opioid use concurrently with Contrave®",
+                    "label": "Document current accurate height and weight measurements",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -171,7 +166,7 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "The member achieves a weight loss of at least 5% of baseline weight",
+                    "label": "The member achieves a documented weight loss of at least 5% of baseline weight",
                     "node_type": "checkbox",
                     "node_value": false
                 }
