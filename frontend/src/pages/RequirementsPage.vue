@@ -1,7 +1,7 @@
 <template>
   <PriorHeader />
   <div class="graph-page-wrapper">
-    <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+    <h1>Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
     <p v-if="requirementsData && requirementsData.description">
       {{ requirementsData.description }}
     </p>

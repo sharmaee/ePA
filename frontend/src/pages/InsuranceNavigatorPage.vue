@@ -1,14 +1,16 @@
 <template>
   <PriorHeader />
   <div class="insurance-navigator-wrapper">
-    <h1 :class="{ hide: screenWidth < 835 }">Prepare PA For <span class="blue-text">Approval</span></h1>
+    <h1 :class="{ hide: screenWidth < 835 }">
+      Prepare Prior Authorization For <span class="blue-text">Approval</span>
+    </h1>
     <div class="insurance-navigator-main-block">
       <div class="insurance-navigator-img">
         <img src="../assets/images/woman-with-stethoscope.png" alt="doctor" />
         <div class="shadow-ellipse"></div>
       </div>
       <div :class="{ hide: screenWidth > 835 }" class="h1-wrapper">
-        <h1>The Wegovy <span class="blue-text">Insurance</span> Navigator</h1>
+        <h1>Prepare Prior Authorization For <span class="blue-text">Approval</span></h1>
       </div>
 
       <div class="insurance-navigator-form-wrapper">
@@ -65,7 +67,7 @@
         <span>{{ item.description }}</span>
         <div class="coverage-btn-wrapper">
           <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
-            Start Request
+            Get Steps
           </router-link>
         </div>
       </div>
