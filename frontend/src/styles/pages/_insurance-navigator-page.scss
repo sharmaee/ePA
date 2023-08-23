@@ -19,7 +19,7 @@
             color: $blue;
         }
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1440px) {
             font-size: 56px;
         }
 
@@ -46,7 +46,7 @@
             position: relative;
             width: 50%;
 
-            @media (max-width: 1280px) {
+            @media (max-width: 1440px) {
                 width: 40%;
             }
 
@@ -57,7 +57,7 @@
             img {             
                 image-rendering: pixelated;
 
-                @media (max-width: 1280px) {
+                @media (max-width: 1440px) {
                     width: 365px;
                     height: 500px;
                 }
@@ -108,7 +108,7 @@
         .insurance-navigator-form-wrapper {
             width: 50%;
 
-            @media (max-width: 1280px) {
+            @media (max-width: 1440px) {
                 width: 57%;
             }
 
