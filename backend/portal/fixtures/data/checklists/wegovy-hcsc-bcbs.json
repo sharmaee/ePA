@@ -304,22 +304,16 @@
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
-                              
-                                    {
-                                        "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 95th percentile for age and gender",
-                                        "node_type": "checkbox",
-                                        "node_value": false
-                                    },
-				{
-                                    "label": "The patient is over 16 years of age",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
                                 {
                                     "label": "One of the following:",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
+                                        {
+                                            "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 95th percentile for age and gender",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
                                         {
                                             "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 30 kg/m^2",
                                             "node_type": "checkbox",
