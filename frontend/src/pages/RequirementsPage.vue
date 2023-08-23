@@ -9,20 +9,17 @@
     <div class="shadow-ellipse shadow-ellipse-left"></div>
 
     <div v-if="!preloader" class="tabs-container">
-      <b-button-group>
-        <b-button
+      <span class="toggle-button-wrapper">
+        <span
           class="switch-tab"
           :class="{ 'active-tab': activeTab === 'questionnaire' }"
           @click="activeTab = 'questionnaire'">
           Questionnaire
-        </b-button>
-        <b-button
-          class="switch-tab"
-          :class="{ 'active-tab': activeTab === 'checklist' }"
-          @click="activeTab = 'checklist'">
+        </span>
+        <span class="switch-tab" :class="{ 'active-tab': activeTab === 'checklist' }" @click="activeTab = 'checklist'">
           Checklist
-        </b-button>
-      </b-button-group>
+        </span>
+      </span>
     </div>
 
     <GreenCirclePreloader v-if="preloader" />
@@ -40,7 +37,9 @@
       <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
   </div>
-  <SmartEngineComponent v-if="smartEngine" />
+  <div id="smart-engine-wrapper">
+    <SmartEngineComponent v-if="smartEngine" />
+  </div>
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
 </template>
@@ -60,6 +59,7 @@ import SmartEngineComponent from "@/pages/SmartEngineComponent";
 
 const route = useRoute();
 const activeTab = ref("questionnaire");
+const smartEngineWrapper = ref(null);
 
 const requirementsData = ref(null);
 const preloader = ref(false);
@@ -69,11 +69,13 @@ onMounted(() => {
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
+
+  smartEngineWrapper.value = document.getElementById("smart-engine-wrapper");
 });
 
 async function showSmartEngine() {
-  window.scrollTo({
-    top: 1000,
+  smartEngineWrapper.value.scrollIntoView({
+    block: "start",
     behavior: "smooth",
   });
   smartEngine.value = true;

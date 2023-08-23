@@ -91,7 +91,7 @@
     .tabs-container {
         z-index: 10;
         border-radius: 46px;
-        padding: 16px 48px;
+        padding: 19px 3px;
         margin-bottom: 60px;
         cursor: pointer;
         background-color: $blue;
@@ -106,7 +106,7 @@
     
             &.active-tab {
                 background-color: $blue-100;
-                color: $blue;
+                color: $black;
             }
         }
     }
