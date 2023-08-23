@@ -14,7 +14,7 @@
                     "node_value": false
                 },
                 {
-                    "label": "As an adjunct to a reduced-calorie diet and increased physical activity",
+                    "label": "Document the medication will be used with a reduced-calorie diet and increased physical activity",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -24,24 +24,24 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "An initial body mass index (BMI) of greater than or equal to 30 kg/m^2 (obese)",
+                            "label": "Document an initial baseline body mass index (BMI) of greater than or equal to 30 kg/m^2 (obese)",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "Meets initial body mass index (BMI) and comorbidity requirements:",
+                            "label": "Document an initial baseline body mass index (BMI) and comorbidity requirements:",
                             "all_required": true,
                             "node_type": "checkbox",
                             "node_value": false,
                             "children": [
 
                                 {
-                                    "label": "An initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (overweight)",
+                                    "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (overweight)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -146,7 +146,7 @@
                     "node_value": false
                 },
                 {
-                    "label": "Requires documented weight loss",
+                    "label": "Requires documented weight loss of one of the following:",
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
