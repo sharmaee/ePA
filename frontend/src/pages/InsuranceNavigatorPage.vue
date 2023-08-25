@@ -17,46 +17,46 @@
           <h2>Get Prior Authorization Criteria</h2>
           <hr />
           <div class="form">
-            <form>
-              <div class="insurance-provider-and-state">
-                <div class="insurance-plan-number">
-                  <label for="insurance-provider">Insurance Provider*</label>
-                  <input
-                    id="insurance-provider"
-                    v-model="searchFormData.insuranceProvider"
-                    type="text"
-                    placeholder="Insurance provider" />
-                  <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
-                    Please enter ALL fields to search.
-                  </span>
-                </div>
-                <div class="insurance-state">
-                  <label for="insurance-state">Patient Insurance State*</label>
-                  <select
-                    id="insurance-state"
-                    v-model="searchFormData.insuranceCoverageState"
-                    class="custom-select-arrow"
-                    placeholder="City/Area">
-                    <option v-for="state in states" :key="state">{{ state }}</option>
-                  </select>
-                  <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
-                    Please enter ALL fields to search.
-                  </span>
-                </div>
-              </div>
-              <div class="insurance-medication-name">
-                <label for="medication-name">Medication Name*</label>
+            <div class="insurance-provider-and-state">
+              <div class="insurance-plan-number">
+                <label for="insurance-provider">Insurance Provider*</label>
                 <input
-                  id="medication-name"
-                  v-model="searchFormData.medication"
+                  id="insurance-provider"
+                  v-model="searchFormData.insuranceProvider"
                   type="text"
-                  placeholder="Search for medication name or NDC number" />
-                <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
+                  placeholder="Insurance provider"
+                  @keyup="sendFormByEnterClicking" />
+                <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
                   Please enter ALL fields to search.
                 </span>
               </div>
-              <button @click.prevent="getPriorAuthRequirements">Get Criteria</button>
-            </form>
+              <div class="insurance-state">
+                <label for="insurance-state">Patient Insurance State*</label>
+                <select
+                  id="insurance-state"
+                  v-model="searchFormData.insuranceCoverageState"
+                  class="custom-select-arrow"
+                  placeholder="City/Area">
+                  <option v-for="state in states" :key="state">{{ state }}</option>
+                </select>
+                <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
+                  Please enter ALL fields to search.
+                </span>
+              </div>
+            </div>
+            <div class="insurance-medication-name">
+              <label for="medication-name">Medication Name*</label>
+              <input
+                id="medication-name"
+                v-model="searchFormData.medication"
+                type="text"
+                placeholder="Search for medication name or NDC number"
+                @keyup="sendFormByEnterClicking" />
+              <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
+                Please enter ALL fields to search.
+              </span>
+            </div>
+            <button @click="getPriorAuthRequirements">Get Criteria</button>
           </div>
         </div>
       </div>
@@ -146,6 +146,12 @@ const isMedicationValid = computed(() => {
   const value = searchFormData.value.medication;
   return value !== null && value.trim() !== "";
 });
+
+function sendFormByEnterClicking(event) {
+  if (event.code === "Enter" || event.code === 76) {
+    getPriorAuthRequirements();
+  }
+}
 
 async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
