@@ -8,7 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from django.conf import settings
 
 from portal.exceptions import PortalException
-from portal.models.accounts import BlackListedAccessToken
+from portal.models.auth import BlackListedAccessToken
 
 
 def api_exception_handler(exc: Exception, context: dict[str, Any]) -> views.Response:

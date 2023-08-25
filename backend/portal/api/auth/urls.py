@@ -12,7 +12,7 @@ from .views import (
 )
 
 
-accounts_urls = [
+auth_urls = [
     path('sign-in/', CustomTokenObtainPairView.as_view()),
     path('sign-in-step2/', GoogleAuthLoginView.as_view()),
     path('sign-in/refresh/', TokenRefreshView.as_view()),

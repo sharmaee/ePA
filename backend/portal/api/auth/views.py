@@ -2,7 +2,7 @@ import pyotp
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils import timezone
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
 
 from rest_framework import status
@@ -16,7 +16,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
 from portal.api.utils import IsTokenValid
-from portal.models.accounts import User, BlackListedAccessToken, ClientCompany
+from portal.models.auth import User, BlackListedAccessToken, ClientCompany
 from portal.utils.token import account_activation_token
 from portal.exceptions import PortalException
 from .serializers import (
@@ -143,7 +143,7 @@ class ActivateView(APIView):
 
     def post(self, request, uidb64, token):
         try:
-            uid = force_text(urlsafe_base64_decode(uidb64))
+            uid = force_str(urlsafe_base64_decode(uidb64))
             user = User.objects.get(pk=uid)
         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None

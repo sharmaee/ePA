@@ -31,7 +31,7 @@ SUPERUSER_USERNAME = 'dopriorauth'
 SUPERUSER_PASSWORD = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # backend dir
 BASE_DIR = Path(__file__).parent.parent.parent
@@ -87,7 +87,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -98,7 +97,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portal.wsgi.application'
 
-# AUTH_USER_MODEL = 'portal.User'
+AUTH_USER_MODEL = 'portal.User'
 
 
 # Password validation

@@ -9,7 +9,7 @@ from rest_framework_simplejwt.serializers import PasswordField
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from portal.models.accounts import User, ClientCompany
+from portal.models.auth import User, ClientCompany
 from portal.utils.send_emails import send_activation_email, send_ran_out_of_seats, send_not_registered_promo_email
 
 UserModel = get_user_model()
