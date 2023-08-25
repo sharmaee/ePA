@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from portal.api.utils import send_denial_notification
+from portal.utils.email_templates import send_denial_notification
 
 from .serializers import PriorAuthDenialSerializer
 from portal.api.requirements.serializers import MemberDetailsSerializer

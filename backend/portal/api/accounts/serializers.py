@@ -2,19 +2,15 @@ from django.conf import settings
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
-from django.core.mail import send_mail
 from django.core.validators import EmailValidator
 from django.utils import timezone
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
 from rest_framework import exceptions, serializers
-from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.serializers import PasswordField
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from portal.models.accounts import User
-from portal.utils.token import account_activation_token
+from portal.models.accounts import User, ClientCompany
+from portal.utils.email_templates import send_activation_email
 
 UserModel = get_user_model()
 
@@ -22,62 +18,54 @@ UserModel = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('first_name', 'middle_name', 'last_name', 'email', 'mobapp_id', 'submission_date')
+        fields = ('first_name', 'last_name', 'email', 'mobapp_id', 'submission_date')
         read_only_fields = fields
 
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'first_name', 'middle_name', 'last_name')
+        fields = ('email', 'first_name', 'last_name')
 
 
 class RegisterSaveSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(required=True, validators=[UniqueValidator(queryset=User.objects.all())])
+    email = serializers.EmailField(required=True)
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
 
     class Meta:
         model = User
-        fields = ('password', 'email', 'first_name', 'middle_name', 'last_name')
+        fields = ('password', 'email', 'first_name', 'last_name')
         extra_kwargs = {'first_name': {'required': True}, 'last_name': {'required': True}}
 
+    def validate_email(self, value):
+        email_domain = value.split('@')[1]
+        client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
+        if not client_company:
+            # send email referral to sales/bcc admin
+            raise serializers.ValidationError({"email": "This email domain is not registered."})
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError({"email": "This email is already in use."})
+        client_user_count = User.objects.filter(client_company=client_company).count()
+        if client_user_count >= client_company.number_of_seats:
+            # send notification to admin
+            raise serializers.ValidationError({"email": "Number of seats for this domain is exceeded."})
+        return value
+
     def create(self, validated_data):
-        # check email is unique and if number of seats for domain is not exceeded
+        email_domain = validated_data['email'].split('@')[1]
+        client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
         user = User.objects.create(
             email=validated_data['email'],
             first_name=validated_data['first_name'],
-            first_name=validated_data['middle_name'],
             last_name=validated_data['last_name'],
             is_active=False,
             is_email_verified=False,
             submission_date=timezone.now(),
+            client_company=client_company
         )
-
         user.set_password(validated_data['password'])
         user.save()
-
-        website_url = settings.WEBSITE_URL
-        user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
-        token = account_activation_token.make_token(user)
-
-        # TODO: should be moved to a service
-        message = f"""
-
-            Dear {user.full_name()},
-            please confirm your email via this url:
-            {website_url}confirm-email/{user_id_code}/{token}
-
-            With best regards,
-            Do Prior Auth Team
-        """
-        send_mail(
-            'Confirmation Email for activation of Do Prior Auth registration',
-            message,
-            settings.DEFAULT_FROM_EMAIL,
-            [user.email],
-            fail_silently=False,
-        )
-
+        send_activation_email(user)
         return user
 
 
@@ -123,14 +111,13 @@ class UpdateUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('first_name', 'middle_name', 'last_name', 'email')
+        fields = ('first_name', 'last_name', 'email')
         extra_kwargs = {
             'first_name': {'required': True},
             'last_name': {'required': True},
         }
 
     def validate_email(self, value):
-        # check if number of seats for domain is not exceeded
         user = self.context['request'].user
         if User.objects.exclude(pk=user.pk).filter(email=value).exists():
             raise serializers.ValidationError({"email": "This email is already in use."})
@@ -138,7 +125,6 @@ class UpdateUserSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.first_name = validated_data['first_name']
-        instance.middle_name = validated_data['middle_name']
         instance.last_name = validated_data['last_name']
         instance.email = validated_data['email']
 
@@ -212,7 +198,6 @@ class CustomTokenObtainPairSerializer(CustomTokenObtainSerializer):
         data['otp_app_url'] = self.user.auth_url
         data['setup_key'] = self.user.secret_code
         data['first_name'] = self.user.first_name
-        data['middle_name'] = self.user.middle_name
         data['last_name'] = self.user.last_name
         data['second_step'] = settings.ENABLE_2FA
 

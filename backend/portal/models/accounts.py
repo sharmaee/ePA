@@ -10,31 +10,12 @@ from django_rest_passwordreset.signals import reset_password_token_created
 from django.utils import timezone
 
 from ._common import PortalModelBase
+from portal.utils.email_templates import send_password_reset_email
 
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
-    website_url = settings.WEBSITE_URL
-    email_plaintext_message = f"""
-        Dear {reset_password_token.user.first_name},
-
-        You can change your password using this url:
-        {website_url}password-reset/{reset_password_token.key}
-
-        Best regards,
-        Do Prior Auth Team
-    """
-
-    send_mail(
-        # title:
-        "Password Reset for {title}".format(title=settings.ISSUER_NAME),
-        # message:
-        email_plaintext_message,
-        # from:
-        settings.DEFAULT_FROM_EMAIL,
-        # to:
-        [reset_password_token.user.email],
-    )
+    send_password_reset_email(reset_password_token)
 
 
 class UserManager(BaseUserManager):
@@ -73,7 +54,6 @@ class ClientCompany(PortalModelBase):
 
 class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     first_name = models.TextField()
-    middle_name = models.TextField()
     last_name = models.TextField()
     email = models.EmailField('Email address', unique=True, blank=True, null=True)
     is_staff = models.BooleanField('User status', default=False)
