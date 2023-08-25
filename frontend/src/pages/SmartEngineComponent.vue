@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in smartEngineTable" :key="item.diagnosis">
+          <tr v-for="item in filteredByComorbidityData" :key="item.diagnosis">
             <td>{{ item.icd_10_codes.join(", ") }}</td>
             <td>{{ item.diagnosis }}</td>
             <td>{{ item.lab_results_to_attach.join(", ") }}</td>
@@ -41,8 +41,24 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
+
+const filteredByComorbidityData = ref([]);
+
+const props = defineProps({
+  comorbidityFilterData: {
+    type: Object,
+    required: true,
+  },
+});
+
+onMounted(() => {
+  filteredByComorbidityData.value = smartEngineTable.filter((element) =>
+    props.comorbidityFilterData.includes(element.diagnosis)
+  );
+});
 </script>
 
 <style lang="scss" scoped>

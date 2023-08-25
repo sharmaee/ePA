@@ -38,7 +38,7 @@
     </div>
   </div>
   <div id="smart-engine-wrapper">
-    <SmartEngineComponent v-if="smartEngine" />
+    <SmartEngineComponent v-if="smartEngine" :comorbidity-filter-data="comorbidityFilterData" />
   </div>
   <ContentUsefulnessQuestionnaire />
   <PriorFooter />
@@ -64,6 +64,7 @@ const smartEngineWrapper = ref(null);
 const requirementsData = ref(null);
 const preloader = ref(false);
 const smartEngine = ref(false);
+const comorbidityFilterData = ref([]);
 
 onMounted(() => {
   if (route.params.id) {
@@ -73,7 +74,9 @@ onMounted(() => {
   smartEngineWrapper.value = document.getElementById("smart-engine-wrapper");
 });
 
-async function showSmartEngine() {
+async function showSmartEngine(comorbidityData) {
+  comorbidityFilterData.value = comorbidityData;
+
   smartEngineWrapper.value.scrollIntoView({
     block: "start",
     behavior: "smooth",
