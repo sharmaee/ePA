@@ -10,7 +10,7 @@ from django_rest_passwordreset.signals import reset_password_token_created
 from django.utils import timezone
 
 from ._common import PortalModelBase
-from portal.utils.email_templates import send_password_reset_email
+from portal.utils.send_emails import send_password_reset_email
 
 
 @receiver(reset_password_token_created)

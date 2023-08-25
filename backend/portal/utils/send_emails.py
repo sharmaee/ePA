@@ -71,19 +71,9 @@ def send_not_registered_promo_email(email, first_name, last_name):
         With best regards,
         Do Prior Auth Team
     """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [email], fail_silently=False)
-
-    subject = ""
-    message = f"""
-        New user attempted to register at {settings.WEBSITE_URL}
-
-        Name: {first_name} {last_name}
-        Email: {email}  
-
-        With best regards,
-        Do Prior Auth Team
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
+    send_mail(
+        subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["founders@lamarhealth.com"], fail_silently=False
+    )
 
 
 def send_ran_out_of_seats(client_company, email, first_name, last_name):

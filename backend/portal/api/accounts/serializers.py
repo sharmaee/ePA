@@ -10,7 +10,7 @@ from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from portal.models.accounts import User, ClientCompany
-from portal.utils.email_templates import send_activation_email
+from portal.utils.send_emails import send_activation_email, send_ran_out_of_seats, send_not_registered_promo_email
 
 UserModel = get_user_model()
 
@@ -41,19 +41,18 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         email_domain = value.split('@')[1]
         client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
         if not client_company:
-            # send email referral to sales/bcc admin
+            send_not_registered_promo_email(value, self.initial_data['first_name'], self.initial_data['last_name'])
             raise serializers.ValidationError({"email": "This email domain is not registered."})
         if User.objects.filter(email=value).exists():
             raise serializers.ValidationError({"email": "This email is already in use."})
         client_user_count = User.objects.filter(client_company=client_company).count()
         if client_user_count >= client_company.number_of_seats:
-            # send notification to admin
+            send_ran_out_of_seats(client_company, value, self.initial_data['first_name'], self.initial_data['last_name'])
             raise serializers.ValidationError({"email": "Number of seats for this domain is exceeded."})
         return value
 
     def create(self, validated_data):
-        email_domain = validated_data['email'].split('@')[1]
-        client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
+        # client_company = ClientCompany.objects.filter(email_domain=validated_data['email'].split('@')[1]).first()
         user = User.objects.create(
             email=validated_data['email'],
             first_name=validated_data['first_name'],
@@ -61,7 +60,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
             is_active=False,
             is_email_verified=False,
             submission_date=timezone.now(),
-            client_company=client_company
+            # client_company=client_company
         )
         user.set_password(validated_data['password'])
         user.save()

@@ -16,7 +16,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
 from portal.api.utils import IsTokenValid
-from portal.models.accounts import User, BlackListedAccessToken
+from portal.models.accounts import User, BlackListedAccessToken, ClientCompany
 from portal.utils.token import account_activation_token
 from portal.exceptions import PortalException
 from .serializers import (
@@ -36,6 +36,8 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
 
     def create(self, request, *args, **kwargs):
+        client_company = ClientCompany.objects.filter(email_domain=request.data['email'].split('@')[1]).first()
+        request.data['client_company'] = client_company.id
         serializer = RegisterSaveSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
