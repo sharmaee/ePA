@@ -77,11 +77,8 @@ def send_not_registered_promo_email(email, first_name, last_name):
         settings.DEFAULT_FROM_EMAIL,
         [email],
         ["liudmyla@lamarhealth.com"],
+        # ["founders@lamarhealth.com"],
     )
-    # send_mail(
-    #     # subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["founders@lamarhealth.com"], fail_silently=False
-    #     subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["liudmyla@lamarhealth.com"], fail_silently=False
-    # )
     email.send()
 
 
