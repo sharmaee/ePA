@@ -41,6 +41,7 @@ class Is2FAVerified(BasePermission):
     def has_permission(self, request, view):
         return bool(request.user and request.user.is_2fa_verified)
 
+
 mfa_enabled = settings.ENABLE_2FA
 default_perms = (IsAuthenticated, IsTokenValid, Is2FAVerified) if mfa_enabled else (IsAuthenticated, IsTokenValid)
 

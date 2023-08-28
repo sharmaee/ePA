@@ -47,7 +47,9 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"email": "This email is already in use."})
         client_user_count = User.objects.filter(client_company=client_company).count()
         if client_user_count >= client_company.number_of_seats:
-            send_ran_out_of_seats(client_company, value, self.initial_data['first_name'], self.initial_data['last_name'])
+            send_ran_out_of_seats(
+                client_company, value, self.initial_data['first_name'], self.initial_data['last_name']
+            )
             raise serializers.ValidationError({"email": "Number of seats for this domain is exceeded."})
         return value
 
@@ -60,7 +62,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
             is_active=False,
             is_email_verified=False,
             submission_date=timezone.now(),
-            client_company=client_company
+            client_company=client_company,
         )
         user.set_password(validated_data['password'])
         user.save()

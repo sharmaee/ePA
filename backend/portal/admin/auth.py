@@ -33,9 +33,7 @@ class ClientCompanyAdmin(admin.ModelAdmin):
         'is_active',
         'number_of_seats',
     )
-    list_filter = (
-        'is_active',
-    )
+    list_filter = ('is_active',)
     search_fields = (
         'company_name',
         'email_domain',
