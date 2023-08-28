@@ -36,7 +36,8 @@
                   id="insurance-state"
                   v-model="searchFormData.insuranceCoverageState"
                   class="custom-select-arrow"
-                  placeholder="City/Area">
+                  placeholder="City/Area"
+                  @keyup="sendFormByEnterClicking">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
                 <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
@@ -155,7 +156,6 @@ function sendFormByEnterClicking(event) {
 
 async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
-
   if (isInsuranceProviderValid.value && isInsuranceCoverageStateValid.value && isMedicationValid.value) {
     preloader.value = true;
     window.scrollTo({
@@ -163,6 +163,8 @@ async function getPriorAuthRequirements() {
       behavior: "smooth",
     });
     try {
+      coverageBlock.value = false;
+      priorAuthRequirementsResult.value = null;
       priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
