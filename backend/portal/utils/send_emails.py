@@ -1,6 +1,6 @@
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from portal.utils.token import account_activation_token
 
@@ -71,9 +71,18 @@ def send_not_registered_promo_email(email, first_name, last_name):
         With best regards,
         Do Prior Auth Team
     """
-    send_mail(
-        subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["founders@lamarhealth.com"], fail_silently=False
+    email = EmailMessage(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [email],
+        ["liudmyla@lamarhealth.com"],
     )
+    # send_mail(
+    #     # subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["founders@lamarhealth.com"], fail_silently=False
+    #     subject, message, settings.DEFAULT_FROM_EMAIL, [email], bcc=["liudmyla@lamarhealth.com"], fail_silently=False
+    # )
+    email.send()
 
 
 def send_ran_out_of_seats(client_company, email, first_name, last_name):
@@ -89,4 +98,5 @@ def send_ran_out_of_seats(client_company, email, first_name, last_name):
         With best regards,
         Do Prior Auth Team
     """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
+    # send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["liudmyla@lamarhealth.com"], fail_silently=False)

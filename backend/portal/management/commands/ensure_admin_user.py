@@ -14,6 +14,7 @@ class Command(createsuperuser.Command):
     def handle(self, *args, **options):
         username = settings.SUPERUSER_USERNAME
         password = settings.SUPERUSER_PASSWORD
+        email = settings.DEFAULT_TO_EMAIL
 
         if not password or not username:
             raise CommandError("Please, specify SUPERUSER_USERNAME and SUPERUSER_PASSWORD in your settings")
@@ -24,6 +25,7 @@ class Command(createsuperuser.Command):
         options['interactive'] = False
         options['verbosity'] = 1
         options['database'] = DEFAULT_DB_ALIAS
+        options['email'] = email
 
         try:
             super().handle(*args, **options)

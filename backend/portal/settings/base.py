@@ -26,12 +26,11 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 WEBSITE_URL = ''
 ALLOWED_HOSTS = ['*']
 ENABLE_2FA = False
-
 SUPERUSER_USERNAME = 'dopriorauth'
 SUPERUSER_PASSWORD = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # backend dir
 BASE_DIR = Path(__file__).parent.parent.parent

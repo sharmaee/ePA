@@ -16,15 +16,12 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
 from portal.api.utils import IsTokenValid
-from portal.models.auth import User, BlackListedAccessToken, ClientCompany
+from portal.models.auth import User, BlackListedAccessToken
 from portal.utils.token import account_activation_token
 from portal.exceptions import PortalException
 from .serializers import (
     RegisterSerializer,
     RegisterSaveSerializer,
-    ChangePasswordSerializer,
-    UpdateUserSerializer,
-    ResetPasswordSaveSerializer,
     CustomTokenObtainPairSerializer,
 )
 
@@ -36,8 +33,6 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
 
     def create(self, request, *args, **kwargs):
-        client_company = ClientCompany.objects.filter(email_domain=request.data['email'].split('@')[1]).first()
-        request.data['client_company'] = client_company.id
         serializer = RegisterSaveSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -88,54 +83,6 @@ class LogoutView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-
-
-class ChangePasswordView(UpdateAPIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsTokenValid,
-    )
-
-    queryset = User.objects.all()
-    serializer_class = ChangePasswordSerializer
-
-    def get_object(self, queryset=None):
-        obj = self.request.user
-        return obj
-
-    def update(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        serializer = self.get_serializer(data=request.data)
-
-        if serializer.is_valid():
-            if not self.object.check_password(request.data.get("old_password")):
-                return Response({"old_password": ["Wrong password."]}, status=status.HTTP_400_BAD_REQUEST)
-            self.object.set_password(request.data.get("new_password"))
-            self.object.save()
-            response = {
-                'status': 'success',
-                'code': status.HTTP_200_OK,
-                'message': 'Password updated successfully',
-                'data': [],
-            }
-
-            return Response(response)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class ResetPasswordView(UpdateAPIView):
-    permission_classes = (AllowAny,)
-
-    queryset = User.objects.all()
-    serializer_class = ResetPasswordSaveSerializer
-
-
-class UpdateProfileView(UpdateAPIView):
-    permission_classes = (IsAuthenticated,)
-
-    queryset = User.objects.all()
-    serializer_class = UpdateUserSerializer
 
 
 class ActivateView(APIView):
