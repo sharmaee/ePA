@@ -50,6 +50,9 @@ class ClientCompany(PortalModelBase):
     is_active = models.BooleanField(default=True)
     number_of_seats = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.company_name
+
 
 class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     first_name = models.TextField()
@@ -73,7 +76,7 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     EMAIL_FIELD = 'email'
 
     class Meta:
-        db_table = 'auth_user'
+        db_table = 'auth__user'
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'.strip()
