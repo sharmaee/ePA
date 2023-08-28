@@ -41,11 +41,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
-
-const filteredByComorbidityData = ref([]);
 
 const props = defineProps({
   comorbidityFilterData: {
@@ -54,10 +52,8 @@ const props = defineProps({
   },
 });
 
-onMounted(() => {
-  filteredByComorbidityData.value = smartEngineTable.filter((element) =>
-    props.comorbidityFilterData.includes(element.diagnosis)
-  );
+const filteredByComorbidityData = computed(() => {
+  return smartEngineTable.filter((element) => props.comorbidityFilterData.includes(element.diagnosis));
 });
 </script>
 
