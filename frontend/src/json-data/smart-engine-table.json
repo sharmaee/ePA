@@ -32,13 +32,13 @@
   },
   {
     "icd_10_codes": ["N18"],
-    "diagnosis": "Chronic Kidney Disease (CKD)",
+    "diagnosis": "Chronic kidney disease (CKD)",
     "lab_results_to_attach": ["eGFR", "uACR"],
     "supporting_documents": "https://dopriorauth-portal-public.s3.amazonaws.com/data/supporting-docs/Semaglutide_CKD.pdf"
   },
   {
     "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
-    "diagnosis": "Coronary Heart Disease (CHD)",
+    "diagnosis": "Congenital heart disease (CHD)",
     "lab_results_to_attach": [
       "EKG",
       "CT scan",
