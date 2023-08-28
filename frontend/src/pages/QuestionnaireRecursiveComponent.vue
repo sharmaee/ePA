@@ -15,7 +15,12 @@
       :checked="isChecked"
       :type="parseData.nodeType"
       :value="isChecked" />
-    <label :for="checkboxId" :class="{ red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked }">
+    <label
+      :for="checkboxId"
+      :class="{
+        red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked,
+        comorbidity: parseData.comorbidity && isChecked,
+      }">
       {{ parseData.label }}
     </label>
 

@@ -27,7 +27,7 @@ function submitChecklist() {
   const comorbidityContentArray = Array.from(elementsWithComorbidity).map((element) => element.textContent);
 
   // Add "Objesty" to filters by default
-  comorbidityContentArray.push("Objesty");
+  comorbidityContentArray.push("Obesity");
 
   showSmartEngine(comorbidityContentArray);
 }

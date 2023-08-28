@@ -40,7 +40,7 @@
   <div id="smart-engine-wrapper">
     <SmartEngineComponent v-if="smartEngine" :comorbidity-filter-data="comorbidityFilterData" />
   </div>
-  <ContentUsefulnessQuestionnaire />
+  <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
 </template>
 

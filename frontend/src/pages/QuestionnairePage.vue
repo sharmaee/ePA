@@ -57,10 +57,17 @@ function selectedTerm(item) {
 //   }
 // }
 
-const emit = defineEmits(["show-smart-engine"]);
+const emit = defineEmits(["showSmartEngine"]);
+const showSmartEngine = (comorbidityData) => emit("showSmartEngine", comorbidityData);
 
 function submitChecklist() {
-  emit("show-smart-engine");
+  const elementsWithComorbidity = document.getElementsByClassName("comorbidity");
+  const comorbidityContentArray = Array.from(elementsWithComorbidity).map((element) => element.textContent);
+
+  // Add "Objesty" to filters by default
+  comorbidityContentArray.push("Obesity");
+
+  showSmartEngine(comorbidityContentArray);
 }
 </script>
 
