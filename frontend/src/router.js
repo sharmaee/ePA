@@ -8,6 +8,8 @@ import InsuranceNavigatorPage from '@/pages/InsuranceNavigatorPage';
 import RequirementsPage from '@/pages/RequirementsPage';
 import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
 import RequestDenialReport from '@/pages/RequestDenialReport';
+import SignUp from '@/pages/SignUp';
+import SignIn from '@/pages/SignIn';
 
 
 const publicAccessRoutes = [
@@ -41,6 +43,18 @@ const publicAccessRoutes = [
       component: RequestDenialReport,
       title: "report-denial",
     },
+    {
+      path: "/sign-up",
+      name: "sign-up",
+      component: SignUp,
+      title: "sign-up",
+    },
+    {
+      path: "/sign-in",
+      name: "sign-in",
+      component: SignIn,
+      title: "sign-in",
+    }
   ];
 
 const protectedRoutes = [];
