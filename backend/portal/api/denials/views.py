@@ -1,16 +1,13 @@
 from rest_framework import status
-from rest_framework import views
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
 from portal.utils.send_emails import send_denial_notification
 
 from .serializers import PriorAuthDenialSerializer
 from portal.api.requirements.serializers import MemberDetailsSerializer
+from portal.api.utils import SecuredAPIView
 
 
-class SubmitDenialView(views.APIView):
-    permission_classes = (AllowAny,)
-
+class SubmitDenialView(SecuredAPIView):
     def post(self, request):
         member_details = MemberDetailsSerializer(data=request.data)
         if member_details.is_valid(raise_exception=True):
