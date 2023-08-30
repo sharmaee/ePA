@@ -34,7 +34,7 @@
       </div>
       <div class="confirm-password">
         <label for="confirm-password">Confirm Password</label>
-        <input id="confirm-password" v-model="userInfo.passwordConfirmation" type="password" />
+        <input id="confirm-password" v-model="passwordConfirmation" type="password" />
         <span v-if="!isPasswordMatchValid && formButtonClicked" class="input-error-notification">
           Passwords must match.
         </span>
@@ -66,8 +66,8 @@ const userInfo = ref({
   lastName: "",
   email: "",
   password: "",
-  passwordConfirmation: "",
 });
+const passwordConfirmation = ref(null);
 
 // Validators
 const isFirstNameValid = computed(() => userInfo.value.firstName.trim() !== "");
@@ -87,7 +87,7 @@ const isPasswordValid = computed(() => {
 });
 
 const isPasswordMatchValid = computed(() => {
-  return userInfo.value.password === userInfo.value.passwordConfirmation;
+  return userInfo.value.password === passwordConfirmation.value;
 });
 
 async function registerUser() {
