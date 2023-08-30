@@ -8,9 +8,14 @@
         <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item }}</label>
       </span>
-      <md-block v-if="section.additional_info" class="additional-info">
-        {{ section.additional_info }}
-      </md-block>
+      <div v-if="section.additional_info" class="additional-info-wrapper">
+        <md-block class="additional-info">
+          {{ section.additional_info }}
+        </md-block>
+      </div>
+      <button v-if="section.additional_info" @click="copyAdditionalInfoToClipboard(section.additional_info)">
+        {{ copyAdditionalInfoButtonText }}
+      </button>
     </div>
 
     <div class="smart-engine-table-wrapper">
@@ -41,10 +46,10 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
-
+const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
   comorbidityFilterData: {
     type: Object,
@@ -55,6 +60,16 @@ const props = defineProps({
 const filteredByComorbidityData = computed(() => {
   return smartEngineTable.filter((element) => props.comorbidityFilterData.includes(element.diagnosis));
 });
+
+function copyAdditionalInfoToClipboard(content) {
+  copyAdditionalInfoButtonText.value = "Copied!";
+
+  try {
+    navigator.clipboard.writeText(content);
+  } catch (error) {
+    copyAdditionalInfoButtonText.value = "Coppy Paragraph";
+  }
+}
 </script>
 
 <style lang="scss" scoped>

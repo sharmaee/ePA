@@ -8,37 +8,14 @@
     <div class="shadow-ellipse shadow-ellipse-right"></div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
 
-    <div v-if="!preloader" class="tabs-container">
-      <span class="toggle-button-wrapper">
-        <span
-          class="switch-tab"
-          :class="{ 'active-tab': activeTab === 'questionnaire' }"
-          @click="activeTab = 'questionnaire'">
-          Questionnaire
-        </span>
-        <span class="switch-tab" :class="{ 'active-tab': activeTab === 'checklist' }" @click="activeTab = 'checklist'">
-          Checklist
-        </span>
-      </span>
-    </div>
-
     <GreenCirclePreloader v-if="preloader" />
 
-    <div
-      v-if="requirementsData && requirementsData.requirementsChecklist"
-      :class="{ hidden: activeTab !== 'questionnaire' }"
-      class="questionaire-wrapper">
+    <div v-if="requirementsData && requirementsData.requirementsChecklist && !smartEngine" class="questionaire-wrapper">
       <QuestionnairePage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
     </div>
-    <div
-      v-if="requirementsData && requirementsData.requirementsChecklist"
-      :class="{ hidden: activeTab !== 'checklist' }"
-      class="questionaire-wrapper">
-      <ChecklistPage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
-    </div>
   </div>
-  <div id="smart-engine-wrapper">
-    <SmartEngineComponent v-if="smartEngine" :comorbidity-filter-data="comorbidityFilterData" />
+  <div v-if="smartEngine" id="smart-engine-wrapper">
+    <SmartEngineComponent :comorbidity-filter-data="comorbidityFilterData" />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -53,13 +30,10 @@ import PriorFooter from "@/components/PriorFooter";
 import PriorHeader from "@/components/PriorHeader";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
-import ChecklistPage from "@/pages/ChecklistPage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
 import SmartEngineComponent from "@/pages/SmartEngineComponent";
 
 const route = useRoute();
-const activeTab = ref("questionnaire");
-const smartEngineWrapper = ref(null);
 
 const requirementsData = ref(null);
 const preloader = ref(false);
@@ -70,17 +44,16 @@ onMounted(() => {
   if (route.params.id) {
     getPriorAuthRequirements(route.params.id);
   }
-
-  smartEngineWrapper.value = document.getElementById("smart-engine-wrapper");
 });
 
 async function showSmartEngine(comorbidityData) {
   comorbidityFilterData.value = comorbidityData;
 
-  smartEngineWrapper.value.scrollIntoView({
-    block: "start",
+  window.scrollTo({
+    top: 0,
     behavior: "smooth",
   });
+
   smartEngine.value = true;
 }
 
