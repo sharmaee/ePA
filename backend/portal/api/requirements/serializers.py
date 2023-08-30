@@ -25,7 +25,7 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
 class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
     class Meta:
         model = PriorAuthRequirement
-        fields = PriorAuthRequirementSerializer.Meta.fields + ('requirements_checklist',)
+        fields = PriorAuthRequirementSerializer.Meta.fields + ('requirements_checklist', 'smart_engine_checklist')
 
 
 class AvailableSearchOptionsSerializer(ObjSerializer):
