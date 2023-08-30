@@ -10,6 +10,7 @@ import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
 import RequestDenialReport from '@/pages/RequestDenialReport';
 import SignUp from '@/pages/SignUp';
 import SignIn from '@/pages/SignIn';
+import PasswordReset from '@/pages/PasswordReset';
 
 
 const publicAccessRoutes = [
@@ -54,6 +55,12 @@ const publicAccessRoutes = [
       name: "sign-in",
       component: SignIn,
       title: "sign-in",
+    },
+    {
+      path: "/password-reset",
+      name: "password-reset",
+      component: PasswordReset,
+      title: "password-reset",
     }
   ];
 
