@@ -42,9 +42,14 @@ def get_cleaned_requirements(requirements):
             insurance_plan_types = r['plan_type'].split('; ')
             for plan_type in insurance_plan_types:
                 url_slug = slugify(r['medication'] + '_' + r['provider'] + '_' + plan_type + '_' + state)
-                checklist = read_data_from_json('portal/fixtures' + r['checklist']) if r['checklist'] else ""
+                questionnaire = (
+                    read_data_from_json('portal/fixtures/data/checklists/' + r['checklist']) if r['checklist'] else ""
+                )
+                smart_engine = (
+                    read_data_from_json('portal/fixtures/data/smart_engine/' + r['checklist']) if r['checklist'] else ""
+                )
                 requirements_cleaned[url_slug] = get_requirement_dict(
-                    url_slug, plan_type, state, checklist, r['provider'], r['medication']
+                    url_slug, plan_type, state, questionnaire, smart_engine, r['provider'], r['medication']
                 )
     return requirements_cleaned
 
@@ -61,7 +66,7 @@ def write_requirements(requirements):
         f.write(json.dumps(fixture_requirements, indent=4))
 
 
-def get_requirement_dict(url_slug, plan_type, state, checklist, provider, medication):
+def get_requirement_dict(url_slug, plan_type, state, questionnaire, smart_engine, provider, medication):
     description = (
         f'{provider} Prior Authorization Requirements for {medication} in the state of {state}'
         if state
@@ -74,7 +79,8 @@ def get_requirement_dict(url_slug, plan_type, state, checklist, provider, medica
         'insurance_provider': provider,
         'insurance_plan_type': plan_type,
         'insurance_coverage_state': state,
-        'requirements_checklist': checklist,
+        'requirements_checklist': questionnaire,
+        'smart_engine_checklist': smart_engine,
     }
 
 
@@ -98,6 +104,7 @@ def generate_requirements_objects():
         'insurance_plan_type',
         'insurance_coverage_state',
         'requirements_checklist',
+        'smart_engine_checklist',
     ]
     custom_bulk_update_or_create(
         requirements_cleaned, PriorAuthRequirement, existing_requirements, 'url_slug', updated_fields
