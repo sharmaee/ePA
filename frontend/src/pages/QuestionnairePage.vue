@@ -15,8 +15,8 @@
         v-for="item in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
         <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
-        <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
       </div>
+      <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
     </div>
   </div>
 </template>
@@ -47,8 +47,8 @@ function selectedTerm(item) {
   selectedData.value = item;
 }
 
-const emit = defineEmits(["showSmartEngine"]);
-const showSmartEngine = (comorbidityData) => emit("showSmartEngine", comorbidityData);
+const emit = defineEmits(["filterComorbidityData"]);
+const filterComorbidityData = (comorbidityData) => emit("filterComorbidityData", comorbidityData);
 
 function submitChecklist() {
   const elementsWithComorbidity = document.getElementsByClassName("comorbidity");
@@ -56,7 +56,7 @@ function submitChecklist() {
 
   comorbidityContentArray.push("Obesity");
 
-  showSmartEngine(comorbidityContentArray);
+  filterComorbidityData(comorbidityContentArray);
 }
 </script>
 

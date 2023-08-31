@@ -2,7 +2,7 @@
   <div class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
 
-    <div v-for="(section, index) in smartEngineCheckboxContent" :key="index" class="smart-engine-list">
+    <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
       <span class="smart-engine-list-header">{{ section.header }}</span>
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
         <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
@@ -55,10 +55,20 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  stepVerifyDocs: {
+    type: Object,
+    required: true,
+  },
 });
 
 const filteredByComorbidityData = computed(() => {
   return smartEngineTable.filter((element) => props.comorbidityFilterData.includes(element.diagnosis));
+});
+
+const smartEngineCheckList = computed(() => {
+  const smartEngineCheckList = [...smartEngineCheckboxContent];
+  smartEngineCheckList.splice(1, 0, props.stepVerifyDocs);
+  return smartEngineCheckList;
 });
 
 function copyAdditionalInfoToClipboard(content) {
@@ -67,7 +77,7 @@ function copyAdditionalInfoToClipboard(content) {
   try {
     navigator.clipboard.writeText(content);
   } catch (error) {
-    copyAdditionalInfoButtonText.value = "Coppy Paragraph";
+    copyAdditionalInfoButtonText.value = "Copy Paragraph";
   }
 }
 </script>

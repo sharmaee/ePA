@@ -11,11 +11,15 @@
     <GreenCirclePreloader v-if="preloader" />
 
     <div v-if="requirementsData && requirementsData.requirementsChecklist && !smartEngine" class="questionaire-wrapper">
-      <QuestionnairePage :data="requirementsData.requirementsChecklist" @show-smart-engine="showSmartEngine" />
+      <QuestionnairePage
+        :data="requirementsData.requirementsChecklist"
+        @filter-comorbidity-data="filterComorbidityData" />
     </div>
   </div>
   <div v-if="smartEngine" id="smart-engine-wrapper">
-    <SmartEngineComponent :comorbidity-filter-data="comorbidityFilterData" />
+    <SmartEngineComponent
+      :comorbidity-filter-data="comorbidityFilterData"
+      :step-verify-docs="requirementsData.smartEngineChecklist" />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -46,7 +50,7 @@ onMounted(() => {
   }
 });
 
-async function showSmartEngine(comorbidityData) {
+async function filterComorbidityData(comorbidityData) {
   comorbidityFilterData.value = comorbidityData;
 
   window.scrollTo({
@@ -60,7 +64,6 @@ async function showSmartEngine(comorbidityData) {
 async function getPriorAuthRequirements(id) {
   preloader.value = true;
   requirementsData.value = await mainServices.getRequirementsData(id);
-
   preloader.value = false;
 }
 </script>
