@@ -16,7 +16,6 @@
         :key="item.label">
         <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
         <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
-        <button v-if="selectedData[0].nodeType === 'radio'" @click="submitRadioChecklist">Submit</button>
       </div>
     </div>
   </div>
@@ -43,13 +42,6 @@ checkListChild.value = props.data;
 
 const selectedData = ref(null);
 const buttonClicked = ref(false);
-const selectedRadioChild = ref(null);
-
-function submitRadioChecklist() {
-  if (selectedData.value.length > 0) {
-    selectedRadioChild.value = selectedData.value[0];
-  }
-}
 
 function selectedTerm(item) {
   selectedData.value = item;
