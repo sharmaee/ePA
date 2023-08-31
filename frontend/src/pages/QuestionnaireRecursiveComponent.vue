@@ -9,7 +9,7 @@
       :value="parseData.nodeValue"
       @click="emit('selectedTerm', parseData.children)" />
     <input
-      v-else-if="parseData.nodeType === 'checkbox'"
+      v-else-if="parseData.nodeType === 'checkbox' && !parseData.children"
       :id="checkboxId"
       v-model="parseData.nodeValue"
       :checked="isChecked"

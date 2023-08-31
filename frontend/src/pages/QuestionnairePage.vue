@@ -16,7 +16,6 @@
         :key="item.label">
         <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
       </div>
-      <!-- <button v-if="selectedData[0].nodeType === 'checkbox'" @click="checkSelectedCheckBoxes">Submit</button> -->
       <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
     </div>
   </div>
@@ -48,26 +47,16 @@ function selectedTerm(item) {
   selectedData.value = item;
 }
 
-// function checkSelectedCheckBoxes() {
-//   buttonClicked.value = true;
-
-//   for (const obj of selectedData.value) {
-//     if (obj.hasOwnProperty("nodeValue") && obj.nodeValue === false) {
-//     }
-//   }
-// }
-
-const emit = defineEmits(["showSmartEngine"]);
-const showSmartEngine = (comorbidityData) => emit("showSmartEngine", comorbidityData);
+const emit = defineEmits(["filterComorbidityData"]);
+const filterComorbidityData = (comorbidityData) => emit("filterComorbidityData", comorbidityData);
 
 function submitChecklist() {
   const elementsWithComorbidity = document.getElementsByClassName("comorbidity");
   const comorbidityContentArray = Array.from(elementsWithComorbidity).map((element) => element.textContent);
 
-  // Add "Objesty" to filters by default
   comorbidityContentArray.push("Obesity");
 
-  showSmartEngine(comorbidityContentArray);
+  filterComorbidityData(comorbidityContentArray);
 }
 </script>
 
