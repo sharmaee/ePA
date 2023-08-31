@@ -42,15 +42,26 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
         if not client_company:
             send_not_registered_promo_email(value, self.initial_data['first_name'], self.initial_data['last_name'])
-            raise serializers.ValidationError({"email": "This email domain is not registered."})
+            raise serializers.ValidationError(
+                {"email": "We are on it! Check your email to get started with your account."}
+            )
         if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError({"email": "This email is already in use."})
+            raise serializers.ValidationError(
+                {
+                    "email": (
+                        "User already exists. Please try signing into your account or,"
+                        "if you've forgotten your password, use the 'Forgot Password' option to reset it."
+                    )
+                }
+            )
         client_user_count = User.objects.filter(client_company=client_company).count()
         if client_user_count >= client_company.number_of_seats:
             send_ran_out_of_seats(
                 client_company, value, self.initial_data['first_name'], self.initial_data['last_name']
             )
-            raise serializers.ValidationError({"email": "Number of seats for this domain is exceeded."})
+            raise serializers.ValidationError(
+                {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
+            )
         return value
 
     def create(self, validated_data):
