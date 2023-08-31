@@ -29,6 +29,13 @@
         <QuestionnaireRecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
     </div>
+
+    <div v-if="parseData.children && parseData.nodeType === 'radio'">
+      <div v-for="(child, index) in parseData.children" :key="child.label" class="new-offset">
+        <QuestionnaireRecursiveComponent :data="child" :child-checkboxes="true" />
+        <button @click="selectRadioChild(index)">Select</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,6 +47,10 @@ import { generateRandom4DigitNumber } from "@/utils";
 const emit = defineEmits(["selectedTerm"]);
 const parseData = ref({});
 const checkboxId = generateRandom4DigitNumber();
+
+function selectRadioChild(index) {
+  emit("selectedTerm", [parseData.value.children[index]]);
+}
 
 const props = defineProps({
   data: {
