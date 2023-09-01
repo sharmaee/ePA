@@ -7,17 +7,19 @@
       </div>
     </div>
     <div v-else>
-      <h3 v-if="selectedData[0].nodeType === 'fieldset'">
-        {{ selectedData[0].label }}
-      </h3>
+      <h3 v-if="selectedData[0].nodeType === 'fieldset'"></h3>
       <div
         v-for="(item, listIndex) in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <QuestionnaireRecursiveComponent
-          :current-index="listIndex"
-          :data="item"
-          :button-clicked="buttonClicked"
-          @selected-term="selectedTerm" />
+        <span :class="{ hide: step < listIndex }">
+          <QuestionnaireRecursiveComponent
+            :current-index="listIndex"
+            :data="item"
+            :button-clicked="buttonClicked"
+            :step="step"
+            @selected-term="selectedTerm"
+            @show-next-step="nextStep" />
+        </span>
       </div>
       <button
         v-if="
@@ -39,7 +41,7 @@ import { storeToRefs } from "pinia";
 import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 
 const { checkListChild } = storeToRefs(useCheckListStore());
-
+const step = ref(0);
 const props = defineProps({
   data: {
     type: Object,
@@ -59,6 +61,10 @@ function selectedTerm(item) {
   selectedData.value = item;
 }
 
+function nextStep() {
+  step.value++;
+  console.log(step.value);
+}
 const emit = defineEmits(["filterComorbidityData"]);
 const filterComorbidityData = (comorbidityData) => emit("filterComorbidityData", comorbidityData);
 

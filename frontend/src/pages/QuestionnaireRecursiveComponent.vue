@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <button v-if="showNextButton && parseData.nodeType === 'checkbox' && parseData.children" @click="showNext">
+    <button v-if="showNextButton && parseData.nodeType === 'checkbox' && parseData.children" @click="showNextStep">
       Show Next
     </button>
   </div>
@@ -42,7 +42,7 @@ import { computed, ref, watch } from "vue";
 import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 import { generateRandom4DigitNumber } from "@/utils";
 
-const emit = defineEmits(["selectedTerm"]);
+const emit = defineEmits(["selectedTerm", "show-next-step"]);
 const parseData = ref({});
 const currentIndex = ref(0);
 
@@ -65,10 +65,23 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
+  step: {
+    type: Number,
+    default: 0,
+  },
 });
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 parseData.value = props.data;
+
+const step = ref(props.step);
+
+watch(
+  () => props.step,
+  (newStep) => {
+    step.value = newStep;
+  }
+);
 
 const isChecked = computed(() => {
   if (parseData.value.nodeType === "checkbox" && parseData.value.children && parseData.value.allRequired) {
@@ -86,11 +99,15 @@ watch(isChecked, (newValue) => {
 
 const showNextButton = computed(() => {
   if (parseData.value.nodeType === "checkbox" && parseData.value.children) {
-    console.log(props.currentIndex, currentIndex.value);
+    // console.log(props.currentIndex, currentIndex.value);
     return true;
   }
   return false;
 });
+
+function showNextStep() {
+  emit("show-next-step", step.value);
+}
 </script>
 
 <style lang="scss" scoped>
