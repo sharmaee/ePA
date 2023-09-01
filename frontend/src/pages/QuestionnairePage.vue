@@ -3,7 +3,7 @@
     <div v-if="!selectedData">
       <h3>{{ checkListChild.label }}</h3>
       <div v-for="option in checkListChild.children" :key="option.label">
-        <QuestionnaireRecursiveComponent :data="option" @selected-term="selectedTerm" />
+        <QuestionnaireRecursiveComponent :data="option" :current-index="currentIndex" @selected-term="selectedTerm" />
       </div>
     </div>
 
@@ -14,7 +14,11 @@
       <div
         v-for="item in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <QuestionnaireRecursiveComponent :data="item" :button-clicked="buttonClicked" @selected-term="selectedTerm" />
+        <QuestionnaireRecursiveComponent
+          :current-index="currentIndex"
+          :data="item"
+          :button-clicked="buttonClicked"
+          @selected-term="selectedTerm" />
       </div>
       <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
     </div>
@@ -23,12 +27,11 @@
 
 <script setup>
 import { ref } from "vue";
-
 import { useCheckListStore } from "@/stores/checkListStore";
 import { storeToRefs } from "pinia";
+import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 
 const { checkListChild } = storeToRefs(useCheckListStore());
-import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 
 const props = defineProps({
   data: {
@@ -37,11 +40,12 @@ const props = defineProps({
   },
 });
 
-// eslint-disable-next-line vue/no-setup-props-destructure
-checkListChild.value = props.data;
-
 const selectedData = ref(null);
 const buttonClicked = ref(false);
+const currentIndex = ref(0);
+
+// eslint-disable-next-line vue/no-setup-props-destructure
+checkListChild.value = props.data;
 
 function selectedTerm(item) {
   selectedData.value = item;
