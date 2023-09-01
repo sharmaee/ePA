@@ -3,24 +3,31 @@
     <div v-if="!selectedData">
       <h3>{{ checkListChild.label }}</h3>
       <div v-for="option in checkListChild.children" :key="option.label">
-        <QuestionnaireRecursiveComponent :data="option" :current-index="currentIndex" @selected-term="selectedTerm" />
+        <QuestionnaireRecursiveComponent :data="option" @selected-term="selectedTerm" />
       </div>
     </div>
-
     <div v-else>
       <h3 v-if="selectedData[0].nodeType === 'fieldset'">
         {{ selectedData[0].label }}
       </h3>
       <div
-        v-for="item in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
+        v-for="(item, listIndex) in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
         <QuestionnaireRecursiveComponent
-          :current-index="currentIndex"
+          :current-index="listIndex"
           :data="item"
           :button-clicked="buttonClicked"
           @selected-term="selectedTerm" />
       </div>
-      <button v-if="selectedData[0].nodeType === 'checkbox'" @click="submitChecklist">Submit</button>
+      <button
+        v-if="
+          selectedData[0].nodeType === 'checkbox' &&
+          selectedData[0].children &&
+          selectedData.length - 1 === currentIndex
+        "
+        @click="submitChecklist">
+        Submit
+      </button>
     </div>
   </div>
 </template>
@@ -42,6 +49,7 @@ const props = defineProps({
 
 const selectedData = ref(null);
 const buttonClicked = ref(false);
+
 const currentIndex = ref(0);
 
 // eslint-disable-next-line vue/no-setup-props-destructure

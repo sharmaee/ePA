@@ -27,11 +27,13 @@
 
     <div v-if="parseData.children && parseData.nodeType === 'checkbox'">
       <div v-for="child in parseData.children" :key="child.label" class="offset">
-        <QuestionnaireRecursiveComponent :data="child" :child-checkboxes="true" :current-index="currentIndex" />
+        <QuestionnaireRecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
     </div>
 
-    <button v-if="showNextButton && parseData.nodeType !== 'radio'" @click="showNext">Show Next</button>
+    <button v-if="showNextButton && parseData.nodeType === 'checkbox' && parseData.children" @click="showNext">
+      Show Next
+    </button>
   </div>
 </template>
 
@@ -67,8 +69,6 @@ const props = defineProps({
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 parseData.value = props.data;
-// eslint-disable-next-line vue/no-setup-props-destructure
-currentIndex.value = props.currentIndex;
 
 const isChecked = computed(() => {
   if (parseData.value.nodeType === "checkbox" && parseData.value.children && parseData.value.allRequired) {
@@ -85,17 +85,12 @@ watch(isChecked, (newValue) => {
 });
 
 const showNextButton = computed(() => {
-  if (parseData.value.children && currentIndex.value < Object.keys(parseData.value.children).length - 1) {
+  if (parseData.value.nodeType === "checkbox" && parseData.value.children) {
+    console.log(props.currentIndex, currentIndex.value);
     return true;
   }
   return false;
 });
-
-function showNext() {
-  currentIndex.value++;
-  console.log(currentIndex.value);
-  // emit("selectedTerm", parseData.value.children[currentIndex.value]);
-}
 </script>
 
 <style lang="scss" scoped>
