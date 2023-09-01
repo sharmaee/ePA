@@ -9,9 +9,7 @@
         <label :for="`item-${index}-${itemIndex}`">{{ item }}</label>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
-        <md-block class="additional-info">
-          {{ section.additional_info }}
-        </md-block>
+        {{ section.additional_info }}
       </div>
       <button v-if="section.additional_info" @click="copyAdditionalInfoToClipboard(section.additional_info)">
         {{ copyAdditionalInfoButtonText }}

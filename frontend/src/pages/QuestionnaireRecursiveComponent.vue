@@ -17,9 +17,11 @@
       :value="isChecked" />
     <label
       :for="checkboxId"
+      class="check-box-block-label"
       :class="{
         red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked,
         comorbidity: parseData.comorbidity && isChecked,
+        'radio-label': parseData.nodeType === 'radio',
       }">
       {{ parseData.label }}
     </label>
@@ -29,6 +31,12 @@
         <QuestionnaireRecursiveComponent :data="child" :child-checkboxes="true" />
       </div>
     </div>
+
+    <button
+      v-if="props.currentIndex < props.totalNumberSteps - 1 && parseData.nodeType === 'checkbox' && parseData.children"
+      @click="showNextStep">
+      Show Next
+    </button>
   </div>
 </template>
 
@@ -37,9 +45,12 @@ import { computed, ref, watch } from "vue";
 import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 import { generateRandom4DigitNumber } from "@/utils";
 
-const emit = defineEmits(["selectedTerm"]);
-const parseData = ref({});
+const parseData = ref(props.data);
+const step = ref(props.step);
+
 const checkboxId = generateRandom4DigitNumber();
+
+const emit = defineEmits(["selectedTerm", "showNextStep"]);
 
 const props = defineProps({
   data: {
@@ -54,10 +65,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  currentIndex: {
+    type: Number,
+    default: 0,
+  },
+  totalNumberSteps: {
+    type: Number,
+    default: 0,
+  },
+  step: {
+    type: Number,
+    default: 0,
+  },
 });
 
-// eslint-disable-next-line vue/no-setup-props-destructure
-parseData.value = props.data;
+watch(
+  () => props.step,
+  (newStep) => {
+    step.value = newStep;
+  }
+);
 
 const isChecked = computed(() => {
   if (parseData.value.nodeType === "checkbox" && parseData.value.children && parseData.value.allRequired) {
@@ -72,6 +99,10 @@ const isChecked = computed(() => {
 watch(isChecked, (newValue) => {
   parseData.value.nodeValue = newValue;
 });
+
+function showNextStep() {
+  emit("showNextStep", step.value);
+}
 </script>
 
 <style lang="scss" scoped>

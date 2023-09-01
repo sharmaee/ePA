@@ -112,16 +112,27 @@
         }
 
     }
-
-    label {
-        font-size: 18px;
-        font-weight: 400;
-        cursor: pointer;    
-    }
     
+    label {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
     .offset { 
         margin: 30px 0 30px 30px; 
         font-size: 12px;
+
+          label {
+            font-size: 18px;
+            font-weight: 400;
+            cursor: pointer;    
+        }
+    }
+
+    .radio-label {
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;    
     }
 
     .bold-text {
@@ -131,4 +142,15 @@
     .red {
         color: $red;
     }
+
+    button {
+        background-color: $blue;
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 46px;
+        padding: 16px 26px;
+        cursor: pointer;
+    }
+
 }

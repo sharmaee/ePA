@@ -4347,11 +4347,6 @@ make-dir@^3.0.2, make-dir@^3.1.0:
   dependencies:
     semver "^6.0.0"
 
-md-block@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/md-block/-/md-block-0.0.1.tgz#d2b8c34dbd7158333e603a482413162c49ac0fb8"
-  integrity sha512-uXAp27jR+ztgoWyQfaktpWYNbknlpzmeYfIkeYGwGjkZDXTcWmom9eVgUsjEn4/I9evLdfydWB0PIzHq9VjUwg==
-
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://registry.npmmirror.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
