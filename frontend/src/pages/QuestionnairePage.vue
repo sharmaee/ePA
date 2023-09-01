@@ -11,9 +11,12 @@
       <div
         v-for="(item, listIndex) in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <span :class="{ hide: step < listIndex }">
+        <span :class="{ hide: step !== listIndex }">
           <QuestionnaireRecursiveComponent
             :current-index="listIndex"
+            :total-number-steps="
+              selectedData[0].nodeType === 'fieldset' ? selectedData[0].children.length : selectedData.length
+            "
             :data="item"
             :button-clicked="buttonClicked"
             :step="step"
@@ -21,15 +24,7 @@
             @show-next-step="nextStep" />
         </span>
       </div>
-      <button
-        v-if="
-          selectedData[0].nodeType === 'checkbox' &&
-          selectedData[0].children &&
-          selectedData.length - 1 === currentIndex
-        "
-        @click="submitChecklist">
-        Submit
-      </button>
+      <button v-if="step === selectedData.length - 1" @click="submitChecklist">Submit</button>
     </div>
   </div>
 </template>
@@ -52,8 +47,6 @@ const props = defineProps({
 const selectedData = ref(null);
 const buttonClicked = ref(false);
 
-const currentIndex = ref(0);
-
 // eslint-disable-next-line vue/no-setup-props-destructure
 checkListChild.value = props.data;
 
@@ -62,9 +55,11 @@ function selectedTerm(item) {
 }
 
 function nextStep() {
-  step.value++;
-  console.log(step.value);
+  if (step.value < selectedData.value.length - 1) {
+    step.value++;
+  }
 }
+
 const emit = defineEmits(["filterComorbidityData"]);
 const filterComorbidityData = (comorbidityData) => emit("filterComorbidityData", comorbidityData);
 

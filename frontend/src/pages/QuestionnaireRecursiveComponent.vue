@@ -31,7 +31,9 @@
       </div>
     </div>
 
-    <button v-if="showNextButton && parseData.nodeType === 'checkbox' && parseData.children" @click="showNextStep">
+    <button
+      v-if="props.currentIndex < props.totalNumberSteps - 1 && parseData.nodeType === 'checkbox' && parseData.children"
+      @click="showNextStep">
       Show Next
     </button>
   </div>
@@ -42,9 +44,8 @@ import { computed, ref, watch } from "vue";
 import QuestionnaireRecursiveComponent from "@/pages/QuestionnaireRecursiveComponent";
 import { generateRandom4DigitNumber } from "@/utils";
 
-const emit = defineEmits(["selectedTerm", "show-next-step"]);
+const emit = defineEmits(["selectedTerm", "showNextStep"]);
 const parseData = ref({});
-const currentIndex = ref(0);
 
 const checkboxId = generateRandom4DigitNumber();
 
@@ -62,6 +63,10 @@ const props = defineProps({
     default: false,
   },
   currentIndex: {
+    type: Number,
+    default: 0,
+  },
+  totalNumberSteps: {
     type: Number,
     default: 0,
   },
@@ -97,16 +102,8 @@ watch(isChecked, (newValue) => {
   parseData.value.nodeValue = newValue;
 });
 
-const showNextButton = computed(() => {
-  if (parseData.value.nodeType === "checkbox" && parseData.value.children) {
-    // console.log(props.currentIndex, currentIndex.value);
-    return true;
-  }
-  return false;
-});
-
 function showNextStep() {
-  emit("show-next-step", step.value);
+  emit("showNextStep", step.value);
 }
 </script>
 
