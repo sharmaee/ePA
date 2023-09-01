@@ -17,6 +17,7 @@
       :value="isChecked" />
     <label
       :for="checkboxId"
+      class="check-box-block-label"
       :class="{
         red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked,
         comorbidity: parseData.comorbidity && isChecked,
