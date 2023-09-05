@@ -24,7 +24,7 @@
         <router-link :to="{ name: 'home-page' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
           Dont have an account ?
-          <router-link :to="{ name: 'home-page' }">Create an account</router-link>
+          <router-link :to="{ name: 'register' }">Create an account</router-link>
         </span>
       </div>
     </div>
