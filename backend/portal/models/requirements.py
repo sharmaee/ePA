@@ -1,6 +1,7 @@
 from django.db import models
-from ._common import PortalModelBase
-from .field import AES256EncryptedField
+from portal.models._common import PortalModelBase
+from portal.models.field import AES256EncryptedField
+from portal.models.auth import User
 
 
 class PriorAuthRequirement(PortalModelBase):
@@ -20,7 +21,6 @@ class MemberDetails(PortalModelBase):
     last_name = AES256EncryptedField(blank=True, null=True)
     dob = AES256EncryptedField(blank=True, null=True)
     member_id = AES256EncryptedField(blank=True, null=True)
-    ma_email = AES256EncryptedField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.cover_my_meds_key} - {self.last_name} - {self.dob} - {self.member_id} - {self.ma_email}'
@@ -32,5 +32,6 @@ class RequestNewPriorAuthRequirements(PortalModelBase):
     insurance_coverage_state = models.TextField(blank=True, null=True)
     submission_date = models.DateTimeField(auto_now_add=True)
     release_version = models.TextField(blank=True, null=True)
-    member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, blank=True, null=True)
+    member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, related_name='requests_new_pa')
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='requests_new_pa')
     notes = models.TextField(blank=True, null=True)

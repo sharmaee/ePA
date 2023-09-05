@@ -23,7 +23,7 @@ class PriorAuthRequirementsView(SecuredAPIView):
 
 class PriorAuthRequirementSearchView(SecuredAPIView):
     def post(self, request):
-        requirements = run_search(request.data)
+        requirements = run_search(self.request.data)
         result = PriorAuthRequirementSerializer(requirements, many=True).data
         return Response(result, status=status.HTTP_200_OK)
 
@@ -39,14 +39,14 @@ class PriorAuthRequirementDetailView(SecuredAPIView):
 
 class RequestNewPriorAuthRequirementsView(SecuredAPIView):
     def post(self, request):
-        member_details = MemberDetailsSerializer(data=request.data)
+        member_details = MemberDetailsSerializer(data=self.request.data)
         if member_details.is_valid(raise_exception=True):
             member_details.save()
             request_new_prior_auth_requirements = RequestNewPriorAuthRequirementsSerializer(
                 data=request.data, partial=True
             )
             if request_new_prior_auth_requirements.is_valid(raise_exception=True):
-                request_new_prior_auth_requirements.save(member_details=member_details.instance)
+                request_new_prior_auth_requirements.save(member_details=member_details.instance, user=self.request.user)
                 send_new_request_notification(request_new_prior_auth_requirements.instance)
                 return Response(request_new_prior_auth_requirements.data, status=status.HTTP_200_OK)
         return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)
