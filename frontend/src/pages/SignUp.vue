@@ -1,18 +1,18 @@
 <template>
   <PriorHeader />
   <div class="registered-form-wrapper">
-    <h1 class="registration-page-title">Create your Account</h1>
+    <h1 class="registration-page-title">Create Your Account</h1>
     <div class="registration-form form">
       <div class="first-name">
         <label for="first-name">First Name</label>
-        <input id="first-name" v-model="userInfo.firstName" type="text" placeholder="John" />
+        <input id="first-name" v-model="userInfo.first_name" type="text" placeholder="John" />
         <span v-if="!isFirstNameValid && formButtonClicked" class="input-error-notification">
           Please enter your first name.
         </span>
       </div>
       <div class="last-name">
         <label for="last-name">Last Name</label>
-        <input id="last-name" v-model="userInfo.lastName" type="text" placeholder="Snow" />
+        <input id="last-name" v-model="userInfo.last_name" type="text" placeholder="Snow" />
         <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
           Please enter your last name.
         </span>
@@ -45,7 +45,7 @@
         <router-link :to="{ name: 'home-page' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
           Dont have an account ?
-          <router-link :to="{ name: 'home-page' }">Create an account</router-link>
+          <router-link :to="{ name: 'register' }">Create an account</router-link>
         </span>
       </div>
     </div>
@@ -62,16 +62,16 @@ import authService from "@/services/authService";
 const formButtonClicked = ref(false);
 
 const userInfo = ref({
-  firstName: "",
-  lastName: "",
+  first_name: "",
+  last_name: "",
   email: "",
   password: "",
 });
 const passwordConfirmation = ref(null);
 
 // Validators
-const isFirstNameValid = computed(() => userInfo.value.firstName.trim() !== "");
-const isLastNameValid = computed(() => userInfo.value.lastName.trim() !== "");
+const isFirstNameValid = computed(() => userInfo.value.first_name.trim() !== "");
+const isLastNameValid = computed(() => userInfo.value.last_name.trim() !== "");
 
 const isEmailValid = computed(() => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
