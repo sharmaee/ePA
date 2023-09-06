@@ -12,6 +12,7 @@ class PriorAuthRequirement(PortalModelBase):
     insurance_coverage_state = models.TextField(blank=True, null=True, db_index=True)
     medication = models.TextField(blank=True, null=True, db_index=True)
     requirements_checklist = models.JSONField(null=True)
+    smart_engine_checklist = models.JSONField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, db_index=True)
     date_modified = models.DateTimeField(auto_now=True, db_index=True)
 

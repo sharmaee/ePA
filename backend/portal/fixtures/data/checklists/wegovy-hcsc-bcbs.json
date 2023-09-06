@@ -29,12 +29,12 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "A diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 30 kg/m^2",
+                                            "label": "Documented diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 30 kg/m^2",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "A body mass index (BMI) greater than or equal to 25 kg/m^2 if the patient is of South Asian, Southeast Asian, or East Asian descent",
+                                            "label": "A documented body mass index (BMI) greater than or equal to 25 kg/m^2 if the patient is of South Asian, Southeast Asian, or East Asian descent",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -45,12 +45,12 @@
                                             "node_value": false,
                                             "children": [
                                                 {
-                                                    "label": "A body mass index (BMI) greater than or equal to 27 kg/m^2",
+                                                    "label": "A documented body mass index (BMI) greater than or equal to 27 kg/m^2",
                                                     "node_type": "checkbox",
                                                     "node_value": false
                                                 },
                                                 {
-                                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -127,36 +127,19 @@
                                     ]
                                 },
                                 {
-                                    "label": "The patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+                                    "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+                                    "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                                    "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
                                     "node_type": "checkbox",
                                     "node_value": false
-                                },
-                                {
-                                    "label": "If the patient has an FDA approved indication, one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "The patient's age is within FDA labeling for the requested indication for Wegovy",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "The prescriber has provided information in support of using Wegovy for the patient's age for the requested indication",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
                                 },
                                 {
                                     "label": "The patient does NOT have any FDA labeled contraindications to Wegovy:",
@@ -165,19 +148,19 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                                            "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+                                            "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
                                     ]
                                 },
                                 {
-                                    "label": "The patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+                                    "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -187,19 +170,19 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient has not tried a targeted weight loss agent in the past 12 months",
+                                            "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy",
+                                            "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
                                     ]
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -214,12 +197,12 @@
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient is currently being treated and has received less than 52 weeks (1 year) of therapy",
+                                            "label": "Document the patient is currently being treated and has received less than 52 weeks (1 year) of therapy",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has achieved and maintained a weight loss of greater than or equal to 5% from baseline (prior to initiation of Wegovy)",
+                                            "label": "Document the patient has achieved and maintained a weight loss of greater than or equal to 5% from baseline (prior to initiation of Wegovy)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
@@ -239,12 +222,12 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is currently on and will continue to be on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                                    "label": "Document the patient is currently on and will continue to be on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient does NOT have any FDA labeled contraindications to Wegovy",
+                                    "label": "Document the patient does NOT have any FDA labeled contraindications to Wegovy",
                                     "all_required": true,
                                     "node_type": "checkbox",
                                     "node_value": false,
@@ -268,7 +251,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -278,7 +261,7 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient has achieved and maintained a weight loss greater than or equal to 5% from baseline (prior to initiation of Wegovy)",
+                                            "label": "Document the patient has achieved and maintained a weight loss greater than or equal to 5% from baseline (prior to initiation of Wegovy)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -290,7 +273,7 @@
                                     ]
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another targeted weight loss agent for the requested indication",
+                                    "label": "Document the patient will NOT be using Wegovy in combination with another targeted weight loss agent for the requested indication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -327,12 +310,12 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 95th percentile for age and gender",
+                                            "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 95th percentile for age and gender",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 30 kg/m^2",
+                                            "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) greater than or equal to 30 kg/m^2",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -344,12 +327,12 @@
                                             "children": [
 
                                                 {
-                                                    "label": "The patient has a body mass index (BMI) greater than or equal to 85th percentile for age and gender",
+                                                    "label": "The patient has a documented body mass index (BMI) greater than or equal to 85th percentile for age and gender (>27 kg/m^2)",
                                                     "node_type": "checkbox",
                                                     "node_value": false
                                                 },
                                                 {
-                                                    "label": "The patient has at least one severe weight-related comorbidity, risk factor or complication:",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -426,37 +409,21 @@
                                     ]
                                 },
                                 {
-                                    "label": "The patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+                                    "label": "Document the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+                                    "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                                    "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
-                                {
-                                    "label": "If the patient has an FDA approved indication, one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "The patient's age is within FDA labeling for the requested indication for Wegovy",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "The prescriber has provided information in support of using Wegovy for the patient's age for the requested indication",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                },
+                                
                                 {
                                     "label": "The patient does NOT have any FDA labeled contraindications to Wegovy:",
                                     "all_required": true,
@@ -481,19 +448,19 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient has not tried a targeted weight loss agent in the past 12 months",
+                                            "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy",
+                                            "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
                                     ]
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -508,12 +475,12 @@
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient is currently being treated and has received less than 52 weeks (1 year) of therapy",
+                                            "label": "Document the patient is currently being treated and has received less than 52 weeks (1 year) of therapy",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has achieved and maintained a reduction in BMI of at least 5% from baseline (prior to initiation of the requested agent)",
+                                            "label": "Document the patient has achieved and maintained a reduction in BMI of at least 5% from baseline (prior to initiation of the requested agent)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
@@ -533,7 +500,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is currently on and will continue to be on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                                    "label": "Document the patient is currently on and will continue to be on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -544,13 +511,13 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                                            "label": "Document the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
 
                                         {
-                                            "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
+                                            "label": "Document the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
@@ -562,22 +529,17 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
                                     "label": "The patient meets one of the following requirements:",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "The patient has received less than 52 weeks of therapy on the maximum-tolerated dose (2.4 mg or 1.7 mg)",
+                                            "label": "Document the patient has received less than 52 weeks of therapy on the maximum-tolerated dose (2.4 mg or 1.7 mg)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "The patient has achieved and maintained a reduction in BMI of at least 5% from baseline (prior to initiation of the requested agent)",
+                                            "label": "Document the patient has achieved and maintained a reduction in BMI of at least 5% from baseline (prior to initiation of the requested agent)",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         }
@@ -589,7 +551,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient will NOT be using Wegovy in combination with another targeted weight loss agent for the requested indication",
+                                    "label": "Document the patient will NOT be using Wegovy in combination with another targeted weight loss agent for the requested indication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }

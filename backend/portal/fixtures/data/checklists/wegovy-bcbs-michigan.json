@@ -29,7 +29,7 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "A body mass index (BMI) greater than or equal to 30 kg/m^2",
+                                            "label": "Document a baseline body mass index (BMI) greater than or equal to 30 kg/m^2",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -41,12 +41,12 @@
                                             "children": [
                 
                                                 {
-                                                    "label": "An initial body mass index (BMI) of greater than or equal to 27 kg/m^2",
+                                                    "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2",
                                                     "node_type": "checkbox",
                                                     "node_value": false
                                                 },
                                                 {
-                                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -145,7 +145,7 @@
                                     ]
                                 },
                                 {
-                                    "label": "Not to be used in combination with other weight loss products",
+                                    "label": "Document that the medication will not to be used in combination with other weight loss products",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -200,7 +200,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "Member’s body mass index (BMI) is ≥ 95th percentile, standardized for age and sex",
+                                    "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile, standardized for age and sex",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -215,7 +215,7 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Provider can submit documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
+                                            "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -227,7 +227,7 @@
                                     ]
                                 },
                                 {
-                                    "label": "Not to be used in combination with other weight loss products",
+                                    "label": "Document medication will not to be used in combination with other weight loss products",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -245,12 +245,12 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The member has maintained at least a 1% reduction in BMI from baseline",
+                                    "label": "Document that the patient has maintained at least a 1% reduction in BMI from baseline",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "Requires documentation of continued participation in lifestyle modification program",
+                                    "label": "Document continued participation in lifestyle modification program",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }

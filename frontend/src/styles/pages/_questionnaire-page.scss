@@ -1,4 +1,6 @@
 .checklist-wrapper {
+    margin-bottom: 40px;
+
     h3 {
         font-size: 24px;
         font-weight: 700;
@@ -14,5 +16,9 @@
         border: none;
         border-radius: 5px;
         padding: 16px 48px;
+    }
+
+    .hide {
+        display: none;
     }
 }

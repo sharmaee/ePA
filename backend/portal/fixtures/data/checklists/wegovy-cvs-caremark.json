@@ -9,12 +9,12 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "The requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
+                    "label": "Document the requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "The patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -24,7 +24,7 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "The patient has a body mass index (BMI) greater than or equal to 30 kg/m^2",
+                            "label": "Document that the patient has a body mass index (BMI) greater than or equal to 30 kg/m^2",
                             "node_type": "checkbox",
                             "node_value": false
                         },
@@ -41,7 +41,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -126,7 +126,7 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose",
+                    "label": "Document that the patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -136,12 +136,12 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Lost at least 5 percent of baseline body weight",
+                            "label": "Documented loss of least 5 percent of baseline body weight",
                             "node_type": "checkbox",
                             "node_value": false
                         },
                         {
-                            "label": "Continued to maintain their initial 5 percent weight loss",
+                            "label": "Documented continued to maintenance of their initial 5 percent weight loss",
                             "node_type": "checkbox",
                             "node_value": false
                         }

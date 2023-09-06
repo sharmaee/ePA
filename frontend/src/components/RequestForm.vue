@@ -3,31 +3,31 @@
     <div class="row-with-two-input">
       <div class="cover-my-meds-key">
         <label for="cover-my-meds-key">CoverMyMeds Key</label>
-        <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="eg. B4HL4T2E" />
+        <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="B4HL4T2E" />
         <span v-if="!isCoverMyMedsKeyValid && formButtonClicked" class="input-error-notification">
           Please enter a valid CoverMyMeds Key.
         </span>
       </div>
       <div class="patient-last-name">
         <label for="patient-last-name">Patient Last Name</label>
-        <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="eg. Snow" />
+        <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="Snow" />
         <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
-          Please enter ALL fields to search.
+          Please enter patient last name.
         </span>
       </div>
     </div>
 
     <div class="row-with-two-input">
       <div class="date-of-birth">
-        <label for="date-of-birth">Date Of Birth</label>
-        <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
+        <label for="date-of-birth">Patient Date Of Birth</label>
+        <input id="date-of-birth" v-model="data.dob" type="text" placeholder="MM/DD/YYYY" />
         <span v-if="!isDobValid && formButtonClicked" class="input-error-notification">
           Please enter a valid date of birth (MM/DD/YYYY).
         </span>
       </div>
       <div class="patient-member-id">
         <label for="patient-member-id">Patient Member ID</label>
-        <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="eg. H3485045" />
+        <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="H3485045" />
         <span v-if="!isPatientMemberIdValid && formButtonClicked" class="input-error-notification">
           Please enter a valid member ID.
         </span>
@@ -82,6 +82,11 @@ const isDobValid = computed(() => {
 
 const isCoverMyMedsKeyValid = computed(() => {
   return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
+});
+
+const isPatientMemberIdValid = computed(() => {
+  const memberIdVlidationPatern = /^[A-Za-z0-9]{1,20}$/;
+  return memberIdVlidationPatern.test(data.value.memberId);
 });
 
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
