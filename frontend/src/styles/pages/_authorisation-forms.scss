@@ -1,5 +1,5 @@
 
-.registered-form-wrapper {
+.registered-form-wrapper, .forgot-form-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,16 +12,21 @@
         font-size: 64px;
         font-weight: 700;
         text-align: center;
-
+        
         @media (max-width: 1280px) {
             font-size: 56px;
         }
+    }
+    
+    .forgot-pass-sub-title {
+        margin-bottom: 46px;
     }
 
     .success-request-modal-window {
         margin-top: 145px;
     }
     
+
     .form {
         padding: 32px 54px;
         border-radius: 34px;
@@ -29,6 +34,12 @@
         background-color: $white;
         z-index: 100;
         width: 446px;
+
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+        }
         
         label {
             margin: 16px 0 12px 0;           

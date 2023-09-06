@@ -26,8 +26,8 @@
 
 <script setup>
 import { ref } from "vue";
-import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
 import { storeToRefs } from "pinia";
 
 import PriorHeader from "@/components/PriorHeader";

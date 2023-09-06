@@ -11,7 +11,9 @@ import RequestMissingRequirements from '@/pages/RequestMissingRequirements';
 import RequestDenialReport from '@/pages/RequestDenialReport';
 import SignUp from '@/pages/SignUp';
 import SignIn from '@/pages/SignIn';
+import PasswordResetRequest from '@/pages/PasswordResetRequest';
 import PasswordReset from '@/pages/PasswordReset';
+import ConfirmEmail from '@/pages/ConfirmEmail'
 
 
 const publicAccessRoutes = [
@@ -27,12 +29,18 @@ const publicAccessRoutes = [
     component: SignIn,
     title: "Do Prior Auth",
   },
-  // {
-  //   path: "/password-reset-request",
-  //   name: "password-reset-request",
-  //   component: PasswordResetRequest,
-  //   title: "Rassword Reset Request",
-  // },
+  {
+    path: "/password-reset-request",
+    name: "password-reset-request",
+    component: PasswordResetRequest,
+    title: "Rassword Reset Request",
+  },
+  {
+    path: "/confirm-email/:user_id/:token",
+    name: "confirmEmail",
+    component: ConfirmEmail,
+    title: "Lamar Health",
+  },
   {
     path: "/password-reset/:token?",
     name: "password-reset",
