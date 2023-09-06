@@ -48,7 +48,6 @@ class DisplayMemberDetailsAdmin(AnalyticsAdminBase):
         return obj.user.email
 
 
-
 @admin.register(RequestNewPriorAuthRequirements)
 class RequestNewPriorAuthRequirementsAdmin(DisplayMemberDetailsAdmin):
     list_display = (
