@@ -1,22 +1,6 @@
 <template>
   <PriorHeader />
-  <div v-if="!showResetPasswordForm" class="forgot-form-wrapper">
-    <h1 class="registration-page-title">Forgot Password</h1>
-    <p>Forgot your password? No problem!</p>
-    <div class="form">
-      <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
-      <div class="your-email">
-        <label for="your-email">Email Address</label>
-        <input id="your-email" v-model="userEmail" type="text" placeholder="example@findsunrise.com" />
-        <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
-          Please enter a valid email address.
-        </span>
-      </div>
-      <button @click="showRestPasswordForm">Get Password Reset Link</button>
-    </div>
-  </div>
-
-  <div v-else class="reset-form-wrapper">
+  <div class="reset-form-wrapper">
     <h1 class="registration-page-title">Reset Password</h1>
     <div class="form">
       <p>To complete the password reset process, please enter your new password below and confirm.</p>
