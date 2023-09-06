@@ -6,6 +6,7 @@
     <div class="modal-content-wrapper">
       <div class="main-window-img-wrapper">
         <img :src="props.modalImg" alt="modal-img" />
+        <!-- <img :src="require(`@/assets/images/${props.modalImg}`)" alt="modal-img" /> -->
       </div>
       <span class="modal-header">{{ props.modalContent.header }}</span>
       <span class="model-content">{{ props.modalContent.content }}</span>
