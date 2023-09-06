@@ -43,25 +43,23 @@ const errors = ref([]);
 const formButtonClicked = ref(false);
 
 // Validators
-const isEmailValid = true;
-// const isEmailValid = computed(() => {
-//   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   const email = userEmail.value;
-//   return email !== "" && emailPattern.test(email);
-// });
+const isEmailValid = computed(() => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const email = userEmail.value;
+  return email !== "" && emailPattern.test(email);
+});
 
 const passwordSending = async () => {
   formButtonClicked.value = true;
-  // if (isEmailValid.value) {
-  try {
-    await authService.passwordResetRequest(userEmail.value);
-    formButtonClicked.value = false;
-    successModalWindow.value = true;
-  } catch (error) {
-    console.log(errors.value);
-    successModalWindow.value = true;
+  if (isEmailValid.value) {
+    try {
+      await authService.passwordResetRequest(userEmail.value);
+      formButtonClicked.value = false;
+      successModalWindow.value = true;
+    } catch (error) {
+      console.log(errors.value);
+    }
   }
-  // }
 };
 
 function closeSuccessModalWindow() {
