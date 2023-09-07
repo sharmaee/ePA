@@ -85,15 +85,10 @@ const isCoverMyMedsKeyValid = computed(() => {
 });
 
 const isPatientMemberIdValid = computed(() => {
-  const memberIdVlidationPatern = /^[A-Za-z0-9]{1,20}$/;
-  return memberIdVlidationPatern.test(data.value.memberId);
+  return patientMemberIdPattern.test(data.value.memberId);
 });
 
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
-
-const isPatientMemberIdValid = computed(() => {
-  return patientMemberIdPattern.test(data.value.memberId);
-});
 
 async function sendRequirements() {
   formButtonClicked.value = true;
