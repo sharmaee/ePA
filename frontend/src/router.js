@@ -39,7 +39,7 @@ const publicAccessRoutes = [
     path: "/confirm-email/:user_id/:token",
     name: "confirmEmail",
     component: ConfirmEmail,
-    title: "Lamar Health",
+    title: "Do Prior Auth",
   },
   {
     path: "/password-reset/:token?",
@@ -54,31 +54,31 @@ const protectedRoutes = [
     path: "/",
     name: "home-page",
     component: HomePage,
-    title: "home-page",
+    title: "Do Prior Auth",
   },
   {
     path: "/insurance-navigator-page",
     name: "insurance-navigator-page",
     component: InsuranceNavigatorPage,
-    title: "insurance-navigator-page",
+    title: "Insurance Navigator Page",
   },
   {
     path: "/check-my-coverage/:id",
     name: "check-my-coverage",
     component: RequirementsPage,
-    title: "check-my-coverage",
+    title: "Insurance Criteria",
   },
   {
     path: "/request-missing-requirements",
     name: "request-missing-requirements",
     component: RequestMissingRequirements,
-    title: "request-missing-requirements",
+    title: "More Info",
   },
   {
     path: "/report-denial",
     name: "report-denial",
     component: RequestDenialReport,
-    title: "report-denial",
+    title: "Report Denial",
   },
 ];
 
@@ -99,6 +99,7 @@ const router = createRouter({
 router.beforeEach((to) => {
   const authManager = useAuthStore();
   document.title = to.meta.title;
+  console.log("authManager", authManager, authManager.loggedIn, document.title);
   if (!authManager.loggedIn && to.meta.loginRequired) {
     return { name: "login" };
   }

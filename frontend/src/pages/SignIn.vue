@@ -70,6 +70,8 @@ async function loginUser() {
       let otpConfig = await authStore.login(credentials.value);
 
       console.log("Login successful!", otpConfig);
+      await authStore.loginStep2NotRequired();
+
       router.push({ name: "home-page" });
     } catch (error) {
       console.error("Login error:", error);
