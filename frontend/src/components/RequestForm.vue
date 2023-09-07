@@ -84,11 +84,11 @@ const isCoverMyMedsKeyValid = computed(() => {
   return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
 });
 
-const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
-
 const isPatientMemberIdValid = computed(() => {
   return patientMemberIdPattern.test(data.value.memberId);
 });
+
+const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
 
 async function sendRequirements() {
   formButtonClicked.value = true;
