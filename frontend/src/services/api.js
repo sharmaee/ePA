@@ -29,7 +29,6 @@ executor.interceptors.request.use(
 
     if (accessToken) {
       config.headers[authHeader] = `Bearer ${accessToken}`;
-      console.log(accessToken);
     }
 
     if (!config._skipPropsAdaptation) {

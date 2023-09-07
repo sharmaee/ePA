@@ -39,9 +39,12 @@ import PriorFooter from "@/components/PriorFooter";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores";
 
+const errors = ref([]);
 const formButtonClicked = ref(false);
 const router = useRouter();
 const authStore = useAuthStore();
+const qrCode = ref("");
+const setupKey = ref("");
 
 const credentials = ref({
   email: "",
@@ -62,26 +65,24 @@ const isPasswordValid = computed(() => {
   return passwordPattern.test(password);
 });
 
-async function loginUser() {
-  formButtonClicked.value = true;
-
-  if (isEmailValid.value && isPasswordValid.value) {
-    try {
-      let otpConfig = await authStore.login(credentials.value);
-
-      console.log("Login successful!", otpConfig);
+const loginUser = async () => {
+  try {
+    let otpConfig = await authStore.login(credentials.value);
+    if (otpConfig.secondStep) {
+      secondVerificationStep.value = true;
+      qrCode.value = otpConfig.otpAppUrl;
+      setupKey.value = otpConfig.setupKey;
+    } else {
       await authStore.loginStep2NotRequired();
-
       router.push({ name: "home-page" });
-    } catch (error) {
-      console.error("Login error:", error);
     }
+    errors.value = [];
+  } catch (error) {
+    errors.value = tryParseApiErrors(error);
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/pages/_authorisation-forms.scss";
 </style>
-<!-- "email": "liudmyla@lamarhealth.com",
-"password": "Y$nzoH4Tng4f" -->

@@ -99,7 +99,6 @@ const router = createRouter({
 router.beforeEach((to) => {
   const authManager = useAuthStore();
   document.title = to.meta.title;
-  console.log("authManager", authManager, authManager.loggedIn, document.title);
   if (!authManager.loggedIn && to.meta.loginRequired) {
     return { name: "login" };
   }
