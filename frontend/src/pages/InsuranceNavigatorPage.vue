@@ -64,6 +64,7 @@
         </div>
       </div>
     </div>
+    <div id="searchResultsBlock"></div>
     <div v-if="coverageBlock" class="coverage">
       <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
         <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
@@ -160,10 +161,8 @@ async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
   if (isInsuranceProviderValid.value && isInsuranceCoverageStateValid.value && isMedicationValid.value) {
     preloader.value = true;
-    window.scrollTo({
-      top: 1000,
-      behavior: "smooth",
-    });
+    const searchResultsBlock = document.getElementById("searchResultsBlock");
+    searchResultsBlock.scrollIntoView({ behavior: "smooth" });
     try {
       coverageBlock.value = false;
       priorAuthRequirementsResult.value = null;

@@ -38,8 +38,8 @@
         </tbody>
       </table>
     </div>
-    <div>
-      <h4 @click="redirectToHomePage">Start New Patient >></h4>
+    <div class="smart-engine-start-new-patient">
+      <span @click="redirectToHomePage">Start New Patient >></span>
     </div>
   </div>
 </template>
