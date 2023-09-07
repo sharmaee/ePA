@@ -19,11 +19,6 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "The patient is 18 years of age or older",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
                                     "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy",
                                     "node_type": "checkbox",
                                     "node_value": false
