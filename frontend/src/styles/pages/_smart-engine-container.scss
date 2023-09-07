@@ -190,6 +190,10 @@
                     th:first-child {
                         width: 60%;
                     }
+                    th:last-child {
+                        width: 15%;
+                        text-align: center;
+                    }
                     th {
                         background-color: $blue;
                         color: $white;
@@ -207,6 +211,9 @@
                 tr {
                     td:first-child {
                         width: 60%;
+                    }
+                    td:last-child {
+                        width: 15%;
                     }
                     td {
                         vertical-align: top;
