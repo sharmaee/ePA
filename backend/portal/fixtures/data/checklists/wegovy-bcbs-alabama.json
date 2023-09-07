@@ -9,7 +9,7 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Adjunct to a reduced calorie diet and increased physical activity for chronic weight management",
+                    "label": "Document that the medication will be used in addition to a reduced calorie diet and increased physical activity for chronic weight management",
                     "node_type": "checkbox",
                     "node_value": false
                 },
@@ -19,7 +19,7 @@
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Initial body mass index (BMI) greater than or equal to 30 kg/m^2 (obese)",
+                            "label": "A documented baseline initial body mass index (BMI) greater than or equal to 30 kg/m^2 (obese)",
                             "node_type": "checkbox",
                             "node_value": false
                         },
@@ -31,12 +31,12 @@
                             "children": [
 
                                 {
-                                    "label": "Initial body mass index (BMI) greater than or equal to 27 kg/m^2 (overweight)",
+                                    "label": "A documented initial body mass index (BMI) greater than or equal to 27 kg/m^2 (overweight)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -113,7 +113,7 @@
                     ]
                 },
                 {
-                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
                     "node_type": "checkbox",
                     "node_value": false
                 }
@@ -126,17 +126,17 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Adjunct to a reduced calorie diet and increased physical activity for chronic weight management",
+                    "label": "Document that the medication will be used with a reduced calorie diet and increased physical activity for chronic weight management",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Initial BMI at the 95th percentile or greater, standardized for age and sex (obesity)",
+                    "label": "Document an initial baseline BMI at the 95th percentile or greater, standardized for age and sex (obesity)",
                     "node_type": "checkbox",
                     "node_value": false
                 },
                 {
-                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
                     "node_type": "checkbox",
                     "node_value": false
                 }

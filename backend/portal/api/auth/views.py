@@ -7,7 +7,7 @@ from django.utils.http import urlsafe_base64_decode
 
 from rest_framework import status
 
-from rest_framework.generics import CreateAPIView, UpdateAPIView
+from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
@@ -15,7 +15,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
-from portal.api.utils import IsTokenValid
+from portal.api.utils import IsTokenValid, SecuredAPIView
 from portal.models.auth import User, BlackListedAccessToken
 from portal.utils.token import account_activation_token
 from portal.exceptions import PortalException
@@ -64,12 +64,7 @@ class GoogleAuthLoginView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-class LogoutView(APIView):
-    permission_classes = (
-        IsAuthenticated,
-        IsTokenValid,
-    )
-
+class LogoutView(SecuredAPIView):
     def post(self, request):
         try:
             user = request.user

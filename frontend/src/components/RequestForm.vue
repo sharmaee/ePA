@@ -3,56 +3,36 @@
     <div class="row-with-two-input">
       <div class="cover-my-meds-key">
         <label for="cover-my-meds-key">CoverMyMeds Key</label>
-        <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="eg. B4HL4T2E" />
+        <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="B4HL4T2E" />
         <span v-if="!isCoverMyMedsKeyValid && formButtonClicked" class="input-error-notification">
           Please enter a valid CoverMyMeds Key.
         </span>
       </div>
       <div class="patient-last-name">
         <label for="patient-last-name">Patient Last Name</label>
-        <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="eg. Snow" />
+        <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="Snow" />
         <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
-          Please enter ALL fields to search.
+          Please enter patient last name.
         </span>
       </div>
     </div>
 
     <div class="row-with-two-input">
       <div class="date-of-birth">
-        <label for="date-of-birth">Date Of Birth</label>
-        <input id="date-of-birth" v-model="data.dob" type="text" placeholder="eg. MM/DD/YYYY" />
+        <label for="date-of-birth">Patient Date Of Birth</label>
+        <input id="date-of-birth" v-model="data.dob" type="text" placeholder="MM/DD/YYYY" />
         <span v-if="!isDobValid && formButtonClicked" class="input-error-notification">
           Please enter a valid date of birth (MM/DD/YYYY).
         </span>
       </div>
       <div class="patient-member-id">
         <label for="patient-member-id">Patient Member ID</label>
-        <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="eg. H3485045" />
+        <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="H3485045" />
         <span v-if="!isPatientMemberIdValid && formButtonClicked" class="input-error-notification">
-          Please add the correct email
+          Please enter a valid member ID.
         </span>
       </div>
     </div>
-
-    <div class="row-with-one-input">
-      <div class="your-email">
-        <label for="your-email">Your Email</label>
-        <input id="your-email" v-model="data.maEmail" type="text" placeholder="example@findsunrise.com" />
-        <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
-          Please add the correct email
-        </span>
-      </div>
-    </div>
-    <span class="agreement">
-      By clicking the button below, I authorize service providers acting on behalf of Quantification by Design Inc. dba
-      Lamar Health (“Lamar Health”) to obtain, use, share, disclose, and store the patient's personal and medical
-      information to provide access support (“Support”). I understand that such Support may require contact with:
-      applicable health insurer(s); and any pharmacy involved in my (or the patient's) treatment. I understand that I do
-      not need to sign this form in order to obtain treatment, insurance, or insurance benefits; I am required to sign
-      it only if I wish to receive optional Lamar Health support. I understand I can revoke my authorization at any time
-      by emailing my revocation to
-      <a href="mailto:security@lamarhealth.com">security@lamarhealth.com</a>.
-    </span>
     <button @click="sendRequirements">{{ btnText }}</button>
     <br />
     <span v-if="errMessage" class="input-error-notification"
@@ -88,28 +68,32 @@ const data = ref({
   lastName: "",
   dob: "",
   memberId: "",
-  maEmail: "",
   releaseVersion: "0.0.1",
 });
 
 // Validators
-const isEmailValid = computed(() => {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(data.value.maEmail);
-});
+const dobPattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
+const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
+const patientMemberIdPattern = /^[A-Za-z0-9]{3,20}$/;
 
 const isDobValid = computed(() => {
-  const dobPattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
   return dobPattern.test(data.value.dob);
 });
 
 const isCoverMyMedsKeyValid = computed(() => {
-  const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
   return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
 });
 
+const isPatientMemberIdValid = computed(() => {
+  const memberIdVlidationPatern = /^[A-Za-z0-9]{1,20}$/;
+  return memberIdVlidationPatern.test(data.value.memberId);
+});
+
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
-const isPatientMemberIdValid = computed(() => data.value.memberId.trim() !== "");
+
+const isPatientMemberIdValid = computed(() => {
+  return patientMemberIdPattern.test(data.value.memberId);
+});
 
 async function sendRequirements() {
   formButtonClicked.value = true;
@@ -119,13 +103,7 @@ async function sendRequirements() {
     behavior: "smooth",
   });
 
-  if (
-    isEmailValid.value &&
-    isDobValid.value &&
-    isCoverMyMedsKeyValid.value &&
-    isLastNameValid.value &&
-    isPatientMemberIdValid.value
-  ) {
+  if (isDobValid.value && isCoverMyMedsKeyValid.value && isLastNameValid.value && isPatientMemberIdValid.value) {
     try {
       showPreloader.value = true;
 
@@ -150,7 +128,6 @@ function clearTheForm() {
   data.value.lastName = "";
   data.value.dob = "";
   data.value.memberId = "";
-  data.value.maEmail = "";
 }
 </script>
 

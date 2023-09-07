@@ -29,12 +29,12 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "A diagnosis of obesity and a BMI ≥ 30 kg/m2",
+                                            "label": "Document a diagnosis of obesity and a BMI ≥ 30 kg/m2",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "A diagnosis of obesity and a BMI ≥ 25 kg/m2, and is of South Asian, Southeast Asian, or East Asian descent",
+                                            "label": "Document a diagnosis of obesity and a BMI ≥ 25 kg/m2, and is of South Asian, Southeast Asian, or East Asian descent",
                                             "node_type": "checkbox",
                                             "node_value": false
                                         },
@@ -51,7 +51,7 @@
                                                     "node_value": false
                                                 },
                                                 {
-                                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -128,27 +128,27 @@
                                     ]
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
+                                    "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with insulin",
+                                    "label": "Document that the requested medication will not be used concurrently with insulin",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with another weight loss medication",
+                                    "label": "Document that the requested medication will not be used concurrently with another weight loss medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The provider has addressed the requirement for lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
+                                    "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
+                                    "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -158,7 +158,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
+                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (document that 3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -213,32 +213,32 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), with a diagnosis of obesity and a BMI > 95th percentile for age and sex",
+                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), with a documented diagnosis of obesity and a BMI > 95th percentile for age and sex",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
+                                    "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with insulin",
+                                    "label": "Document that the requested medication will not be used concurrently with insulin",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The requested medication will not be used concurrently with another weight loss medication",
+                                    "label": "Document the requested medication will not be used concurrently with another weight loss medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The provider has addressed the requirement for lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
+                                    "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
+                                    "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
@@ -248,7 +248,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
+                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (document 3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }
@@ -266,7 +266,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), and has achieved and maintained a BMI reduction of ≥ 5% from baseline (prior to the initiation of requested medication)",
+                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), and has achieved and maintained a documented BMI reduction of ≥ 5% from baseline (prior to the initiation of requested medication)",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },

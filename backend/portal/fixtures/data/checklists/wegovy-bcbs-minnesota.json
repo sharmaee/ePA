@@ -14,12 +14,12 @@
                     "node_value": false
                 },
                 {
-                    "label": "Initial body mass index (BMI) should be either:",
+                    "label": "A documented initial baseline body mass index (BMI) should be either:",
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "An initial body mass index (BMI) of greater than or equal to 27 kg/m2 (obese)",
+                            "label": "An initial body mass index (BMI) of greater than or equal to 30 kg/m2 (obese)",
                             "node_type": "checkbox",
                             "node_value": false
                         },
@@ -36,7 +36,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient has at least one weight-related comorbid condition:",
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -113,7 +113,7 @@
                     ]
                 },
                 {
-                    "label": "Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
+                    "label": "Document Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
                     "node_type": "checkbox",
                     "node_value": false
                 }

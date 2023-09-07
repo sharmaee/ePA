@@ -50,6 +50,9 @@ class ClientCompany(PortalModelBase):
     is_active = models.BooleanField(default=True)
     number_of_seats = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.company_name
+
 
 class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     first_name = models.TextField()
@@ -60,7 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     is_email_verified = models.BooleanField('Verified', default=False)
     is_2fa_verified = models.BooleanField('Google Auth Verified', default=False)
     client_company = models.ForeignKey(
-        ClientCompany, related_name="user_client_company", on_delete=models.CASCADE, blank=True, null=True
+        ClientCompany, related_name="user", on_delete=models.PROTECT, blank=True, null=True
     )
     secret_code = models.CharField(max_length=32, blank=True)
     auth_url = models.CharField(max_length=255, blank=True)
@@ -73,7 +76,7 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     EMAIL_FIELD = 'email'
 
     class Meta:
-        db_table = 'auth_user'
+        db_table = 'auth__user'
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'.strip()

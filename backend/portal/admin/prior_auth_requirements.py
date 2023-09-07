@@ -45,7 +45,7 @@ class DisplayMemberDetailsAdmin(AnalyticsAdminBase):
         return obj.member_details.member_id
 
     def ma_email(self, obj):
-        return obj.member_details.ma_email
+        return obj.user.email
 
 
 @admin.register(RequestNewPriorAuthRequirements)
