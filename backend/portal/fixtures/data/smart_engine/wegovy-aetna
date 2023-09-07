@@ -1,0 +1,10 @@
+{
+    "header": "Step 2: Verify Prescriber and Patient Documentation",
+    "items": [
+        "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist. If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation).",
+        "The Patient's Starting Baseline Body Mass Index (BMI) 30 kg/m^2 or Greater",
+        "Patient Is 18 Years of Age or Older",
+        "Wegovy Is Not Being Used with Another Weight Loss Drug or GLP-1 Receptor Agonist",
+        "The Initial Order Is a 30-Day Supply with 2 Refills. When Over This Amount Ask Clinical Staff to Make an Adjustment."
+    ]
+}
