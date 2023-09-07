@@ -20,17 +20,15 @@
       <table>
         <thead>
           <tr>
-            <th>ICD-10 Codes</th>
             <th>Diagnosis</th>
-            <th>Lab Results to Attach</th>
-            <th>Supporting documents</th>
+            <th>ICD-10 Codes</th>
+            <th>Clinical Study Documents</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in filteredByComorbidityData" :key="item.diagnosis">
-            <td>{{ item.icd_10_codes.join(", ") }}</td>
             <td>{{ item.diagnosis }}</td>
-            <td>{{ item.lab_results_to_attach.join(", ") }}</td>
+            <td>{{ item.icd_10_codes.join(", ") }}</td>
             <td>
               <div class="download">
                 <a :href="item.supporting_documents" target="_blank">Download</a>
@@ -40,6 +38,9 @@
         </tbody>
       </table>
     </div>
+    <div>
+      <h4 @click="redirectToHomePage">Start New Patient >></h4>
+    </div>
   </div>
 </template>
 
@@ -47,6 +48,9 @@
 import { ref, computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
   comorbidityFilterData: {
@@ -77,6 +81,10 @@ function copyAdditionalInfoToClipboard(content) {
   } catch (error) {
     copyAdditionalInfoButtonText.value = "Copy Paragraph";
   }
+}
+
+function redirectToHomePage() {
+  router.push({ name: "home-page" });
 }
 </script>
 
