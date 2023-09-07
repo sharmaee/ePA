@@ -84,11 +84,6 @@ const isCoverMyMedsKeyValid = computed(() => {
   return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
 });
 
-const isPatientMemberIdValid = computed(() => {
-  const memberIdVlidationPatern = /^[A-Za-z0-9]{1,20}$/;
-  return memberIdVlidationPatern.test(data.value.memberId);
-});
-
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
 
 const isPatientMemberIdValid = computed(() => {
