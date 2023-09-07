@@ -5,14 +5,14 @@
     <div class="form">
       <div class="your-email">
         <label for="your-email">Email Address</label>
-        <input id="your-email" v-model="userInfo.email" type="text" placeholder="example@findsunrise.com" />
+        <input id="your-email" v-model="credentials.email" type="text" placeholder="example@findsunrise.com" />
         <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
           Please enter a valid email address.
         </span>
       </div>
       <div class="password">
         <label for="password">Password</label>
-        <input id="password" v-model="userInfo.password" type="password" />
+        <input id="password" v-model="credentials.password" type="password" />
         <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
           Please create a password with more than 10 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
           and 1 symbol.
@@ -36,11 +36,14 @@
 import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
-import authService from "@/services/authService";
+import { useRouter } from "vue-router";
+import { useAuthStore } from "@/stores";
 
 const formButtonClicked = ref(false);
+const router = useRouter();
+const authStore = useAuthStore();
 
-const userInfo = ref({
+const credentials = ref({
   email: "",
   password: "",
 });
@@ -48,12 +51,12 @@ const userInfo = ref({
 // Validators
 const isEmailValid = computed(() => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const email = userInfo.value.email;
+  const email = credentials.value.email;
   return email !== "" && emailPattern.test(email);
 });
 
 const isPasswordValid = computed(() => {
-  const password = userInfo.value.password;
+  const password = credentials.value.password;
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{11,}$/;
 
   return passwordPattern.test(password);
@@ -64,9 +67,12 @@ async function loginUser() {
 
   if (isEmailValid.value && isPasswordValid.value) {
     try {
-      await authService.login(userInfo.value);
+      let otpConfig = await authStore.login(credentials.value);
+
+      console.log("Login successful!", otpConfig);
+      router.push({ name: "home-page" });
     } catch (error) {
-      console.log(error);
+      console.error("Login error:", error);
     }
   }
 }
@@ -75,3 +81,5 @@ async function loginUser() {
 <style lang="scss" scoped>
 @import "../styles/pages/_authorisation-forms.scss";
 </style>
+<!-- "email": "liudmyla@lamarhealth.com",
+"password": "Y$nzoH4Tng4f" -->
