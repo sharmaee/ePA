@@ -187,6 +187,9 @@
             thead {
                
                 tr {
+                    th:first-child {
+                        width: 60%;
+                    }
                     th {
                         background-color: $blue;
                         color: $white;
@@ -199,9 +202,12 @@
                 }
             }
     
-            tbody {              
+            tbody {
     
                 tr {
+                    td:first-child {
+                        width: 60%;
+                    }
                     td {
                         vertical-align: top;
                         background-color: $blue-200;
@@ -233,5 +239,17 @@
             }
         }
 
+    }
+
+    .smart-engine-start-new-patient {
+        margin-top: 50px;
+        text-align: left;
+        cursor: pointer;
+
+        span {
+            font-size: 25px;
+            color: $blue;
+            font-weight: 700;
+        }
     }
 }

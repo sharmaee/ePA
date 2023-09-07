@@ -9,7 +9,7 @@
         margin-top: 50px;
         margin-bottom: 90px;
         font-size: 64px;
-        width: 65%;
+        width: 70%;
         font-weight: 700;
         text-align: center;
         line-height: 115%;
@@ -54,11 +54,12 @@
                 width: 50%;
             }
 
-            img {             
-                image-rendering: pixelated;
+            img {
+                width: 451px;
+                height: 676px;
 
                 @media (max-width: 1440px) {
-                    width: 365px;
+                    width: 335px;
                     height: 500px;
                 }
 
