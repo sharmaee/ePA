@@ -19,11 +19,6 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "The patient is 17 years of age or older",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
                                     "label": "The patient has either:",
                                     "node_type": "checkbox",
                                     "node_value": false,
