@@ -21,6 +21,8 @@ pycryptodome = "*"
 django-filter = "==2.4.0"
 django-otp = "*"
 qrcode = "*"
+django-rest-auth = "*"
+pyotp = "*"
 
 [dev-packages]
 black = "*"
