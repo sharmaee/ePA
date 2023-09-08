@@ -1,11 +1,16 @@
 <template>
   <PriorHeader />
   <div class="registered-form-wrapper">
-    <h1 class="registration-page-title">Create Your Account</h1>
-    <ModalWindowForSuccessRequest
-      v-if="successModalWindow"
-      :modal-content="modalContent"
-      @close-modal-window="closeSuccessModalWindow" />
+    <h1 v-if="!registerEmailSent" class="registration-page-title">Create Your Account</h1>
+    <div v-if="registerEmailSent" class="final-registered-notification">
+      <h1>We are on it!</h1>
+      <div class="envelop-wrapper">
+        <img src="@/assets/images/envelop.svg" alt="envelop" />
+      </div>
+      <div class="form">
+        <p>Check your email to get started with your account</p>
+      </div>
+    </div>
 
     <div v-else class="registration-form form">
       <div class="first-name">
@@ -63,14 +68,7 @@ import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
-import { useRouter } from "vue-router";
-import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
-import { storeToRefs } from "pinia";
 const formButtonClicked = ref(false);
-import { useUiElementsStore } from "@/stores/uiElementsStore";
-
-const { successModalWindow } = storeToRefs(useUiElementsStore());
-const router = useRouter();
 
 const userInfo = ref({
   first_name: "",
@@ -79,11 +77,7 @@ const userInfo = ref({
   password: "",
 });
 
-const modalContent = {
-  header: "",
-  content: "We are on it! Check your email to get started with your account",
-};
-
+const registerEmailSent = ref(true);
 const passwordConfirmation = ref(null);
 
 // Validators
@@ -118,17 +112,12 @@ async function registerUser() {
     isPasswordMatchValid.value
   ) {
     try {
-      successModalWindow.value = true;
       await authService.register(userInfo.value);
+      registerEmailSent.value = true;
     } catch (error) {
       console.log(error);
     }
   }
-}
-
-function closeSuccessModalWindow() {
-  successModalWindow.value = false;
-  router.push({ name: "login" });
 }
 </script>
 
