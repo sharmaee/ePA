@@ -12,6 +12,13 @@
     <nav class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
       <ul>
         <li>
+          <router-link :to="{ name: 'register' }">Start New Patient</router-link>
+        </li>
+        <li>
+          <router-link v-if="authManager.loggedIn" :to="{ name: 'login' }" @click="logoutUser">Log Out</router-link>
+          <router-link v-else :to="{ name: 'login' }">Login</router-link>
+        </li>
+        <!-- <li>
           <a href="https://www.dopriorauth.com/">For Providers</a>
         </li>
         <li>
@@ -22,7 +29,7 @@
         </li>
         <li>
           <a href="https://www.dopriorauth.com/company/careers">Careers</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </header>
@@ -33,9 +40,12 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+import { useAuthStore } from "@/stores";
 
 const screenWidth = ref(null);
 const mobileMenu = ref(true);
+
+const authManager = useAuthStore();
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
@@ -51,6 +61,11 @@ function showHideMenu() {
 
 function redirectToHomePage() {
   router.push({ name: "home-page" });
+}
+
+async function logoutUser() {
+  await authManager.logout();
+  window.location.reload();
 }
 </script>
 
