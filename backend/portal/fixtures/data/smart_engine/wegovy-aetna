@@ -1,4 +1,18 @@
 {
+    "label": "For patients 18 years or older. For initiation."
+    "header": "Step 2: Verify Prescriber and Patient Documentation",
+    "items": [
+        {
+            "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
+            "text": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        }
+    ]
+}
+{
     "label": "For patients 18 years or older. For continuation of therapy."
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
@@ -13,7 +27,7 @@
         {
             "text": "Documented continued maintainance of their initial 5 percent weight loss.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        },
+        }
     ]
 }
 {
@@ -31,7 +45,7 @@
         {
             "text": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        },
+        }
     ]
 }
 {
@@ -41,6 +55,6 @@
         {
             "text": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        },
+        }
     ]
 }
