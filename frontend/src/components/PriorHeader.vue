@@ -9,27 +9,14 @@
       alt="mobile-menu"
       class="mobile-menu-img"
       @click="showHideMenu" />
-    <nav class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
+    <nav v-if="authManager.loggedIn" class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
       <ul>
         <li>
-          <router-link :to="{ name: 'register' }">Start New Patient</router-link>
+          <router-link :to="{ name: 'home-page' }">Start New Patient</router-link>
         </li>
         <li>
-          <router-link v-if="authManager.loggedIn" :to="{ name: 'login' }" @click="logoutUser">Log Out</router-link>
-          <router-link v-else :to="{ name: 'login' }">Login</router-link>
+          <router-link :to="{ name: 'login' }" @click="logoutUser">Log Out</router-link>
         </li>
-        <!-- <li>
-          <a href="https://www.dopriorauth.com/">For Providers</a>
-        </li>
-        <li>
-          <a href="https://www.dopriorauth.com/product/for-life-science-companies">For life science companies</a>
-        </li>
-        <li>
-          <a href="https://www.dopriorauth.com/company/about">About</a>
-        </li>
-        <li>
-          <a href="https://www.dopriorauth.com/company/careers">Careers</a>
-        </li> -->
       </ul>
     </nav>
   </header>

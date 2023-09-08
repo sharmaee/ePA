@@ -63,12 +63,14 @@ import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
+import { useRouter } from "vue-router";
 import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
 import { storeToRefs } from "pinia";
 const formButtonClicked = ref(false);
 import { useUiElementsStore } from "@/stores/uiElementsStore";
 
 const { successModalWindow } = storeToRefs(useUiElementsStore());
+const router = useRouter();
 
 const userInfo = ref({
   first_name: "",
@@ -126,6 +128,7 @@ async function registerUser() {
 
 function closeSuccessModalWindow() {
   successModalWindow.value = false;
+  router.push({ name: "login" });
 }
 </script>
 
