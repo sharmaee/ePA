@@ -63,7 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
     is_email_verified = models.BooleanField('Verified', default=False)
     is_2fa_verified = models.BooleanField('Google Auth Verified', default=False)
     client_company = models.ForeignKey(
-        ClientCompany, related_name="user", on_delete=models.PROTECT, blank=True, null=True
+        ClientCompany, related_name="user", on_delete=models.CASCADE, blank=True, null=True
     )
     secret_code = models.CharField(max_length=32, blank=True)
     auth_url = models.CharField(max_length=255, blank=True)

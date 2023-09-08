@@ -34,5 +34,5 @@ class RequestNewPriorAuthRequirements(PortalModelBase):
     submission_date = models.DateTimeField(auto_now_add=True)
     release_version = models.TextField(blank=True, null=True)
     member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, related_name='requests_new_pa')
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='requests_new_pa')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='requests_new_pa')
     notes = models.TextField(blank=True, null=True)
