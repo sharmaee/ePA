@@ -3,10 +3,15 @@
   <div class="forgot-form-wrapper">
     <h1 class="registration-page-title">Forgot Password</h1>
     <p class="forgot-pass-sub-title">Forgot your password? No problem!</p>
-    <ModalWindowForSuccessRequest
-      v-if="successModalWindow"
-      :modal-content="modalContent"
-      @close-modal-window="closeSuccessModalWindow" />
+    <GreenCirclePreloader v-if="showPreloader" />
+    <div v-else-if="!showPreloader && passwordRequestEmailSent" class="final-registered-notification">
+      <div class="envelop-wrapper">
+        <img src="@/assets/images/envelop.svg" alt="envelop" />
+      </div>
+      <div class="form">
+        <p>Check your email, and click the link there</p>
+      </div>
+    </div>
     <div v-else class="form">
       <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
       <div class="your-email">
@@ -27,18 +32,14 @@ import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
+import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import { tryParseApiErrors } from "@/utils";
 
-import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
-
-const successModalWindow = ref(false);
-
-const modalContent = {
-  header: "",
-  content: "Check your email, and click the link there",
-};
+const errors = ref([]);
+const showPreloader = ref(false);
+const passwordRequestEmailSent = ref(false);
 
 const userEmail = ref("");
-const errors = ref([]);
 const formButtonClicked = ref(false);
 
 // Validators
@@ -49,21 +50,21 @@ const isEmailValid = computed(() => {
 });
 
 const passwordSending = async () => {
+  showPreloader.value = true;
   formButtonClicked.value = true;
   if (isEmailValid.value) {
     try {
       await authService.passwordResetRequest(userEmail.value);
       formButtonClicked.value = false;
-      successModalWindow.value = true;
+      showPreloader.value = false;
+      passwordRequestEmailSent.value = true;
+      userEmail.value = "";
+      errors.value = [];
     } catch (error) {
-      console.log(errors.value);
+      errors.value = tryParseApiErrors(error);
     }
   }
 };
-
-function closeSuccessModalWindow() {
-  successModalWindow.value = false;
-}
 </script>
 
 <style lang="scss" scoped>

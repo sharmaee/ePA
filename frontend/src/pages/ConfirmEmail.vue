@@ -16,6 +16,7 @@ import { useRoute, useRouter } from "vue-router";
 import authService from "@/services/authService";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
+import { tryParseApiErrors } from "@/utils";
 
 const loading = ref(false);
 const success = ref(true);

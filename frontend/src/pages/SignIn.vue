@@ -2,7 +2,8 @@
   <PriorHeader />
   <div class="registered-form-wrapper">
     <h1 class="registration-page-title">Login</h1>
-    <div class="form">
+    <GreenCirclePreloader v-if="showPreloader" />
+    <div v-else class="form">
       <div class="your-email">
         <label for="your-email">Email Address</label>
         <input id="your-email" v-model="credentials.email" type="text" placeholder="example@findsunrise.com" />
@@ -36,8 +37,10 @@
 import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
+import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores";
+import { tryParseApiErrors } from "@/utils";
 
 const errors = ref([]);
 const formButtonClicked = ref(false);
@@ -45,6 +48,7 @@ const router = useRouter();
 const authStore = useAuthStore();
 const qrCode = ref("");
 const setupKey = ref("");
+const showPreloader = ref(false);
 
 const credentials = ref({
   email: "",
@@ -66,6 +70,7 @@ const isPasswordValid = computed(() => {
 });
 
 const loginUser = async () => {
+  showPreloader.value = true;
   try {
     let otpConfig = await authStore.login(credentials.value);
     if (otpConfig.secondStep) {
@@ -80,6 +85,8 @@ const loginUser = async () => {
   } catch (error) {
     errors.value = tryParseApiErrors(error);
   }
+
+  showPreloader.value = false;
 };
 </script>
 

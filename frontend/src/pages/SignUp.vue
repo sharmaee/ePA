@@ -69,6 +69,9 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
 const formButtonClicked = ref(false);
+import { tryParseApiErrors } from "@/utils";
+
+const errors = ref([]);
 
 const userInfo = ref({
   first_name: "",
@@ -114,8 +117,9 @@ async function registerUser() {
     try {
       await authService.register(userInfo.value);
       registerEmailSent.value = true;
+      errors.value = [];
     } catch (error) {
-      console.log(error);
+      errors.value = tryParseApiErrors(error);
     }
   }
 }
