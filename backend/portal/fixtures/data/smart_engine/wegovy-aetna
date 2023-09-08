@@ -1,4 +1,22 @@
 {
+    "label": "For patients 18 years or older. For continuation of therapy."
+    "header": "Step 2: Verify Prescriber and Patient Documentation",
+    "items": [
+        {
+            "text": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
+            "text": "Documentated loss of at least 5 percent of baseline body weight.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
+            "text": "Documented continued maintainance of their initial 5 percent weight loss.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+    ]
+}
+{
     "label": "For patients 12 to 17 years old. For initiation of therapy."
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
@@ -21,7 +39,7 @@
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
-            "text": "A documented reduction from their baseline body mass index (BMI).",
+            "text": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
     ]
