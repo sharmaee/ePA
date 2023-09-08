@@ -2,25 +2,27 @@
   <PriorHeader />
   <div class="forgot-form-wrapper">
     <h1 class="registration-page-title">Forgot Password</h1>
-    <p class="forgot-pass-sub-title">Forgot your password? No problem!</p>
     <GreenCirclePreloader v-if="showPreloader" />
     <div v-else-if="!showPreloader && passwordRequestEmailSent" class="final-registered-notification">
-      <div class="envelop-wrapper">
-        <img src="@/assets/images/envelop.svg" alt="envelop" />
-      </div>
       <div class="form">
+        <div class="envelop-wrapper">
+          <img src="@/assets/images/envelop.svg" alt="envelop" />
+        </div>
         <p>Check your email, and click the link there</p>
       </div>
     </div>
-    <div v-else class="form">
-      <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
-      <div class="your-email">
-        <input id="your-email" v-model="userEmail" type="text" placeholder="example@findsunrise.com" />
-        <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
-          Please enter a valid email address.
-        </span>
+    <div v-else-if="!showPreloader && !passwordRequestEmailSent">
+      <p class="forgot-pass-sub-title">Forgot your password? No problem!</p>
+      <div class="form">
+        <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
+        <div class="your-email">
+          <input id="your-email" v-model="userEmail" type="text" placeholder="example@findsunrise.com" />
+          <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
+            Please enter a valid email address.
+          </span>
+        </div>
+        <button @click="passwordSending">Get Password Reset Link</button>
       </div>
-      <button @click="passwordSending">Get Password Reset Link</button>
     </div>
   </div>
 

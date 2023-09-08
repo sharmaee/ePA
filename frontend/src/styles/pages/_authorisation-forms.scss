@@ -11,7 +11,6 @@
     width: 100%;
 
     h1 {
-        width: 90%;
         font-size: 64px;
         font-weight: 700;
         text-align: center;
@@ -23,6 +22,7 @@
     
     .forgot-pass-sub-title {
         margin-bottom: 46px;
+        text-align: center;
     }
 
     .success-request-modal-window {
@@ -33,15 +33,20 @@
         min-height: 60vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
 
         .envelop-wrapper {
-            margin-bottom: 20px;
+            margin: 20px 175px 0 175px;
+            text-align: center;
         }
 
         h1 {
             margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: center;
         }
         
     }

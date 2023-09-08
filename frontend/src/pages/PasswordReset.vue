@@ -3,11 +3,13 @@
   <div class="reset-form-wrapper">
     <h1 v-if="!passwordUpdated" class="registration-page-title">Reset Password</h1>
     <GreenCirclePreloader v-if="showPreloader" />
-    <div v-else-if="!showPreloader && passwordUpdated" class="final-registered-notification">
-      <h1>Password changed</h1>
-      <div class="form">
-        <p>Password changed successfully!</p>
-        <button @click="redirectionToLoginPage">Continue To Login</button>
+    <div v-else-if="!showPreloader && passwordUpdated">
+      <h1 class="registration-page-title">Password Changed</h1>
+      <div class="final-registered-notification">
+        <div class="form">
+          <p>Password changed successfully!</p>
+          <button @click="redirectionToLoginPage">Continue To Login</button>
+        </div>
       </div>
     </div>
     <div v-else class="form">

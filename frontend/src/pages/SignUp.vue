@@ -2,17 +2,19 @@
   <PriorHeader />
   <div class="registered-form-wrapper">
     <h1 v-if="!registerEmailSent" class="registration-page-title">Create Your Account</h1>
-    <div v-if="registerEmailSent" class="final-registered-notification">
-      <h1>We are on it!</h1>
-      <div class="envelop-wrapper">
-        <img src="@/assets/images/envelop.svg" alt="envelop" />
-      </div>
-      <div class="form">
-        <p>Check your email to get started with your account</p>
+    <GreenCirclePreloader v-if="showPreloader" />
+    <div v-if="registerEmailSent">
+      <h1 class="registration-page-title">We are on it!</h1>
+      <div class="final-registered-notification">
+        <div class="form">
+          <div class="envelop-wrapper">
+            <img src="@/assets/images/envelop.svg" alt="envelop" />
+          </div>
+          <p>Check your email to get started with your account</p>
+        </div>
       </div>
     </div>
-
-    <div v-else class="registration-form form">
+    <div v-else-if="!showPreloader && !registerEmailSent" class="registration-form form">
       <div class="first-name">
         <label for="first-name">First Name</label>
         <input id="first-name" v-model="userInfo.first_name" type="text" placeholder="John" />
@@ -67,11 +69,9 @@
 import { ref, computed } from "vue";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
+import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import authService from "@/services/authService";
-const formButtonClicked = ref(false);
 import { tryParseApiErrors } from "@/utils";
-
-const errors = ref([]);
 
 const userInfo = ref({
   first_name: "",
@@ -80,7 +80,10 @@ const userInfo = ref({
   password: "",
 });
 
-const registerEmailSent = ref(true);
+const formButtonClicked = ref(false);
+const errors = ref([]);
+const showPreloader = ref(false);
+const registerEmailSent = ref(false);
 const passwordConfirmation = ref(null);
 
 // Validators
@@ -115,6 +118,7 @@ async function registerUser() {
     isPasswordMatchValid.value
   ) {
     try {
+      showPreloader.value = true;
       await authService.register(userInfo.value);
       registerEmailSent.value = true;
       errors.value = [];
@@ -122,6 +126,7 @@ async function registerUser() {
       errors.value = tryParseApiErrors(error);
     }
   }
+  showPreloader.value = false;
 }
 </script>
 
