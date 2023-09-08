@@ -1,6 +1,5 @@
 <template>
   <PriorHeader />
-
   <div class="forgot-form-wrapper">
     <h1 class="registration-page-title">Forgot Password</h1>
     <p class="forgot-pass-sub-title">Forgot your password? No problem!</p>

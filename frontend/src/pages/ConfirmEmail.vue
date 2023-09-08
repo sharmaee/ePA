@@ -1,12 +1,18 @@
 <template>
   <PriorHeader />
-  <div class="confirm-email-wrapper">Confirm email</div>
+  <div class="confirm-email-wrapper">
+    <h1 class="registration-page-title">Account Registered!</h1>
+    <div class="form">
+      <p>Your account has successfully been created. Click below to Login to your account.</p>
+      <button @click="redirectionToLoginPage">Continue To Login</button>
+    </div>
+  </div>
   <PriorFooter />
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import authService from "@/services/authService";
 import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
@@ -15,6 +21,7 @@ const loading = ref(false);
 const success = ref(true);
 const failure = ref(false);
 const route = useRoute();
+const router = useRouter();
 const errors = ref([]);
 
 onMounted(async () => {
@@ -27,8 +34,12 @@ onMounted(async () => {
   }
   loading.value = false;
 });
+
+function redirectionToLoginPage() {
+  router.push({ name: "login" });
+}
 </script>
 
 <style lang="scss" scoped>
-// @import "../styles/pages/_confirm-email.scss";
+@import "../styles/pages/_authorisation-forms.scss";
 </style>
