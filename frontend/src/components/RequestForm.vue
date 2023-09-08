@@ -126,6 +126,6 @@ function clearTheForm() {
 }
 </script>
 
-<style lang="sass" scoped>
-@import "../styles/components/_request-form"
+<style lang="scss" scoped>
+@import "../styles/components/_request-form";
 </style>

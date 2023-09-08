@@ -17,7 +17,7 @@ header {
     .nav {
         display: flex;
         width: 50%;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
 
         @media (max-width: 1150px) {
@@ -25,7 +25,7 @@ header {
         }
         
         ul {
-            width: 100%;
+            width: 40%;
             display: flex;
             justify-content: space-between;
             

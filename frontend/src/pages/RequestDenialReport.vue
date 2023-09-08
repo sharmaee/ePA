@@ -6,7 +6,7 @@
     <div v-if="showPreloader" class="preloader-wrapper">
       <GreenCirclePreloader />
     </div>
-    <ModalWindowForSuccessRequestVue
+    <ModalWindowForSuccessRequest
       v-if="successModalWindow"
       :modal-content="modalContent"
       @close-modal-window="closeSuccessModalWindow" />
@@ -26,8 +26,8 @@
 
 <script setup>
 import { ref } from "vue";
-import ModalWindowForSuccessRequestVue from "@/components/ModalWindowForSuccessRequest";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
+import ModalWindowForSuccessRequest from "@/components/ModalWindowForSuccessRequest";
 import { storeToRefs } from "pinia";
 
 import PriorHeader from "@/components/PriorHeader";

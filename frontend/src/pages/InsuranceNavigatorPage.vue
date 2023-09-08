@@ -101,7 +101,8 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 const { searchFormData } = storeToRefs(useSearchFormStore());
-
+import { tryParseApiErrors } from "@/utils";
+const errors = ref([]);
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
@@ -173,6 +174,7 @@ async function getPriorAuthRequirements() {
       clearTheForm();
       preloader.value = false;
       errMessage.value = err;
+      errors.value = tryParseApiErrors(error);
     }
   }
 }

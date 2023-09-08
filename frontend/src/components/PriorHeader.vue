@@ -9,19 +9,13 @@
       alt="mobile-menu"
       class="mobile-menu-img"
       @click="showHideMenu" />
-    <nav class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
+    <nav v-if="authManager.loggedIn" class="nav" :class="{ 'mobile-menu': screenWidth < 835, hide: mobileMenu }">
       <ul>
         <li>
-          <a href="https://www.dopriorauth.com/">For Providers</a>
+          <router-link :to="{ name: 'home-page' }">Start New Patient</router-link>
         </li>
         <li>
-          <a href="https://www.dopriorauth.com/product/for-life-science-companies">For life science companies</a>
-        </li>
-        <li>
-          <a href="https://www.dopriorauth.com/company/about">About</a>
-        </li>
-        <li>
-          <a href="https://www.dopriorauth.com/company/careers">Careers</a>
+          <router-link :to="{ name: 'login' }" @click="logoutUser">Log Out</router-link>
         </li>
       </ul>
     </nav>
@@ -33,9 +27,12 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+import { useAuthStore } from "@/stores";
 
 const screenWidth = ref(null);
 const mobileMenu = ref(true);
+
+const authManager = useAuthStore();
 
 function displayWindowSize() {
   screenWidth.value = document.documentElement.clientWidth;
@@ -51,6 +48,11 @@ function showHideMenu() {
 
 function redirectToHomePage() {
   router.push({ name: "home-page" });
+}
+
+async function logoutUser() {
+  await authManager.logout();
+  window.location.reload();
 }
 </script>
 
