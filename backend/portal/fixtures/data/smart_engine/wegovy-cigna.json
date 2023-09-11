@@ -3,6 +3,10 @@
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
             "text": "Document that patient has tried behavioral modification and dietary restriction for at least 3 months.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
@@ -22,6 +26,10 @@
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
             "text": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
@@ -40,6 +48,10 @@
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
             "text": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
@@ -56,9 +68,13 @@
 
 
 {
-    "label": "For patients 12 to 17 years old. For initiation of therapy."
+    "label": "For patients 12 to 17 years old. For initiation of therapy.",
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
+        {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
         {
             "text": "Document that the patient has engaged in behavioral modification and dietary restriction for at least 3 months.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
@@ -74,17 +90,21 @@
     ]
 }
 {
-    "label": "For patients 12 to 17 years old. For continuation of therapy more than 12 months."
+    "label": "For patients 12 to 17 years old. For continuation of therapy more than 12 months.",
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
             "text": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        }
+        },
         {
             "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        }
+        },
         {
             "text": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
@@ -92,17 +112,21 @@
     ]
 }
 {
-    "label": "For patients 12 to 17 years old. For continuation of therapy less than 12 months."
+    "label": "For patients 12 to 17 years old. For continuation of therapy less than 12 months.",
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
+            "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
             "text": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        }
+        },
         {
             "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        }
+        },
         {
             "text": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
