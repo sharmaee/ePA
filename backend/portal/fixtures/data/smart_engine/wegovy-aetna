@@ -7,7 +7,7 @@
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
         {
-            "text": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+            "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
     ]
@@ -21,13 +21,9 @@
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
         {
-            "text": "Documentated loss of at least 5 percent of baseline body weight.",
+            "text": "Documentated loss or maintenance of at least 5 percent reducting from baseline body weight.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
-        {
-            "text": "Documented continued maintainance of their initial 5 percent weight loss.",
-            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        }
         {
             "text": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
