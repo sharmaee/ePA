@@ -9,6 +9,116 @@
         {
             "text": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+                {
+            "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+            "node_type": "checkbox",
+            "node_value": false
+        }
+    ]
+}
+{
+    "label": "For patients 18 years or older. For initiation. For South Asian, Southeast Asian, or East Asian descent"
+    "header": "Step 2: Verify Prescriber and Patient Documentation",
+    "items": [
+        {
+            "text": "Documented baseline body mass index (BMI) ≥ 25 kg/m^2.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
+            "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
+            "node_type": "checkbox",
+            "node_value": false
+        },
+        {
+            "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+            "node_type": "checkbox",
+            "node_value": false
         }
     ]
 }
