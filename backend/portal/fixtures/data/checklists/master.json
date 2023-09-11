@@ -93,19 +93,18 @@
                                     ]
                                 },
                                 {
-                                    "label": "The patient has either one of the following",
-                                    "node_type": "checkbox",
+                                    "label": "The patient is of South Asian, Southeast Asian, or East Asian descent?",
+                                    "node_type": "radio",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
-                                            "node_type": "checkbox",
+                                            "label": "Yes",
+                                            "node_type": "radio",
                                             "node_value": false
                                         },
                                         {
-                                            "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2 and comorbidity requirements:",
-                                            "all_required": true,
-                                            "node_type": "checkbox",
+                                            "label": "No",
+                                            "node_type": "radio",
                                             "node_value": false,
                                         }
                                                     ]
