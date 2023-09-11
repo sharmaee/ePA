@@ -54,10 +54,9 @@
       <button @click="registerUser">Create Account</button>
 
       <div class="auxiliary-account-links">
-        <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
-          Dont have an account ?
-          <router-link :to="{ name: 'register' }">Create an account</router-link>
+          Already have an account ?
+          <router-link :to="{ name: 'login' }">Login</router-link>
         </span>
       </div>
     </div>
