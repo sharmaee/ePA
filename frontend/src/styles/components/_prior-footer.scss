@@ -1,5 +1,8 @@
 footer {
     display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 1160px;
     justify-content: space-between;
     border-top: 1px solid $gray-600;
     padding: 20px 0;
