@@ -41,16 +41,6 @@
             "node_value": false
         },
         {
-            "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
-            "node_type": "checkbox",
-            "node_value": false
-        },
-        {
-            "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
-            "node_type": "checkbox",
-            "node_value": false
-        },
-        {
             "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
             "node_type": "checkbox",
             "node_value": false
