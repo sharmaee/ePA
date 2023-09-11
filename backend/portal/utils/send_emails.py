@@ -32,15 +32,15 @@ def send_denial_notification(requirements_request):
 
 
 def send_password_reset_email(reset_password_token):
-    subject = f"Password Reset for {settings.ISSUER_NAME}"
+    subject = f"Password Reset | {settings.ISSUER_NAME}"
     message = f"""
         Dear {reset_password_token.user.full_name()},
 
-        You can change your password using this url:
+        Please click the following link to set up a new password. 
         {settings.WEBSITE_URL}password-reset/{reset_password_token.key}
 
         Best regards,
-        Do Prior Auth Team
+        The Do Prior Auth Team
     """
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [reset_password_token.user.email], fail_silently=False)
 
@@ -48,36 +48,37 @@ def send_password_reset_email(reset_password_token):
 def send_activation_email(user):
     user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
     token = account_activation_token.make_token(user)
-    subject = "Confirmation Email for activation of Do Prior Auth registration"
+    subject = f"Verify Your Account Now | {settings.ISSUER_NAME}"
     message = f"""
         Dear {user.full_name()},
-        please confirm your email via this url:
+        
+        Welcome aboard! To continue, please click the link below to verify your account:
         {settings.WEBSITE_URL}confirm-email/{user_id_code}/{token}
 
-        With best regards,
-        Do Prior Auth Team
+        Best regards,
+        The Do Prior Auth Team
     """
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
 
 
 def send_not_registered_promo_email(email, first_name, last_name):
-    subject = ""
+    subject = f"Set Up an Account | {settings.ISSUER_NAME}"
     message = f"""
         Dear {first_name} {last_name},
-        thank you for your interest. Our sales team will be in contact with you.
 
-        Feel free to contact us at founders@lamarhealth.com  
+        Thank you for your interest! Someone from our team will be in contact with you. 
 
-        With best regards,
-        Do Prior Auth Team
+        Feel free to contact us anytime at founders@lamarhealth.com
+
+        Best Regards,
+        The Do Prior Auth Team
     """
     email = EmailMessage(
         subject,
         message,
         settings.DEFAULT_FROM_EMAIL,
         [email],
-        ["liudmyla@lamarhealth.com"],
-        # ["founders@lamarhealth.com"],
+        ["founders@lamarhealth.com"],
     )
     email.send()
 
@@ -92,8 +93,7 @@ def send_ran_out_of_seats(client_company, email, first_name, last_name):
         Name: {first_name} {last_name}
         Email: {email}
 
-        With best regards,
-        Do Prior Auth Team
+        Best regards,
+        The Do Prior Auth Team
     """
-    # send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["liudmyla@lamarhealth.com"], fail_silently=False)
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
