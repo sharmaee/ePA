@@ -12,8 +12,7 @@
         },
         {
             "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
-            "node_type": "checkbox",
-            "node_value": false
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
     ]
 }
@@ -27,9 +26,12 @@
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
         {
-            "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-            "node_type": "checkbox",
-            "node_value": false
+            "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        },
+        {
+            "label": "Is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
     ]
 }
@@ -43,13 +45,11 @@
         },
         {
             "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-            "node_type": "checkbox",
-            "node_value": false
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         },
         {
             "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
-            "node_type": "checkbox",
-            "node_value": false
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
     ]
 }
@@ -74,7 +74,7 @@
     ]
 }
 {
-    "label": "For patients 12 to 17 years old. For continuation of therapy."
+    "label": "For patients 12 to 17 years old. For continuation of therapy more than 12 months."
     "header": "Step 2: Verify Prescriber and Patient Documentation",
     "items": [
         {
@@ -82,7 +82,25 @@
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
         {
-            "text": "Document patient has received < 12 consecutive months of Wegovy.",
+            "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        }
+        {
+            "text": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        }
+    ]
+}
+{
+    "label": "For patients 12 to 17 years old. For continuation of therapy less than 12 months."
+    "header": "Step 2: Verify Prescriber and Patient Documentation",
+    "items": [
+        {
+            "text": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
+            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+        }
+        {
+            "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
             "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
         }
         {
