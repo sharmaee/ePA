@@ -1,7 +1,7 @@
 {
     "18_plus_initiation":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
              "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
@@ -23,7 +23,7 @@
         },
     "18_plus_continuation_less_than_12_months":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
@@ -45,7 +45,7 @@
         },
     "18_plus_continuation_more_than_12_months":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
@@ -67,7 +67,7 @@
         },
     "below_18_initiation":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
@@ -89,7 +89,7 @@
         },
     "below_18_continuation_more_than_12_months":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
@@ -111,7 +111,7 @@
         },
     "below_18_continuation_less_than_12_months":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
