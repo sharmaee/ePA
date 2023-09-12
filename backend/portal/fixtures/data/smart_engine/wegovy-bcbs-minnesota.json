@@ -1,17 +1,21 @@
 {
-    "label": "Eligibility Criteria for Wegovy"
-    "header": "Step 2: Verify Prescriber and Patient Documentation",
-    "items": [
+    "18_plus_initiation":
         {
-            "text": "Document Wegovy will be used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
-            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        },
-        {
-            "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
-            "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-        },
+            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "items": [
                 {
-            "label": "Document Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
-            "node_type": "checkbox",
-            "node_value": false
+                    "text": "Document Wegovy will be used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Document Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
         }
+}
+
