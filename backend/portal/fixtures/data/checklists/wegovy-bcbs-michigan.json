@@ -1,5 +1,5 @@
 {
-    "label": "Age of patient?",
+    "label": "Age of Patient?",
     "node_type": "fieldset",
     "children": [
         {
@@ -19,136 +19,98 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Member is ≥ 18 years old",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Member’s body mass index (BMI) meets either requirement:",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                    "all_required": true,
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Document a baseline body mass index (BMI) greater than or equal to 30 kg/m^2",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                                            "all_required": true,
+                                            "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "children": [
-                
-                                                {
-                                                    "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false,
-                                                    "children": [
-                                                        {
-                                                            "label": "Established cardiovascular disease or stroke",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Hypertension",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Type 2 diabetes (DM)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Chronic kidney disease (CKD)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Congenital heart disease (CHD)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Obstructive sleep apnea",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Polycystic ovarian syndrome",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Dyslipidemia",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Non-alcoholic fatty liver disease",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Idiopathic intracranial hypertension",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Osteoarthritis in weight-bearing joints",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "comorbidity": true
                                         }
                                     ]
                                 },
                                 {
-                                    "label": "Member’s current weight must be submitted to the plan for review (within 30 days)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Lifestyle Modification Program participation:",
-                                    "node_type": "checkbox",
+                                    "label": "Does the patient have access to a covered BCBSM/BCN program?",
+                                    "node_type": "radio",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Provider can submit documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
+                                            "label": "Yes",
                                             "node_type": "checkbox",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "smart_engine": "18_plus_initiation_with_BCBSM/BCN_program"
                                         },
                                         {
-                                            "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) if the member does not have access to a covered BCBSM/BCN program",
+                                            "label": "No",
                                             "node_type": "checkbox",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "smart_engine": "18_plus_initiation_without_BCBSM/BCN_program"
                                         }
                                     ]
                                 },
-                                {
-                                    "label": "Document that the medication will not to be used in combination with other weight loss products",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
                             ]
                         },
                         {
@@ -156,23 +118,7 @@
                             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "Continued coverage will be reviewed annually",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The member has maintained at least a 5% weight loss from baseline",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Requires documentation of continued participation in lifestyle modification program",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
-                            ]
+                            "smart_engine": "18_plus_continuation":
                         }
                     ]
                 }
@@ -195,42 +141,24 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Member’s age is 12 to 17 years",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile, standardized for age and sex",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Member’s current weight must be submitted to the plan for review (within 30 days)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Lifestyle Modification Program participation:",
-                                    "node_type": "checkbox",
+                                    "label": "Does the patient have access to a covered BCBSM/BCN program?",
+                                    "node_type": "radio",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program",
+                                            "label": "Yes",
                                             "node_type": "checkbox",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "smart_engine": "below_18_initiation_with_BCBSM/BCN_program"
                                         },
                                         {
-                                            "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) if the member does not have access to a covered BCBSM/BCN program",
+                                            "label": "No",
                                             "node_type": "checkbox",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "smart_engine": "18_plus_initiation_without_BCBSM/BCN_program"
                                         }
-                                    ]
+                                    ]    
                                 },
-                                {
-                                    "label": "Document medication will not to be used in combination with other weight loss products",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
                             ]
                         },
                         {
@@ -238,23 +166,7 @@
                             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "Continued coverage will be reviewed annually",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient has maintained at least a 1% reduction in BMI from baseline",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document continued participation in lifestyle modification program",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
-                            ]
+                            "smart_engine": "18_plus_continuation"
                         }
                     ]
                 }
