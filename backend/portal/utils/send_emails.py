@@ -69,7 +69,7 @@ class RanOutOfSeatsEmail(ServiceEmail):
         subject = f"{client_company} ran out of seats"
         message = f"""
             New user attempted to register at {settings.WEBSITE_URL} with {client_company} domain.
-            {client_company.company_name} has ran out of seats.
+            {client_company} has ran out of seats.
 
             Contacts used:
             Name: {first_name} {last_name}
