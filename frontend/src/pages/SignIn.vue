@@ -15,8 +15,7 @@
         <label for="password">Password</label>
         <input id="password" v-model="credentials.password" type="password" />
         <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
-          Please create a password with more than 10 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
-          and 1 symbol.
+          Invalid username or password. Please try again.
         </span>
       </div>
       <button @click="loginUser">Login</button>
@@ -71,19 +70,23 @@ const isPasswordValid = computed(() => {
 
 const loginUser = async () => {
   showPreloader.value = true;
-  try {
-    let otpConfig = await authStore.login(credentials.value);
-    if (otpConfig.secondStep) {
-      secondVerificationStep.value = true;
-      qrCode.value = otpConfig.otpAppUrl;
-      setupKey.value = otpConfig.setupKey;
-    } else {
-      await authStore.loginStep2NotRequired();
-      router.push({ name: "home-page" });
+  formButtonClicked.value = true;
+
+  if (isEmailValid.value && isPasswordValid.value) {
+    try {
+      let otpConfig = await authStore.login(credentials.value);
+      if (otpConfig.secondStep) {
+        secondVerificationStep.value = true;
+        qrCode.value = otpConfig.otpAppUrl;
+        setupKey.value = otpConfig.setupKey;
+      } else {
+        await authStore.loginStep2NotRequired();
+        router.push({ name: "home-page" });
+      }
+      errors.value = [];
+    } catch (error) {
+      errors.value = tryParseApiErrors(error);
     }
-    errors.value = [];
-  } catch (error) {
-    errors.value = tryParseApiErrors(error);
   }
 
   showPreloader.value = false;
