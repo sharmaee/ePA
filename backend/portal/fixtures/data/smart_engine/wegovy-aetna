@@ -13,7 +13,7 @@
                 }
             ]
         },
-    "18_plus_continuation_less_than_12_months":
+    "18_plus_continuation":
         {
             "header": "Step 2: Verify Prescriber and Patient Documentation",
             "items": [
@@ -31,7 +31,7 @@
                 }
             ]
         },
-    "For patients 12 to 17 years old. For initiation of therapy."
+    "below_18_initiation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -49,7 +49,7 @@
                 }
             ]
         },
-    "For patients 12 to 17 years old. For continuation of therapy."
+    "below_18_continuation":
         {
             "header": "Step 2: Verify Prescriber and Patient Documentation",
             "items": [
