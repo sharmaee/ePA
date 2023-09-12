@@ -1,14 +1,14 @@
 <template>
   <PriorHeader />
   <div class="forgot-form-wrapper">
-    <h1 class="registration-page-title">Forgot Password</h1>
+    <h1 class="registration-page-title">Reset Password</h1>
     <GreenCirclePreloader v-if="showPreloader" />
     <div v-else-if="!showPreloader && passwordRequestEmailSent" class="final-registered-notification">
       <div class="form">
         <div class="envelop-wrapper">
           <img src="@/assets/images/envelop.svg" alt="envelop" />
         </div>
-        <p>Check your email, and click the link there</p>
+        <p>Check your email, you will receive a link to reset your password.</p>
       </div>
     </div>
     <div v-else-if="!showPreloader && !passwordRequestEmailSent">
