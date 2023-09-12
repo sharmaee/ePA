@@ -7,115 +7,45 @@
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
+            "smart_engine": "18_plus"
             "children": [
                 {
-                    "label": "Document that the medication will be used in addition to a reduced calorie diet and increased physical activity for chronic weight management",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "The patient has either:",
+                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                    "all_required": true,
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "A documented baseline initial body mass index (BMI) greater than or equal to 30 kg/m^2 (obese)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Meets initial body mass index (BMI) and comorbidity requirements:",
-                            "all_required": true,
+                            "label": "Established cardiovascular disease or stroke",
                             "node_type": "checkbox",
                             "node_value": false,
-                            "children": [
-
-                                {
-                                    "label": "A documented initial body mass index (BMI) greater than or equal to 27 kg/m^2 (overweight)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Established cardiovascular disease or stroke",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Type 2 diabetes (DM)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Chronic kidney disease (CKD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Congenital heart disease (CHD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Obstructive sleep apnea",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Polycystic ovarian syndrome",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Dyslipidemia",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Non-alcoholic fatty liver disease",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Idiopathic intracranial hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Osteoarthritis in weight-bearing joints",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
+                            "comorbidity": true
+                        },
+                        {
+                            "label": "Hypertension",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "comorbidity": true
+                        },
+                        {
+                            "label": "Type 2 diabetes (DM)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "comorbidity": true
+                        },
+                        {
+                            "label": "Chronic kidney disease (CKD)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "comorbidity": true
+                        },
+                        {
+                            "label": "Congenital heart disease (CHD)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "comorbidity": true
+                        },
                     ]
-                },
-                {
-                    "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
-                    "node_type": "checkbox",
-                    "node_value": false
                 }
             ]
         },
@@ -124,23 +54,7 @@
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
-            "children": [
-                {
-                    "label": "Document that the medication will be used with a reduced calorie diet and increased physical activity for chronic weight management",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document an initial baseline BMI at the 95th percentile or greater, standardized for age and sex (obesity)",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
-            ]
+            "smart_engine": "below_18"
         }
     ]
 }
