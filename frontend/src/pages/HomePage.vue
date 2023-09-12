@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="home-page-wrapper">
+  <div class="home-page-wrapper fix-height-wrapper">
     <h1>Prepare Prior Authorizations For <span class="blue-text">Approval</span></h1>
 
     <div class="home-page-btn-wrapper">
