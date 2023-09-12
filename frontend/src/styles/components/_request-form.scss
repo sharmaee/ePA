@@ -17,7 +17,7 @@
             flex-direction: column;
         }  
 
-        .cover-my-meds-key, .patient-first-name, .patient-last-name, .date-of-birth, .patient-member-id, .referring-doctor, .your-email {
+        .cover-my-meds-key, .patient-last-name, .date-of-birth, .patient-member-id {
             width: 47%;       
 
             @media (max-width: 605px) {
