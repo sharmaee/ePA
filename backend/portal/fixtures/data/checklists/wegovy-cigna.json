@@ -17,6 +17,7 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to for 7 months when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "18_plus_initiation"
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
@@ -173,6 +174,24 @@
                                             "comorbidity": true
                                         }
                                     ]
+                                },
+                                {
+                                    "label": "How long has the patient been using Wegovy?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "More than 12 months",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "18_plus_continuation_more_than_12_months"
+                                        },
+                                        {
+                                            "label": "Less than 12 months",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "18_plus_continuation_less_than_12_months"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -195,6 +214,7 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 7 months when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "below_18_initiation"
                         },
                         {
                             "label": "Continuation of therapy",
@@ -204,18 +224,19 @@
                             "children": [
                                 {
                                     "label": "How long has the patient been using Wegovy?",
-                                    "node_type": "radio",
-                                    "node_value": false,
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
                                             "label": "More than 12 months",
                                             "node_type": "radio",
-                                            "node_value": false
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_more_than_12_months"
                                         },
                                         {
                                             "label": "Less than 12 months",
                                             "node_type": "radio",
                                             "node_value": false,
+                                            "smart_engine": "below_18_continuation_less_than_12_months"
                                         }
                                     ]
                                 }
