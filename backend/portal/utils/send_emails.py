@@ -2,7 +2,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from portal.utils.async_tasks import background_tasks_supported, try_run_in_background
 from portal.tasks import send_notification_task
-from enum import Enum
+from enum import Flag
 
 
 class ServiceEmail:
@@ -14,7 +14,7 @@ class ServiceEmail:
         self.bcc = bcc
 
     def send_email(self):
-        email = EmailMessage(self.subject, self.message, self.from_email, self.to_email, self.bcc, fail_silently=False)
+        email = EmailMessage(self.subject, self.message, self.from_email, self.to_email, self.bcc)
         email.send()
 
 
@@ -34,18 +34,18 @@ class ActivationEmail(ServiceEmail):
 
 
 class PasswordResetEmail(ServiceEmail):
-    def __init__(self, reset_password_token):
+    def __init__(self, first_name, last_name, email, reset_password_token_key):
         subject = f"Password Reset | {settings.ISSUER_NAME}"
         message = f"""
-            Dear {reset_password_token.user.full_name()},
+            Dear {first_name} {last_name},
 
             Please click the following link to set up a new password. 
-            {settings.WEBSITE_URL}password-reset/{reset_password_token.key}
+            {settings.WEBSITE_URL}password-reset/{reset_password_token_key}
 
             Best regards,
             The Do Prior Auth Team
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [reset_password_token.user.email])
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
 class NotRegisteredPromoEmail(ServiceEmail):
@@ -82,34 +82,34 @@ class RanOutOfSeatsEmail(ServiceEmail):
 
 
 class DenialRequestEmail(ServiceEmail):
-    def __init__(self, requirements_request):
+    def __init__(self, medication, cmm_key, release_version, submission_date):
         subject = "Denial Details Submitted"
         message = f"""
         DoPriorAuth user submitted denial details.\n\n
-        Medication: {requirements_request.medication}\n
-        CoverMyMeds Key: {requirements_request.member_details.cover_my_meds_key}\n
-        App Release Version: {requirements_request.release_version}\n
-        Submission Date: {requirements_request.submission_date}\n
+        Medication: {medication}\n
+        CoverMyMeds Key: {cmm_key}\n
+        App Release Version: {release_version}\n
+        Submission Date: {submission_date}\n
         """
         super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
 
 
 class NewRequestEmail(ServiceEmail):
-    def __init__(self, requirements_request):
+    def __init__(self, medication, insurance_provider, insurance_coverage_state, cmm_key, release_version, submission_date):
         subject = "Request for New Prior Auth Requirements"
         message = f"""
         DoPriorAuth user requested new prior auth requirements.\n\n
-        Medication: {requirements_request.medication}\n
-        Insurance Provider: {requirements_request.insurance_provider}\n
-        Insurance Coverage State: {requirements_request.insurance_coverage_state}\n
-        CoverMyMeds Key: {requirements_request.member_details.cover_my_meds_key}\n
-        App Release Version: {requirements_request.release_version}\n
-        Submission Date: {requirements_request.submission_date}\n
+        Medication: {medication}\n
+        Insurance Provider: {insurance_provider}\n
+        Insurance Coverage State: {insurance_coverage_state}\n
+        CoverMyMeds Key: {cmm_key}\n
+        App Release Version: {release_version}\n
+        Submission Date: {submission_date}\n
         """
         super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
 
 
-class NotificationType(Enum):
+class NotificationType(Flag):
     NEW_REQUEST = NewRequestEmail
     DENIAL = DenialRequestEmail
     PASSWORD_RESET = PasswordResetEmail
@@ -123,11 +123,14 @@ def send_notification(notification_type, *args):
     email.send_email()
 
 
-def send_service_email(notification_type, *args, **kwargs):
+def send_service_email(notification_type, *args):
     if not background_tasks_supported():
-        send_notification(notification_type, *args, **kwargs)
-    try_run_in_background(
-        send_notification_task,
-        args=[notification_type, args, kwargs],
-        expires=120,
-    )
+        print("Running in foreground")
+        send_notification(notification_type, *args)
+    else:
+        print("Running in background")
+        try_run_in_background(
+            send_notification_task,
+            args=[notification_type, *args],
+            expires=120,
+        )

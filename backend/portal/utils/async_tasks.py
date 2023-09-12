@@ -11,7 +11,7 @@ _background_tasks_supported = None
 
 def background_tasks_supported():
     global _background_tasks_supported
-
+    print("Backgrounf", _background_tasks_supported)
     if _background_tasks_supported is not None:
         return _background_tasks_supported
 

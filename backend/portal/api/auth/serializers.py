@@ -41,7 +41,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         extra_kwargs = {'first_name': {'required': True}, 'last_name': {'required': True}}
 
     def raise_company_not_registered(self, email, first_name, last_name):
-        send_service_email(NotificationType.NOT_REGISTERED_PROMO, email, first_name, last_name)
+        send_service_email(NotificationType.NOT_REGISTERED_PROMO.name, email, first_name, last_name)
         raise serializers.ValidationError({"email": "We are on it! Check your email to get started with your account."})
 
     def raise_user_exists(self):
@@ -55,7 +55,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         )
 
     def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
-        self.send_service_email(NotificationType.RAN_OUT_OF_SEATS, company_name, email, first_name, last_name)
+        send_service_email(NotificationType.RAN_OUT_OF_SEATS.name, company_name, email, first_name, last_name)
         raise serializers.ValidationError(
             {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
         )
@@ -78,7 +78,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
         token = account_activation_token.make_token(user)
         send_service_email(
-            NotificationType.ACTIVATION, user.first_name, user.last_name, user.email, token, user_id_code
+            NotificationType.ACTIVATION.name, user.first_name, user.last_name, user.email, token, user_id_code
         )
 
     def create(self, validated_data):
