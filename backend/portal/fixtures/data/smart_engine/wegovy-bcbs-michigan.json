@@ -1,0 +1,106 @@
+{
+    "18_plus_initiation_with_BCBSM/BCN_program":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+                {
+                    "text": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Document that the medication will not to be used in combination with other weight loss products.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
+        },
+      "18_plus_initiation_without_BCBSM/BCN_program":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+                {
+                    "text": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Document that the medication will not to be used in combination with other weight loss products.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+             ]
+        },
+
+    "18_plus_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "text": "Document the patient has maintained at least a 5% weight loss from baseline.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "text": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+          ]
+      },
+
+  
+    "below_18_initiation_with_BCBSM/BCN_program":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "text": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Document medication will not to be used in combination with other weight loss products.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
+        },
+    "below_18_without_BCBSM/BCN_program":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "text": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Document medication will not to be used in combination with other weight loss products.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
+        },
+    
+    "18_plus_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "text": "Document the patient has maintained at least a 1% weight loss in BMI from baseline.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "text": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+          ]
+      }
+
