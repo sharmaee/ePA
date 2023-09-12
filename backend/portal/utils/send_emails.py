@@ -95,7 +95,9 @@ class DenialRequestEmail(ServiceEmail):
 
 
 class NewRequestEmail(ServiceEmail):
-    def __init__(self, medication, insurance_provider, insurance_coverage_state, cmm_key, release_version, submission_date):
+    def __init__(
+        self, medication, insurance_provider, insurance_coverage_state, cmm_key, release_version, submission_date
+    ):
         subject = "Request for New Prior Auth Requirements"
         message = f"""
         DoPriorAuth user requested new prior auth requirements.\n\n

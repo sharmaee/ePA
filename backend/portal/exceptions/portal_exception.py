@@ -62,5 +62,5 @@ class PortalException(APIException):
         return PortalException(
             "Something went wrong. Please contact us at founders@lamarhealth.com",
             {error_props.DETAILED_MSG: exc.detail},
-            code
+            code,
         )

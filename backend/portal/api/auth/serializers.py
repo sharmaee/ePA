@@ -42,22 +42,20 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
 
     def raise_company_not_registered(self, email, first_name, last_name):
         send_service_email(NotificationType.NOT_REGISTERED_PROMO.name, email, first_name, last_name)
-        raise serializers.ValidationError({"email": "We are on it! Check your email to get started with your account."})
+        raise serializers.ValidationError("We are on it! Check your email to get started with your account.")
 
     def raise_user_exists(self):
         raise serializers.ValidationError(
-            {
-                "email": (
-                    "User already exists. Please try signing into your account or, if you've forgotten your password,"
-                    "use the 'Forgot Password' option to reset it." 
-                )
-            }
+            (
+                "User already exists. Please try signing into your account or, if you've forgotten your password,"
+                "use the 'Forgot Password' option to reset it."
+            )
         )
 
     def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
         send_service_email(NotificationType.RAN_OUT_OF_SEATS.name, company_name, email, first_name, last_name)
         raise serializers.ValidationError(
-            {"email": "Registration failed. Your company has reached maximum number of seats. Reach out to your admin."}
+            "Registration failed. Your company has reached maximum number of seats. Reach out to your admin."
         )
 
     def validate_email(self, value):
@@ -113,7 +111,7 @@ class CustomTokenObtainSerializer(serializers.Serializer):
         "no_active_account": "Account not registered. Please create an account to continue.",
         "email_not_verified": (
             "Email has not been verified.",
-            "Please check your inbox for an email from Lamar Health to activate your account."
+            "Please check your inbox for an email from Lamar Health to activate your account.",
         ),
     }
 
