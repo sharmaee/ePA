@@ -19,7 +19,9 @@
         </span>
       </div>
       <button @click="loginUser">Login</button>
-
+      <span v-if="errors.length > 0" class="input-error-notification">
+        Invalid username or password. Please try again.
+      </span>
       <div class="auxiliary-account-links">
         <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
