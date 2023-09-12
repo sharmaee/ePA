@@ -69,10 +69,10 @@ const isPasswordValid = computed(() => {
 });
 
 const loginUser = async () => {
-  showPreloader.value = true;
   formButtonClicked.value = true;
 
   if (isEmailValid.value && isPasswordValid.value) {
+    showPreloader.value = true;
     try {
       let otpConfig = await authStore.login(credentials.value);
       if (otpConfig.secondStep) {

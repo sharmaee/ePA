@@ -52,9 +52,10 @@ const isEmailValid = computed(() => {
 });
 
 const passwordSending = async () => {
-  showPreloader.value = true;
   formButtonClicked.value = true;
+
   if (isEmailValid.value) {
+    showPreloader.value = true;
     try {
       await authService.passwordResetRequest(userEmail.value);
       formButtonClicked.value = false;
