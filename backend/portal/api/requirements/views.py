@@ -1,6 +1,6 @@
 from rest_framework import status
 from rest_framework.response import Response
-from portal.utils.send_emails import send_new_request_notification
+from portal.utils.send_emails import send_service_email, NotificationType
 
 from .serializers import (
     PriorAuthRequirementSerializer,
@@ -47,6 +47,6 @@ class RequestNewPriorAuthRequirementsView(SecuredAPIView):
             )
             if request_new_prior_auth_requirements.is_valid(raise_exception=True):
                 request_new_prior_auth_requirements.save(member_details=member_details.instance, user=self.request.user)
-                send_new_request_notification(request_new_prior_auth_requirements.instance)
+                send_service_email(NotificationType.NEW_REQUEST, request_new_prior_auth_requirements.instance)
                 return Response(request_new_prior_auth_requirements.data, status=status.HTTP_200_OK)
         return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)

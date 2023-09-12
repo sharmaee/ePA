@@ -3,12 +3,12 @@ import os
 
 CELERY_IMPORTS = ("portal",)
 CELERY_BROKER_USE_SSL = None
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "redis://127.0.0.1:6379")
-CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND", "redis://127.0.0.1:6379")
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://127.0.0.1:6379")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND", "redis://127.0.0.1:6379")
 
 CELERY_BEAT_SCHEDULE = {}
 
-REDIS_HOST = os.getenv("REDIS_HOST", "127.0.0.1")
+REDIS_HOST = os.environ.get("REDIS_HOST", "127.0.0.1")
 
 worker_send_task_event = False
 task_ignore_result = True

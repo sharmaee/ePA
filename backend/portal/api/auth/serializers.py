@@ -4,18 +4,16 @@ from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
 from django.core.validators import EmailValidator
 from django.utils import timezone
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from portal.utils.token import account_activation_token
 from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.serializers import PasswordField
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from portal.models.auth import User, ClientCompany
-from portal.tasks import (
-    send_activation_email_task,
-    send_ran_out_of_seats_task,
-    send_not_registered_promo_email_task,
-)
-from portal.utils.async_tasks import background_tasks_supported, try_run_in_background
+from portal.utils.send_emails import NotificationType, send_service_email
 
 UserModel = get_user_model()
 
@@ -43,7 +41,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         extra_kwargs = {'first_name': {'required': True}, 'last_name': {'required': True}}
 
     def raise_company_not_registered(self, email, first_name, last_name):
-        self.send_notification(send_not_registered_promo_email_task, email, first_name, last_name)
+        send_service_email(NotificationType.NOT_REGISTERED_PROMO, email, first_name, last_name)
         raise serializers.ValidationError({"email": "We are on it! Check your email to get started with your account."})
 
     def raise_user_exists(self):
@@ -57,7 +55,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         )
 
     def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
-        self.send_notification(send_ran_out_of_seats_task, company_name, email, first_name, last_name)
+        self.send_service_email(NotificationType.RAN_OUT_OF_SEATS, company_name, email, first_name, last_name)
         raise serializers.ValidationError(
             {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
         )
@@ -76,13 +74,11 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def send_notification(self, notitication_type, *args, **kwargs):
-        if not background_tasks_supported():
-            raise serializers.ValidationError({"errors": "Email service is down. Please try again later"})
-        try_run_in_background(
-            notitication_type,
-            args=[args, kwargs],
-            expires=120,
+    def activate_user(self, user):
+        user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
+        token = account_activation_token.make_token(user)
+        send_service_email(
+            NotificationType.ACTIVATION, user.first_name, user.last_name, user.email, token, user_id_code
         )
 
     def create(self, validated_data):
@@ -98,7 +94,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         )
         user.set_password(validated_data['password'])
         user.save()
-        self.send_notification(send_activation_email_task, user.pk)
+        self.activate_user(user)
         return user
 
 
