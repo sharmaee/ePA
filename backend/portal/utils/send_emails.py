@@ -3,6 +3,7 @@ from django.utils.http import urlsafe_base64_encode
 from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from portal.utils.token import account_activation_token
+from portal.models.auth import User
 
 
 def send_new_request_notification(requirements_request):
@@ -45,8 +46,9 @@ def send_password_reset_email(reset_password_token):
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [reset_password_token.user.email], fail_silently=False)
 
 
-def send_activation_email(user):
-    user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
+def send_activation_email(user_id):
+    user = User.objects.get(pk=user_id)
+    user_id_code = urlsafe_base64_encode(force_bytes(user_id))
     token = account_activation_token.make_token(user)
     subject = f"Verify Your Account Now | {settings.ISSUER_NAME}"
     message = f"""
@@ -84,9 +86,9 @@ def send_not_registered_promo_email(email, first_name, last_name):
 
 
 def send_ran_out_of_seats(client_company, email, first_name, last_name):
-    subject = f"{client_company.company_name} ran out of seats"
+    subject = f"{client_company} ran out of seats"
     message = f"""
-        New user attempted to register at {settings.WEBSITE_URL} with {client_company.company_name} domain.
+        New user attempted to register at {settings.WEBSITE_URL} with {client_company} domain.
         {client_company.company_name} has ran out of seats.
 
         Contacts used:

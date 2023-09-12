@@ -10,7 +10,12 @@ from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from portal.models.auth import User, ClientCompany
-from portal.utils.send_emails import send_activation_email, send_ran_out_of_seats, send_not_registered_promo_email
+from portal.tasks import (
+    send_activation_email_task,
+    send_ran_out_of_seats_task,
+    send_not_registered_promo_email_task,
+)
+from portal.utils.async_tasks import background_tasks_supported, try_run_in_background
 
 UserModel = get_user_model()
 
@@ -37,32 +42,48 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         fields = ('password', 'email', 'first_name', 'last_name')
         extra_kwargs = {'first_name': {'required': True}, 'last_name': {'required': True}}
 
+    def raise_company_not_registered(self, email, first_name, last_name):
+        self.send_notification(send_not_registered_promo_email_task, email, first_name, last_name)
+        raise serializers.ValidationError({"email": "We are on it! Check your email to get started with your account."})
+
+    def raise_user_exists(self):
+        raise serializers.ValidationError(
+            {
+                "email": (
+                    "User already exists. Please try signing into your account or,"
+                    "if you've forgotten your password, use the 'Forgot Password' option to reset it."
+                )
+            }
+        )
+
+    def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
+        self.send_notification(send_ran_out_of_seats_task, company_name, email, first_name, last_name)
+        raise serializers.ValidationError(
+            {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
+        )
+
     def validate_email(self, value):
         email_domain = value.split('@')[1]
         client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
         if not client_company:
-            send_not_registered_promo_email(value, self.initial_data['first_name'], self.initial_data['last_name'])
-            raise serializers.ValidationError(
-                {"email": "We are on it! Check your email to get started with your account."}
-            )
+            self.raise_company_not_registered(value, self.initial_data['first_name'], self.initial_data['last_name'])
         if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError(
-                {
-                    "email": (
-                        "User already exists. Please try signing into your account or,"
-                        "if you've forgotten your password, use the 'Forgot Password' option to reset it."
-                    )
-                }
-            )
+            self.raise_user_exists()
         client_user_count = User.objects.filter(client_company=client_company).count()
         if client_user_count >= client_company.number_of_seats:
-            send_ran_out_of_seats(
-                client_company, value, self.initial_data['first_name'], self.initial_data['last_name']
-            )
-            raise serializers.ValidationError(
-                {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
+            self.raise_number_of_seats_exceeded(
+                value, client_company.company_name, self.initial_data['first_name'], self.initial_data['last_name']
             )
         return value
+
+    def send_notification(self, notitication_type, *args, **kwargs):
+        if not background_tasks_supported():
+            raise serializers.ValidationError({"errors": "Email service is down. Please try again later"})
+        try_run_in_background(
+            notitication_type,
+            args=[args, kwargs],
+            expires=120,
+        )
 
     def create(self, validated_data):
         client_company = ClientCompany.objects.filter(email_domain=validated_data['email'].split('@')[1]).first()
@@ -77,7 +98,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         )
         user.set_password(validated_data['password'])
         user.save()
-        send_activation_email(user)
+        self.send_notification(send_activation_email_task, user.pk)
         return user
 
 
