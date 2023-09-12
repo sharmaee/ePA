@@ -11,7 +11,6 @@ _background_tasks_supported = None
 
 def background_tasks_supported():
     global _background_tasks_supported
-    print("Backgrounf", _background_tasks_supported)
     if _background_tasks_supported is not None:
         return _background_tasks_supported
 
@@ -34,3 +33,6 @@ def background_tasks_supported():
 def try_run_in_background(task, args, expires):
     if background_tasks_supported():
         task.apply_async(args=args, expires=expires)
+
+
+background_tasks_supported()

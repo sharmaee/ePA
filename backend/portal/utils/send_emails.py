@@ -125,10 +125,8 @@ def send_notification(notification_type, *args):
 
 def send_service_email(notification_type, *args):
     if not background_tasks_supported():
-        print("Running in foreground")
         send_notification(notification_type, *args)
     else:
-        print("Running in background")
         try_run_in_background(
             send_notification_task,
             args=[notification_type, *args],
