@@ -1,0 +1,38 @@
+{
+    "18_plus":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+                {
+                    "text": "Document that the medication will be used in addition to a reduced calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "A documented initial body mass index (BMI) greater than or equal to 27 kg/m^2 (overweight).",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "text": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
+        },
+    "below_18":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "text": "Document that the medication will be used with a reduced calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+               },
+                {
+                    "text": "Document an initial baseline BMI at the 95th percentile or greater, standardized for age and sex (obesity).",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+            ]
+        }
+}
