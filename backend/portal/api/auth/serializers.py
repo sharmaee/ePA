@@ -47,7 +47,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
     def raise_user_exists(self):
         raise serializers.ValidationError(
             (
-                "User already exists. Please try signing into your account or, if you've forgotten your password,"
+                "User already exists. Please try signing into your account or, if you've forgotten your password, "
                 "use the 'Forgot Password' option to reset it."
             )
         )
