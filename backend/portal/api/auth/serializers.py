@@ -48,8 +48,8 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         raise serializers.ValidationError(
             {
                 "email": (
-                    "User already exists. Please try signing into your account or,"
-                    "if you've forgotten your password, use the 'Forgot Password' option to reset it."
+                    "User already exists. Please try signing into your account or, if you've forgotten your password,"
+                    "use the 'Forgot Password' option to reset it." 
                 )
             }
         )
@@ -57,7 +57,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
     def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
         send_service_email(NotificationType.RAN_OUT_OF_SEATS.name, company_name, email, first_name, last_name)
         raise serializers.ValidationError(
-            {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
+            {"email": "Registration failed. Your company has reached maximum number of seats. Reach out to your admin."}
         )
 
     def validate_email(self, value):
@@ -110,8 +110,11 @@ class CustomTokenObtainSerializer(serializers.Serializer):
     username_field = get_user_model().USERNAME_FIELD
 
     default_error_messages = {
-        'no_active_account': 'No active account found with the given credentials',
-        'email_not_verified': 'Email wasn\'t verified',
+        "no_active_account": "Account not registered. Please create an account to continue.",
+        "email_not_verified": (
+            "Email has not been verified.",
+            "Please check your inbox for an email from Lamar Health to activate your account."
+        ),
     }
 
     def __init__(self, *args, **kwargs):
