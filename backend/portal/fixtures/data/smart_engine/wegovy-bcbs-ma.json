@@ -1,0 +1,50 @@
+{
+    "18_plus_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+                {
+                    "label": "Patient must be 18 years of age or older.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Document the medication will be used with a reduced-calorie diet and increased physical activity.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (overweight).",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Documentation that the member has been and is currently following a dietary and behavior modification program for weight loss.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                }
+            ]
+        },
+    "18_plus_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "label": "Documented significant weight loss* after initiation of therapy.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "label": "Adhering to a reduced-calorie diet.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "label": "Adhering to increased physical activity.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "label": "Patient is on 2.4 mg dose.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              },
+              {
+                    "label": "Document patient continues weightloss or maintains at least a 4% weight loss from initial BMI.",
+                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+              }
+          ]
+      }
+}
