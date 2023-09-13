@@ -5,11 +5,11 @@
             "items": [
                 {
                     "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
                     "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "A baseline body mass index of less than 27 is unlikely to get approved."
                 }
             ]
         },
@@ -19,15 +19,15 @@
             "items": [
                 {
                     "text": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                
                 },
                 {
                     "text": "Documentated loss or maintenance of at least 5 percent reduction from baseline body weight.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
                     "text": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
         },
@@ -37,15 +37,15 @@
             "items": [
                 {
                     "text": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
                     "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
                     "text": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
         },
@@ -55,7 +55,7 @@
             "items": [
                 {
                     "text": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. (The baseline BMI should be from the start of therapy."
                 }
             ]
         }
