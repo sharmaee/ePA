@@ -8,28 +8,6 @@
             "node_type": "radio",
             "node_value": false,
             "children": [
-                {
-                    "label": "Body mass index (BMI) meets either of the requirements:",
-                    "node_type": "checkbox",
-                    "node_value": false,
-                    "children": [
-                        {
-                            "label": "Documented body mass index (BMI) ≥ 30 kg/m^2",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                            "all_required": true,
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "children": [
-
-                                {
-                                    "label": "Documented body mass index (BMI) ≥ 27 kg/m^2",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
                                 {
                                     "label": "Document that the patient has at least one weight-related comorbid condition:",
                                     "node_type": "checkbox",
