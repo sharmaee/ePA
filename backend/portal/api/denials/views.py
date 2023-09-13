@@ -15,12 +15,13 @@ class SubmitDenialView(SecuredAPIView):
             pa_denial_serializer = PriorAuthDenialSerializer(data=self.request.data, partial=True)
             if pa_denial_serializer.is_valid(raise_exception=True):
                 pa_denial_serializer.save(member_details=member_details.instance, user=self.request.user)
+                denial = pa_denial_serializer.instance
                 send_service_email(
-                    NotificationType.DENIAL.name,
-                    pa_denial_serializer.instance.medication,
-                    pa_denial_serializer.instance.member_details.cover_my_meds_key,
-                    pa_denial_serializer.instance.release_version,
-                    pa_denial_serializer.instance.submission_date,
+                    NotificationType.DENIAL,
+                    denial.medication,
+                    denial.member_details.cover_my_meds_key,
+                    denial.release_version,
+                    denial.submission_date,
                 )
                 return Response(pa_denial_serializer.data, status=status.HTTP_200_OK)
         return Response(pa_denial_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -13,12 +13,9 @@ from portal.utils.send_emails import send_service_email, NotificationType
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
+    user = reset_password_token.user
     send_service_email(
-        NotificationType.PASSWORD_RESET.name,
-        reset_password_token.user.first_name,
-        reset_password_token.user.last_name,
-        reset_password_token.user.email,
-        reset_password_token.key,
+        NotificationType.PASSWORD_RESET, user.first_name, user.last_name, user.email, reset_password_token.key,
     )
 
 

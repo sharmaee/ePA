@@ -47,14 +47,15 @@ class RequestNewPriorAuthRequirementsView(SecuredAPIView):
             )
             if request_new_prior_auth_requirements.is_valid(raise_exception=True):
                 request_new_prior_auth_requirements.save(member_details=member_details.instance, user=self.request.user)
+                new_request = request_new_prior_auth_requirements.instance
                 send_service_email(
-                    NotificationType.NEW_REQUEST.name,
-                    request_new_prior_auth_requirements.instance.medication,
-                    request_new_prior_auth_requirements.instance.insurance_provider,
-                    request_new_prior_auth_requirements.instance.insurance_coverage_state,
-                    request_new_prior_auth_requirements.instance.member_details.cover_my_meds_key,
-                    request_new_prior_auth_requirements.instance.release_version,
-                    request_new_prior_auth_requirements.instance.submission_date,
+                    NotificationType.NEW_REQUEST,
+                    new_request.medication,
+                    new_request.insurance_provider,
+                    new_request.insurance_coverage_state,
+                    new_request.member_details.cover_my_meds_key,
+                    new_request.release_version,
+                    new_request.submission_date,
                 )
                 return Response(request_new_prior_auth_requirements.data, status=status.HTTP_200_OK)
         return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)

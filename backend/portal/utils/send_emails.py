@@ -127,10 +127,10 @@ def send_notification(notification_type, *args):
 
 def send_service_email(notification_type, *args):
     if not background_tasks_supported():
-        send_notification(notification_type, *args)
+        send_notification(notification_type.name, *args)
     else:
         try_run_in_background(
             send_notification_task,
-            args=[notification_type, *args],
+            args=[notification_type.name, *args],
             expires=120,
         )
