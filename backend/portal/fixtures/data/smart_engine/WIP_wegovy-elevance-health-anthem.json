@@ -24,7 +24,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                    "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
