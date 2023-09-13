@@ -1,99 +1,136 @@
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from django.conf import settings
-from portal.utils.token import account_activation_token
+from portal.utils.async_tasks import background_tasks_supported, try_run_in_background
+from portal.tasks import send_notification_task
+from enum import Flag
 
 
-def send_new_request_notification(requirements_request):
-    subject = "Request for New Prior Auth Requirements"
-    message = f"""
-    DoPriorAuth user requested new prior auth requirements.\n\n
-    Medication: {requirements_request.medication}\n
-    Insurance Provider: {requirements_request.insurance_provider}\n
-    Insurance Coverage State: {requirements_request.insurance_coverage_state}\n
-    CoverMyMeds Key: {requirements_request.member_details.cover_my_meds_key}\n
-    App Release Version: {requirements_request.release_version}\n
-    Submission Date: {requirements_request.submission_date}\n
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL], fail_silently=False)
+class ServiceEmail:
+    def __init__(self, subject, message, from_email, to_email, bcc=[]):
+        self.subject = subject
+        self.message = message
+        self.from_email = from_email
+        self.to_email = to_email
+        self.bcc = bcc
+
+    def send_email(self):
+        email = EmailMessage(self.subject, self.message, self.from_email, self.to_email, self.bcc)
+        email.send()
 
 
-def send_denial_notification(requirements_request):
-    subject = "Denial Details Submitted"
-    message = f"""
-    DoPriorAuth user submitted denial details.\n\n
-    Medication: {requirements_request.medication}\n
-    CoverMyMeds Key: {requirements_request.member_details.cover_my_meds_key}\n
-    App Release Version: {requirements_request.release_version}\n
-    Submission Date: {requirements_request.submission_date}\n
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL], fail_silently=False)
+class ActivationEmail(ServiceEmail):
+    def __init__(self, first_name, last_name, email, token, user_id_code):
+        subject = f"Verify Your Account Now | {settings.ISSUER_NAME}"
+        message = f"""
+            Dear {first_name} {last_name},
+            
+            Welcome aboard! To continue, please click the link below to verify your account:
+            {settings.WEBSITE_URL}confirm-email/{user_id_code}/{token}
+
+            Best regards,
+            The Do Prior Auth Team
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
-def send_password_reset_email(reset_password_token):
-    subject = f"Password Reset | {settings.ISSUER_NAME}"
-    message = f"""
-        Dear {reset_password_token.user.full_name()},
+class PasswordResetEmail(ServiceEmail):
+    def __init__(self, first_name, last_name, email, reset_password_token_key):
+        subject = f"Password Reset | {settings.ISSUER_NAME}"
+        message = f"""
+            Dear {first_name} {last_name},
 
-        Please click the following link to set up a new password. 
-        {settings.WEBSITE_URL}password-reset/{reset_password_token.key}
+            Please click the following link to set up a new password. 
+            {settings.WEBSITE_URL}password-reset/{reset_password_token_key}
 
-        Best regards,
-        The Do Prior Auth Team
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [reset_password_token.user.email], fail_silently=False)
-
-
-def send_activation_email(user):
-    user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
-    token = account_activation_token.make_token(user)
-    subject = f"Verify Your Account Now | {settings.ISSUER_NAME}"
-    message = f"""
-        Dear {user.full_name()},
-        
-        Welcome aboard! To continue, please click the link below to verify your account:
-        {settings.WEBSITE_URL}confirm-email/{user_id_code}/{token}
-
-        Best regards,
-        The Do Prior Auth Team
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
+            Best regards,
+            The Do Prior Auth Team
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
-def send_not_registered_promo_email(email, first_name, last_name):
-    subject = f"Set Up an Account | {settings.ISSUER_NAME}"
-    message = f"""
-        Dear {first_name} {last_name},
+class NotRegisteredPromoEmail(ServiceEmail):
+    def __init__(self, email, first_name, last_name):
+        subject = f"Set Up an Account | {settings.ISSUER_NAME}"
+        message = f"""
+            Dear {first_name} {last_name},
 
-        Thank you for your interest! Someone from our team will be in contact with you. 
+            Thank you for your interest! Someone from our team will be in contact with you. 
 
-        Feel free to contact us anytime at founders@lamarhealth.com
+            Feel free to contact us anytime at founders@lamarhealth.com
 
-        Best Regards,
-        The Do Prior Auth Team
-    """
-    email = EmailMessage(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        [email],
-        ["founders@lamarhealth.com"],
-    )
-    email.send()
+            Best Regards,
+            The Do Prior Auth Team
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email], ["founders@lamarhealth.com"])
 
 
-def send_ran_out_of_seats(client_company, email, first_name, last_name):
-    subject = f"{client_company.company_name} ran out of seats"
-    message = f"""
-        New user attempted to register at {settings.WEBSITE_URL} with {client_company.company_name} domain.
-        {client_company.company_name} has ran out of seats.
+class RanOutOfSeatsEmail(ServiceEmail):
+    def __init__(self, client_company, email, first_name, last_name):
+        subject = f"{client_company} ran out of seats"
+        message = f"""
+            New user attempted to register at {settings.WEBSITE_URL} with {client_company} domain.
+            {client_company} has ran out of seats.
 
-        Contacts used:
-        Name: {first_name} {last_name}
-        Email: {email}
+            Contacts used:
+            Name: {first_name} {last_name}
+            Email: {email}
 
-        Best regards,
-        The Do Prior Auth Team
-    """
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, ["founders@lamarhealth.com"], fail_silently=False)
+            Best regards,
+            The Do Prior Auth Team
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
+
+
+class DenialRequestEmail(ServiceEmail):
+    def __init__(self, medication, cmm_key, release_version, submission_date):
+        subject = "Denial Details Submitted"
+        message = f"""
+        DoPriorAuth user submitted denial details.\n\n
+        Medication: {medication}\n
+        CoverMyMeds Key: {cmm_key}\n
+        App Release Version: {release_version}\n
+        Submission Date: {submission_date}\n
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
+
+
+class NewRequestEmail(ServiceEmail):
+    def __init__(
+        self, medication, insurance_provider, insurance_coverage_state, cmm_key, release_version, submission_date
+    ):
+        subject = "Request for New Prior Auth Requirements"
+        message = f"""
+        DoPriorAuth user requested new prior auth requirements.\n\n
+        Medication: {medication}\n
+        Insurance Provider: {insurance_provider}\n
+        Insurance Coverage State: {insurance_coverage_state}\n
+        CoverMyMeds Key: {cmm_key}\n
+        App Release Version: {release_version}\n
+        Submission Date: {submission_date}\n
+        """
+        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
+
+
+class NotificationType(Flag):
+    NEW_REQUEST = NewRequestEmail
+    DENIAL = DenialRequestEmail
+    PASSWORD_RESET = PasswordResetEmail
+    ACTIVATION = ActivationEmail
+    NOT_REGISTERED_PROMO = NotRegisteredPromoEmail
+    RAN_OUT_OF_SEATS = RanOutOfSeatsEmail
+
+
+def send_notification(notification_type, *args):
+    email = NotificationType[notification_type].value(*args)
+    email.send_email()
+
+
+def send_service_email(notification_type, *args):
+    if not background_tasks_supported():
+        send_notification(notification_type.name, *args)
+    else:
+        try_run_in_background(
+            send_notification_task,
+            args=[notification_type.name, *args],
+            expires=120,
+        )

@@ -59,4 +59,8 @@ class PortalException(APIException):
             return PortalException("Validation failed", {error_props.VALIDATION_ERRORS: exc.detail}, code)
 
         # unknown error. providing original info for debug purposes
-        return exc
+        return PortalException(
+            "Something went wrong. Please contact us at founders@lamarhealth.com",
+            {error_props.DETAILED_MSG: exc.detail},
+            code,
+        )

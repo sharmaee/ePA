@@ -4,13 +4,16 @@ from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
 from django.core.validators import EmailValidator
 from django.utils import timezone
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from portal.utils.token import account_activation_token
 from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.serializers import PasswordField
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from portal.models.auth import User, ClientCompany
-from portal.utils.send_emails import send_activation_email, send_ran_out_of_seats, send_not_registered_promo_email
+from portal.utils.send_emails import NotificationType, send_service_email
 
 UserModel = get_user_model()
 
@@ -37,32 +40,44 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         fields = ('password', 'email', 'first_name', 'last_name')
         extra_kwargs = {'first_name': {'required': True}, 'last_name': {'required': True}}
 
+    def raise_company_not_registered(self, email, first_name, last_name):
+        send_service_email(NotificationType.NOT_REGISTERED_PROMO, email, first_name, last_name)
+        raise serializers.ValidationError("We are on it! Check your email to get started with your account.")
+
+    def raise_user_exists(self):
+        raise serializers.ValidationError(
+            (
+                "User already exists. Please try signing into your account or, if you've forgotten your password, "
+                "use the 'Forgot Password' option to reset it."
+            )
+        )
+
+    def raise_number_of_seats_exceeded(self, email, company_name, first_name, last_name):
+        send_service_email(NotificationType.RAN_OUT_OF_SEATS, company_name, email, first_name, last_name)
+        raise serializers.ValidationError(
+            "Registration failed. Your company has reached maximum number of seats. Reach out to your admin."
+        )
+
     def validate_email(self, value):
         email_domain = value.split('@')[1]
         client_company = ClientCompany.objects.filter(email_domain=email_domain).first()
         if not client_company:
-            send_not_registered_promo_email(value, self.initial_data['first_name'], self.initial_data['last_name'])
-            raise serializers.ValidationError(
-                {"email": "We are on it! Check your email to get started with your account."}
-            )
+            self.raise_company_not_registered(value, self.initial_data['first_name'], self.initial_data['last_name'])
         if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError(
-                {
-                    "email": (
-                        "User already exists. Please try signing into your account or,"
-                        "if you've forgotten your password, use the 'Forgot Password' option to reset it."
-                    )
-                }
-            )
+            self.raise_user_exists()
         client_user_count = User.objects.filter(client_company=client_company).count()
         if client_user_count >= client_company.number_of_seats:
-            send_ran_out_of_seats(
-                client_company, value, self.initial_data['first_name'], self.initial_data['last_name']
-            )
-            raise serializers.ValidationError(
-                {"email": "Registration failed. Please reach out to your admin to get additional seats. "}
+            self.raise_number_of_seats_exceeded(
+                value, client_company.company_name, self.initial_data['first_name'], self.initial_data['last_name']
             )
         return value
+
+    def activate_user(self, user):
+        user_id_code = urlsafe_base64_encode(force_bytes(user.pk))
+        token = account_activation_token.make_token(user)
+        send_service_email(
+            NotificationType.ACTIVATION, user.first_name, user.last_name, user.email, token, user_id_code
+        )
 
     def create(self, validated_data):
         client_company = ClientCompany.objects.filter(email_domain=validated_data['email'].split('@')[1]).first()
@@ -77,7 +92,7 @@ class RegisterSaveSerializer(serializers.ModelSerializer):
         )
         user.set_password(validated_data['password'])
         user.save()
-        send_activation_email(user)
+        self.activate_user(user)
         return user
 
 
@@ -93,8 +108,11 @@ class CustomTokenObtainSerializer(serializers.Serializer):
     username_field = get_user_model().USERNAME_FIELD
 
     default_error_messages = {
-        'no_active_account': 'No active account found with the given credentials',
-        'email_not_verified': 'Email wasn\'t verified',
+        "no_active_account": "Account not registered. Please create an account to continue.",
+        "email_not_verified": (
+            "Email has not been verified. ",
+            "Please check your inbox for an email from Lamar Health to activate your account.",
+        ),
     }
 
     def __init__(self, *args, **kwargs):
