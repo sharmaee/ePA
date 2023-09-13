@@ -4,11 +4,11 @@
             "header": "Step 2: Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document Wegovy will be used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
+                    "label": "Document Wegovy will be used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
