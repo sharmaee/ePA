@@ -23,6 +23,8 @@ django-otp = "*"
 qrcode = "*"
 django-rest-auth = "*"
 pyotp = "*"
+celery = "*"
+redis = "*"
 
 [dev-packages]
 black = "*"

@@ -2,19 +2,25 @@ import uuid
 
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
-from django.core.mail import send_mail
 from django.db import models
 from django.dispatch import receiver
 from django_rest_passwordreset.signals import reset_password_token_created
 from django.utils import timezone
 
 from ._common import PortalModelBase
-from portal.utils.send_emails import send_password_reset_email
+from portal.utils.send_emails import send_service_email, NotificationType
 
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
-    send_password_reset_email(reset_password_token)
+    user = reset_password_token.user
+    send_service_email(
+        NotificationType.PASSWORD_RESET,
+        user.first_name,
+        user.last_name,
+        user.email,
+        reset_password_token.key,
+    )
 
 
 class UserManager(BaseUserManager):
@@ -80,9 +86,6 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'.strip()
-
-    def email_user(self, subject, message, from_email=None, **kwargs):
-        send_mail(subject, message, from_email, [self.email], **kwargs)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} - {self.mobapp_id}'
