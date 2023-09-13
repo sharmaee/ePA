@@ -9,119 +9,87 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Members 18 years of age or older",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document the medication will be used with a reduced-calorie diet and increased physical activity",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
                     "label": "For chronic weight management in patients that have either:",
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Document an initial baseline body mass index (BMI) of greater than or equal to 30 kg/m^2 (obese)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Document an initial baseline body mass index (BMI) and comorbidity requirements:",
+                            "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
                             "all_required": true,
                             "node_type": "checkbox",
                             "node_value": false,
+                            "smart_engine": "18_plus_initiation",
                             "children": [
-
                                 {
-                                    "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (overweight)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                    "label": "Established cardiovascular disease or stroke",
                                     "node_type": "checkbox",
                                     "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Established cardiovascular disease or stroke",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Type 2 diabetes (DM)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Chronic kidney disease (CKD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Congenital heart disease (CHD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Obstructive sleep apnea",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Polycystic ovarian syndrome",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Dyslipidemia",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Non-alcoholic fatty liver disease",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Idiopathic intracranial hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        },
-                                        {
-                                            "label": "Osteoarthritis in weight-bearing joints",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "comorbidity": true
-                                        }
-                                    ]
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Hypertension",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Type 2 diabetes (DM)",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Chronic kidney disease (CKD)",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Congenital heart disease (CHD)",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Obstructive sleep apnea",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Polycystic ovarian syndrome",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Dyslipidemia",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Non-alcoholic fatty liver disease",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Idiopathic intracranial hypertension",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
+                                },
+                                {
+                                    "label": "Osteoarthritis in weight-bearing joints",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "comorbidity": true
                                 }
                             ]
                         }
                     ]
                 },
-                {
-                    "label": "Documentation that the member has been and is currently following a dietary and behavior modification program for weight loss",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
             ]
         },
         {
@@ -129,50 +97,7 @@
             "outcome": "Authorization for Wegovy™ (semaglutide) may be approved for up to an additional 6 months of therapy",
             "node_type": "radio",
             "node_value": false,
-            "children": [
-                {
-                    "label": "Demonstrate significant weight loss* after initiation of therapy",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Adhering to a reduced-calorie diet",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Adhering to increased physical activity",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Requires documented weight loss of one of the following:",
-                    "node_type": "checkbox",
-                    "node_value": false,
-                    "children": [
-                        {
-                            "label": "of at least 4% of baseline body weight after the initiation of treatment (first 16 weeks of treatment)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "must demonstrate continued weight loss",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "maintain the plateau weight achieved with diet and exercise treatment",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        }
-                    ]
-                },
-                {
-                    "label": "Member must be on the 2.4mg dose",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
-            ]
+            "smart_engine": "18_plus_continuation"
         }
     ]
 }
