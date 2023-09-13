@@ -4,15 +4,15 @@
             "header": "Verify Prescriber and Patient Documentation",
              "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document that patient has tried behavioral modification and dietary restriction for at least 3 months.",
+                    "label": "Document that patient has tried behavioral modification and dietary restriction for at least 3 months.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
@@ -26,11 +26,11 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                },
                 {
-                    "text": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
+                    "label": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
@@ -48,11 +48,11 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
+                    "label": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
@@ -70,19 +70,19 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document that the patient has engaged in behavioral modification and dietary restriction for at least 3 months.",
+                    "label": "Document that the patient has engaged in behavioral modification and dietary restriction for at least 3 months.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document that the patient currently has a BMI ≥ 95th percentile for age and sex.",
+                    "label": "Document that the patient currently has a BMI ≥ 95th percentile for age and sex.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 }
             ]
@@ -92,19 +92,19 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
+                    "label": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
+                    "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 }
             ]
@@ -114,19 +114,19 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
+                    "label": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "text": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
+                    "label": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
                     "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 }
             ]
