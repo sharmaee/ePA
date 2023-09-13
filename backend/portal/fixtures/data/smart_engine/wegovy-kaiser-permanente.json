@@ -18,11 +18,33 @@
                 {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented current baseline weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
+                    "validation": "If it is not documented that the patient has tried these medications check to see if they have the following contraindications (1) Xenical: Pregnancy, chronic Malabsorption, Cholestasis (2) Contrave:  uncontrolled hypertension, History of seizures, bulimia, anorexia nervosa, Opioid Use (3) Qsymia: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors (4) Saxenda: hyroid Cancer, Medullary Thyroid carcinoma, multiple endocrine neoplasia syndrome type 2. If any of the contraindications are found, ask the ordering provider to document the reason the alternative medications can not be used. Otherwise, let the provider know the medications should be tried in the order listed."
                 }
             ]
         }, 
-    "18_under_initiation":
+        "18_plus_continuation":
         {
-            "header": "Pediatric patients are not covered",
-        }, 
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documentated loss of at least 10 percent of baseline body weight in the previous 3 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Patient continues to meet initial review critieria",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
 }
