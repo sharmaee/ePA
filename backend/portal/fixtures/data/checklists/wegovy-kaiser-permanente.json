@@ -30,6 +30,7 @@
                             "node_type": "checkbox",
                             "node_value": false,
                             "comorbidity": true
+                            "smart_engine": "18_plus_initiation_diabetic"
                         },
                         {
                             "label": "Chronic kidney disease (CKD)",
