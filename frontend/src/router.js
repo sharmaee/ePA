@@ -33,7 +33,7 @@ const publicAccessRoutes = [
     path: "/password-reset-request",
     name: "password-reset-request",
     component: PasswordResetRequest,
-    title: "Password Reset Request",
+    title: "Password Reset",
   },
   {
     path: "/confirm-email/:user_id/:token",

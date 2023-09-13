@@ -14,13 +14,16 @@
       <div class="password">
         <label for="password">Password</label>
         <input id="password" v-model="credentials.password" type="password" />
-        <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
+        <span v-if="!credentials.password && formButtonClicked" class="input-error-notification">
+          Please enter a password.
+        </span>
+        <span v-else-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
           Invalid username or password. Please try again.
         </span>
       </div>
       <button @click="loginUser">Login</button>
       <span v-if="errors.length > 0" class="input-error-notification">
-        Invalid username or password. Please try again.
+        <span v-for="error in errors" :key="error">{{ error }}</span>
       </span>
       <div class="auxiliary-account-links">
         <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>

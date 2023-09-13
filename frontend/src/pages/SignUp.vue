@@ -53,7 +53,7 @@
       </div>
       <button @click="registerUser">Create Account</button>
       <span v-if="errors.length > 0" class="input-error-notification">
-        Invalid username or password. Please try again.
+        <span v-for="error in errors" :key="error">{{ error }}</span>
       </span>
       <div class="auxiliary-account-links">
         <span class="have-an-account">
