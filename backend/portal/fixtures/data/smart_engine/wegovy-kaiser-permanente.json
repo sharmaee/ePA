@@ -20,5 +20,9 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
-        }
+        }, 
+    "18_under_initiation":
+        {
+            "header": "Pediatric patients are not covered",
+        }, 
 }
