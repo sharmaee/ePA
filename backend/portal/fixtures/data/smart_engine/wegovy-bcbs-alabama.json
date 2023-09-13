@@ -5,15 +5,15 @@
              "items": [
                 {
                     "label": "Document that the medication will be used in addition to a reduced calorie diet and increased physical activity for chronic weight management.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "A documented initial body mass index (BMI) greater than or equal to 27 kg/m^2 (overweight).",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "A BMI less than 27 is unlikely to be approved."
                 },
                 {
                     "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
         },
@@ -23,15 +23,15 @@
             "items": [
                 {
                     "label": "Document that the medication will be used with a reduced calorie diet and increased physical activity for chronic weight management.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                },
                 {
                     "label": "Document an initial baseline BMI at the 95th percentile or greater, standardized for age and sex (obesity).",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "Document that Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
             ]
         }
