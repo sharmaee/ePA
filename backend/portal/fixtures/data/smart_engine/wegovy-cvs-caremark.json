@@ -5,15 +5,15 @@
             "items": [
                 {
                     "label": "Document the requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "Document that the patient has a body mass index (BMI) greater than or equal to 27 kg/m^2",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
                 }
             ]
         },
@@ -23,9 +23,9 @@
             "items": [
                 {
                     "label": "Document that the patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "Document patient continues weightloss or maintains at least 5% weight loss from initial BMI.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
