@@ -23,7 +23,7 @@
       </div>
       <button @click="loginUser">Login</button>
       <span v-if="errors.length > 0" class="input-error-notification">
-        <span v-for="error in errors" :key="error">{{ error }}</span>
+        <span v-for="error in errors" :key="error">{{ error[0] }}</span>
       </span>
       <div class="auxiliary-account-links">
         <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>
