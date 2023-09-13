@@ -5,19 +5,19 @@
              "items": [
                 {
                     "label": "Patient must be 18 years of age or older.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Patients younger than 18 years old may have a harder time getting coverage."
                 },
                 {
                     "label": "Document the medication will be used with a reduced-calorie diet and increased physical activity.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
                     "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (overweight).",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "A BMI of less than 27 kg/m^2 is unlikely to be covered."
                 },
                 {
                     "label": "Documentation that the member has been and is currently following a dietary and behavior modification program for weight loss.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
         },
@@ -26,24 +26,20 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
               {
-                    "label": "Documented significant weight loss* after initiation of therapy.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-              },
-              {
                     "label": "Adhering to a reduced-calorie diet.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
               },
               {
                     "label": "Adhering to increased physical activity.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
               },
               {
                     "label": "Patient is on 2.4 mg dose.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
               },
               {
                     "label": "Document patient continues weightloss or maintains at least a 4% weight loss from initial BMI.",
-                    "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
               }
           ]
       }
