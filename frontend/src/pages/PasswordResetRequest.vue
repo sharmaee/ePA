@@ -22,6 +22,9 @@
           </span>
         </div>
         <button @click="passwordSending">Get Password Reset Link</button>
+        <span v-if="errors.length > 0" class="input-error-notification">
+          <span v-for="error in errors" :key="error">{{ error[0] }}</span>
+        </span>
       </div>
     </div>
   </div>
@@ -67,6 +70,7 @@ const passwordSending = async () => {
       errors.value = tryParseApiErrors(error);
     }
   }
+  showPreloader.value = false;
 };
 </script>
 
