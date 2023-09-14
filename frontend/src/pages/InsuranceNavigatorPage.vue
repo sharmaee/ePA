@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="insurance-navigator-wrapper">
+  <div class="insurance-navigator-wrapper fix-height-wrapper">
     <h1 :class="{ hide: screenWidth < 835 }">
       Prepare Prior Authorization For <span class="blue-text">Approval</span>
     </h1>
