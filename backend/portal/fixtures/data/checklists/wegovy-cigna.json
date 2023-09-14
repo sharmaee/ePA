@@ -1,9 +1,9 @@
 {
-    "label": "Conditions of use",
+    "label": "Age of Patient?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For Adult Use",
+            "label": "For patients 18 years or older",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -17,120 +17,81 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to for 7 months when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "over_18_initiation",
                             "children": [
                                 {
-                                    "label": "Individual is ≥ 18 years of age",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that patient has tried behavioral modification and dietary restriction for at least 3 months",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Individual meets one of the following:",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                    "all_required": true,
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Document baseline body mass index (BMI) ≥ 30 kg/m^2",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                                            "all_required": true,
+                                            "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "children": [
-                
-                                                {
-                                                    "label": "Document initial body mass index (BMI) ≥ 27 kg/m^2",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false,
-                                                    "children": [
-                                                        {
-                                                            "label": "Established cardiovascular disease or stroke",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Hypertension",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Type 2 diabetes (DM)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Chronic kidney disease (CKD)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Congenital heart disease (CHD)",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Obstructive sleep apnea",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Polycystic ovarian syndrome",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Dyslipidemia",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Non-alcoholic fatty liver disease",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Idiopathic intracranial hypertension",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        },
-                                                        {
-                                                            "label": "Osteoarthritis in weight-bearing joints",
-                                                            "node_type": "checkbox",
-                                                            "node_value": false,
-                                                            "comorbidity": true
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
                                         }
                                     ]
-                                },
-                                {
-                                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-                                    "node_type": "checkbox",
-                                    "node_value": false
                                 }
                             ]
                         },
@@ -141,57 +102,170 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Individual is ≥ 18 years of age",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Individual meets one of the following baseline conditions:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
+                                    "label": "How long has the patient been using Wegovy?",
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
-                                            "label": "Document a BMI ≥ 30 kg/m2",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Individual meets one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year)",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Meets both of the following:",
-                                            "node_type": "checkbox",
+                                            "label": "More than 12 months",
+                                            "node_type": "radio",
                                             "node_value": false,
-                                            "all_required": true,
+                                            "smart_engine": "over_18_continuation_more_than_12_months",
                                             "children": [
                                                 {
-                                                    "label": "Has received < 12 consecutive months of Wegovy",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "all_required": true,
                                                     "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Less than 12 months",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_continuation_less_than_12_months",
+                                            "children": [
                                                 {
-                                                    "label": "Is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months)",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "all_required": true,
                                                     "node_type": "checkbox",
-                                                    "node_value": false
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -218,28 +292,7 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 7 months when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "Individual is ≥ 12 years of age and < 18 years of age",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient has engaged in behavioral modification and dietary restriction for at least 3 months",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient currently has a BMI ≥ 95th percentile for age and sex",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
-                            ]
+                            "smart_engine": "below_18_initiation"
                         },
                         {
                             "label": "Continuation of therapy",
@@ -248,66 +301,26 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Document individual has had a reduction in BMI of ≥ 1% from baseline",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Individual meets one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
+                                    "label": "How long has the patient been using Wegovy?",
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
-                                            "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year)",
-                                            "node_type": "checkbox",
-                                            "node_value": false
+                                            "label": "More than 12 months",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_more_than_12_months"
                                         },
                                         {
-                                            "label": "Meets both of the following:",
-                                            "node_type": "checkbox",
+                                            "label": "Less than 12 months",
+                                            "node_type": "radio",
                                             "node_value": false,
-                                            "all_required": true,
-                                            "children": [
-                                                {
-                                                    "label": "Document patient has received < 12 consecutive months of Wegovy",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months)",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                }
-                                            ]
+                                            "smart_engine": "below_18_continuation_less_than_12_months"
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "label": "Conditions Not Covered",
-            "outcome": "Authorization for Wegovy™ (semaglutide) is not approved",
-            "node_type": "radio",
-            "node_value": false,
-            "children": [
-                {
-                    "label": "Glucagon-Like Peptide-1 Agonists (Saxenda® and Wegovy™) are considered experimental, investigational or unproven for ANY other use",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Use with other weight loss medications. Use with other medications intended for weight loss is not recommended",
-                    "node_type": "checkbox",
-                    "node_value": false
                 }
             ]
         }

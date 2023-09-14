@@ -1,2 +1,3 @@
 Drug,Insurance Provider,Insurance Plan Type (Group),States,Checklist
 Wegovy (semaglutide),Kaiser Permanente,Commercial; Medicaid; Medicare Advantage,California; Colorado; Georgia; Hawaii; Maryland; Oregon; Virginia; Washington,wegovy-kaiser-permanente.json
+Wegovy (semaglutide),Cigna,Commercial; Medicaid; Medicare Advantage,Arizona; California; Colorado; Connecticut; Florida; Georgia; Maryland; Missouri; North Carolina; South Carolina; Tennessee; Texas,wegovy-cigna.json

@@ -7,11 +7,14 @@
       </div>
     </div>
     <div v-else>
-      <h3 v-if="selectedData[0].nodeType === 'fieldset'"></h3>
+      <h3 v-if="selectedData[0].nodeType === 'fieldset'">{{ selectedData[0].label }}</h3>
       <div
         v-for="(item, listIndex) in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
         :key="item.label">
-        <span :class="{ hide: step !== listIndex }">
+        <span v-if="item.nodeType === 'radio'">
+          <QuestionnaireRecursiveComponent :data="item" @selected-term="selectedTerm" />
+        </span>
+        <span v-if="item.nodeType === 'checkbox'" :class="{ hide: step !== listIndex && item.nodeType === 'checkbox' }">
           <QuestionnaireRecursiveComponent
             :current-index="listIndex"
             :total-number-steps="
@@ -24,7 +27,7 @@
             @show-next-step="nextStep" />
         </span>
       </div>
-      <button v-if="step === selectedData.length - 1" @click="submitChecklist">Submit</button>
+      <button v-if="step === selectedData.length - 1 && smartEngineKey" @click="submitChecklist">Submit</button>
     </div>
   </div>
 </template>
@@ -46,12 +49,17 @@ const props = defineProps({
 
 const selectedData = ref(null);
 const buttonClicked = ref(false);
+const smartEngineKey = ref(null);
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 checkListChild.value = props.data;
 
-function selectedTerm(item) {
-  selectedData.value = item;
+function selectedTerm(options) {
+  selectedData.value = options.item;
+  smartEngineKey.value = options.smartEngineKey;
+  if (!selectedData.value && smartEngineKey.value) {
+    submitChecklist();
+  }
 }
 
 function nextStep() {
@@ -60,16 +68,16 @@ function nextStep() {
   }
 }
 
-const emit = defineEmits(["filterComorbidityData"]);
-const filterComorbidityData = (comorbidityData) => emit("filterComorbidityData", comorbidityData);
+const emit = defineEmits(["filterSmartEngineData"]);
+const filterSmartEngineData = (smartEngineData) => emit("filterSmartEngineData", smartEngineData);
 
 function submitChecklist() {
-  const elementsWithComorbidity = document.getElementsByClassName("comorbidity");
-  const comorbidityContentArray = Array.from(elementsWithComorbidity).map((element) => element.textContent);
+  const elementsWithDiagnosis = document.getElementsByClassName("diagnosis");
+  const diagnosisContentArray = Array.from(elementsWithDiagnosis).map((element) => element.textContent);
 
-  comorbidityContentArray.push("Obesity");
+  diagnosisContentArray.push("Obesity");
 
-  filterComorbidityData(comorbidityContentArray);
+  filterSmartEngineData({ diagnosisContentArray: diagnosisContentArray, smartEngineKey: smartEngineKey.value });
 }
 </script>
 
