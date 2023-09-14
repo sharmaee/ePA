@@ -15,7 +15,7 @@
         },
     "over_18_continuation":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
@@ -51,7 +51,7 @@
         },
     "below_18_continuation":
         {
-            "header": "Step 2: Verify Prescriber and Patient Documentation",
+            "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "text": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
