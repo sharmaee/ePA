@@ -185,6 +185,7 @@
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 6 months",
             "node_type": "radio",
             "node_value": false,
+            "smart_engine": "over_18_continuation"
             "children": [
                 {
                     "label": "Patient continues to meet initial review criteria",
