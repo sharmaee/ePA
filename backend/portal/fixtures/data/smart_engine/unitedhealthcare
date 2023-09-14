@@ -1,0 +1,30 @@
+{
+    "over_12_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "text": "Document treatment is being requested for appetite suppression or weight loss.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "text": "Document that the medication will be used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program).",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+            ]
+        },
+    "over_12_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "text": "Documentated loss or maintenance of at least 4 percent reduction from baseline body weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "text": "Document continuation of lifestyle modification.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                }
+            ]
+        },
+}
