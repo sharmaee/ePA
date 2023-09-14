@@ -18,7 +18,7 @@
           Please enter a password.
         </span>
         <span v-else-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
-          Invalid username or password. Please try again.
+          Please enter a valid password.
         </span>
       </div>
       <button @click="loginUser">Login</button>
