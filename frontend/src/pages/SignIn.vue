@@ -14,13 +14,17 @@
       <div class="password">
         <label for="password">Password</label>
         <input id="password" v-model="credentials.password" type="password" />
-        <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
-          Please create a password with more than 10 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
-          and 1 symbol.
+        <span v-if="!credentials.password && formButtonClicked" class="input-error-notification">
+          Please enter a password.
+        </span>
+        <span v-else-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
+          Please enter a valid password.
         </span>
       </div>
       <button @click="loginUser">Login</button>
-
+      <span v-if="errors.length > 0" class="input-error-notification">
+        <span v-for="error in errors" :key="error">{{ error }}</span>
+      </span>
       <div class="auxiliary-account-links">
         <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
@@ -70,20 +74,24 @@ const isPasswordValid = computed(() => {
 });
 
 const loginUser = async () => {
-  showPreloader.value = true;
-  try {
-    let otpConfig = await authStore.login(credentials.value);
-    if (otpConfig.secondStep) {
-      secondVerificationStep.value = true;
-      qrCode.value = otpConfig.otpAppUrl;
-      setupKey.value = otpConfig.setupKey;
-    } else {
-      await authStore.loginStep2NotRequired();
-      router.push({ name: "home-page" });
+  formButtonClicked.value = true;
+
+  if (isEmailValid.value && isPasswordValid.value) {
+    showPreloader.value = true;
+    try {
+      let otpConfig = await authStore.login(credentials.value);
+      if (otpConfig.secondStep) {
+        secondVerificationStep.value = true;
+        qrCode.value = otpConfig.otpAppUrl;
+        setupKey.value = otpConfig.setupKey;
+      } else {
+        await authStore.loginStep2NotRequired();
+        router.push({ name: "home-page" });
+      }
+      errors.value = [];
+    } catch (error) {
+      errors.value = tryParseApiErrors(error);
     }
-    errors.value = [];
-  } catch (error) {
-    errors.value = tryParseApiErrors(error);
   }
 
   showPreloader.value = false;

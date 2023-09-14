@@ -3,8 +3,20 @@ html {
 
     body {
         max-width: 1160px;
+        min-height: 100vh;
         background-color: #FFFFFF;
         margin: 0 auto;
+
+        .app {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fix-height-wrapper {
+            min-height: 100vh;
+        }
+
+
     
         ul {
             padding: 0;

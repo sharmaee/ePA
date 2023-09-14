@@ -69,8 +69,10 @@ const isPasswordMatchValid = computed(() => {
 });
 
 const updatePassword = async () => {
-  showPreloader.value = true;
+  formButtonClicked.value = true;
+
   if (isPasswordValid.value && isPasswordMatchValid.value) {
+    showPreloader.value = true;
     try {
       await authService.passwordReset(newPassword.value, route.params.token);
       passwordUpdatedCorrectly.value = true;

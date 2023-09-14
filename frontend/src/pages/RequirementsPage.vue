@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="graph-page-wrapper">
+  <div class="graph-page-wrapper" :class="{ 'fix-height-wrapper': !smartEngine }">
     <h1>Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
     <p v-if="requirementsData && requirementsData.description">
       {{ requirementsData.description }}

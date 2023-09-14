@@ -52,12 +52,13 @@
         </span>
       </div>
       <button @click="registerUser">Create Account</button>
-
+      <span v-if="errors.length > 0" class="input-error-notification">
+        <span v-for="error in errors" :key="error">{{ error }}</span>
+      </span>
       <div class="auxiliary-account-links">
-        <router-link :to="{ name: 'password-reset-request' }" class="forgot-pass-link">Forgot Password ?</router-link>
         <span class="have-an-account">
-          Dont have an account ?
-          <router-link :to="{ name: 'register' }">Create an account</router-link>
+          Already have an account ?
+          <router-link :to="{ name: 'login' }">Login</router-link>
         </span>
       </div>
     </div>
