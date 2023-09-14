@@ -101,13 +101,13 @@
                                             "label": "Yes",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "smart_engine": "18_plus_initiation_with_BCBSM/BCN_program"
+                                            "smart_engine": "over_18_initiation_with_BCBSM/BCN_program"
                                         },
                                         {
                                             "label": "No",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "smart_engine": "18_plus_initiation_without_BCBSM/BCN_program"
+                                            "smart_engine": "over_18_initiation_without_BCBSM/BCN_program"
                                         }
                                     ]
                                 },
@@ -118,7 +118,7 @@
                             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "18_plus_continuation":
+                            "smart_engine": "over_18_continuation":
                         }
                     ]
                 }
