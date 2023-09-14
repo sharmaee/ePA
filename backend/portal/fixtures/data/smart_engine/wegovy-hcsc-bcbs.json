@@ -1,0 +1,246 @@
+{
+    "ALL":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              },
+              {
+                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              }
+
+
+
+
+
+              
+
+
+{
+    "over_18_initiation_no_weightloss_agent":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+              }
+              {
+                    "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              }
+
+
+{
+    "over_18_initiation_with_weightloss_agent":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+               {
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+               },
+               {
+                    "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+               }
+
+
+
+{
+    "over_18_initiation_south_asian_no_weightloss_agent":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "label": "Documented baseline body mass index (BMI) ≥ 25 kg/m^2.",
+                    "validation": "An initial BMI of less than 25 kg/m^2 is unlikely to be approved."
+              },
+              {
+                    "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              }
+
+  {
+    "over_18_initiation_south_asian_with_weightloss_agent":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+              {
+                    "label": "Documented baseline body mass index (BMI) ≥ 25 kg/m^2.",
+                    "validation": "An initial BMI of less than 25 kg/m^2 is unlikely to be approved."
+              },
+              {
+                    "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+              }
+
+               
+
+
+
+
+
+        },
+    "over_18_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document patient has recieved less than 52 weeks of therapy on the 2.4mg dose.",
+                    "validation": "Wegovy is unlikely to get approved for use over 52 weeks."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_continuation_over_52weeks":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document patient has achieved and is maintained a reduction of BMI of at least 5% from baseline.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
+                },
+                {
+                    "label": "Document current BMI is greater than 85th percentile for age and gender.",
+                    "validation": "A current BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_continuation_under_52weeks":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document patient has recieved less than 52 weeks of therapy on the 1.7 or 2.4mg dose.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
+                },
+                {
+                    "label": "Document current BMI is greater than 85th percentile for age and gender.",
+                    "validation": "A current BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+
+
+
+
+              
+
+                {
+                    "label": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity.",
+                    "validation": "An initial BMI of less than 27 kg/m^2 and no risk factors is unlikely to be approved."
+                },
+                {
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient has engaged in behavioral modification and dietary restriction for at least 3 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient currently has a BMI ≥ 95th percentile for age and sex.",
+                    "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
+                },
+                {
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_continuation_more_than_12_months":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_continuation_less_than_12_months":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document individual has had a reduction in BMI of ≥ 1% from baseline.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        }
+}
