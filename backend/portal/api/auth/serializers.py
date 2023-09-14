@@ -109,10 +109,7 @@ class CustomTokenObtainSerializer(serializers.Serializer):
 
     default_error_messages = {
         "no_active_account": "Account not registered. Please create an account to continue.",
-        "email_not_verified": (
-            "Email has not been verified. ",
-            "Please check your inbox for an email from Lamar Health to activate your account.",
-        ),
+        "email_not_verified": "Email has not been verified. Please check your inbox for an email from Lamar Health to activate your account.",
         "invalid_credentials": "Invalid username or password. Please try again.",
     }
 
