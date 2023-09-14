@@ -140,6 +140,31 @@
                             "node_value": false,
                             "children": [
                                 {
+                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "Yes",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_initiation_with_weightloss_agent",
+                                            "children": [
+                                                {
+                                                
+                                                }
+                                            ]
+                                        },
+                                            {
+                                            "label": "No",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_initiation_no_weightloss_agent",
+                                            "children": [
+                                                {
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -149,6 +174,24 @@
                             "node_type": "radio",
                             "node_value": false,
                             "children": [
+                                {
+                                    "label": "How long has patient recieved treatment of Wegovy?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "More than 52 weeks (1 year)",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_over_52weeks"
+                                        },
+                                        {
+                                            "label": "Less than 52 weeks",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_under_52weeks"
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
