@@ -22,7 +22,7 @@
           v-model="userInfo.first_name"
           type="text"
           placeholder="John"
-          @keyup="sendFormByEnterClicking" />
+          @keyup="(event) => sendFormByEnterClicking(event, registerUser)" />
         <span v-if="!isFirstNameValid && formButtonClicked" class="input-error-notification">
           Please enter your first name.
         </span>
@@ -34,7 +34,7 @@
           v-model="userInfo.last_name"
           type="text"
           placeholder="Snow"
-          @keyup="sendFormByEnterClicking" />
+          @keyup="(event) => sendFormByEnterClicking(event, registerUser)" />
         <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
           Please enter your last name.
         </span>
@@ -46,14 +46,18 @@
           v-model="userInfo.email"
           type="text"
           placeholder="example@findsunrise.com"
-          @keyup="sendFormByEnterClicking" />
+          @keyup="(event) => sendFormByEnterClicking(event, registerUser)" />
         <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
           Please enter a valid email address.
         </span>
       </div>
       <div class="password">
         <label for="password">Password</label>
-        <input id="password" v-model="userInfo.password" type="password" @keyup="sendFormByEnterClicking" />
+        <input
+          id="password"
+          v-model="userInfo.password"
+          type="password"
+          @keyup="(event) => sendFormByEnterClicking(event, registerUser)" />
         <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
           Please create a password with more than 10 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
           and 1 symbol.
@@ -61,7 +65,11 @@
       </div>
       <div class="confirm-password">
         <label for="confirm-password">Confirm Password</label>
-        <input id="confirm-password" v-model="passwordConfirmation" type="password" @keyup="sendFormByEnterClicking" />
+        <input
+          id="confirm-password"
+          v-model="passwordConfirmation"
+          type="password"
+          @keyup="(event) => sendFormByEnterClicking(event, registerUser)" />
         <span v-if="!isPasswordMatchValid && formButtonClicked" class="input-error-notification">
           Passwords must match.
         </span>
@@ -122,8 +130,6 @@ const isPasswordValid = computed(() => {
 const isPasswordMatchValid = computed(() => {
   return userInfo.value.password === passwordConfirmation.value;
 });
-
-sendFormByEnterClicking(registerUser());
 
 async function registerUser() {
   formButtonClicked.value = true;
