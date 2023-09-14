@@ -11,7 +11,7 @@ export function tryParseApiErrors(error) {
 
   if (validationErrors) {
     for (let key in validationErrors) {
-      resultErrors.push(validationErrors[key]);
+      resultErrors.push(...validationErrors[key]);
     }
   } else if (error.response.data.source_error) {
     resultErrors = [error.response.data.source_error];
