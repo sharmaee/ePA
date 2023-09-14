@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="graph-page-wrapper">
+  <div class="graph-page-wrapper" :class="{ 'fix-height-wrapper': !smartEngine }">
     <h1>Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
     <p v-if="requirementsData && requirementsData.description">
       {{ requirementsData.description }}
@@ -13,13 +13,14 @@
     <div v-if="requirementsData && requirementsData.requirementsChecklist && !smartEngine" class="questionaire-wrapper">
       <QuestionnairePage
         :data="requirementsData.requirementsChecklist"
-        @filter-comorbidity-data="filterComorbidityData" />
+        @filter-smart-engine-data="filterSmartEngineData" />
     </div>
   </div>
   <div v-if="smartEngine" id="smart-engine-wrapper">
     <SmartEngineComponent
-      :comorbidity-filter-data="comorbidityFilterData"
-      :step-verify-docs="requirementsData.smartEngineChecklist" />
+      :diagnosis-filter-data="diagnosisFilterData"
+      :step-verify-docs="requirementsData.smartEngineChecklist"
+      :smart-engine-key-data="smartEngineKeyData" />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -42,7 +43,8 @@ const route = useRoute();
 const requirementsData = ref(null);
 const preloader = ref(false);
 const smartEngine = ref(false);
-const comorbidityFilterData = ref([]);
+const smartEngineKeyData = ref(null);
+const diagnosisFilterData = ref([]);
 
 onMounted(() => {
   if (route.params.id) {
@@ -50,8 +52,13 @@ onMounted(() => {
   }
 });
 
-async function filterComorbidityData(comorbidityData) {
-  comorbidityFilterData.value = comorbidityData;
+function snakeToCamel(str) {
+  return str.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
+}
+
+async function filterSmartEngineData(options) {
+  diagnosisFilterData.value = options.diagnosisContentArray;
+  smartEngineKeyData.value = snakeToCamel(options.smartEngineKey);
 
   window.scrollTo({
     top: 0,
