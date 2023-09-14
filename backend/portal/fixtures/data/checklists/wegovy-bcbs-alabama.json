@@ -7,7 +7,7 @@
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
-            "smart_engine": "18_plus"
+            "smart_engine": "over_18"
             "children": [
                 {
                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
