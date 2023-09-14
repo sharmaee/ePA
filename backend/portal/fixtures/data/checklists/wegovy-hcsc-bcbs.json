@@ -59,8 +59,81 @@
                                             "label": "No",
                                             "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "over_18_continuation_more_than_12_months",
                                             "children": [
+                                                {
+                                                    "label": "What is the patient's BMI?",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "children": [
+                                                                {
+                                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Yes",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>27",
+                                                                            "children": [
+                                                                                {
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "label": "No",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>27",
+                                                                            "children": [
+                                                                                {
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "children": [
+                                                                {
+                                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Yes",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>30",
+                                                                            "children": [
+                                                                                {
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "label": "No",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>30",
+                                                                            "children": [
+                                                                                {
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                    ]
+                                                }
+                                                
+                                                
                                                 {
                                                     "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
                                                     "node_type": "fieldset",
