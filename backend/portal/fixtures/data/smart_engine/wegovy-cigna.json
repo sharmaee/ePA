@@ -1,5 +1,5 @@
 {
-    "18_plus_initiation":
+    "over_18_initiation":
         {
             "header": "Verify Prescriber and Patient Documentation",
              "items": [
@@ -21,7 +21,7 @@
                 }
             ]
         },
-    "18_plus_continuation_less_than_12_months":
+    "over_18_continuation_less_than_12_months":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -43,7 +43,7 @@
                 }
             ]
         },
-    "18_plus_continuation_more_than_12_months":
+    "over_18_continuation_more_than_12_months":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
