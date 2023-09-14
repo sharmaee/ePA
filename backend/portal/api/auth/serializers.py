@@ -113,6 +113,7 @@ class CustomTokenObtainSerializer(serializers.Serializer):
             "Email has not been verified. ",
             "Please check your inbox for an email from Lamar Health to activate your account.",
         ),
+        "invalid_credentials": "Invalid username or password. Please try again.",
     }
 
     def __init__(self, *args, **kwargs):
@@ -133,6 +134,11 @@ class CustomTokenObtainSerializer(serializers.Serializer):
 
         try:
             self.user = User.objects.filter(email=attrs['email']).get()
+            if not self.user.check_password(attrs['password']):
+                raise exceptions.AuthenticationFailed(
+                    self.error_messages['invalid_credentials'],
+                    'invalid_credentials',
+                )
             if self.user.check_password(attrs['password']) and not self.user.is_email_verified:
                 raise exceptions.AuthenticationFailed(
                     self.error_messages['email_not_verified'],
