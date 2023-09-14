@@ -109,7 +109,7 @@
 
 
         },
-    "over_18_continuation":
+    "over_18_continuation_under_52_weeks":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -117,6 +117,21 @@
                     "label": "Document patient has recieved less than 52 weeks of therapy on the 2.4mg dose.",
                     "validation": "Wegovy is unlikely to get approved for use over 52 weeks."
                 },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+
+        "over_18_continuation_over_52weeks":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document patient has achieved and is maintained a reduction of BMI of at least 5% from baseline.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
+                },                
                 {
                     "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
