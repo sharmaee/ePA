@@ -18,7 +18,7 @@
                             "all_required": true,
                             "node_type": "checkbox",
                             "node_value": false,
-                            "smart_engine": "18_plus_initiation",
+                            "smart_engine": "over_18_initiation",
                             "children": [
                                 {
                                     "label": "Established cardiovascular disease or stroke",
@@ -97,7 +97,7 @@
             "outcome": "Authorization for Wegovy™ (semaglutide) may be approved for up to an additional 6 months of therapy",
             "node_type": "radio",
             "node_value": false,
-            "smart_engine": "18_plus_continuation"
+            "smart_engine": "over_18_continuation"
         }
     ]
 }
