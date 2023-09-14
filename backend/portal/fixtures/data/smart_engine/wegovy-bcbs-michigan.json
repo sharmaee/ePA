@@ -1,5 +1,5 @@
 {
-    "18_plus_initiation_with_BCBSM/BCN_program":
+    "over_18_initiation_with_BCBSM/BCN_program":
         {
             "header": "Verify Prescriber and Patient Documentation",
              "items": [
@@ -17,7 +17,7 @@
                 }
             ]
         },
-      "18_plus_initiation_without_BCBSM/BCN_program":
+      "over_18_initiation_without_BCBSM/BCN_program":
         {
             "header": "Verify Prescriber and Patient Documentation",
              "items": [
@@ -36,7 +36,7 @@
              ]
         },
 
-    "18_plus_continuation":
+    "over_18_continuation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -89,7 +89,7 @@
             ]
         },
     
-    "18_plus_continuation":
+    "below_18_continuation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
