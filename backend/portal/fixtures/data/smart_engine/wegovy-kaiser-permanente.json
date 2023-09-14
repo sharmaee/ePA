@@ -1,5 +1,5 @@
 {
-    "18_plus_initiation":
+    "over_18_initiation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -33,7 +33,7 @@
                 }
             ]
         }, 
-    "18_plus_initiation_diabetic":
+    "over_18_initiation_diabetic":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
@@ -76,7 +76,7 @@
                 
             ]
         }, 
-        "18_plus_continuation":
+        "over_18_continuation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
