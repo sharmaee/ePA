@@ -3,7 +3,7 @@
     "node_type": "fieldset",
     "children": [
         {
-            "label": "Initial review criteria",
+            "label": "Starting therapy",
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 3 months",
             "node_type": "radio",
             "node_value": false,
@@ -179,7 +179,9 @@
                     ]
                 }
              ]
-        },
+            }
+            ]
+        ,
         {
             "label": "Continuation of therapy",
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 6 months",
@@ -199,7 +201,7 @@
                 }
             ]
         }
-    ]
+     }
+   ]
 }
-]
-}
+
