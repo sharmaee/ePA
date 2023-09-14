@@ -13,7 +13,7 @@
                     "all_required": true,
                     "node_type": "checkbox",
                     "node_value": false,
-                    "smart_engine": "18_plus_initiation"
+                    "smart_engine": "over_18_initiation"
                     "children": [
                         {
                             "label": "Established cardiovascular disease or stroke",
