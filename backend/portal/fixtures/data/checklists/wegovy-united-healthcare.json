@@ -21,7 +21,7 @@
                             "children": [
                                 {
                                     "label": "Document all the weight-related comorbid conditions the patient has:",
-                                    "node_type": "checkbox",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
