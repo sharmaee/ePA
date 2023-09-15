@@ -38,7 +38,7 @@
                                                             "smart_engine": "over_18_initiation_south_asian_with_weightloss_agent",
                                                             "children": [
                                                                 {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                     "all_required": true,
                                                                     "node_type": "checkbox",
                                                                     "node_value": false,
@@ -120,7 +120,7 @@
                                                             "smart_engine": "over_18_initiation_south_asian_no_weightloss_agent"
                                                             "children": [
                                                                 {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                     "all_required": true,
                                                                     "node_type": "checkbox",
                                                                     "node_value": false,
@@ -205,11 +205,11 @@
                                             "node_value": false,
                                             "children": [
                                                 {
-                                                    "label": "What is the patient's BMI?",
+                                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
                                                     "node_type": "fieldset",
                                                     "children": [
                                                         {
-                                                            "label": "Baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                                                            "label": "BMI ≥ 27 kg/m^2",
                                                             "node_type": "radio",
                                                             "node_value": false,
                                                             "children": [
@@ -274,7 +274,7 @@
                                                                                         {
                                                                                             "label": "Dyslipidemia",
                                                                                             "node_type": "checkbox",
-                                                                                            node_value": false,
+                                                                                            "node_value": false,
                                                                                             "comorbidity": true
                                                                                         },
                                                                                         {
@@ -386,7 +386,7 @@
                                                             ]
                                                         },
                                                         {
-                                                            "label": "Baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                                                            "label": "BMI ≥ 30 kg/m^2",
                                                             "node_type": "radio",
                                                             "node_value": false,
                                                             "children": [
@@ -401,7 +401,7 @@
                                                                             "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>30",
                                                                             "children": [
                                                                                 {
-                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                                     "all_required": true,
                                                                                     "node_type": "checkbox",
                                                                                     "node_value": false,
@@ -483,7 +483,7 @@
                                                                             "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>30",
                                                                             "children": [
                                                                                 {
-                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                                     "all_required": true,
                                                                                     "node_type": "checkbox",
                                                                                     "node_value": false,
@@ -557,176 +557,6 @@
                                                                                     ]
                                                                                 }
                                                                             ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
-                                                    "node_type": "fieldset",
-                                                    "children": [
-                                                        {
-                                                            "label": "Yes",
-                                                            "node_type": "radio",
-                                                            "node_value": false,
-                                                            "smart_engine": "over_18_initiation_with_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                                                                    "all_required": true,
-                                                                    "node_type": "checkbox",
-                                                                    "node_value": false,
-                                                                    "children": [
-                                                                        {
-                                                                            "label": "Established cardiovascular disease or stroke",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Hypertension",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Type 2 diabetes (DM)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Chronic kidney disease (CKD)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Congenital heart disease (CHD)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Obstructive sleep apnea",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Polycystic ovarian syndrome",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Dyslipidemia",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Non-alcoholic fatty liver disease",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Idiopathic intracranial hypertension",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Osteoarthritis in weight-bearing joints",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "label": "No",
-                                                            "node_type": "radio",
-                                                            "node_value": false,
-                                                            "smart_engine": "over_18_initiation_no_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                                                                    "all_required": true,
-                                                                    "node_type": "checkbox",
-                                                                    "node_value": false,
-                                                                    "children": [
-                                                                        {
-                                                                            "label": "Established cardiovascular disease or stroke",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Hypertension",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Type 2 diabetes (DM)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Chronic kidney disease (CKD)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Congenital heart disease (CHD)",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Obstructive sleep apnea",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Polycystic ovarian syndrome",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Dyslipidemia",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Non-alcoholic fatty liver disease",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Idiopathic intracranial hypertension",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
-                                                                        },
-                                                                        {
-                                                                            "label": "Osteoarthritis in weight-bearing joints",
-                                                                            "node_type": "checkbox",
-                                                                            "node_value": false,
-                                                                            "comorbidity": true
                                                                         }
                                                                     ]
                                                                 }
@@ -943,7 +773,7 @@
                                     "node_type": "fieldset",
                                     "children": [
                                         {
-                                            "label": "(BMI) ≥ 95th percentile.",
+                                            "label": "BMI ≥ 95th percentile.",
                                             "node_type": "radio",
                                             "node_value": false,
                                             "children": [
@@ -958,7 +788,7 @@
                                                             "smart_engine": "below_18_initiation_with_weightloss_agent_bmi_>95",
                                                             "children": [
                                                                 {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                     "all_required": true,
                                                                     "node_type": "checkbox",
                                                                     "node_value": false,
@@ -1040,7 +870,7 @@
                                                             "smart_engine": "below_18_initiation_no_weightloss_agent_bmi_>95",
                                                             "children": [
                                                                 {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                     "all_required": true,
                                                                     "node_type": "checkbox",
                                                                     "node_value": false,
@@ -1120,7 +950,7 @@
                                             ]
                                         },
                                         {
-                                            "label": "(BMI) ≥ 85th percentile.",
+                                            "label": "BMI ≥ 85th percentile.",
                                             "node_type": "radio",
                                             "node_value": false,
                                             "children": [
@@ -1214,10 +1044,10 @@
                                                             "label": "No",
                                                             "node_type": "radio",
                                                             "node_value": false,
-                                                            "smart_engine": "below_18_initiation_no_weightloss_agent_bmi_>95",
+                                                            "smart_engine": "below_18_initiation_no_weightloss_agent_bmi_>85",
                                                             "children": [
                                                                 {
-                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                                     "all_required": true,
                                                                     "node_type": "checkbox",
                                                                     "node_value": false,
@@ -1399,7 +1229,7 @@
                                             "smart_engine": "below_18_continuation_under_52weeks",
                                             "children": [
                                                 {
-                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                     "all_required": true,
                                                     "node_type": "checkbox",
                                                     "node_value": false,
