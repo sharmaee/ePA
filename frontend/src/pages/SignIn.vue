@@ -6,14 +6,23 @@
     <div v-else class="form">
       <div class="your-email">
         <label for="your-email">Email Address</label>
-        <input id="your-email" v-model="credentials.email" type="text" placeholder="example@findsunrise.com" />
+        <input
+          id="your-email"
+          v-model="credentials.email"
+          type="text"
+          placeholder="example@findsunrise.com"
+          @keyup="(event) => sendFormByEnterClicking(event, loginUser)" />
         <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
           Please enter a valid email address.
         </span>
       </div>
       <div class="password">
         <label for="password">Password</label>
-        <input id="password" v-model="credentials.password" type="password" />
+        <input
+          id="password"
+          v-model="credentials.password"
+          type="password"
+          @keyup="(event) => sendFormByEnterClicking(event, loginUser)" />
         <span v-if="!credentials.password && formButtonClicked" class="input-error-notification">
           Please enter a password.
         </span>
@@ -44,7 +53,7 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores";
-import { tryParseApiErrors } from "@/utils";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 
 const errors = ref([]);
 const formButtonClicked = ref(false);
