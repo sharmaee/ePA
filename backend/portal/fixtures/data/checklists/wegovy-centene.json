@@ -1,5 +1,5 @@
 {
-    "label": "What is the patient's age?"",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
