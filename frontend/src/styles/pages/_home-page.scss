@@ -45,4 +45,23 @@
             cursor: pointer;
         }
     }
+
+    .shadow-ellipse {
+        position: absolute;
+        width: 663px;
+        height: 664px;
+        z-index: -1;
+        border-radius: 663px;
+        background: rgba(225, 255, 253, 0.26);
+        filter: blur(53.5px);
+
+        @media (max-width: 940px) {
+            display: none;
+        }
+    }
+
+    .shadow-ellipse-right {
+        top: -250px;
+        right: 0;
+    }
 }
