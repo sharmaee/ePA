@@ -31,7 +31,7 @@
                                             "children": [
                                                 {
                                                     "label": "Document all the weight-related comorbid conditions the patient has:",
-                                                    "node_type": "checkbox",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -59,7 +59,7 @@
                                                             "comorbidity": true
                                                         },
                                                         {
-                                                            "label": "Congenital heart disease (CHD)",
+                                                            "label": "Coronary heart disease (CHD)",
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "comorbidity": true
@@ -112,7 +112,7 @@
                                             "children": [
                                                 {
                                                     "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                                    "node_type": "checkbox",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -203,13 +203,13 @@
                                         {
                                             "label": "This is the first renewal request.",
                                             "node_type": "radio",
-                                            "smart_engine": "first_continuation"
+                                            "smart_engine": "over_18_first_continuation"
                                             "node_value": false
                                         },
                                         {
                                             "label": "This is the second or subsequent renewal request.",
-                                            "node_type": "checkbox",
-                                            "smart_engine": "second_continuation"
+                                            "node_type": "radio",
+                                            "smart_engine": "over_18_second_continuation"
                                             "node_value": false
                                         }
                                     ]
@@ -239,7 +239,7 @@
                             "children": [
                                                 {
                                                     "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                                    "node_type": "checkbox",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -327,13 +327,13 @@
                                         {
                                             "label": "This is the first renewal request.",
                                             "node_type": "radio",
-                                            "smart_engine": "first_continuation"
+                                            "smart_engine": "under_18_first_continuation"
                                             "node_value": false
                                         },
                                         {
                                             "label": "This is the second or subsequent renewal request.",
-                                            "node_type": "checkbox",
-                                            "smart_engine": "second_continuation"
+                                            "node_type": "radio",
+                                            "smart_engine": "under_18_second_continuation"
                                             "node_value": false
                                         }
                                     ]
