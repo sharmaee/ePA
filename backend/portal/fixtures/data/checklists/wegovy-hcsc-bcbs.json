@@ -35,21 +35,13 @@
                                                             "label": "Yes",
                                                             "node_type": "radio",
                                                             "node_value": false,
-                                                            "smart_engine": "over_18_initiation_south_asian_with_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                }
-                                                            ]
+                                                            "smart_engine": "over_18_initiation_south_asian_with_weightloss_agent"
                                                         },
                                                         {
                                                             "label": "No",
                                                             "node_type": "radio",
                                                             "node_value": false,
-                                                            "smart_engine": "over_18_initiation_south_asian_no_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                }
-                                                            ]
+                                                            "smart_engine": "over_18_initiation_south_asian_no_weightloss_agent"
                                                         }
                                                     ]
                                                 }
@@ -77,21 +69,13 @@
                                                                             "label": "Yes",
                                                                             "node_type": "radio",
                                                                             "node_value": false,
-                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>27",
-                                                                            "children": [
-                                                                                {
-                                                                                }
-                                                                            ]
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>27"
                                                                         },
                                                                         {
                                                                             "label": "No",
                                                                             "node_type": "radio",
                                                                             "node_value": false,
-                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>27",
-                                                                            "children": [
-                                                                                {
-                                                                                }
-                                                                            ]
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>27"
                                                                         }
                                                                     ]
                                                                 }
@@ -110,30 +94,20 @@
                                                                             "label": "Yes",
                                                                             "node_type": "radio",
                                                                             "node_value": false,
-                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>30",
-                                                                            "children": [
-                                                                                {
-                                                                                }
-                                                                            ]
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_>30"
                                                                         },
                                                                         {
                                                                             "label": "No",
                                                                             "node_type": "radio",
                                                                             "node_value": false,
-                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>30",
-                                                                            "children": [
-                                                                                {
-                                                                                }
-                                                                            ]
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_>30"
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
-                                                        },
+                                                        }
                                                     ]
-                                                }
-                                                
-                                                
+                                                },
                                                 {
                                                     "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
                                                     "node_type": "fieldset",
@@ -142,21 +116,13 @@
                                                             "label": "Yes",
                                                             "node_type": "radio",
                                                             "node_value": false,
-                                                            "smart_engine": "over_18_initiation_with_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                }
-                                                            ]
+                                                            "smart_engine": "over_18_initiation_with_weightloss_agent"
                                                         },
                                                         {
                                                             "label": "No",
                                                             "node_type": "radio",
                                                             "node_value": false,
-                                                            "smart_engine": "over_18_initiation_no_weightloss_agent",
-                                                            "children": [
-                                                                {
-                                                                }
-                                                            ]
+                                                            "smart_engine": "over_18_initiation_no_weightloss_agent"
                                                         }
                                                     ]
                                                 }
@@ -220,22 +186,13 @@
                                             "label": "Yes",
                                             "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "below_18_initiation_with_weightloss_agent",
-                                            "children": [
-                                                {
-                                                
-                                                }
-                                            ]
+                                            "smart_engine": "below_18_initiation_with_weightloss_agent"
                                         },
                                             {
                                             "label": "No",
                                             "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "below_18_initiation_no_weightloss_agent",
-                                            "children": [
-                                                {
-                                                }
-                                            ]
+                                            "smart_engine": "below_18_initiation_no_weightloss_agent"
                                         }
                                     ]
                                 }

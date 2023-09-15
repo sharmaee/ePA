@@ -28,67 +28,67 @@
                                             "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Hypertension",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Type 2 diabetes (DM)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Chronic kidney disease (CKD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Congenital heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Obstructive sleep apnea",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Polycystic ovarian syndrome",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Dyslipidemia",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Non-alcoholic fatty liver disease",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Idiopathic intracranial hypertension",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         },
                                         {
                                             "label": "Osteoarthritis in weight-bearing joints",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "comorbidity": true
+                                            "diagnosis": true
                                         }
                                     ]
                                 },
@@ -110,7 +110,7 @@
                                             "smart_engine": "over_18_initiation_without_BCBSM/BCN_program"
                                         }
                                     ]
-                                },
+                                }
                             ]
                         },
                         {
@@ -118,7 +118,7 @@
                             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_18_continuation":
+                            "smart_engine": "over_18_continuation"
                         }
                     ]
                 }
@@ -158,7 +158,7 @@
                                             "smart_engine": "18_plus_initiation_without_BCBSM/BCN_program"
                                         }
                                     ]    
-                                },
+                                }
                             ]
                         },
                         {
