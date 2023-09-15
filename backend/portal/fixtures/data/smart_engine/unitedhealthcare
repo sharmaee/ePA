@@ -18,7 +18,7 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Documentated loss or maintenance of at least 4 percent reduction from baseline body weight.",
+                    "text": "Documented loss or maintenance of at least 4 percent reduction from baseline body weight.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
@@ -26,5 +26,5 @@
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
-        },
+        }
 }
