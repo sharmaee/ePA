@@ -5,7 +5,7 @@
             "items": [
                 {
                     "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
-                    "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
                 },
                 {
                     "label": "Document patient does NOT have history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2",
