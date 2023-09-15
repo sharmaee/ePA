@@ -31,14 +31,14 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
                 {
-                    "text": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
+                    "text": "Document that the dose prescribed does not exceed 0.25mg in weeks 1 to 4, 0.5mg in weeks 5 to 8, 1mg in weeks 9 to 12 and 1.7mg in weeks 13 to 16.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
               
             ]
         },
 
-    "first_continuation":
+    "over_18_first_continuation":
         {
             "header": "Prepare Patient Documentation",
             "items": [
@@ -55,7 +55,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
                 {
-                    "text": "Document that member has lost ≥ 5% of baseline body weight (adults).",
+                    "text": "Document that member has lost ≥ 5% of baseline body weight.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
                 {
@@ -64,7 +64,33 @@
                 }
             ]
         },
-      "second_continuation":
+        "under_18_first_continuation":
+        {
+            "header": "Prepare Patient Documentation",
+            "items": [
+                {
+                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
+                },
+                {
+                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Dose does not exceed 1.7 mg once weekly.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Document that member has lost ≥ 5% of baseline BMI.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+      "over_18_second_continuation":
         {
             "header": "Prepare Patient Documentation",
             "items": [
@@ -90,7 +116,33 @@
                 }
             ]
         },
-    "below_18_initiation":
+        "under_18_second_continuation":
+        {
+            "header": "Prepare Patient Documentation",
+            "items": [
+                {
+                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
+                },
+                {
+                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Dose does not exceed 1.7mg.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+                {
+                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "under_18_initiation":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
