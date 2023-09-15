@@ -19,7 +19,7 @@
                             "node_value": false,
                             "smart_engine": "over_18_initiation"
                             "children": [
-                                    {
+                                {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
                                     "all_required": true,
                                     "node_type": "checkbox",

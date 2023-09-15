@@ -8,4 +8,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-ISSUER_NAME = 'LamarHealth'
+ISSUER_NAME = 'Lamar Health - Do Prior Auth'

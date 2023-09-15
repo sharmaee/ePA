@@ -1,0 +1,107 @@
+
+.registered-form-wrapper, 
+.forgot-form-wrapper, 
+.reset-form-wrapper,
+.confirm-email-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 60px 0;
+    min-height: 100vh;
+    width: 100%;
+
+    h1 {
+        font-size: 64px;
+        font-weight: 700;
+        text-align: center;
+        
+        @media (max-width: 1280px) {
+            font-size: 56px;
+        }
+    }
+    
+    .forgot-pass-sub-title {
+        margin-bottom: 46px;
+        text-align: center;
+    }
+
+    .success-request-modal-window {
+        margin-top: 145px;
+    }
+    
+    .final-registered-notification {
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .envelop-wrapper {
+            margin: 20px 175px 0 175px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+    }
+
+    .form {
+        padding: 32px 54px;
+        border-radius: 34px;
+        border: 1px solid $gray-600;
+        background-color: $white;
+        z-index: 100;
+        width: 446px;
+
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        label {
+            margin: 16px 0 12px 0;           
+            color: $gray-1000;
+    
+            @media (max-width: 605px) {
+                font-size: 14px;
+            }     
+        }
+    
+        button {
+            margin-top: 28px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            width: inherit;
+        }
+
+        .auxiliary-account-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 400;
+
+            .forgot-pass-link {
+                margin: 24px auto;
+            }
+
+            .have-an-account {
+                color: $gray-400;
+                margin-top: 10px;
+                
+                a {
+                    color: $black;
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@
       :checked="isChecked"
       :type="parseData.nodeType"
       :value="parseData.nodeValue"
-      @click="emit('selectedTerm', parseData.children)" />
+      @click="emit('selectedTerm', { item: parseData.children, smartEngineKey: parseData.smartEngine })" />
     <input
       v-else-if="parseData.nodeType === 'checkbox' && !parseData.children"
       :id="checkboxId"
@@ -20,7 +20,7 @@
       class="check-box-block-label"
       :class="{
         red: parseData.nodeValue === false && !props.childCheckboxes && buttonClicked,
-        comorbidity: parseData.comorbidity && isChecked,
+        diagnosis: parseData.diagnosis && isChecked,
         'radio-label': parseData.nodeType === 'radio',
       }">
       {{ parseData.label }}

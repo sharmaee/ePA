@@ -1,27 +1,54 @@
 [
   {
-    "header": "Step 1: Search and Attach Any of the Following as Evidence Supporting Pre-Diabetes.",
+    "header": "Search and Attach Any of the Following as Evidence Supporting Pre-Diabetes.",
     "items": [
-      "Doctor Has Mentioned Pre-Diabetes in the Patient’s Chart",
-      "A1C Lab Result of 5.7% or Higher",
-      "Fasting Glucose Levels of 100mg/dL or Higher",
-			"ICD-10 Code R73.03 Added as the Secondary Diagnosis in CoverMyMeds"
+      {
+        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient’s Chart",
+        "validation": ""
+      },
+      {
+        "label": "A1C Lab Result of 5.7% or Higher",
+        "validation": ""
+      },
+      {
+        "label": "Fasting Glucose Levels of 100mg/dL or Higher",
+        "validation": ""
+      },
+      {
+        "label": "ICD-10 Code R73.03 Added as the Secondary Diagnosis in CoverMyMeds",
+        "validation": ""
+      }
     ]
   },
   {
-    "header": "Step 3: Add a Statement of Medical Necessity to the Patient’s Documentation",
+    "header": "Add a Statement of Medical Necessity to the Patient’s Documentation",
     "items": [
-      "Copy and Paste the Paragraph Below",
-			"Request Prescribing Doctor to Add in the Patient's Chart or in a Signed Letter of Medical Necessity"
+      {
+        "label": "Copy and Paste the Paragraph Below",
+        "validation": ""
+      },
+      {
+        "label": "Request Prescribing Doctor to Add in the Patient's Chart or in a Signed Letter of Medical Necessity",
+        "validation": ""
+      }
     ],
-    "additional_info": "On Examination, the Patient's Symptoms at Their Most Severe Included **[Insert Symptoms from Patient's Chart]**, Abnormal Lab Results Including **[List the Lab Results Consistent with the Diagnosis]**, and Causing Marked Difficulty in Performing Daily Activities. It Is of Vital Importance to Underline That the Patient's Condition Has Reached a Critical Stage Where Immediate Intervention Is No Longer Optional but a Necessity. Failure to Prescribe the Indicated Medication and Initiate Comprehensive Care Will Likely Lead to Catastrophic Consequences for the Patient's Health. This Assessment Is in Accordance with Clinical Guidelines and Best Practice Standards, as Evidenced by the Documents and Research Studies That My Assistant Will Attach to This Note. Should Appropriate Care Not Be Initiated Promptly, the Patient Is at Imminent Risk for Serious Complications Such as Heart Attack, Stroke, Renal Failure, Severe Infection, Loss of Limb Due to Peripheral Arterial Disease, and Other Life-Threatening Conditions. The Urgency of This Matter Cannot Be Overstated, and I Strongly Urge That the Necessary Steps Be Taken Without Delay to Prevent Further Deterioration of the Patient's Health."
+    "additional_info": "On Examination, the Patient's Symptoms at Their Most Severe Included: [Insert Symptoms from Patient’s Chart], and Causing Marked Difficulty in Performing Daily Activities. It Is of Vital Importance to Underline That the Patient's Condition Has Reached a Critical Stage Where Immediate Intervention Is No Longer Optional but a Necessity. Failure to Prescribe the Indicated Medication and Initiate Comprehensive Care Will Likely Lead to Catastrophic Consequences for the Patient's Health. This Assessment Is in Accordance with Clinical Guidelines and Best Practice Standards, as Evidenced by the Documents and Research Studies That My Assistant Will Attach to This Note. Should Appropriate Care Not Be Initiated Promptly, the Patient Is at Imminent Risk for Serious Complications Such as Heart Attack, Stroke, Renal Failure, Severe Infection, Loss of Limb Due to Peripheral Arterial Disease, and Other Life-Threatening Conditions. The Urgency of This Matter Cannot Be Overstated, and I Strongly Urge That the Necessary Steps Be Taken Without Delay to Prevent Further Deterioration of the Patient's Health."
   },
   {
-    "header": "Step 4: Add Evidence of the Risk Factors in the Table Below",
+    "header": "Add Evidence of the Risk Factors in the Table Below",
     "items": [
-      "Add the Chart Notes Mentioning the Patient's Risk Factors",
-      "Download and Add the Clinical Study Documents Provided",
-			"Confirm All Risk Factors Are Listed in Your CoverMyMeds Submission"
+      {
+        "label": "Add the Chart Notes Mentioning the Patient's Risk Factors",
+        "validation": ""
+      },
+      {
+        "label": "Download and Add the Clinical Study Documents Provided",
+        "validation": ""
+      },
+      {
+        "label": "Confirm All Risk Factors Are Listed in Your CoverMyMeds Submission",
+        "validation": ""
+      }
     ]
   }
 ]

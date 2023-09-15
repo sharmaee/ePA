@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 WEBSITE_URL = ''
 ALLOWED_HOSTS = ['*']
-
+ENABLE_2FA = False
 SUPERUSER_USERNAME = 'dopriorauth'
 SUPERUSER_PASSWORD = ''
 
@@ -86,7 +86,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -97,7 +96,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portal.wsgi.application'
 
-# AUTH_USER_MODEL = 'portal.User'
+AUTH_USER_MODEL = 'portal.User'
 
 
 # Password validation

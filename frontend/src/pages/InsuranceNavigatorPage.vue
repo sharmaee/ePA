@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="insurance-navigator-wrapper">
+  <div class="insurance-navigator-wrapper fix-height-wrapper">
     <h1 :class="{ hide: screenWidth < 835 }">
       Prepare Prior Authorization For <span class="blue-text">Approval</span>
     </h1>
@@ -27,7 +27,7 @@
                   v-model="searchFormData.insuranceProvider"
                   type="text"
                   placeholder="Insurance provider"
-                  @keyup="sendFormByEnterClicking" />
+                  @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)" />
                 <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
                   Please enter ALL fields to search.
                 </span>
@@ -39,7 +39,7 @@
                   v-model="searchFormData.insuranceCoverageState"
                   class="custom-select-arrow"
                   placeholder="City/Area"
-                  @keyup="sendFormByEnterClicking">
+                  @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
                 <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
@@ -54,7 +54,7 @@
                 v-model="searchFormData.medication"
                 type="text"
                 placeholder="Search for medication name or NDC number"
-                @keyup="sendFormByEnterClicking" />
+                @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)" />
               <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
                 Please enter ALL fields to search.
               </span>
@@ -65,14 +65,18 @@
       </div>
     </div>
     <div id="searchResultsBlock"></div>
-    <div v-if="coverageBlock" class="coverage">
-      <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
-        <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
-        <span>{{ item.description }}</span>
-        <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
-            Get Steps
-          </router-link>
+    <GreenCirclePreloader v-if="preloader" />
+
+    <div class="coverage">
+      <div v-if="coverageBlock">
+        <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
+          <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
+          <span>{{ item.description }}</span>
+          <div class="coverage-btn-wrapper">
+            <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
+              Get Steps
+            </router-link>
+          </div>
         </div>
       </div>
       <div class="request-text missing-requirements-block">
@@ -85,8 +89,7 @@
         </div>
       </div>
     </div>
-    <GreenCirclePreloader v-else-if="preloader" />
-    <p v-else-if="errMessage">Try it later please: {{ errMessage }}</p>
+    <p v-if="errMessage">Try it later please: {{ errMessage }}</p>
   </div>
   <PriorFooter />
 </template>
@@ -101,7 +104,8 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 const { searchFormData } = storeToRefs(useSearchFormStore());
-
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+const errors = ref([]);
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
@@ -151,12 +155,6 @@ const isMedicationValid = computed(() => {
   return value !== null && value.trim() !== "";
 });
 
-function sendFormByEnterClicking(event) {
-  if (event.code === "Enter" || event.code === 76) {
-    getPriorAuthRequirements();
-  }
-}
-
 async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
   if (isInsuranceProviderValid.value && isInsuranceCoverageStateValid.value && isMedicationValid.value) {
@@ -173,6 +171,7 @@ async function getPriorAuthRequirements() {
       clearTheForm();
       preloader.value = false;
       errMessage.value = err;
+      errors.value = tryParseApiErrors(error);
     }
   }
 }

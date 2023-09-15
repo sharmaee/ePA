@@ -29,6 +29,7 @@
                                             "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
+<<<<<<< HEAD
                                             "comorbidity": true
                                         },
                                         {
@@ -90,6 +91,151 @@
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "comorbidity": true
+||||||| d46c93f
+                                            "children": [
+                
+                                                {
+                                                    "label": "Document initial body mass index (BMI) ≥ 27 kg/m^2",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                },
+                                                {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+=======
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+>>>>>>> main
                                         }
                                     ]
                                 }
@@ -102,12 +248,27 @@
                             "node_value": false,
                             "children": [
                                 {
+<<<<<<< HEAD
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
                                     "all_required": true,
                                     "node_type": "checkbox",
                                     "node_value": false,
+||||||| d46c93f
+                                    "label": "Individual is ≥ 18 years of age",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Individual meets one of the following baseline conditions:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+=======
+                                    "label": "How long has the patient been using Wegovy?",
+                                    "node_type": "fieldset",
+>>>>>>> main
                                     "children": [
                                         {
+<<<<<<< HEAD
                                             "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
@@ -188,8 +349,218 @@
                                         {
                                             "label": "Less than 12 months",
                                             "node_type": "radio",
+||||||| d46c93f
+                                            "label": "Document a BMI ≥ 30 kg/m2",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Document a BMI ≥ 27 kg/m2 and had at least one weight-related comorbidity",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                },
+                                {
+                                    "label": "Individual meets one of the following:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year)",
+                                            "node_type": "checkbox",
+                                            "node_value": false
+                                        },
+                                        {
+                                            "label": "Meets both of the following:",
+                                            "node_type": "checkbox",
+=======
+                                            "label": "More than 12 months",
+                                            "node_type": "radio",
+>>>>>>> main
                                             "node_value": false,
+<<<<<<< HEAD
                                             "smart_engine": "over_18_continuation_less_than_12_months"
+||||||| d46c93f
+                                            "all_required": true,
+                                            "children": [
+                                                {
+                                                    "label": "Has received < 12 consecutive months of Wegovy",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                },
+                                                {
+                                                    "label": "Is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months)",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false
+                                                }
+                                            ]
+=======
+                                            "smart_engine": "over_18_continuation_more_than_12_months",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "all_required": true,
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Less than 12 months",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_continuation_less_than_12_months",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "all_required": true,
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+>>>>>>> main
                                         }
                                     ]
                                 }

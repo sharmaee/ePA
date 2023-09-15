@@ -24,6 +24,9 @@ class AnalyticsAdminBase(admin.ModelAdmin):
     def has_add_permission(self, *_):
         return False
 
+    def has_change_permission(self, *_):
+        return False
+
     def has_delete_permission(self, *_):
         return False
 
@@ -42,7 +45,7 @@ class DisplayMemberDetailsAdmin(AnalyticsAdminBase):
         return obj.member_details.member_id
 
     def ma_email(self, obj):
-        return obj.member_details.ma_email
+        return obj.user.email
 
 
 @admin.register(RequestNewPriorAuthRequirements)

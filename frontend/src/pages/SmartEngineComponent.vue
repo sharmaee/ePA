@@ -3,10 +3,10 @@
     <h3>Follow these steps to increase the chance of approval:</h3>
 
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
-      <span class="smart-engine-list-header">{{ section.header }}</span>
+      <span class="smart-engine-list-header">Step {{ index + 1 }}: {{ section.header }}</span>
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
         <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
-        <label :for="`item-${index}-${itemIndex}`">{{ item }}</label>
+        <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in filteredByComorbidityData" :key="item.diagnosis">
+          <tr v-for="item in filteredByDiagnosisData" :key="item.diagnosis">
             <td>{{ item.diagnosis }}</td>
             <td>{{ item.icd_10_codes.join(", ") }}</td>
             <td>
@@ -53,7 +53,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
-  comorbidityFilterData: {
+  diagnosisFilterData: {
     type: Object,
     required: true,
   },
@@ -61,15 +61,22 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  smartEngineKeyData: {
+    type: String,
+    required: true,
+  },
 });
 
-const filteredByComorbidityData = computed(() => {
-  return smartEngineTable.filter((element) => props.comorbidityFilterData.includes(element.diagnosis));
+const filteredByDiagnosisData = computed(() => {
+  return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
 });
 
 const smartEngineCheckList = computed(() => {
   const smartEngineCheckList = [...smartEngineCheckboxContent];
-  smartEngineCheckList.splice(1, 0, props.stepVerifyDocs);
+  smartEngineCheckList.splice(1, 0, props.stepVerifyDocs[props.smartEngineKeyData]);
+  if (props.diagnosisFilterData.includes("Type 2 diabetes (DM)")) {
+    smartEngineCheckList.shift();
+  }
   return smartEngineCheckList;
 });
 
