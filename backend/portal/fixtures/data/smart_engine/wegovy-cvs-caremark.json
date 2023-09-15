@@ -1,31 +1,193 @@
 {
-    "initiation":
+    "label": "Is this request for starting or continued therapy with Wegovy™ (semaglutide)?",
+    "node_type": "fieldset",
+    "children": [
         {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
+            "label": "Starting therapy",
+            "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization",
+            "node_type": "radio",
+            "node_value": false,
+            "smart_engine": "initiation",
+            "children": [
                 {
-                    "label": "Document the requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient has a body mass index (BMI) greater than or equal to 27 kg/m^2",
-                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+                 "label": "What is the patient's BMI?",
+                    "node_type": "fieldset",
+                    "node_value": false,
+                    "children": [
+                        {
+                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "smart_engine": "over_12_initiation",
+                            "children": [
+                                {
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                    "all_required": true,
+                                    "node_type": "fieldset",
+                                    "node_value": false,
+                                    "children": [
+                                           {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        }
+                                    ]
+                                    }
+                                    ]
+                                },
+                                {
+                                    "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2.",
+                                    "node_type": "radio",
+                                    "node_value": false,
+                                    "smart_engine": "over_12_initiation",
+                                    "children": [
+                                    {
+                                        "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                        "all_required": true,
+                                        "node_type": "fieldset",
+                                        "node_value": false,
+                                        "children": [
+                                               {
+                                                "label": "Established cardiovascular disease or stroke",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Hypertension",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Type 2 diabetes (DM)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Chronic kidney disease (CKD)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Congenital heart disease (CHD)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Obstructive sleep apnea",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Polycystic ovarian syndrome",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Dyslipidemia",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Non-alcoholic fatty liver disease",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Idiopathic intracranial hypertension",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Osteoarthritis in weight-bearing joints",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            }
+                                            ]
+                                        }
+                                    ]
+                                }
+                    ]
                 }
             ]
         },
-    "continuation":
         {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "label": "Document that the patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document patient continues weightloss or maintains at least 5% weight loss from initial BMI.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
+            "label": "Continuation of therapy",
+            "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization",
+            "node_type": "radio",
+            "node_value": false,
+            "smart_engine": "continuation"            
+        }
+    ]
+}
