@@ -1,175 +1,165 @@
 {
-    "over_18_start_BMI_over_27":
-        {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "text": "Document that member is actively enrolled in a weight-loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-              
-            ]
-        },
-    "over_18_start_BMI_over_30":
-        {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "text": "Document that member is actively enrolled in a weight-loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that the dose prescribed does not exceed 0.25mg in weeks 1 to 4, 0.5mg in weeks 5 to 8, 1mg in weeks 9 to 12 and 1.7mg in weeks 13 to 16.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-              
-            ]
-        },
-
-    "over_18_first_continuation":
-        {
-            "header": "Prepare Patient Documentation",
-            "items": [
-                {
-                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
-                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Dose does not exceed 2.4 mg once weekly or a temporary dose reduction to 1.7mg for a maximum of 4 weeks.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member has lost ≥ 5% of baseline body weight.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        },
-        "under_18_first_continuation":
-        {
-            "header": "Prepare Patient Documentation",
-            "items": [
-                {
-                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
-                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Dose does not exceed 1.7 mg once weekly.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member has lost ≥ 5% of baseline BMI.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        },
-      "over_18_second_continuation":
-        {
-            "header": "Prepare Patient Documentation",
-            "items": [
-                {
-                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
-                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Dose does not exceed 2.4 mg once weekly or a temporary dose reduction to 1.7mg for a maximum of 4 weeks.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        },
-        "under_18_second_continuation":
-        {
-            "header": "Prepare Patient Documentation",
-            "items": [
-                {
-                    "text": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
-                    "validation": "Stop and submit a prior authorization following the criteria for start of therapy." 
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Dose does not exceed 1.7mg.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-                {
-                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        },
-    "under_18_initiation":
-        {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "text": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
-                    "validation": "Stop and contact provider to document this in the patient's chart."
-                },
-                {
-                    "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart."
-                },
-                {
-                    "text": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
-                    "validation": "Stop and contact provider to document this in the patient's chart."
-                },
-                {
-                    "text": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
-                    "validation": "Stop and contact provider to document this in the patient's chart."
-                },
-                {
-                    "text": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
-                    "validation": "Stop and contact provider to document this in the patient's chart."
-                },
-                {
-                    "text": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        }
+    "over_18_start_BMI_over_27": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document that member is actively enrolled in a weight-loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_start_BMI_over_30": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document that member is actively enrolled in a weight-loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the dose prescribed does not exceed 0.25mg in weeks 1 to 4, 0.5mg in weeks 5 to 8, 1mg in weeks 9 to 12 and 1.7mg in weeks 13 to 16.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_first_continuation": {
+        "header": "Prepare Patient Documentation",
+        "items": [
+            {
+                "label": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                "validation": "Stop and submit a prior authorization following the criteria for start of therapy."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Dose does not exceed 2.4 mg once weekly or a temporary dose reduction to 1.7mg for a maximum of 4 weeks.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member has lost ≥ 5% of baseline body weight.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "under_18_first_continuation": {
+        "header": "Prepare Patient Documentation",
+        "items": [
+            {
+                "label": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                "validation": "Stop and submit a prior authorization following the criteria for start of therapy."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Dose does not exceed 1.7 mg once weekly.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member has lost ≥ 5% of baseline BMI.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_second_continuation": {
+        "header": "Prepare Patient Documentation",
+        "items": [
+            {
+                "label": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                "validation": "Stop and submit a prior authorization following the criteria for start of therapy."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Dose does not exceed 2.4 mg once weekly or a temporary dose reduction to 1.7mg for a maximum of 4 weeks.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "under_18_second_continuation": {
+        "header": "Prepare Patient Documentation",
+        "items": [
+            {
+                "label": "Member has previously received medication via Centene benefit or is enrolled in a state and product with continuity of care regulations.",
+                "validation": "Stop and submit a prior authorization following the criteria for start of therapy."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Dose does not exceed 1.7mg.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "under_18_initiation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    }
 }
