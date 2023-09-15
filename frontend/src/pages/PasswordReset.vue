@@ -16,7 +16,11 @@
       <p>To complete the password reset process, please enter your new password below and confirm.</p>
       <div class="password">
         <label for="password">Password</label>
-        <input id="password" v-model="newPassword" type="password" />
+        <input
+          id="password"
+          v-model="newPassword"
+          type="password"
+          @keyup="(event) => sendFormByEnterClicking(event, updatePassword)" />
         <span v-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
           Please create a password with more than 10 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
           and 1 symbol.
@@ -24,7 +28,11 @@
       </div>
       <div class="confirm-password">
         <label for="confirm-password">Confirm Password</label>
-        <input id="confirm-password" v-model="passwordConfirmation" type="password" />
+        <input
+          id="confirm-password"
+          v-model="passwordConfirmation"
+          type="password"
+          @keyup="(event) => sendFormByEnterClicking(event, updatePassword)" />
         <span v-if="!isPasswordMatchValid && formButtonClicked" class="input-error-notification">
           Passwords must match.
         </span>
@@ -42,7 +50,7 @@ import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
 import { useRoute, useRouter } from "vue-router";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-import { tryParseApiErrors } from "@/utils";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 
 const errors = ref([]);
 const showPreloader = ref(false);

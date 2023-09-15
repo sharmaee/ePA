@@ -16,7 +16,12 @@
       <div class="form">
         <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
         <div class="your-email">
-          <input id="your-email" v-model="userEmail" type="text" placeholder="example@findsunrise.com" />
+          <input
+            id="your-email"
+            v-model="userEmail"
+            type="text"
+            placeholder="example@findsunrise.com"
+            @keyup="(event) => sendFormByEnterClicking(event, passwordSending)" />
           <span v-if="!isEmailValid && formButtonClicked" class="input-error-notification">
             Please enter a valid email address.
           </span>
@@ -38,7 +43,7 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
-import { tryParseApiErrors } from "@/utils";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 
 const errors = ref([]);
 const showPreloader = ref(false);

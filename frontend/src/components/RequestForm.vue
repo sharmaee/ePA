@@ -3,14 +3,24 @@
     <div class="row-with-two-input">
       <div class="cover-my-meds-key">
         <label for="cover-my-meds-key">CoverMyMeds Key</label>
-        <input id="cover-my-meds-key" v-model="data.coverMyMedsKey" type="text" placeholder="B4HL4T2E" />
+        <input
+          id="cover-my-meds-key"
+          v-model="data.coverMyMedsKey"
+          type="text"
+          placeholder="B4HL4T2E"
+          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
         <span v-if="!isCoverMyMedsKeyValid && formButtonClicked" class="input-error-notification">
           Please enter a valid CoverMyMeds Key.
         </span>
       </div>
       <div class="patient-last-name">
         <label for="patient-last-name">Patient Last Name</label>
-        <input id="patient-last-name" v-model="data.lastName" type="text" placeholder="Snow" />
+        <input
+          id="patient-last-name"
+          v-model="data.lastName"
+          type="text"
+          placeholder="Snow"
+          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
         <span v-if="!isLastNameValid && formButtonClicked" class="input-error-notification">
           Please enter patient last name.
         </span>
@@ -20,14 +30,24 @@
     <div class="row-with-two-input">
       <div class="date-of-birth">
         <label for="date-of-birth">Patient Date Of Birth</label>
-        <input id="date-of-birth" v-model="data.dob" type="text" placeholder="MM/DD/YYYY" />
+        <input
+          id="date-of-birth"
+          v-model="data.dob"
+          type="text"
+          placeholder="MM/DD/YYYY"
+          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
         <span v-if="!isDobValid && formButtonClicked" class="input-error-notification">
           Please enter a valid date of birth (MM/DD/YYYY).
         </span>
       </div>
       <div class="patient-member-id">
         <label for="patient-member-id">Patient Member ID</label>
-        <input id="patient-member-id" v-model="data.memberId" type="text" placeholder="H3485045" />
+        <input
+          id="patient-member-id"
+          v-model="data.memberId"
+          type="text"
+          placeholder="H3485045"
+          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
         <span v-if="!isPatientMemberIdValid && formButtonClicked" class="input-error-notification">
           Please enter a valid member ID.
         </span>
@@ -50,6 +70,7 @@ import { storeToRefs } from "pinia";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 import { useUiElementsStore } from "@/stores/uiElementsStore";
 import { useRoute } from "vue-router";
+import { sendFormByEnterClicking } from "@/utils";
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const route = useRoute();

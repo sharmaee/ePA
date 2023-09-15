@@ -27,7 +27,7 @@
                   v-model="searchFormData.insuranceProvider"
                   type="text"
                   placeholder="Insurance provider"
-                  @keyup="sendFormByEnterClicking" />
+                  @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)" />
                 <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
                   Please enter ALL fields to search.
                 </span>
@@ -39,7 +39,7 @@
                   v-model="searchFormData.insuranceCoverageState"
                   class="custom-select-arrow"
                   placeholder="City/Area"
-                  @keyup="sendFormByEnterClicking">
+                  @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
                 <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
@@ -54,7 +54,7 @@
                 v-model="searchFormData.medication"
                 type="text"
                 placeholder="Search for medication name or NDC number"
-                @keyup="sendFormByEnterClicking" />
+                @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)" />
               <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
                 Please enter ALL fields to search.
               </span>
@@ -104,7 +104,7 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 const { searchFormData } = storeToRefs(useSearchFormStore());
-import { tryParseApiErrors } from "@/utils";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 const errors = ref([]);
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
@@ -154,12 +154,6 @@ const isMedicationValid = computed(() => {
   const value = searchFormData.value.medication;
   return value !== null && value.trim() !== "";
 });
-
-function sendFormByEnterClicking(event) {
-  if (event.code === "Enter" || event.code === 76) {
-    getPriorAuthRequirements();
-  }
-}
 
 async function getPriorAuthRequirements() {
   formButtonClicked.value = true;
