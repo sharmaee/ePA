@@ -1,9 +1,9 @@
 {
-    "label": "Age of patient?",
+    "label": "What is the patient's age?"",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For patients 18 years or older",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -13,7 +13,7 @@
                     "node_type": "fieldset",
                     "children": [
                         {
-                            "label": "Start of therapy for weight management",
+                            "label": "Start of therapy",
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 16 weeks when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
@@ -24,13 +24,13 @@
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2",
+                                            "label": "BMI ≥ 30 kg/m2",
                                             "node_type": "radio",
                                             "node_value": false,
                                             "smart_engine": "over_18_start_BMI_over_30",
                                             "children": [
                                                 {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -105,14 +105,14 @@
                                             ]
                                         },
                                         {
-                                            "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2",
+                                            "label": "BMI ≥ 27 kg/m2",
                                             "all_required": true,
                                             "node_type": "radio",
                                             "node_value": false,
                                             "smart_engine": "over_18_start_BMI_over_27",
                                             "children": [
                                                 {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must have at least one, Select All That Apply)",
                                                     "node_type": "checkbox",
                                                     "node_value": false,
                                                     "children": [
@@ -222,7 +222,7 @@
             ]
         },
         {
-            "label": "For patients aged 12 to 17 years",
+            "label": "Patient is 12 to 17 years old.",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -232,14 +232,14 @@
                     "node_type": "fieldset",
                     "children": [
                         {
-                            "label": "Start of therapy for weight management",
+                            "label": "Start of therapy",
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 16 weeks when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
                             "smart_engine": "under_18_initiation",
                             "children": [
                                 {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
