@@ -413,7 +413,7 @@
                 },
                 {
                     "label": "Document current BMI is greater than 85th percentile for age and gender.",
-                    "validation": "A current BMI of less than 30 kg/m^2 is unlikely to be approved."
+                    "validation": "A current BMI of less than 85th is unlikely to be approved."
                 },
                 {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weight loss medication.",
