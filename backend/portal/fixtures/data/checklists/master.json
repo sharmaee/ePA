@@ -1,9 +1,9 @@
 {
-    "label": "Age of Patient?",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For patients 18 years or older",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
