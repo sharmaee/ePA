@@ -106,7 +106,6 @@
                                         },
                                         {
                                             "label": "BMI ≥ 27 kg/m2",
-                                            "all_required": true,
                                             "node_type": "radio",
                                             "node_value": false,
                                             "smart_engine": "over_18_start_BMI_over_27",
