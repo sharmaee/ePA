@@ -321,11 +321,6 @@
                                     "label": "The patient has achieved and maintained a documented BMI reduction of ≥ 5% from baseline.",
                                     "node_type": "checkbox",
                                     "node_value": false
-                                },
-                                {
-                                    "label": "The patient has anti-obesity medication coverage benefits",
-                                    "node_type": "checkbox",
-                                    "node_value": false
                                 }
                             ]
                         }
