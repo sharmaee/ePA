@@ -21,7 +21,7 @@
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                                    "node_type": "checkbox",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                     {
@@ -91,6 +91,25 @@
                                             "diagnosis": true
                                         }
                                     ]
+                                },
+                                {
+                                     "label": "Documented intolerance, contraindication, or failure to reach goal A1c after at least 6 month trial of Victoza or Ozempic. If the patient hasn't tried Victoza or Ozempic, ask the order prescriber that insurance requires these to be tried first.",
+                                    "node_type": "fieldset",
+                                    "node_value": false,
+                                    "children": [
+                                    {
+                                            "label": "Victoza",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Ozempic",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    }
+                                ]
                                 }
                             ]
                         },
@@ -173,6 +192,37 @@
                                             "diagnosis": true
                                         }
                                     ]
+                                },
+                                {
+                                     "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
+                                    "node_type": "fieldset",
+                                    "node_value": false,
+                                    "children": [
+                                    {
+                                            "label": "Xenical - Contraindications: Pregnancy, Chronic Malabsorption, Cholestasis",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Contrave - Contraindications: Uncontrolled hypertension, History of seizures, Bulimia, Anorexia nervosa, Opioid Use",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Qsymia - Contraindications: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Saxenda - Contraindications: Thyroid Cancer, Medullary Thyroid carcinoma, Multiple endocrine neoplasia syndrome type 2",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    }
+                                ]
                                 }
                             ]
                         }
@@ -187,16 +237,7 @@
             "node_value": false,
             "smart_engine": "over_18_continuation",
             "children": [
-                {
-                    "label": "Patient continues to meet initial review criteria",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Documented weight loss within the previous 3 months of at least 10% from baseline weight",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
+                
             ]
         }
    ]
