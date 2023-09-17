@@ -8,7 +8,7 @@
                     "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation). You can check a providers NPI number here: https://npiregistry.cms.hhs.gov/search by entering their NPI number and clicking search. In the result look for the Taxonomy of the provider. "
                 },
                 {
-                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "label": "Documented current baseline body mass index (BMI) ≥ 30 kg/m^2.",
                     "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
                 },
                 {
@@ -38,7 +38,7 @@
                     "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
                 },
                 {
-                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "label": "Documented current baseline body mass index (BMI) ≥ 30 kg/m^2.",
                     "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
                 },
                 {
