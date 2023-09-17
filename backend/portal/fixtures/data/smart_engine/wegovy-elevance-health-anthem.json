@@ -1,11 +1,95 @@
 {
-    "initiation":
+    "over_18_initiation_27":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
                     "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document patient does NOT have history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document no history of an eating disorder (for example, anorexia, bulimia).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current therapy for all medical conditions (including obesity), identifying specific treatments including medications",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current accurate height and weight measurements.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, exercise regimen, calorie/fat-restricted diet) in the past six months and will continue to follow as part of the treatment plan",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current medical status including nutritional or dietetic assessment",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+     "over_18_initiation_30":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document patient does NOT have history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document no history of an eating disorder (for example, anorexia, bulimia).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current therapy for all medical conditions (including obesity), identifying specific treatments including medications",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current accurate height and weight measurements.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, exercise regimen, calorie/fat-restricted diet) in the past six months and will continue to follow as part of the treatment plan",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document current medical status including nutritional or dietetic assessment",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+     "under_18_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 95th percentile on pediatric growth chart.",
+                    "validation": "An initial BMI of under the 95th percentile is unlikely to be approved."
                 },
                 {
                     "label": "Document patient does NOT have history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2",
