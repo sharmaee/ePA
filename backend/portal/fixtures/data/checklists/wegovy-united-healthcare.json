@@ -95,14 +95,14 @@
                             ]
                         },
                         {
-                            "label": "BMI ≥ 27 kg/m^22",
+                            "label": "BMI ≥ 27 kg/m^2",
                             "all_required": true,
                             "node_type": "radio",
                             "node_value": false,
                             "smart_engine": "over_12_initiation_27",
                             "children": [
                                 {
-                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must have at least 1, Select All That Apply)",
                                     "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
