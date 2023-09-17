@@ -19,7 +19,7 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "What is the patient's BMI?",
+                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
                                     "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
@@ -222,7 +222,7 @@
             ]
         },
         {
-            "label": "Patient is 12 to 17 years old.",
+            "label": "Patient is 12 to 17 years old",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
