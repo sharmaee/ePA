@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "over_18_initiation":
         {
@@ -131,12 +130,9 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
-        }
-}
-||||||| d46c93f
-=======
-{
-    "over_18_initiation": {
+        },
+    "over_18_initiation": 
+        {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -157,7 +153,8 @@
             }
         ]
     },
-    "over_18_continuation_less_than_12_months": {
+    "over_18_continuation_less_than_12_months": 
+    {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -178,7 +175,8 @@
             }
         ]
     },
-    "over_18_continuation_more_than_12_months": {
+    "over_18_continuation_more_than_12_months": 
+    {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -199,7 +197,8 @@
             }
         ]
     },
-    "below_18_initiation": {
+    "below_18_initiation": 
+    {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -220,7 +219,8 @@
             }
         ]
     },
-    "below_18_continuation_more_than_12_months": {
+    "below_18_continuation_more_than_12_months": 
+    {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -241,7 +241,8 @@
             }
         ]
     },
-    "below_18_continuation_less_than_12_months": {
+    "below_18_continuation_less_than_12_months": 
+    {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -262,5 +263,6 @@
             }
         ]
     }
+}
 }
 >>>>>>> main
