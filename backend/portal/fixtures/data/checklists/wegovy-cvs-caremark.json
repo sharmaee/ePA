@@ -3,22 +3,21 @@
     "node_type": "fieldset",
     "children": [
         {
-            "label": "Starting therapy",
+            "label": "Start of therapy",
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization",
             "node_type": "radio",
             "node_value": false,
-            "smart_engine": "initiation",
             "children": [
                 {
-                 "label": "What is the patient's BMI?",
+                 "label": "What is the patient's initial BMI (baseline body mass index)?",
                     "node_type": "fieldset",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2",
+                            "label": "BMI ≥ 30 kg/m^2",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_12_initiation",
+                            "smart_engine": "over_12_initiation_30",
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
@@ -51,7 +50,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
@@ -97,14 +96,13 @@
                                     ]
                                 },
                                 {
-                                    "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2.",
+                                    "label": "BMI ≥ 27 kg/m^2.",
                                     "node_type": "radio",
                                     "node_value": false,
-                                    "smart_engine": "over_12_initiation",
+                                    "smart_engine": "over_12_initiation_27",
                                     "children": [
                                     {
                                         "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                                        "all_required": true,
                                         "node_type": "fieldset",
                                         "node_value": false,
                                         "children": [
@@ -133,7 +131,7 @@
                                                 "diagnosis": true
                                             },
                                             {
-                                                "label": "Congenital heart disease (CHD)",
+                                                "label": "Coronary heart disease (CHD)",
                                                 "node_type": "checkbox",
                                                 "node_value": false,
                                                 "diagnosis": true
