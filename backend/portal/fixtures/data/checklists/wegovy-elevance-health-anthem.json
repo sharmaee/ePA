@@ -31,7 +31,6 @@
                                                     "children": [
                                                         {
                                                             "label": "Which Weight-Related Risk Factors Does the Patient Have?",
-                                                            "all_required": true,
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "children": [
@@ -95,7 +94,6 @@
                                                     "children": [
                                                         {
                                                             "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least Two, Select All That Apply)",
-                                                            "all_required": true,
                                                             "node_type": "fieldset",
                                                             "node_value": false,
                                                             "children": [
@@ -191,7 +189,6 @@
                                                     "children": [
                                                         {
                                                             "label": "Which Weight-Related Risk Factors Does the Patient Have?",
-                                                            "all_required": true,
                                                             "node_type": "fieldset",
                                                             "node_value": false,
                                                             "children": [
