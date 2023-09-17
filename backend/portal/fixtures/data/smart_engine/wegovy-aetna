@@ -1,32 +1,78 @@
 {
-    "over_18_initiation":
+    "over_18_initiation_bmi_>27":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
-                    "text": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
                     "validation": "A baseline body mass index of less than 27 is unlikely to get approved."
                 }
             ]
         },
-    "over_18_continuation":
+    "over_18_initiation_bmi_>30":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
-                
-                },
-                {
-                    "text": "Documentated loss or maintenance of at least 5 percent reduction from baseline body weight.",
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
-                    "text": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "A baseline body mass index of less than 30 is unlikely to get approved."
+                }
+            ]
+        },
+    "over_18_continuation_over_3_months":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documentated loss or maintenance of at least 5 percent reduction from baseline body weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                }
+            ]
+        },
+    "over_18_continuation_bmi_>27":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "validation": "A baseline body mass index of less than 27 is unlikely to get approved."
+                }
+                {
+                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                }
+            ]
+        },
+    "over_18_continuation_bmi_>30":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "A baseline body mass index of less than 30 is unlikely to get approved."
+                }
+                {
+                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
@@ -36,15 +82,15 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
-                    "text": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 },
                 {
-                    "text": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
+                    "label": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
                     "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
@@ -54,8 +100,20 @@
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
-                    "text": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
+                    "label": "A documented reduction or maintained reduction from their baseline body mass index (BMI).",
                     "validation": "Stop and contact provider to document this in the patient's chart. (The baseline BMI should be from the start of therapy."
+                },
+                {
+                    "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
+                },
+                {
+                    "label": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
+                    "validation": "Stop and contact provider to document this in the patient's chart."
                 }
             ]
         }
