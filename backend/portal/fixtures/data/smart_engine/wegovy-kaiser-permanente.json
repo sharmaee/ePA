@@ -1,12 +1,11 @@
 {
-<<<<<<< HEAD
     "over_18_initiation_not_diabetic":
         {
             "header": "Verify Prescriber and Patient Documentation",
             "items": [
                 {
                     "label": "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist.",
-                    "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                    "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation). You can check a providers NPI number here: https://npiregistry.cms.hhs.gov/search by entering their NPI number and clicking search. In the result look for the Taxonomy of the provider. "
                 },
                 {
                     "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
@@ -27,10 +26,6 @@
                 {
                     "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
-                    "validation": "If it is not documented that the patient has tried these medications check to see if they have the following contraindications (1) Xenical: Pregnancy, chronic Malabsorption, Cholestasis (2) Contrave:  uncontrolled hypertension, History of seizures, bulimia, anorexia nervosa, Opioid Use (3) Qsymia: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors (4) Saxenda: hyroid Cancer, Medullary Thyroid carcinoma, multiple endocrine neoplasia syndrome type 2. If any of the contraindications are found, ask the ordering provider to document the reason the alternative medications can not be used. Otherwise, let the provider know the medications should be tried in the order listed."
                 }
             ]
         }, 
@@ -61,11 +56,7 @@
                 {
                     "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
-                    "validation": "If it is not documented that the patient has tried these medications check to see if they have the following contraindications (1) Xenical: Pregnancy, chronic Malabsorption, Cholestasis (2) Contrave:  uncontrolled hypertension, History of seizures, bulimia, anorexia nervosa, Opioid Use (3) Qsymia: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors (4) Saxenda: hyroid Cancer, Medullary Thyroid carcinoma, multiple endocrine neoplasia syndrome type 2. If any of the contraindications are found, ask the ordering provider to document the reason the alternative medications can not be used. Otherwise, let the provider know the medications should be tried in the order listed."
-                },
+                },s
                 {
                     "label": "Document patient is following Kaiser National Adult Diabetes Guidelines and CBC step therapy criteria for use of preferred agents for diabetes control.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
@@ -90,26 +81,6 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
-        },
+        }
+        
 }
-||||||| d46c93f
-    "header": "Step 2: Verify Prescriber and Patient Documentation",
-    "items": [
-        "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist. If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation).",
-        "The Patient's Starting Baseline Body Mass Index (BMI) 30 kg/m^2 or Greater",
-        "Patient Is 18 Years of Age or Older",
-        "Wegovy Is Not Being Used with Another Weight Loss Drug or GLP-1 Receptor Agonist",
-        "The Initial Order Is a 30-Day Supply with 2 Refills. When Over This Amount Ask Clinical Staff to Make an Adjustment."
-    ]
-}
-=======
-    "header": "Verify Prescriber and Patient Documentation",
-    "items": [
-        "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist. If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation).",
-        "The Patient's Starting Baseline Body Mass Index (BMI) 30 kg/m^2 or Greater",
-        "Patient Is 18 Years of Age or Older",
-        "Wegovy Is Not Being Used with Another Weight Loss Drug or GLP-1 Receptor Agonist",
-        "The Initial Order Is a 30-Day Supply with 2 Refills. When Over This Amount Ask Clinical Staff to Make an Adjustment."
-    ]
-}
->>>>>>> main
