@@ -17,7 +17,7 @@
                             "label": "BMI ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_12_initiation",
+                            "smart_engine": "over_12_initiation_30",
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
@@ -99,7 +99,7 @@
                             "all_required": true,
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_12_initiation",
+                            "smart_engine": "over_12_initiation_27",
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
