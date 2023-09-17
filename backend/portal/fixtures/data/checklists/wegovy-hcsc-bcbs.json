@@ -356,7 +356,7 @@
                                                                                         {
                                                                                             "label": "Dyslipidemia",
                                                                                             "node_type": "checkbox",
-                                                                                            node_value": false,
+                                                                                            "node_value": false,
                                                                                             "comorbidity": true
                                                                                         },
                                                                                         {
