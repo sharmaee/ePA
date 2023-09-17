@@ -166,7 +166,7 @@
             ]
         },
         {
-            "label": "For patients aged 12-17 years",
+            "label": "Patient is 12 to 17 years old",
             "outcome": "Authorization for Wegovy (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
