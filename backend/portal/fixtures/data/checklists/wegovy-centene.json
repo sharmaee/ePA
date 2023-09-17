@@ -31,7 +31,7 @@
                                             "children": [
                                                 {
                                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
-                                                    "node_type": "checkbox",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -113,7 +113,7 @@
                                             "children": [
                                                 {
                                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must have at least one, Select All That Apply)",
-                                                    "node_type": "checkbox",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -141,7 +141,7 @@
                                                             "diagnosis": true
                                                         },
                                                         {
-                                                            "label": "Congenital heart disease (CHD)",
+                                                            "label": "Coronary heart disease (CHD)",
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "diagnosis": true
@@ -240,7 +240,7 @@
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
-                                    "node_type": "checkbox",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
@@ -268,7 +268,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
