@@ -9,18 +9,18 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "What is the patient's BMI?",
+                    "label": "What is the patient's initial BMI (baseline body mass index)?",
                     "node_type": "fieldset",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
+                            "label": "BMI ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
                             "node_type": "radio",
                             "node_value": false,
                             "smart_engine": "over_12_initiation",
                             "children": [
                                 {
-                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                     "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
@@ -49,7 +49,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
@@ -95,15 +95,15 @@
                             ]
                         },
                         {
-                            "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2",
+                            "label": "BMI ≥ 27 kg/m^22",
                             "all_required": true,
                             "node_type": "radio",
                             "node_value": false,
                             "smart_engine": "over_12_initiation",
                             "children": [
                                 {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                    "node_type": "checkbox",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
@@ -131,7 +131,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
