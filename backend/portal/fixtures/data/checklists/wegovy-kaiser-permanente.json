@@ -3,7 +3,7 @@
     "node_type": "fieldset",
     "children": [
         {
-            "label": "Starting therapy",
+            "label": "Start of therapy",
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 3 months",
             "node_type": "radio",
             "node_value": false,
@@ -49,7 +49,7 @@
                                             "diagnosis": true
                                     },
                                     {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
@@ -150,7 +150,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
