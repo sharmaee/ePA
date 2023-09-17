@@ -29,8 +29,11 @@
             {
                 "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
                 "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            },
+            {
+                "label": "Document that the patient has a current BMI of greater than 27 kg/m^2 (within the last 30 days).",
+                "validation": "A BMI of less than 27 is unlikely to be approved."
             }
-            
         ]
     },
     "over_18_start_BMI_over_30": {
@@ -63,6 +66,10 @@
             {
                 "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
                 "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            },
+            {
+                "label": "Document that the patient has a current BMI of greater than 30 kg/m^2 (within the last 30 days).",
+                "validation": "A BMI of less than 27 is unlikely to be approved."
             }
             
         ]
