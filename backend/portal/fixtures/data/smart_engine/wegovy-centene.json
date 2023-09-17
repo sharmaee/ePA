@@ -7,11 +7,15 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
+                "label": "Document that the patient has an initial body mass index (BMI) ≥ 27 kg/m^2.",
+                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+            },
+            {
                 "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
+                "label": "Document that the dose prescribed does not exceed 0.25mg in weeks 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -24,11 +28,15 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
+                "label": "Document that the patient has an initial body mass index (BMI) ≥ 30 kg/m^2.",
+                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+            },
+            {
                 "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s).",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Document that the dose prescribed does not exceed 0.25mg in weeks 1 to 4, 0.5mg in weeks 5 to 8, 1mg in weeks 9 to 12 and 1.7mg in weeks 13 to 16.",
+                "label": "Document that the dose prescribed does not exceed 0.25mg in weeks 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -99,7 +107,7 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
+                "label": "Document member has lost weight and/or maintained at least 5% weight loss on therapy.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
@@ -124,7 +132,7 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Document member has lost weight and/or maintained 5% weight loss on therapy.",
+                "label": "Document member has lost weight and/or maintained at least 5% weight loss on therapy.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
@@ -136,14 +144,6 @@
     "under_18_initiation": {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
-            {
-                "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
-                "validation": "Stop and contact provider to document this in the patient's chart."
-            },
-            {
-                "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                "validation": "Stop and contact provider to document this in the patient's chart."
-            },
             {
                 "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
                 "validation": "Stop and contact provider to document this in the patient's chart."
@@ -157,7 +157,7 @@
                 "validation": "Stop and contact provider to document this in the patient's chart."
             },
             {
-                "label": "Document that the dose prescribed does not exceed 0.25mg in week 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
+                "label": "Document that the dose prescribed does not exceed 0.25mg in weeks 1-4, 0.5mg in weeks 5-8, 1mg in weeks 9-12 and 1.7mg in weeks 13-16.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
