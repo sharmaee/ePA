@@ -1,5 +1,27 @@
 {
-    "over_18_initiation":
+    "over_18_initiation_bmi_>30":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+             "items": [
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that patient has tried behavioral modification and dietary restriction for at least 3 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document Wegovy will be used alongside behavioral modification and a reduced-calorie diet.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+        "over_18_initiation_bmi_>27":
         {
             "header": "Verify Prescriber and Patient Documentation",
              "items": [
@@ -104,7 +126,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document patient is able to tolerate a Wegovy maintenance dose of 2.4 mg once weekly (Approve for 1 year).",
+                    "label": "Document patient is able to tolerate a Wegovy maintenance dose of 1.7 or 2.4 mg once weekly.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -126,7 +148,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document patient is continuing to titrate the Wegovy dose to a target of 2.4 mg once weekly (Approve for up to 5 months).",
+                    "label": "Document patient is continuing to titrate the Wegovy dose to a target of 1.7 or 2.4 mg once weekly.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
