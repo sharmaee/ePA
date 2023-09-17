@@ -1,9 +1,9 @@
 {
-    "label": "Age of patient?",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For patients 18 years or older",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -20,12 +20,12 @@
                             "children": [
                                 
                                 {
-                                    "label": "What is the patient's BMI?",
+                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
                                     "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "BMI ≥ 30 kg/m2",
+                                            "label": "BMI ≥ 30 kg/m^2",
                                             "node_type": "radio",
                                             "node_value": false
                                             "smart_engine": "over_18_start_BMI_over_30"
@@ -106,7 +106,7 @@
                                                 ]
                                         },
                                         {
-                                            "label": "BMI ≥ 27 kg/m2",
+                                            "label": "BMI ≥ 27 kg/m^2"",
                                             "node_type": "radio",
                                             "node_value": false
                                             "smart_engine": "over_18_start_BMI_over_27"
@@ -188,7 +188,6 @@
                                         },
                                         {
                                             "label": "BMI ≥ 25 kg/m^2",
-                                            "all_required": true,
                                             "node_type": "radio",
                                             "node_value": false,
                                             "smart_engine": "over_18_start_BMI_over_25"
@@ -319,7 +318,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), and has achieved and maintained a documented BMI reduction of ≥ 5% from baseline (prior to the initiation of requested medication)",
+                                    "label": "The patient has achieved and maintained a documented BMI reduction of ≥ 5% from baseline.",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
