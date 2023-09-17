@@ -1,9 +1,9 @@
 {
-    "label": "Age of Patient?",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For patients 18 years or older",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -17,10 +17,9 @@
                             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "initiation",
                             "children": [
                                             {
-                                            "label": "What is the patient's BMI?",
+                                            "label": "What is the patient's initial BMI (baseline body mass index)?",
                                             "node_type": "fieldset",
                                             "node_value": false,
                                             "children": [
@@ -28,7 +27,7 @@
                                                     "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
                                                     "node_type": "radio",
                                                     "node_value": false,
-                                                    "smart_engine": "over_12_initiation",
+                                                    "smart_engine": "over_12_initiation_30",
                                                     "children": [
                                                         {
                                                             "label": "Which Weight-Related Risk Factors Does the Patient Have?",
@@ -92,12 +91,12 @@
                                                     "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2.",
                                                     "node_type": "radio",
                                                     "node_value": false,
-                                                    "smart_engine": "over_12_initiation",
+                                                    "smart_engine": "over_12_initiation_27",
                                                     "children": [
                                                         {
                                                             "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least Two, Select All That Apply)",
                                                             "all_required": true,
-                                                            "node_type": "checkbox",
+                                                            "node_type": "fieldset",
                                                             "node_value": false,
                                                             "children": [
                                                                 {
@@ -183,8 +182,74 @@
                             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "initiation"
+                            "children": [
+                                {
+                                                    "label": "BMI ≥ 95th percentile.",
+                                                    "node_type": "radio",
+                                                    "node_value": false,
+                                                    "smart_engine": "under_18_initiation",
+                                                    "children": [
+                                                        {
+                                                            "label": "Which Weight-Related Risk Factors Does the Patient Have?",
+                                                            "all_required": true,
+                                                            "node_type": "fieldset",
+                                                            "node_value": false,
+                                                            "children": [
+                                                                {
+                                                                    "label": "Established cardiovascular disease or stroke",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Hypertension",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Type 2 diabetes (DM)",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Chronic kidney disease (CKD)",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Coronary heart disease (CHD)",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Obstructive sleep apnea",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Dyslipidemia",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                },
+                                                                {
+                                                                    "label": "Idiopathic intracranial hypertension",
+                                                                    "node_type": "checkbox",
+                                                                    "node_value": false,
+                                                                    "diagnosis": true
+                                                                }
+                                                            ]
+                                                        }
+                                                        ]
+                                                    }
+                            ]
                         },
+                        
                         {
                             "label": "Continuation of therapy",
                             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted for an additional 6-month PA when the criteria are met",
