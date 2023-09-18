@@ -3,109 +3,178 @@
     "node_type": "fieldset",
     "children": [
         {
-            "label": "Initial review criteria",
+            "label": "Starting therapy",
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 3 months",
             "node_type": "radio",
             "node_value": false,
             "children": [
                 {
-                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                    "node_type": "checkbox",
-                    "node_value": false,
+                    "label": "Is the patient diabetic?",
+                    "node_type": "fieldset",
                     "children": [
                         {
-                            "label": "Established cardiovascular disease or stroke",
-                            "node_type": "checkbox",
+                            "label": "Yes, the patient is diabetic or pre-diabetic",
+                            "outcome": "The requested drug, Wegovy™ (semaglutide), may be covered if the patient meets certain requirements",
+                            "node_type": "radio",
                             "node_value": false,
-                            "diagnosis": true
+                            "smart_engine": "over_18_initiation_diabetic",
+                            "children": [
+                                {
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                    {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                    },
+                                    {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "label": "Hypertension",
-                            "node_type": "checkbox",
+                            "label": "No, the patient is not diabetic or pre-diabetic.",
+                            "outcome": "The requested drug, Wegovy™ (semaglutide), may be covered if the patient meets other criteria.",
+                            "node_type": "radio",
                             "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Type 2 diabetes (DM)",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Chronic kidney disease (CKD)",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Congenital heart disease (CHD)",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Obstructive sleep apnea",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Polycystic ovarian syndrome",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Dyslipidemia",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Non-alcoholic fatty liver disease",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Idiopathic intracranial hypertension",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Osteoarthritis in weight-bearing joints",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        }
-                    ]
-                },
-                {
-                    "label": "All of the Below Must Be Tried Before Wegovy for at Least 3 Months Without Losing >5% Body Weight. Do a PA for the Missing Medications in the Order Listed. OR Document Reason They Cannot Be Used (e.g., Side Effects, Contraindication, Adherence).",
-                    "node_type": "checkbox",
-                    "node_value": false,
-                    "all_required": true,
-                    "children": [
-                        {
-                            "label": "Xenical (orlistat)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Contrave (naltrexone + bupropion)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Qsymia (phentermine + topiramate)",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Saxenda (liraglutide)",
-                            "node_type": "checkbox",
-                            "node_value": false
+                            "smart_engine": "over_18_not_diabetic",
+                            "children": [
+                                {
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -116,6 +185,7 @@
             "outcome": "The requested drug, Wegovy™ (semaglutide), is expected to be covered with prior authorization for 6 months",
             "node_type": "radio",
             "node_value": false,
+            "smart_engine": "over_18_continuation",
             "children": [
                 {
                     "label": "Patient continues to meet initial review criteria",
@@ -129,5 +199,6 @@
                 }
             ]
         }
-    ]
+   ]
 }
+

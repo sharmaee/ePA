@@ -3,8 +3,8 @@
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For adults (age 18 years and older)",
-            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "label": "For patients 18 years or older",
+            "outcome": "Authorization for Wegovy (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
             "children": [
@@ -14,9 +14,10 @@
                     "children": [
                         {
                             "label": "Start of therapy",
-                            "outcome": "Initial Authorization for Wegovy™ (semaglutide) may be granted for 4 months when the criteria are met",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "over_18_initiation",
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
@@ -28,104 +29,103 @@
                                             "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Hypertension",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Type 2 diabetes (DM)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Chronic kidney disease (CKD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Congenital heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Obstructive sleep apnea",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Polycystic ovarian syndrome",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Dyslipidemia",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Non-alcoholic fatty liver disease",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Idiopathic intracranial hypertension",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         },
                                         {
                                             "label": "Osteoarthritis in weight-bearing joints",
                                             "node_type": "checkbox",
                                             "node_value": false,
-                                            "diagnosis": true
+                                            "comorbidity": true
                                         }
                                     ]
                                 },
                                 {
-                                    "label": "Does the patient have access to a covered BCBSM/BCN program?",
+                                    "label": "The patient is of South Asian, Southeast Asian, or East Asian descent?",
                                     "node_type": "radio",
                                     "node_value": false,
                                     "children": [
                                         {
                                             "label": "Yes",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "smart_engine": "over_18_initiation_with_BCBSM/BCN_program"
+                                            "node_type": "radio",
+                                            "node_value": false
                                         },
                                         {
                                             "label": "No",
-                                            "node_type": "checkbox",
+                                            "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "over_18_initiation_without_BCBSM/BCN_program"
                                         }
-                                    ]
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                
+                                {
+                                    "label": "Continuation of therapy for ages 18 or older",
+                                    "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                                    "node_type": "radio",
+                                    "node_value": false,
                                 }
                             ]
                         },
-                        {
-                            "label": "Continuation of therapy",
-                            "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
-                            "node_type": "radio",
-                            "node_value": false,
-                            "smart_engine": "over_18_continuation"
-                        }
                     ]
-                }
-            ]
-        },
-        {
-            "label": "For adolescents (12 to 17 years of age)",
+                },
+        
+{
+            "label": "For patients aged 12 to 17 years",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -136,41 +136,20 @@
                     "children": [
                         {
                             "label": "Start of therapy",
-                            "outcome": "Initial Authorization for Wegovy™ (semaglutide) may be granted for 4 months when the criteria are met",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "Does the patient have access to a covered BCBSM/BCN program?",
-                                    "node_type": "radio",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Yes",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "smart_engine": "below_18_initiation_with_BCBSM/BCN_program"
-                                        },
-                                        {
-                                            "label": "No",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "smart_engine": "18_plus_initiation_without_BCBSM/BCN_program"
-                                        }
-                                    ]    
-                                }
-                            ]
                         },
                         {
                             "label": "Continuation of therapy",
-                            "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted when the criteria are met",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "18_plus_continuation"
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         }
-    ]
-}
+

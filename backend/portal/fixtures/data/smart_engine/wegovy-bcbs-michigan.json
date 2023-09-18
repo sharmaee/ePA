@@ -1,0 +1,96 @@
+{
+    "over_18_initiation_with_BCBSM/BCN_program": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
+                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+            },
+            {
+                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_initiation_without_BCBSM/BCN_program": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
+                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+            },
+            {
+                "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document the patient has maintained at least a 5% weight loss from baseline.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "below_18_initiation_with_BCBSM/BCN_program": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
+            },
+            {
+                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "below_18_without_BCBSM/BCN_program": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
+            },
+            {
+                "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "below_18_continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document the patient has maintained at least a 1% weight loss in BMI from baseline.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    }
+}

@@ -21,4 +21,14 @@
     .hide {
         display: none;
     }
+    
+    .next-step-button {
+        background-color: $blue;
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 46px;
+        padding: 16px 26px;
+        cursor: pointer;
+    }
 }

@@ -9,7 +9,7 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "label": "Is this request for starting or continuation of therapy with Wegovy™ (semaglutide)?",
                     "node_type": "fieldset",
                     "children": [
                         {
@@ -19,27 +19,97 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Member meets one of the following:",
-                                    "node_type": "checkbox",
+                                    "label": "What is the patient's BMI?",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
                                             "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2",
-                                            "node_type": "checkbox",
+                                            "node_type": "radio",
                                             "node_value": false
+                                            "smart_engine": "over_18_start_BMI_over_30"
+                                            "children": [
+                                                {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
                                         },
                                         {
-                                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
+                                            "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2",
                                             "all_required": true,
-                                            "node_type": "checkbox",
+                                            "node_type": "radio",
                                             "node_value": false,
+                                            "smart_engine": "over_18_start_BMI_over_27"
                                             "children": [
-                
-                                                {
-                                                    "label": "A documented body mass index (BMI) ≥ 27 kg/m^2",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
                                                 {
                                                     "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "checkbox",
@@ -117,43 +187,6 @@
                                         }
                                     ]
                                 },
-                                {
-                                    "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that member is actively enrolled in a weight-loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Dose does not exceed the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Week 1 through 4: 0.25 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 5 through 8: 0.5 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 9 through 12: 1 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 13 through 16: 1.7 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                }
                             ]
                         },
                         {
@@ -163,76 +196,21 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Member meets one of the following:",
-                                    "node_type": "checkbox",
+                                    "label": "How long has it been since the patient started therapy?",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Document patient is currently receiving medication via Centene benefit or member has previously met initial approval criteria",
-                                            "node_type": "checkbox",
+                                            "label": "This is the first renewal request.",
+                                            "node_type": "radio",
+                                            "smart_engine": "first_continuation"
                                             "node_value": false
                                         },
                                         {
-                                            "label": "Document member is currently receiving medication and is enrolled in a state and product with continuity of care regulations",
+                                            "label": "This is the second or subsequent renewal request.",
                                             "node_type": "checkbox",
+                                            "smart_engine": "second_continuation"
                                             "node_value": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "label": "Member is responding positively to therapy as evidenced by one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "If this is the first renewal request, document that member has lost ≥ 5% of baseline body weight (adults)",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "If this is a second or subsequent renewal request, document member has lost weight and/or maintained weight loss on therapy",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Request meets both of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "all_required": true,
-                                    "children": [
-                                        {
-                                            "label": "Dose does not exceed 2.4 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "After the initial dose escalation period, one of the following:",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "children": [
-                                                {
-                                                    "label": "Maintenance dose is 2.4 mg",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "A temporary dose reduction to 1.7 mg is needed for a maximum of 4 weeks",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -257,54 +235,82 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 16 weeks when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "under_18_initiation"
                             "children": [
-                                {
-                                    "label": "Documented BMI ≥ 95th percentile standardized for age and sex",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Age ≥ 12 years",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Dose does not exceed the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Week 1 through 4: 0.25 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 5 through 8: 0.5 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 9 through 12: 1 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Week 13 through 16: 1.7 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                }
+                                                {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                                    "node_type": "checkbox",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Congenital heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                
                             ]
                         },
                         {
@@ -314,76 +320,21 @@
                             "node_value": false,
                             "children": [
                                 {
-                                    "label": "Member meets one of the following:",
-                                    "node_type": "checkbox",
+                                    "label": "How long has it been since the patient started therapy?",
+                                    "node_type": "fieldset",
                                     "node_value": false,
                                     "children": [
                                         {
-                                            "label": "Document currently receiving medication via Centene benefit or member has previously met initial approval criteria",
-                                            "node_type": "checkbox",
+                                            "label": "This is the first renewal request.",
+                                            "node_type": "radio",
+                                            "smart_engine": "first_continuation"
                                             "node_value": false
                                         },
                                         {
-                                            "label": "Document Member is currently receiving medication and is enrolled in a state and product with continuity of care regulations",
+                                            "label": "This is the second or subsequent renewal request.",
                                             "node_type": "checkbox",
+                                            "smart_engine": "second_continuation"
                                             "node_value": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "label": "Member is responding positively to therapy as evidenced by one of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "If this is the first renewal request, document member has lost ≥ 5% of baseline BMI (pediatrics)",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "If this is a second or subsequent renewal request, document member has lost weight and/or maintained weight loss on therapy",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "label": "Document Wegovy is not prescribed concurrently with other semaglutide-containing products or any other GLP-1 receptor agonist(s)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that member is actively enrolled in a weight loss program that involves a reduced calorie diet and increased physical activity adjunct to therapy",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Request meets both of the following:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "all_required": true,
-                                    "children": [
-                                        {
-                                            "label": "Dose does not exceed 2.4 mg once weekly",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "After the initial dose escalation period, one of the following:",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "children": [
-                                                {
-                                                    "label": "Maintenance dose is 2.4 mg",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "Maintenance dose is 1.7 mg",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                }
-                                            ]
                                         }
                                     ]
                                 }

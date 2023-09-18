@@ -24,9 +24,6 @@ class AnalyticsAdminBase(admin.ModelAdmin):
     def has_add_permission(self, *_):
         return False
 
-    def has_change_permission(self, *_):
-        return False
-
     def has_delete_permission(self, *_):
         return False
 

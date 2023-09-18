@@ -1,0 +1,21 @@
+{
+    "over_18_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document Wegovy will be used with a reduced-calorie diet and increased physical activity for chronic weight management in adults.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 27 kg/m^2.",
+                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document Wegovy will not be coadministered with other semaglutide-containing products or with any other GLP-1 receptor agonist.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        }
+}
+

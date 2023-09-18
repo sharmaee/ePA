@@ -7,25 +7,27 @@
       </div>
     </div>
     <div v-else>
-      <h3 v-if="selectedData[0].nodeType === 'fieldset'">{{ selectedData[0].label }}</h3>
-      <div
-        v-for="(item, listIndex) in selectedData[0].nodeType === 'fieldset' ? selectedData[0].children : selectedData"
-        :key="item.label">
-        <span v-if="item.nodeType === 'radio'">
-          <QuestionnaireRecursiveComponent :data="item" @selected-term="selectedTerm" />
-        </span>
-        <span v-if="item.nodeType === 'checkbox'" :class="{ hide: step !== listIndex && item.nodeType === 'checkbox' }">
-          <QuestionnaireRecursiveComponent
-            :current-index="listIndex"
-            :total-number-steps="
-              selectedData[0].nodeType === 'fieldset' ? selectedData[0].children.length : selectedData.length
-            "
-            :data="item"
-            :button-clicked="buttonClicked"
-            :step="step"
-            @selected-term="selectedTerm"
-            @show-next-step="nextStep" />
-        </span>
+      <div v-for="(selectedItem, selectedItemIndex) in selectedData" :key="selectedItem.label">
+        <h3 :class="{ hide: step !== selectedItemIndex && selectedItem.children[0].nodeType === 'checkbox' }">
+          {{ selectedItem.label }}
+        </h3>
+        <div v-for="subItem in selectedItem.children" :key="subItem.label">
+          <span v-if="subItem.nodeType === 'radio'">
+            <QuestionnaireRecursiveComponent :data="subItem" @selected-term="selectedTerm" />
+          </span>
+          <span
+            v-if="subItem.nodeType === 'checkbox'"
+            :class="{ hide: step !== selectedItemIndex && subItem.nodeType === 'checkbox' }">
+            <QuestionnaireRecursiveComponent :data="subItem" :step="step" @selected-term="selectedTerm" />
+          </span>
+        </div>
+        <button
+          v-if="step < selectedData.length - 1"
+          :class="{ hide: step !== selectedItemIndex }"
+          class="next-step-button"
+          @click="nextStep">
+          Show Next
+        </button>
       </div>
       <button v-if="step === selectedData.length - 1 && smartEngineKey" @click="submitChecklist">Submit</button>
     </div>
@@ -48,7 +50,6 @@ const props = defineProps({
 });
 
 const selectedData = ref(null);
-const buttonClicked = ref(false);
 const smartEngineKey = ref(null);
 
 // eslint-disable-next-line vue/no-setup-props-destructure

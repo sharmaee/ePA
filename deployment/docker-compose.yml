@@ -20,6 +20,8 @@ services:
       - "db:${DB_SERVER_IP}"
     env_file:
       - ./.env
+    depends_on:
+      - redis
   nginx:
     restart: always
     build: 
@@ -37,7 +39,7 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - web
+      - celery
   certbot:
     image: certbot/certbot
     container_name: certbot

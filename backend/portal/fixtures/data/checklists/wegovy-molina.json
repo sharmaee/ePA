@@ -7,160 +7,81 @@
             "outcome": "Initial Authorization for Wegovy™ (semaglutide) may be granted for 6 months when the criteria are met",
             "node_type": "radio",
             "node_value": false,
+            "smart_engine": "initiation",
             "children": [
                 {
-                    "label": "Body mass index (BMI) requirements:",
+                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                    "all_required": true,
                     "node_type": "checkbox",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Document body mass index (BMI) ≥ 30 kg/m^2, if no applicable risk factors",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                            "all_required": true,
+                            "label": "Established cardiovascular disease or stroke",
                             "node_type": "checkbox",
                             "node_value": false,
-                            "children": [
-
-                                {
-                                    "label": "Document body mass index (BMI) ≥ 27 kg/m^2",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
-                                    "children": [
-                                        {
-                                            "label": "Established cardiovascular disease or stroke",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Type 2 diabetes (DM)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Chronic kidney disease (CKD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Congenital heart disease (CHD)",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Obstructive sleep apnea",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Polycystic ovarian syndrome",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Dyslipidemia",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Non-alcoholic fatty liver disease",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Idiopathic intracranial hypertension",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        },
-                                        {
-                                            "label": "Osteoarthritis in weight-bearing joints",
-                                            "node_type": "checkbox",
-                                            "node_value": false,
-                                            "diagnosis": true
-                                        }
-                                    ]
-                                }
-                            ]
+                            "diagnosis": true
                         },
                         {
-                            "label": "Body weight above 60 kg and an initial BMI corresponding to 30 kg/m^2 for adults (obese) by international cut-offs",
+                            "label": "Hypertension",
                             "node_type": "checkbox",
-                            "node_value": false
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Type 2 diabetes (DM)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Chronic kidney disease (CKD)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Congenital heart disease (CHD)",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Obstructive sleep apnea",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Polycystic ovarian syndrome",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Dyslipidemia",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Non-alcoholic fatty liver disease",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Idiopathic intracranial hypertension",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
+                        },
+                        {
+                            "label": "Osteoarthritis in weight-bearing joints",
+                            "node_type": "checkbox",
+                            "node_value": false,
+                            "diagnosis": true
                         }
                     ]
-                },
-                {
-                    "label": "Wegovy is only covered for members 18 years of age or older",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document no contraindications to use",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document no history of an eating disorder (e.g., anorexia, bulimia)",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, an exercise regimen and a calorie/fat-restricted diet) in the past 6 months and will continue to follow as part of the treatment plan",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Documentation of current medical status including nutritional or dietetic assessment",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Documentation of current therapy for all medical conditions (including obesity), identifying specific treatments including medications",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document current accurate height and weight measurements",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document current weight loss plan or program including diet and exercise plan",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document member is not concurrently on Victoza or Ozempic or other GLP-1 inhibitors",
-                    "node_type": "checkbox",
-                    "node_value": false
                 }
             ]
         },
@@ -169,18 +90,7 @@
             "outcome": "Reauthorization for Wegovy™ (semaglutide) may be granted for an additional 6-month SA when the criteria are met",
             "node_type": "radio",
             "node_value": false,
-            "children": [
-                {
-                    "label": "Document the member has achieved a weight loss of at least 5% of baseline weight",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document the member’s BMI is > 24",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
-            ]
+            "smart_engine": "continuation"
         }
     ]
 }

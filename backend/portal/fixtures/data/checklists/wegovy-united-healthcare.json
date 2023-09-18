@@ -9,44 +9,100 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "Treatment is being requested for appetite suppression or weight loss",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Patient is ≥ 12 years of age",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document that the medication will be used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program)",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "One of the following",
-                    "node_type": "checkbox",
+                    "label": "What is the patient's BMI?",
+                    "node_type": "fieldset",
                     "node_value": false,
                     "children": [
                         {
-                            "label": "Document baseline body mass index (BMI) ≥ 30 kg/m^2 or for pediatric patients a BMI > 95th percentile",
-                            "node_type": "checkbox",
-                            "node_value": false
-                        },
-                        {
-                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                            "all_required": true,
-                            "node_type": "checkbox",
+                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
+                            "node_type": "radio",
                             "node_value": false,
+                            "smart_engine": "over_12_initiation",
                             "children": [
-
-                                {
-                                    "label": "Document baseline body mass index (BMI) ≥ 27 kg/m^2",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
                                 {
                                     "label": "Document all the weight-related comorbid conditions the patient has:",
+                                    "node_type": "checkbox",
+                                    "node_value": false,
+                                    "children": [
+                                        {
+                                            "label": "Established cardiovascular disease or stroke",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Type 2 diabetes (DM)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Chronic kidney disease (CKD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Congenital heart disease (CHD)",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Obstructive sleep apnea",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Polycystic ovarian syndrome",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Dyslipidemia",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Non-alcoholic fatty liver disease",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Idiopathic intracranial hypertension",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        },
+                                        {
+                                            "label": "Osteoarthritis in weight-bearing joints",
+                                            "node_type": "checkbox",
+                                            "node_value": false,
+                                            "diagnosis": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2",
+                            "all_required": true,
+                            "node_type": "radio",
+                            "node_value": false,
+                            "smart_engine": "over_12_initiation",
+                            "children": [
+                                {
+                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                     "node_type": "checkbox",
                                     "node_value": false,
                                     "children": [
@@ -129,18 +185,8 @@
             "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
             "node_type": "radio",
             "node_value": false,
-            "children": [
-                {
-                    "label": "Document weight loss of ≥ 4% of baseline body weight for Wegovy",
-                    "node_type": "checkbox",
-                    "node_value": false
-                },
-                {
-                    "label": "Document continuation of lifestyle modification",
-                    "node_type": "checkbox",
-                    "node_value": false
-                }
-            ]
+            "smart_engine": "over_12_continuation",
+            "children": []
         }
     ]
 }

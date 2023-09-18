@@ -1,0 +1,147 @@
+{
+    "18_plus_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with a continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "18_plus_initiation_south_asian":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documented baseline body mass index (BMI) ≥ 25 kg/m^2.",
+                    "validation": "An initial BMI of less than 25 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient did not achieve a weight loss of 1 pound or more per week while on the weight loss regimen prior to initiating therapy with Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient is currently on and will continue a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "The patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "The patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy",
+                    
+                },
+                {
+                    "label": "Document the patient has not tried a targeted weight loss agent in the past 12 months",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "18_plus_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "The patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documentated loss of at least 5 percent of baseline body weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented continued maintainance of their initial 5 percent weight loss.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                {
+                    "label": "The requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        },
+    "below_18_initiation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Document that the requested drug will be used with a reduced-calorie diet and increased physical activity for chronic weight management.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, reduced-calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document that the patient has an initial body mass index (BMI) in the 95th percentile or greater standardized for age and sex (obesity).",
+                    "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
+                }
+            ]
+        },
+    "below_18_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "A documented reduction or continued reduction from their baseline body mass index (BMI).",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        }
+}
