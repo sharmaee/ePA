@@ -59,7 +59,7 @@
                                                             "diagnosis": true
                                                         },
                                                         {
-                                                            "label": "Congenital heart disease (CHD)",
+                                                            "label": "Coronary heart disease (CHD)",
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "diagnosis": true
@@ -141,7 +141,7 @@
                                                             "diagnosis": true
                                                         },
                                                         {
-                                                            "label": "Congenital heart disease (CHD)",
+                                                            "label": "Coronary heart disease (CHD)",
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "diagnosis": true
@@ -253,7 +253,7 @@
                                                                             "diagnosis": true
                                                                         },
                                                                         {
-                                                                            "label": "Congenital heart disease (CHD)",
+                                                                            "label": "Coronary heart disease (CHD)",
                                                                             "node_type": "checkbox",
                                                                             "node_value": false,
                                                                             "diagnosis": true
@@ -335,7 +335,7 @@
                                                                             "diagnosis": true
                                                                         },
                                                                         {
-                                                                            "label": "Congenital heart disease (CHD)",
+                                                                            "label": "Coronary heart disease (CHD)",
                                                                             "node_type": "checkbox",
                                                                             "node_value": false,
                                                                             "diagnosis": true
