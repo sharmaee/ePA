@@ -112,7 +112,7 @@
                                             "smart_engine": "over_18_start_BMI_over_27"
                                             "children": [
                                             {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
                                                     "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
@@ -194,7 +194,7 @@
                                             "children": [
     
                                                 {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
                                                     "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
