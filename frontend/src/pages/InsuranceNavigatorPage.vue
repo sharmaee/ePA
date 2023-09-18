@@ -67,7 +67,7 @@
     <div id="searchResultsBlock"></div>
     <GreenCirclePreloader v-if="preloader" />
 
-    <div class="coverage">
+    <div class="coverage" id="coverage">
       <div v-if="coverageBlock">
         <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
           <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
@@ -167,6 +167,8 @@ async function getPriorAuthRequirements() {
       priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
+      const coverageBlockView = document.getElementById("coverage");
+      coverageBlockView.scrollIntoView({ behavior: "smooth" });
     } catch (err) {
       clearTheForm();
       preloader.value = false;
