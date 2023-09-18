@@ -32,7 +32,6 @@
                                             {
                                                     "label": "Document all the weight-related comorbid conditions the patient has :",
                                                     "node_type": "fieldset",
-                                                    "node_value": false,
                                                     "children": [
                                                         {
                                                             "label": "Established cardiovascular disease or stroke",

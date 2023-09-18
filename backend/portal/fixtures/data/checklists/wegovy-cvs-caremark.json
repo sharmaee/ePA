@@ -22,7 +22,7 @@
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                     "node_type": "fieldset",
                                     "children": [
-                                        {
+                                           {
                                             "label": "Established cardiovascular disease or stroke",
                                             "node_type": "checkbox",
                                             "node_value": false,
@@ -169,9 +169,90 @@
                                             "diagnosis": true
                                         }
                                     ]
+                                    }
+                                    ]
+                                },
+                                {
+                                    "label": "BMI ≥ 27 kg/m^2.",
+                                    "node_type": "radio",
+                                    "node_value": false,
+                                    "smart_engine": "over_12_initiation_27",
+                                    "children": [
+                                    {
+                                        "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                        "node_type": "fieldset",
+                                        "node_value": false,
+                                        "children": [
+                                               {
+                                                "label": "Established cardiovascular disease or stroke",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Hypertension",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Type 2 diabetes (DM)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Chronic kidney disease (CKD)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Coronary heart disease (CHD)",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Obstructive sleep apnea",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Polycystic ovarian syndrome",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Dyslipidemia",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Non-alcoholic fatty liver disease",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Idiopathic intracranial hypertension",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            },
+                                            {
+                                                "label": "Osteoarthritis in weight-bearing joints",
+                                                "node_type": "checkbox",
+                                                "node_value": false,
+                                                "diagnosis": true
+                                            }
+                                            ]
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
                     ]
                 }
             ]
