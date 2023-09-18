@@ -53,6 +53,21 @@
         </span>
       </div>
     </div>
+    <div class="row-with-two-input">
+      <div class="patient-member-id">
+        <label for="medication-name">Medication Name*</label>
+        <select
+          id="insurance-state"
+          v-model="data.medication"
+          class="custom-select-arrow"
+          @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
+          <option v-for="medication in medications" :key="medication" :value="medication">{{ medication }}</option>
+        </select>
+        <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
+          Please enter ALL fields to search.
+        </span>
+      </div>
+    </div>
     <button @click="sendRequirements">{{ btnText }}</button>
     <br />
     <span v-if="errMessage" class="input-error-notification"
@@ -92,6 +107,8 @@ const data = ref({
   releaseVersion: "0.0.1",
 });
 
+const medications = ["Saxenda", "Mounjaro", "Ozempic", "Victoza", "Rybelsus", "Wegovy"];
+
 // Validators
 const dobPattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
 const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
@@ -109,6 +126,11 @@ const isPatientMemberIdValid = computed(() => {
   return patientMemberIdPattern.test(data.value.memberId);
 });
 
+const isMedicationValid = computed(() => {
+  const value = searchFormData.value.medication;
+  return value !== null && value.trim() !== "";
+});
+
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
 
 async function sendRequirements() {
@@ -119,7 +141,13 @@ async function sendRequirements() {
     behavior: "smooth",
   });
 
-  if (isDobValid.value && isCoverMyMedsKeyValid.value && isLastNameValid.value && isPatientMemberIdValid.value) {
+  if (
+    isDobValid.value &&
+    isCoverMyMedsKeyValid.value &&
+    isLastNameValid.value &&
+    isPatientMemberIdValid.value &&
+    isMedicationValid.value
+  ) {
     try {
       showPreloader.value = true;
 
