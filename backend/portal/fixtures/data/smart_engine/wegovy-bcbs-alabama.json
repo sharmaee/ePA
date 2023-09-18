@@ -28,19 +28,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -74,19 +62,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient will NOT be using Wegovy in combination with other weightloss medications.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -120,15 +96,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -144,7 +112,7 @@
                 {
                     "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
+                },
                 {
                     "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
@@ -162,15 +130,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -204,15 +164,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -228,7 +180,7 @@
                 {
                     "label": "Document the patient has tried a targeted weight loss agent for a previous course of therapy in the past 12 months AND the prescriber anticipates success with repeating therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
+                },
                 {
                     "label": "Document that the patient has been on a weight loss regimen of a low-calorie diet, increased physical activity, and behavioral modifications for a minimum of 6 months prior to initiating therapy with Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
@@ -246,15 +198,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -288,15 +232,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -330,15 +266,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -372,15 +300,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss agent.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -414,15 +334,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss agent.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document the patient is newly starting therapy or has received less than 52 weeks (1 year) of therapy.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -433,10 +345,6 @@
             "items": [
                 {
                     "label": "Document patient has recieved less than 52 weeks of therapy on the 2.4mg dose.",
-                    "validation": "Wegovy is unlikely to get approved for use over 52 weeks."
-                },
-                {
-                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
@@ -448,7 +356,7 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -462,10 +370,6 @@
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
                 }, 
                 {
-                    "label": "The requested dose is 1.7mg or 2.4mg.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
                     "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent or other weightloss medication.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
@@ -477,10 +381,6 @@
                     "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
-                {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
             ]
         },
     "below_18_continuation_over_52weeks": 
@@ -489,10 +389,6 @@
             "items": [
                 {
                     "label": "Document patient has achieved and is maintained a reduction of BMI of at least 5% from baseline.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "The requested dose is 1.7mg or 2.4mg.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 },
                 {
@@ -509,10 +405,6 @@
                 },
                 {
                     "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
@@ -539,10 +431,6 @@
                 },
                 {
                     "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 or have a history of pancreatitis.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient does NOT have a known hypersensitivity to semaglutide or any of the ingredients in Wegovy.",
                     "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
                 }
             ]
