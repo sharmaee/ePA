@@ -1,85 +1,1289 @@
 {
-    "label": "Eligibility Criteria for Wegovy™ (semaglutide)",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "Eligibility Criteria for Wegovy™ (semaglutide)",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
             "children": [
                 {
-                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
-                    "all_required": true,
-                    "node_type": "checkbox",
-                    "node_value": false,
-                    "smart_engine": "over_18_initiation",
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
                     "children": [
                         {
-                            "label": "Established cardiovascular disease or stroke",
-                            "node_type": "checkbox",
+                            "label": "Start of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
                             "node_value": false,
-                            "diagnosis": true
+                            "children": [
+                                {
+                                    "label": "The patient is of South Asian, Southeast Asian, or East Asian descent?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "Yes",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Yes",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "over_18_initiation_south_asian_with_weightloss_agent",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "No",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "over_18_initiation_south_asian_no_weightloss_agent",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "No",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "BMI ≥ 27 kg/m^2",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "children": [
+                                                                {
+                                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Yes",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_over_27",
+                                                                            "children": [
+                                                                                {
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                                    "node_type": "fieldset",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Type 2 diabetes (DM)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Coronary heart disease (CHD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Obstructive sleep apnea",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Polycystic ovarian syndrome",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Dyslipidemia",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "label": "No",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_over_27",
+                                                                            "children": [
+                                                                                {
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                                    "node_type": "fieldset",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Type 2 diabetes (DM)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Coronary heart disease (CHD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Obstructive sleep apnea",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Polycystic ovarian syndrome",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Dyslipidemia",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "BMI ≥ 30 kg/m^2",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "children": [
+                                                                {
+                                                                    "label": "Patient has tried a targeted weightloss agent in the last 12 months?",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Yes",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_with_weightloss_agent_bmi_over_30",
+                                                                            "children": [
+                                                                                {
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                                    "node_type": "fieldset",
+                                                                                    "node_value": false,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Type 2 diabetes (DM)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Coronary heart disease (CHD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Obstructive sleep apnea",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Polycystic ovarian syndrome",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Dyslipidemia",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "label": "No",
+                                                                            "node_type": "radio",
+                                                                            "node_value": false,
+                                                                            "smart_engine": "over_18_initiation_no_weightloss_agent_bmi_over_30",
+                                                                            "children": [
+                                                                                {
+                                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                                    "node_type": "fieldset",
+                                                                                    "node_value": false,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Type 2 diabetes (DM)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Coronary heart disease (CHD)",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Obstructive sleep apnea",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Polycystic ovarian syndrome",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Dyslipidemia",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        },
+                                                                                        {
+                                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                                            "node_type": "checkbox",
+                                                                                            "node_value": false,
+                                                                                            "comorbidity": true
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "label": "Hypertension",
-                            "node_type": "checkbox",
+                            "label": "Continuation of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
                             "node_value": false,
-                            "diagnosis": true
+                            "children": [
+                                {
+                                    "label": "How long has patient recieved treatment of Wegovy?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "More than 52 weeks (1 year)",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_continuation_over_52weeks",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                    "node_type": "fieldset",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Less than 52 weeks",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_continuation_under_52_weeks",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",                                                  
+                                                    "node_type": "fieldset",
+                                                    "node_value": false,
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Patient is 12 to 17 years old",
+            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+            "node_type": "radio",
+            "node_value": false,
+            "children": [
+                {
+                    "label": "Is this request for initiation or continuation of therapy with Wegovy™ (semaglutide)?",
+                    "node_type": "fieldset",
+                    "children": [
+                        {
+                            "label": "Start of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
+                            "node_value": false,
+                            "children": [
+                                {
+                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "BMI ≥ 95th percentile for age and gender or BMI ≥ 30 kg/m^2.",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "Patient has tried a targeted weight loss agent in the last 12 months?",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Yes",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "below_18_initiation_with_weightloss_agent_bmi_over_95",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "No",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "below_18_initiation_no_weightloss_agent_bmi_over_95",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "BMI ≥ 85th percentile for age and gender.",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "children": [
+                                                {
+                                                    "label": "Patient has tried a targeted weight loss agent in the last 12 months?",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Yes",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "below_18_initiation_with_weightloss_agent_bmi_over_85",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                                    "node_type": "fieldset",
+                                                                    "node_value": false,
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "No",
+                                                            "node_type": "radio",
+                                                            "node_value": false,
+                                                            "smart_engine": "below_18_initiation_no_weightloss_agent_bmi_over_85",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",     
+                                                                    "node_type": "fieldset",
+                                                                    "children": [
+                                                                        {
+                                                                            "label": "Established cardiovascular disease or stroke",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Type 2 diabetes (DM)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Chronic kidney disease (CKD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Coronary heart disease (CHD)",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Obstructive sleep apnea",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Polycystic ovarian syndrome",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Dyslipidemia",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Non-alcoholic fatty liver disease",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Idiopathic intracranial hypertension",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        },
+                                                                        {
+                                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                                            "node_type": "checkbox",
+                                                                            "node_value": false,
+                                                                            "comorbidity": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "label": "Type 2 diabetes (DM)",
-                            "node_type": "checkbox",
+                            "label": "Continuation of therapy",
+                            "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
+                            "node_type": "radio",
                             "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Chronic kidney disease (CKD)",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Congenital heart disease (CHD)",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Obstructive sleep apnea",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Polycystic ovarian syndrome",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Dyslipidemia",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Non-alcoholic fatty liver disease",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Idiopathic intracranial hypertension",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
-                        },
-                        {
-                            "label": "Osteoarthritis in weight-bearing joints",
-                            "node_type": "checkbox",
-                            "node_value": false,
-                            "diagnosis": true
+                            "children": [
+                                {
+                                    "label": "How long has patient recieved treatment of Wegovy?",
+                                    "node_type": "fieldset",
+                                    "children": [
+                                        {
+                                            "label": "More than 52 weeks (1 year)",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_over_52weeks",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Less than 52 weeks",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "below_18_continuation_under_52weeks",
+                                            "children": [
+                                                {
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "comorbidity": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

@@ -1,9 +1,9 @@
 {
-    "label": "Age of patient?",
+    "label": "What is the patient's age?",
     "node_type": "fieldset",
     "children": [
         {
-            "label": "For patients 18 years or older",
+            "label": "Patient is 18 years or older",
             "outcome": "Authorization for Wegovy™ (semaglutide), may be approved when all of the criteria are met",
             "node_type": "radio",
             "node_value": false,
@@ -18,41 +18,20 @@
                             "node_type": "radio",
                             "node_value": false,
                             "children": [
+                                
                                 {
-                                    "label": "The patient has taken the medication for less than 18 weeks (For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient is 18 years of age or older, and has one of the following",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
+                                    "label": "What is the patient's initial BMI (baseline body mass index)?",
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
-                                            "label": "Document a diagnosis of obesity and a BMI ≥ 30 kg/m2",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Document a diagnosis of obesity and a BMI ≥ 25 kg/m2, and is of South Asian, Southeast Asian, or East Asian descent",
-                                            "node_type": "checkbox",
-                                            "node_value": false
-                                        },
-                                        {
-                                            "label": "Meets body mass index (BMI) and comorbidity requirements:",
-                                            "all_required": true,
-                                            "node_type": "checkbox",
+                                            "label": "BMI ≥ 30 kg/m^2",
+                                            "node_type": "radio",
                                             "node_value": false,
+                                            "smart_engine": "over_18_start_BMI_over_30",
                                             "children": [
-                
-                                                {
-                                                    "label": "A documented body mass index (BMI) ≥ 27 kg/m^2",
-                                                    "node_type": "checkbox",
-                                                    "node_value": false
-                                                },
-                                                {
-                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                                    "node_type": "checkbox",
+                                            {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has :",
+                                                    "node_type": "fieldset",
                                                     "node_value": false,
                                                     "children": [
                                                         {
@@ -80,7 +59,168 @@
                                                             "diagnosis": true
                                                         },
                                                         {
-                                                            "label": "Congenital heart disease (CHD)",
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
+                                                }
+                                                ]
+                                        },
+                                        {
+                                            "label": "BMI ≥ 27 kg/m^2",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_start_BMI_over_27",
+                                            "children": [
+                                            {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Obstructive sleep apnea",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Polycystic ovarian syndrome",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Dyslipidemia",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Non-alcoholic fatty liver disease",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Idiopathic intracranial hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Osteoarthritis in weight-bearing joints",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        }
+                                                    ]
+                                                }
+                                                ]
+                                        },
+                                        {
+                                            "label": "BMI ≥ 25 kg/m^2",
+                                            "node_type": "radio",
+                                            "node_value": false,
+                                            "smart_engine": "over_18_start_BMI_over_25",
+                                            "children": [
+    
+                                                {
+                                                    "label": "Document all the weight-related comorbid conditions the patient has:",
+                                                    "node_type": "fieldset",
+                                                    "children": [
+                                                        {
+                                                            "label": "Established cardiovascular disease or stroke",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Hypertension",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Type 2 diabetes (DM)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Chronic kidney disease (CKD)",
+                                                            "node_type": "checkbox",
+                                                            "node_value": false,
+                                                            "diagnosis": true
+                                                        },
+                                                        {
+                                                            "label": "Coronary heart disease (CHD)",
                                                             "node_type": "checkbox",
                                                             "node_value": false,
                                                             "diagnosis": true
@@ -126,41 +266,6 @@
                                             ]
                                         }
                                     ]
-                                },
-                                {
-                                    "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the requested medication will not be used concurrently with insulin",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the requested medication will not be used concurrently with another weight loss medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient has anti-obesity medication coverage benefits",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (document that 3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
                                 }
                             ]
                         },
@@ -169,23 +274,7 @@
                             "outcome": "Continuation of Wegovy™ (semaglutide) therapy may be approved for up to an additional 365 days (1 year) when all of the criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "The patient was approved through Blue Cross NC initial coverage criteria, or is new to the plan, meets the initial coverage requirements listed above, and has taken the medication greater than 18 weeks",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient is 18 years of age or older and has achieved and maintained a weight loss of ≥4% from baseline (prior to the initiation of requested medication)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient has anti-obesity medication coverage benefits",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
-                            ]
+                            "smart_engine": "over_18_continuation"
                         }
                     ]
                 }
@@ -206,53 +295,7 @@
                             "outcome": "Initiation of Wegovy™ (semaglutide) may be approved for up to 18 weeks when all of the following criteria are met",
                             "node_type": "radio",
                             "node_value": false,
-                            "children": [
-                                {
-                                    "label": "The patient has taken the medication for less than 18 weeks (For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), with a documented diagnosis of obesity and a BMI > 95th percentile for age and sex",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the requested medication will not be used concurrently with insulin",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document the requested medication will not be used concurrently with another weight loss medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient has anti-obesity medication coverage benefits",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "For formularies that exclude the requested medication, Non-formulary Exception Criteria applies (document 3 other medications that target the same condition have been tried and they either did not work or were not tolerated.)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                }
-                            ]
+                            "smart_engine": "under_18_start"
                         },
                         {
                             "label": "Continuation of therapy",
@@ -266,12 +309,7 @@
                                     "node_value": false
                                 },
                                 {
-                                    "label": "The patient is 12–17 years of age and the request is for Wegovy (semaglutide), and has achieved and maintained a documented BMI reduction of ≥ 5% from baseline (prior to the initiation of requested medication)",
-                                    "node_type": "checkbox",
-                                    "node_value": false
-                                },
-                                {
-                                    "label": "The patient has anti-obesity medication coverage benefits",
+                                    "label": "The patient has achieved and maintained a documented BMI reduction of ≥ 5% from baseline.",
                                     "node_type": "checkbox",
                                     "node_value": false
                                 }

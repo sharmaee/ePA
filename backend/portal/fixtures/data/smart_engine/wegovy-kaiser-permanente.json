@@ -1,89 +1,86 @@
 {
-    "over_18_initiation_not_diabetic": {
-        "header": "Verify Prescriber and Patient Documentation",
-        "items": [
-            {
-                "label": "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist.",
-                "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-            },
-            {
-                "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
-                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
-            },
-            {
-                "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Documented current baseline weight.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
-                "validation": "If it is not documented that the patient has tried these medications check to see if they have the following contraindications (1) Xenical: Pregnancy, chronic Malabsorption, Cholestasis (2) Contrave:  uncontrolled hypertension, History of seizures, bulimia, anorexia nervosa, Opioid Use (3) Qsymia: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors (4) Saxenda: hyroid Cancer, Medullary Thyroid carcinoma, multiple endocrine neoplasia syndrome type 2. If any of the contraindications are found, ask the ordering provider to document the reason the alternative medications can not be used. Otherwise, let the provider know the medications should be tried in the order listed."
-            }
-        ]
-    },
-    "over_18_initiation_diabetic": {
-        "header": "Verify Prescriber and Patient Documentation",
-        "items": [
-            {
-                "label": "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist.",
-                "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
-            },
-            {
-                "label": "Documented baseline body mass index (BMI) ≥ 30 kg/m^2.",
-                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
-            },
-            {
-                "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Documented current baseline weight.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Patient has documented intolerance, contraindication or failure to lose and maintain greater than or equal to 5% body weight after a 3-month trial of ALL of the following medications: (1) Xenical (2) Contrave (3) Qsymia (4) Saxenda.",
-                "validation": "If it is not documented that the patient has tried these medications check to see if they have the following contraindications (1) Xenical: Pregnancy, chronic Malabsorption, Cholestasis (2) Contrave:  uncontrolled hypertension, History of seizures, bulimia, anorexia nervosa, Opioid Use (3) Qsymia: Pregnancy, Glaucoma, Hyperthyroidism, Taking Monoamine Oxidase Inhibitors (4) Saxenda: hyroid Cancer, Medullary Thyroid carcinoma, multiple endocrine neoplasia syndrome type 2. If any of the contraindications are found, ask the ordering provider to document the reason the alternative medications can not be used. Otherwise, let the provider know the medications should be tried in the order listed."
-            },
-            {
-                "label": "Document patient is following Kaiser National Adult Diabetes Guidelines and CBC step therapy criteria for use of preferred agents for diabetes control.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Documented intolerance, contraindication, or failure to reach goal A1c after at least 6 month trial of Victoza or Ozempic.",
-                "validation": "If the patient hasn't tried Victoza or Ozempic, ask the order prescriber that insurance requires these to be tried first."
-            }
-        ]
-    },
-    "over_18_continuation": {
-        "header": "Verify Prescriber and Patient Documentation",
-        "items": [
-            {
-                "label": "Documentated loss of at least 10 percent of baseline body weight in the previous 3 months.",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            },
-            {
-                "label": "Patient continues to meet initial review critieria",
-                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-            }
-        ]
-    }
+    "over_18_initiation_not_diabetic":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist.",
+                    "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation). You can check a providers NPI number here: https://npiregistry.cms.hhs.gov/search by entering their NPI number and clicking search. In the result look for the Taxonomy of the provider. "
+                },
+                {
+                    "label": "Documented current baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented current baseline weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        }, 
+    "over_18_initiation_diabetic":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "The Prescribing Provider Is an Endocrinologist or Weight Management Specialist.",
+                    "validation": "If Not, Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                },
+                {
+                    "label": "Documented current baseline body mass index (BMI) ≥ 30 kg/m^2.",
+                    "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+                },
+                {
+                    "label": "Document the patient will NOT be using the requested agent in combination with another targeted weight loss agent for the requested indication",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document the patient will NOT be using Wegovy in combination with another GLP-1 receptor agonist agent",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented current baseline weight.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient has attempted to lose weight through a KP-approved weight loss program, and will continue these interventions while on Wegovy.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Document patient is following Kaiser National Adult Diabetes Guidelines and CBC step therapy criteria for use of preferred agents for diabetes control.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Documented intolerance, contraindication, or failure to reach goal A1c after at least 6 month trial of Victoza or Ozempic.",
+                    "validation": "If the patient hasn't tried Victoza or Ozempic, ask the order prescriber that insurance requires these to be tried first."
+                }
+                
+            ]
+        }, 
+        "over_18_continuation":
+        {
+            "header": "Verify Prescriber and Patient Documentation",
+            "items": [
+                {
+                    "label": "Documentated loss of at least 10 percent of baseline body weight in the previous 3 months.",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                },
+                {
+                    "label": "Patient continues to meet initial review critieria",
+                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+                }
+            ]
+        }
+        
 }

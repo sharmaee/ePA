@@ -9,20 +9,18 @@
             "node_value": false,
             "children": [
                 {
-                    "label": "What is the patient's BMI?",
+                    "label": "What is the patient's initial BMI (baseline body mass index)?",
                     "node_type": "fieldset",
-                    "node_value": false,
                     "children": [
                         {
-                            "label": "Documented initial baseline body mass index (BMI) ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
+                            "label": "BMI ≥ 30 kg/m2 or a BMI > 95th percentile for pediatric patients (12-18).",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_12_initiation",
+                            "smart_engine": "over_12_initiation_30",
                             "children": [
                                 {
-                                    "label": "Document all the weight-related comorbid conditions the patient has:",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
                                             "label": "Established cardiovascular disease or stroke",
@@ -49,7 +47,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
@@ -95,16 +93,14 @@
                             ]
                         },
                         {
-                            "label": "Documented initial baseline body mass index (BMI) ≥ 27 kg/m2",
-                            "all_required": true,
+                            "label": "BMI ≥ 27 kg/m^2",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_12_initiation",
+                            "smart_engine": "over_12_initiation_27",
                             "children": [
                                 {
-                                    "label": "Document all the weight-related comorbid conditions the patient has (at least one required):",
-                                    "node_type": "checkbox",
-                                    "node_value": false,
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must have at least 1, Select All That Apply)",
+                                    "node_type": "fieldset",
                                     "children": [
                                         {
                                             "label": "Established cardiovascular disease or stroke",
@@ -131,7 +127,7 @@
                                             "diagnosis": true
                                         },
                                         {
-                                            "label": "Congenital heart disease (CHD)",
+                                            "label": "Coronary heart disease (CHD)",
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "diagnosis": true
@@ -185,8 +181,7 @@
             "outcome": "Authorization for Wegovy™ (semaglutide), is expected to be issued for 12 months",
             "node_type": "radio",
             "node_value": false,
-            "smart_engine": "over_12_continuation",
-            "children": []
+            "smart_engine": "over_12_continuation"
         }
     ]
 }
