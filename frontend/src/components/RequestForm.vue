@@ -53,7 +53,7 @@
         </span>
       </div>
     </div>
-    <div class="row-with-two-input">
+    <div v-if="props.showMedication" class="row-with-two-input">
       <div class="patient-member-id">
         <label for="medication-name">Medication Name*</label>
         <select
@@ -87,6 +87,13 @@ import { useUiElementsStore } from "@/stores/uiElementsStore";
 import { useRoute } from "vue-router";
 import { sendFormByEnterClicking } from "@/utils";
 const { searchFormData } = storeToRefs(useSearchFormStore());
+
+const props = defineProps({
+  showMedication: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const route = useRoute();
 

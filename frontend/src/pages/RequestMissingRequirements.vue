@@ -16,7 +16,7 @@
       <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
         <h2>Get the exact preparation steps your patient needs.</h2>
         <hr />
-        <RequestForm />
+        <RequestForm :show-medication="true" />
       </div>
     </div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
