@@ -87,7 +87,7 @@ function copyAdditionalInfoToClipboard(content) {
   } catch (error) {
     copyAdditionalInfoButtonText.value = "Copy Paragraph";
   }
-  setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph!"), 3000);
+  setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph"), 3000);
 }
 
 function redirectToHomePage() {
