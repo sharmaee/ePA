@@ -82,12 +82,12 @@ const smartEngineCheckList = computed(() => {
 
 function copyAdditionalInfoToClipboard(content) {
   copyAdditionalInfoButtonText.value = "Copied!";
-
   try {
     navigator.clipboard.writeText(content);
   } catch (error) {
     copyAdditionalInfoButtonText.value = "Copy Paragraph";
   }
+  setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph!"), 3000);
 }
 
 function redirectToHomePage() {
