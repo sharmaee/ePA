@@ -67,7 +67,7 @@
     <div id="searchResultsBlock"></div>
     <GreenCirclePreloader v-if="preloader" />
 
-    <div class="coverage" id="coverage">
+    <div id="coverage" class="coverage">
       <div v-if="coverageBlock">
         <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
           <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
