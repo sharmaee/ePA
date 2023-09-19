@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from portal.models.requirements import RequestNewPriorAuthRequirements
 from portal.models.pa_denial import PriorAuthDenial
+from portal.models.analytics import RequirementsSearchAction
 
 
 base_display_member_details_fields = (
@@ -72,3 +73,21 @@ class PriorAuthDenialAdmin(DisplayMemberDetailsAdmin):
     list_display = base_display_fields + base_display_member_details_fields
 
     list_filter = ('submission_date',)
+
+
+@admin.register(RequirementsSearchAction)
+class RequirementsSearchActionAdmin(AnalyticsAdminBase):
+    list_display = (
+        'insurance_provider',
+        'state',
+        'medication',
+        'created_on',
+        'created_by',
+    )
+    list_filter = ('created_on', 'created_by', 'state', 'insurance_provider', 'medication')
+    search_fields = (
+        'insurance_provider',
+        'state',
+        'medication',
+        'created_by__email',
+    )

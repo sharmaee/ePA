@@ -1,0 +1,10 @@
+from django.db import models
+from ._common import PortalModelBase
+from portal.models.auth import User
+
+class RequirementsSearchAction(PortalModelBase):
+    insurance_provider = models.TextField(blank=True, null=True)
+    state = models.TextField(blank=True, null=True)
+    medication = models.TextField(blank=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
