@@ -1,0 +1,156 @@
+{
+    "over_18_start_BMI_over_27": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "The patient has taken the medication for less than 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist, insulin, or other weightloss medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "The patient has anti-obesity medication coverage benefits.",
+                "validation": "If the patient does not, two available therapeutic equivalents must be tried and shown to be ineffective or were not tolerated before Wegovy can be prescribed."
+            },
+            {
+                "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
+                "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            },
+            {
+                "label": "Document that the patient has a current BMI of greater than 27 kg/m^2 (within the last 30 days).",
+                "validation": "A BMI of less than 27 is unlikely to be approved."
+            }
+        ]
+    },
+    "over_18_start_BMI_over_30": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "The patient has taken the medication for less than 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist, insulin, or other weightloss medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "The patient has anti-obesity medication coverage benefits.",
+                "validation": "If the patient does not, two available therapeutic equivalents must be tried and shown to be ineffective or were not tolerated before Wegovy can be prescribed."
+            },
+            {
+                "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
+                "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            },
+            {
+                "label": "Document that the patient has a current BMI of greater than 30 kg/m^2 (within the last 30 days).",
+                "validation": "A BMI of less than 27 is unlikely to be approved."
+            }
+        ]
+    },
+    "over_18_start_south_asian": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Patient is of South Asian, Southeast Asian, or East Asian descent.",
+                "validation": "Patient's of other ethnicities are unlikely to be approved for a BMI between 25-27."
+            },
+            {
+                "label": "Document that the patient has a current BMI of greater than 25 kg/m^2 (within the last 30 days).",
+                "validation": "A BMI of less than 27 is unlikely to be approved."
+            },
+            {
+                "label": "The patient has taken the medication for less than 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist, insulin, or other weightloss medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "The patient has anti-obesity medication coverage benefits.",
+                "validation": "If the patient does not, two available therapeutic equivalents must be tried and shown to be ineffective or were not tolerated before Wegovy can be prescribed."
+            },
+            {
+                "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
+                "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            }
+        ]
+    },
+    "below_18_initiation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document the patient has a diagnosis of obesity, confirmed by a body mass index (BMI) ≥ 95th percentile for age and gender.",
+                "validation": "Wegovy is unlikely to get approved for pediatrics for BMI below 95th percentile."
+            },
+            {
+                "label": "The patient has taken the medication for less than 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "Document that the requested medication will not be used concurrently with another GLP-1 receptor agonist, insulin, or other weightloss medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has agreed to lifestyle modifications (calorie restrictions and increased activity) while taking the requested medication.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "The patient has anti-obesity medication coverage benefits.",
+                "validation": "If the patient does not, two available therapeutic equivalents must be tried and shown to be ineffective or were not tolerated before Wegovy can be prescribed."
+            },
+            {
+                "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period).",
+                "validation": "Or ensure documentation that the patient has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately."
+            }
+        ]
+    },
+    "over_18_continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "The patient was approved through Blue Cross NC initial coverage criteria, or is new to the plan, meets the initial coverage requirements listed above, and has taken the medication greater than 18 weeks.",
+                "validation": "For new members with less than 18 weeks of therapy, starting criteria apply."
+            },
+            {
+                "label": "The patient has taken the medication for at least 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "The patient has achieved and maintained a weight loss of ≥5% from baseline.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "below_18_continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "The patient was approved through Blue Cross NC initial coverage criteria, or is new to the plan, meets the initial coverage requirements listed above, and has taken the medication greater than 18 weeks.",
+                "validation": "For new members with less than 18 weeks of therapy, starting criteria apply."
+            },
+            {
+                "label": "The patient has taken the medication for at least 18 weeks.",
+                "validation": "For new members who meet initial coverage requirements with greater than 18 weeks of therapy, continuation criteria apply."
+            },
+            {
+                "label": "The patient has achieved and maintained a weight loss of ≥1% from baseline.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    }
+}

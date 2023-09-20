@@ -1,34 +1,49 @@
 {
-    "initiation":
-        {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "label": "Document the requested drug, Wegovy™ (semaglutide), will be used in conjunction with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document that the patient has a body mass index (BMI) greater than or equal to 27 kg/m^2",
-                    "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
-                }
-            ]
-        },
-    "continuation":
-        {
-            "header": "Verify Prescriber and Patient Documentation",
-            "items": [
-                {
-                    "label": "Document that the patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                },
-                {
-                    "label": "Document patient continues weightloss or maintains at least 5% weight loss from initial BMI.",
-                    "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
-                }
-            ]
-        }
+    "over_12_initiation_30": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document a BMI of greater than 30 (within the past 30 days).",
+                "validation": "A BMI under 30 is unlikely to be approved."
+            },
+            {
+                "label": "Document the requested drug, Wegovy™ (semaglutide), will be used with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_12_initiation_27": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document a current BMI of greater than 27 (within the past 30 days).",
+                "validation": "A BMI under 27 is unlikely to be approved."
+            },
+            {
+                "label": "Document the requested drug, Wegovy™ (semaglutide), will be used with a reduced-calorie diet and increased physical activity for chronic weight management in an adult.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the patient has participated in a comprehensive weight management program that encourages behavioral modification, a reduced calorie diet, and increased physical activity with continuing follow-up for at least 6 months prior to using drug therapy.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document that the patient has completed at least 3 months of therapy with the requested drug at a stable maintenance dose.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has achieved and has maintained a reduction in BMI of at least 5% from baseline.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    }
 }

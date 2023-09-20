@@ -1,0 +1,49 @@
+{
+    "over_12_initiation_27": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document treatment is being requested for appetite suppression or weight loss.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document current baseline BMI of 27 or greater (within the last 30 days).",
+                "validation": "Approval is unlikely to be obtained for patients with a BMI under 27."
+            },
+            {
+                "label": "Document that the medication will be used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program).",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            }
+        ]
+    },
+    "over_12_initiation_30": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document treatment is being requested for appetite suppression or weight loss.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document current baseline BMI of 30 or greater (within the last 30 days).",
+                "validation": "Approval is unlikely to be obtained for patients with a BMI under 27."
+            },
+            {
+                "label": "Document that the medication will be used as an adjunct to lifestyle modification (e.g., dietary or caloric restriction, exercise, behavioral support, community-based program).",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            }
+        ]
+    },
+    "over_12_continuation": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Documented loss or maintenance of at least 5 percent reduction from baseline body weight.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            },
+            {
+                "label": "Document continuation of lifestyle modification.",
+                "validation": "Stop and contact provider to document this in the patient's chart."
+            }
+        ]
+    }
+}

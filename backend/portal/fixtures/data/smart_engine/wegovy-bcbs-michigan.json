@@ -1,34 +1,92 @@
 {
-    "over_18_initiation_with_BCBSM/BCN_program": {
+    "over_18_initiation_with_BCBSM/BCN_program_bmi_over_27": {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (within the last 30 days).",
                 "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
             },
             {
-                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                "label": "Current weight (within 30 days) must be submitted to the plan for review.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program for a minimum of 6 months.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
     },
-    "over_18_initiation_without_BCBSM/BCN_program": {
+    "over_18_initiation_with_BCBSM/BCN_program_bmi_over_30": {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 within the last 30 days.",
-                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 30 kg/m^2 (within the last 30 days).",
+                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
             },
             {
-                "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                "label": "Current weight (within 30 days) must be submitted to the plan for review.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program for a minimum of 6 months.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_initiation_without_BCBSM/BCN_program_bmi_over_27": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 27 kg/m^2 (within the last 30 days).",
+                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
+            },
+            {
+                "label": "Document active participation in an alternative concurrent lifestyle modification program for a minimum of 6 months (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) for a minimum of 6 months.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            }
+        ]
+    },
+    "over_18_initiation_without_BCBSM/BCN_program_bmi_over_30": {
+        "header": "Verify Prescriber and Patient Documentation",
+        "items": [
+            {
+                "label": "Document an initial body mass index (BMI) of greater than or equal to 30 kg/m^2 (within the last 30 days).",
+                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
+            },
+            {
+                "label": "Document active participation in an alternative concurrent lifestyle modification program for a minimum of 6 months (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) for a minimum of 6 months.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document that the medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -41,7 +99,11 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                "label": "Document the patients current weight (within the last 30 days).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -50,15 +112,23 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                "label": "Document patients baseline body mass index (BMI) is ≥ 95th percentile standardized for age and sex (within the last 30 days).",
                 "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
             },
             {
-                "label": "Documentation of active participation in a covered BCBSM/BCN lifestyle modification program.",
+                "label": "Current weight (within 30 days) above 132 lb (60 kg) must be submitted for review.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document active participation in a covered BCBSM/BCN lifestyle modification program for a minimum of 6 months.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -67,15 +137,19 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document member’s baseline body mass index (BMI) is ≥ 95th percentile within the last 30 days, standardized for age and sex.",
+                "label": "Document patients baseline body mass index (BMI) is ≥ 95th percentile standardized for age and sex (within the last 30 days).",
                 "validation": "An initial BMI that is less than the 95th percentile is unlikely to be approved."
             },
             {
-                "label": "Documentation of active participation in an alternative concurrent lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.).",
+                "label": "Document active participation in an alternative concurrent lifestyle modification program for a minimum of 6 months (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) for a minimum of 6 months.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document medication will not to be used in combination with other weight loss products.",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document patient has not experienced previous treatment failure (i.e., not able to reach or maintain clinically appropriate weight loss percentage) on a GLP-1 for weight loss.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
@@ -88,7 +162,11 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Documentation of continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN.",
+                "label": "Document the patients current weight (within the last 30 days).",
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
+            },
+            {
+                "label": "Document continued participation in an alternative lifestyle modification program (e.g., recent food diaries, exercise logs, program receipts, app participation, etc.) or active participation in a covered BCBSM/BCN program.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
