@@ -58,7 +58,7 @@ class ClientCompany(PortalModelBase):
 
     def __str__(self):
         return self.company_name
-    
+
     class Meta:
         verbose_name = 'Client Company'
         verbose_name_plural = 'Client Companies'

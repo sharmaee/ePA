@@ -10,19 +10,12 @@ from import_export.widgets import ForeignKeyWidget
 
 class RequirementsSearchActionResource(resources.ModelResource):
     created_by = fields.Field(
-        column_name='created_by',
-        attribute='created_by',
-        widget=ForeignKeyWidget(User, field='email'))
+        column_name='created_by', attribute='created_by', widget=ForeignKeyWidget(User, field='email')
+    )
 
     class Meta:
         model = RequirementsSearchAction
-        fields = (
-            'insurance_provider',
-            'insurance_coverage_state',
-            'medication',
-            'created_on',
-            'created_by'
-        )
+        fields = ('insurance_provider', 'insurance_coverage_state', 'medication', 'created_on', 'created_by')
 
 
 class RequirementsSearchActionAdmin(ExportActionModelAdmin):
@@ -33,7 +26,14 @@ class RequirementsSearchActionAdmin(ExportActionModelAdmin):
         'created_on',
         'created_by_user',
     )
-    list_filter = (('created_on', DateRangeFilter), 'created_on', 'created_by', 'insurance_coverage_state', 'insurance_provider', 'medication')
+    list_filter = (
+        ('created_on', DateRangeFilter),
+        'created_on',
+        'created_by',
+        'insurance_coverage_state',
+        'insurance_provider',
+        'medication',
+    )
     search_fields = (
         'insurance_provider',
         'insurance_coverage_state',

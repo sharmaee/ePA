@@ -2,6 +2,7 @@ from django.db import models
 from ._common import PortalModelBase
 from portal.models.auth import User
 
+
 class RequirementsSearchAction(PortalModelBase):
     insurance_provider = models.TextField(blank=True, null=True)
     insurance_coverage_state = models.TextField(blank=True, null=True)
