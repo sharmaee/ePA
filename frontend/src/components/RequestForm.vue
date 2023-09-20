@@ -54,52 +54,49 @@
       </div>
     </div>
 
-    <div
-      v-if="
-        (route.name === 'request-missing-requirements' && !searchFormData.insuranceProvider) ||
-        !searchFormData.insuranceCoverageState
-      "
-      class="row-with-two-input">
-      <div class="insurance-plan-number">
-        <label for="insurance-provider">Insurance Provider</label>
-        <input
-          id="insurance-provider"
-          v-model="data.insuranceProvider"
-          type="text"
-          placeholder="Insurance provider"
-          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
-        <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
-          Please enter ALL fields to search.
-        </span>
+    <div v-if="route.name === 'request-missing-requirements'">
+      <div v-if="!searchFormData.insuranceProvider" class="row-with-two-input">
+        <div class="insurance-plan-number">
+          <label for="insurance-provider">Insurance Provider</label>
+          <input
+            id="insurance-provider"
+            v-model="data.insuranceProvider"
+            type="text"
+            placeholder="Insurance provider"
+            @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
+          <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
+            Please enter ALL fields to search.
+          </span>
+        </div>
+        <div v-if="!searchFormData.insuranceCoverageState" class="insurance-state">
+          <label for="insurance-state">State</label>
+          <select
+            id="insurance-state"
+            v-model="data.insuranceCoverageState"
+            class="custom-select-arrow"
+            @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
+            <option v-for="state in states" :key="state">{{ state }}</option>
+          </select>
+          <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
+            Please enter ALL fields to search.
+          </span>
+        </div>
       </div>
-      <div class="insurance-state">
-        <label for="insurance-state">State</label>
-        <select
-          id="insurance-state"
-          v-model="data.insuranceCoverageState"
-          class="custom-select-arrow"
-          @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
-          <option v-for="state in states" :key="state">{{ state }}</option>
-        </select>
-        <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
-          Please enter ALL fields to search.
-        </span>
-      </div>
-    </div>
 
-    <div v-if="route.name === 'request-missing-requirements'" class="row-with-one-input">
-      <div class="patient-member-id">
-        <label for="medication-name">Medication Name*</label>
-        <select
-          id="insurance-state"
-          v-model="data.medication"
-          class="custom-select-arrow"
-          @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
-          <option v-for="medication in medications" :key="medication" :value="medication">{{ medication }}</option>
-        </select>
-        <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
-          Please enter ALL fields to search.
-        </span>
+      <div class="row-with-one-input">
+        <div class="patient-member-id">
+          <label for="medication-name">Medication Name*</label>
+          <select
+            id="insurance-state"
+            v-model="data.medication"
+            class="custom-select-arrow"
+            @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
+            <option v-for="medication in medications" :key="medication" :value="medication">{{ medication }}</option>
+          </select>
+          <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">
+            Please enter ALL fields to search.
+          </span>
+        </div>
       </div>
     </div>
     <button @click="sendRequirements">{{ btnText }}</button>
