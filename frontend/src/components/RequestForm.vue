@@ -78,7 +78,6 @@
           id="insurance-state"
           v-model="data.insuranceCoverageState"
           class="custom-select-arrow"
-          placeholder="City/Area"
           @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
           <option v-for="state in states" :key="state">{{ state }}</option>
         </select>
