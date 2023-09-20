@@ -25,6 +25,8 @@ django-rest-auth = "*"
 pyotp = "*"
 celery = "*"
 redis = "*"
+django-import-export = "*"
+django-admin-rangefilter = "*"
 
 [dev-packages]
 black = "*"

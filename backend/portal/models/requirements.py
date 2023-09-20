@@ -36,3 +36,8 @@ class RequestNewPriorAuthRequirements(PortalModelBase):
     member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, related_name='requests_new_pa')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='requests_new_pa')
     notes = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Request for More Info'
+        verbose_name_plural = 'Requests for More Info'
+        ordering = ['-submission_date']

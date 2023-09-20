@@ -58,6 +58,10 @@ class ClientCompany(PortalModelBase):
 
     def __str__(self):
         return self.company_name
+    
+    class Meta:
+        verbose_name = 'Client Company'
+        verbose_name_plural = 'Client Companies'
 
 
 class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
@@ -88,7 +92,7 @@ class User(AbstractBaseUser, PermissionsMixin, PortalModelBase):
         return f'{self.first_name} {self.last_name}'.strip()
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} - {self.mobapp_id}'
+        return f'{self.first_name} {self.last_name} - {self.email}'
 
 
 class BlackListedAccessToken(PortalModelBase):

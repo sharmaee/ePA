@@ -1,7 +1,18 @@
-from portal.models import PriorAuthRequirement
+from portal.models.requirements import PriorAuthRequirement
+from portal.models.analytics import RequirementsSearchAction
 
 
-def run_search(search_params):
+def save_search_action(search_params, user):
+    RequirementsSearchAction.objects.create(
+        insurance_provider=search_params['insurance_provider'],
+        state=search_params['insurance_coverage_state'],
+        medication=search_params['medication'],
+        created_by=user,
+    )
+
+
+def run_search(search_params, user):
+    save_search_action(search_params, user)
     return (
         PriorAuthRequirement.objects.filter(medication=search_params['medication'])
         .filter(insurance_coverage_state=search_params['insurance_coverage_state'])
