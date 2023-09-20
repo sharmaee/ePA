@@ -53,7 +53,37 @@
         </span>
       </div>
     </div>
-    <div v-if="props.showMedication" class="row-with-two-input">
+
+    <div v-if="route.name === 'request-missing-requirements'" class="row-with-two-input">
+      <div class="insurance-plan-number">
+        <label for="insurance-provider">Insurance Provider</label>
+        <input
+          id="insurance-provider"
+          v-model="data.insuranceProvider"
+          type="text"
+          placeholder="Insurance provider"
+          @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
+        <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
+          Please enter ALL fields to search.
+        </span>
+      </div>
+      <div class="insurance-state">
+        <label for="insurance-state">State</label>
+        <select
+          id="insurance-state"
+          v-model="data.insuranceCoverageState"
+          class="custom-select-arrow"
+          placeholder="City/Area"
+          @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
+          <option v-for="state in states" :key="state">{{ state }}</option>
+        </select>
+        <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
+          Please enter ALL fields to search.
+        </span>
+      </div>
+    </div>
+
+    <div v-if="route.name === 'request-missing-requirements'" class="row-with-one-input">
       <div class="patient-member-id">
         <label for="medication-name">Medication Name*</label>
         <select
@@ -78,24 +108,25 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { mainServices } from "@/services/mainServices";
 import { denialService } from "@/services/denialService";
 import { storeToRefs } from "pinia";
 import { useSearchFormStore } from "@/stores/searchFormStore";
 import { useUiElementsStore } from "@/stores/uiElementsStore";
 import { useRoute } from "vue-router";
+import { usaStates } from "@/utils/usaStates";
 import { sendFormByEnterClicking } from "@/utils";
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
-const props = defineProps({
-  showMedication: {
-    type: Boolean,
-    default: false,
-  },
-});
-
 const route = useRoute();
+const states = ref([]);
+
+onMounted(() => {
+  for (let stateData of Object.values(usaStates)) {
+    states.value.push(stateData.name);
+  }
+});
 
 const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
 const btnText = route.name === "request-missing-requirements" ? "Email me steps" : "Submit";
@@ -140,6 +171,16 @@ const isMedicationValid = computed(() => {
 
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
 
+const isInsuranceProviderValid = computed(() => {
+  const value = searchFormData.value.insuranceProvider;
+  return value !== null && value.trim() !== "";
+});
+
+const isInsuranceCoverageStateValid = computed(() => {
+  const value = searchFormData.value.insuranceCoverageState;
+  return value !== null && value.trim() !== "";
+});
+
 async function sendRequirements() {
   formButtonClicked.value = true;
 
@@ -153,7 +194,9 @@ async function sendRequirements() {
     isCoverMyMedsKeyValid.value &&
     isLastNameValid.value &&
     isPatientMemberIdValid.value &&
-    isMedicationValid.value
+    isMedicationValid.value &&
+    isInsuranceProviderValid.value &&
+    isInsuranceCoverageStateValid.value
   ) {
     try {
       showPreloader.value = true;
