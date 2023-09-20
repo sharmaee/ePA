@@ -23,7 +23,7 @@ class PriorAuthRequirementsView(SecuredAPIView):
 
 class PriorAuthRequirementSearchView(SecuredAPIView):
     def post(self, request):
-        requirements = run_search(self.request.data, self.request.user)
+        requirements = run_search(self.request.data)
         result = PriorAuthRequirementSerializer(requirements, many=True).data
         return Response(result, status=status.HTTP_200_OK)
 

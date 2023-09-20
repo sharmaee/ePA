@@ -18,7 +18,7 @@ class RequirementsSearchActionResource(resources.ModelResource):
         model = RequirementsSearchAction
         fields = (
             'insurance_provider',
-            'state',
+            'insurance_coverage_state',
             'medication',
             'created_on',
             'created_by'
@@ -28,15 +28,15 @@ class RequirementsSearchActionResource(resources.ModelResource):
 class RequirementsSearchActionAdmin(ExportActionModelAdmin):
     list_display = (
         'insurance_provider',
-        'state',
+        'insurance_coverage_state',
         'medication',
         'created_on',
         'created_by_user',
     )
-    list_filter = (('created_on', DateRangeFilter), 'created_by', 'state', 'insurance_provider', 'medication')
+    list_filter = (('created_on', DateRangeFilter), 'created_on', 'created_by', 'insurance_coverage_state', 'insurance_provider', 'medication')
     search_fields = (
         'insurance_provider',
-        'state',
+        'insurance_coverage_state',
         'medication',
         'created_by__email',
     )
