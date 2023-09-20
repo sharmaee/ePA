@@ -98,6 +98,9 @@
                 &[type="checkbox"]:checked + label:after,
                 &[type="checkbox"]:not(:checked) + label:after {
                     content: '\2713';
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     color: $white;
                     width: 18px;
                     height: 18px;
@@ -158,20 +161,18 @@
                 width: 95%;
                 margin: 0 auto;
             }
-        }
+        }        
+    }
 
-
-        button {
-            margin-top: 10px;
-            background-color: $blue;
-            cursor: pointer;
-            color: $white;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            padding: 16px 48px;
-        }
-
+    button {
+        margin-top: 10px;
+        background-color: $blue;
+        cursor: pointer;
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        padding: 16px 48px;
     }
    
     .smart-engine-table-wrapper {

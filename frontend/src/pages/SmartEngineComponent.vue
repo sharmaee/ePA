@@ -39,6 +39,9 @@
       </table>
     </div>
     <div class="smart-engine-start-new-patient">
+      <button>Submit</button>
+    </div>
+    <div class="smart-engine-start-new-patient">
       <span @click="redirectToHomePage">Start New Patient >></span>
     </div>
   </div>
