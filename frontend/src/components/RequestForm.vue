@@ -54,7 +54,12 @@
       </div>
     </div>
 
-    <div v-if="route.name === 'request-missing-requirements'" class="row-with-two-input">
+    <div
+      v-if="
+        (route.name === 'request-missing-requirements' && !searchFormData.insuranceProvider) ||
+        !searchFormData.insuranceCoverageState
+      "
+      class="row-with-two-input">
       <div class="insurance-plan-number">
         <label for="insurance-provider">Insurance Provider</label>
         <input
