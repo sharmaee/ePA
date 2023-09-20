@@ -17,19 +17,32 @@
             flex-direction: column;
         }  
 
-        .cover-my-meds-key, .patient-last-name, .date-of-birth, .patient-member-id {
+        .cover-my-meds-key, .patient-last-name, .date-of-birth, .patient-member-id, .insurance-plan-number, .insurance-state {
             width: 47%;       
 
             @media (max-width: 605px) {
                 width: 100%;
             }                
         }
-              
     }
 
     .row-with-one-input {
         display: flex;
-        flex-direction: column;                      
+        flex-direction: column;   
+
+    }
+
+    select {
+        appearance: none;
+        background-color: $snowy-whte !important;
+        cursor: pointer;
+    }
+
+    .custom-select-arrow {
+        background-image: url('@/assets/images/select-arrow.svg');
+        background-repeat: no-repeat, repeat;
+        background-position: right 1.2em top 50%, 0 0;
+        background-size: 1.3em auto, 100%;
     }
 
     .agreement {
