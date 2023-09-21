@@ -7,7 +7,7 @@
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
         <input :id="`item-${index}-${itemIndex}`" v-model="item.checked" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
-        <span v-if="submitClicked && !item.checked" class="error-message">Please, check the item</span>
+        <span v-if="submitClicked && !item.checked" class="error-message">{{ item.validation }}</span>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
