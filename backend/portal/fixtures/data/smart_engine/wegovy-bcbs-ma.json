@@ -66,7 +66,7 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
-                "label": "Document patient continues weightloss or maintains at least a 5% weight loss from initial BMI.",
+                "label": "Document patient continues weightloss or maintains at least a 5% weight loss from initial BMI after first 16 weeks of treatment.",
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
