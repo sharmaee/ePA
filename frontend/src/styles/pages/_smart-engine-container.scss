@@ -258,7 +258,12 @@
             font-size: 25px;
             color: $blue;
             font-weight: 700;
-        }
+        }        
+    }
+
+    .smart-engine-submit {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -275,7 +280,7 @@
 
     p {
         font-size: 18px;
-        line-height: 0.5;
+        line-height: 0.5;   
     }
 
     .smart-engine-start-new-patient {

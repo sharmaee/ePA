@@ -1,12 +1,13 @@
 <template>
-  <div v-if="!submitClicked" class="smart-engine-wrapper">
+  <div v-if="!showFinalWindow" class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
 
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
       <span class="smart-engine-list-header">Step {{ index + 1 }}: {{ section.header }}</span>
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
-        <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
+        <input :id="`item-${index}-${itemIndex}`" v-model="item.checked" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
+        <span v-if="submitClicked && !item.checked" class="error-message">Please, check the item</span>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
@@ -38,12 +39,12 @@
         </tbody>
       </table>
     </div>
-    <div class="smart-engine-start-new-patient">
-      <button @click="sendData">Submit</button>
+    <div class="smart-engine-submit">
+      <button class="smart" @click="checkCheckboxes">Submit</button>
     </div>
-    <div class="smart-engine-start-new-patient">
+    <!-- <div class="smart-engine-start-new-patient">
       <span @click="redirectToHomePage">Start New Patient >></span>
-    </div>
+    </div> -->
   </div>
   <div v-else class="smart-engine-success-wrapper">
     <div class="smart-engine-success-img">
@@ -64,6 +65,8 @@ import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-conten
 import { useRouter } from "vue-router";
 
 const submitClicked = ref(false);
+const allCheckboxesFilled = ref(true);
+const showFinalWindow = ref(false);
 const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
@@ -110,13 +113,33 @@ function redirectToHomePage() {
   router.push({ name: "home-page" });
 }
 
-function sendData() {
+function checkCheckboxes() {
   submitClicked.value = true;
-  emit("hide-requirements-page-header");
-  console.log(smartEngineCheckList);
+
+  for (const section of smartEngineCheckList.value) {
+    for (const item of section.items) {
+      if (!item.checked) {
+        allCheckboxesFilled.value = false;
+      }
+    }
+  }
+
+  if (allCheckboxesFilled.value) {
+    emit("hide-requirements-page-header");
+    sendData();
+    showFinalWindow.value = true;
+  }
+}
+
+async function sendData() {
+  console.log("hey");
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/pages/_smart-engine-container.scss";
+.error-message {
+  color: red;
+  font-size: 14px;
+}
 </style>
