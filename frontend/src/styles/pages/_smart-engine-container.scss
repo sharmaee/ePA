@@ -1,4 +1,4 @@
-.smart-engine-wrapper {
+.smart-engine-wrapper, .smart-engine-success-wrapper {
     
     h3 {
         font-size: 32px;
@@ -259,5 +259,26 @@
             color: $blue;
             font-weight: 700;
         }
+    }
+}
+
+.smart-engine-success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+
+    h2 {
+        font-size: 48px;
+        line-height: 0.5;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 0.5;
+    }
+
+    .smart-engine-start-new-patient {
+        margin-top: 35px;
     }
 }

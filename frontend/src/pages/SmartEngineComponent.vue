@@ -1,5 +1,5 @@
 <template>
-  <div class="smart-engine-wrapper">
+  <div v-if="!submitClicked" class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
 
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
@@ -39,10 +39,20 @@
       </table>
     </div>
     <div class="smart-engine-start-new-patient">
-      <button>Submit</button>
+      <button @click="sendData">Submit</button>
     </div>
     <div class="smart-engine-start-new-patient">
       <span @click="redirectToHomePage">Start New Patient >></span>
+    </div>
+  </div>
+  <div v-else class="smart-engine-success-wrapper">
+    <div class="smart-engine-success-img">
+      <img src="@/assets/images/modal-green-checkmark.svg" alt="success" />
+    </div>
+    <h2>Complete!</h2>
+    <p>Thanks to your efforts, our patients are one step closer to achieving their health goals.</p>
+    <div class="smart-engine-start-new-patient">
+      <button @click="redirectToHomePage">Start New Patient</button>
     </div>
   </div>
 </template>
@@ -53,6 +63,7 @@ import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
 import { useRouter } from "vue-router";
 
+const submitClicked = ref(false);
 const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
@@ -69,6 +80,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(["hide-requirements-page-header"]);
 
 const filteredByDiagnosisData = computed(() => {
   return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
@@ -95,6 +108,12 @@ function copyAdditionalInfoToClipboard(content) {
 
 function redirectToHomePage() {
   router.push({ name: "home-page" });
+}
+
+function sendData() {
+  submitClicked.value = true;
+  emit("hide-requirements-page-header");
+  console.log(smartEngineCheckList);
 }
 </script>
 

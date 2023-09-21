@@ -1,8 +1,8 @@
 <template>
   <PriorHeader />
   <div class="graph-page-wrapper">
-    <h1>Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
-    <p v-if="requirementsData && requirementsData.description">
+    <h1 v-if="showRequirementsHeader">Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
+    <p v-if="requirementsData && requirementsData.description && showRequirementsHeader">
       {{ requirementsData.description }}
     </p>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
@@ -20,7 +20,8 @@
     <SmartEngineComponent
       :diagnosis-filter-data="diagnosisFilterData"
       :step-verify-docs="requirementsData.smartEngineChecklist"
-      :smart-engine-key-data="smartEngineKeyData" />
+      :smart-engine-key-data="smartEngineKeyData"
+      @hide-requirements-page-header="hideHeader" />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -45,6 +46,7 @@ const preloader = ref(false);
 const smartEngine = ref(false);
 const smartEngineKeyData = ref(null);
 const diagnosisFilterData = ref([]);
+const showRequirementsHeader = ref(true);
 
 onMounted(() => {
   if (route.params.id) {
@@ -72,6 +74,10 @@ async function getPriorAuthRequirements(id) {
   preloader.value = true;
   requirementsData.value = await mainServices.getRequirementsData(id);
   preloader.value = false;
+}
+
+function hideHeader() {
+  showRequirementsHeader.value = false;
 }
 </script>
 
