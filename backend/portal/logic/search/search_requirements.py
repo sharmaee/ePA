@@ -1,4 +1,4 @@
-from portal.models import PriorAuthRequirement
+from portal.models.requirements import PriorAuthRequirement
 
 
 def run_search(search_params):

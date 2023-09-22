@@ -39,7 +39,6 @@
                                             "node_type": "checkbox",
                                             "node_value": false,
                                             "children": [
-                
                                                 {
                                                     "label": "A documented body mass index (BMI) ≥ 27 kg/m^2",
                                                     "node_type": "checkbox",
@@ -142,21 +141,21 @@
                                     "node_type": "checkbox",
                                     "node_value": false
                                 },
-				{
+                                {
                                     "label": "Document no contraindications to use (personal or family history of medullary thyroid carcinoma or multiple endocrine neoplasia syndrome type 2)",
                                     "node_type": "checkbox",
                                     "node_value": false
-                		},
-                		{
-                    		    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
+                                },
+                                {
+                                    "label": "Document no malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
                                     "node_type": "checkbox",
                                     "node_value": false
-                		},
-                		{
-                    		    "label": "Document no history of an eating disorder (for example, anorexia, bulimia)",
-                    		    "node_type": "checkbox",
-                    		    "node_value": false
-                		},
+                                },
+                                {
+                                    "label": "Document no history of an eating disorder (for example, anorexia, bulimia)",
+                                    "node_type": "checkbox",
+                                    "node_value": false
+                                }
                             ]
                         },
                         {
@@ -174,7 +173,7 @@
                                     "label": "The patient is 18 years of age or older and has achieved and maintained a weight loss of ≥5% from baseline (prior to the initiation of requested medication)",
                                     "node_type": "checkbox",
                                     "node_value": false
-                                },
+                                }
                             ]
                         }
                     ]
@@ -231,7 +230,7 @@
                                     "label": "Document that the patient was unable to achieve acceptable weight loss through lifestyle modifications (defined as a 1lb per week weight loss through calorie restriction, increased activity, and behavioral modifications in a 6-month period), or has a weight-related comorbidity/risk factor/complication (e.g., diabetes, dyslipidemia, coronary artery disease) that warrants medication interventions immediately",
                                     "node_type": "checkbox",
                                     "node_value": false
-                                },
+                                }
                             ]
                         },
                         {

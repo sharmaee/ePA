@@ -38,7 +38,6 @@
                   id="insurance-state"
                   v-model="searchFormData.insuranceCoverageState"
                   class="custom-select-arrow"
-                  placeholder="City/Area"
                   @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
                   <option v-for="state in states" :key="state">{{ state }}</option>
                 </select>
@@ -97,6 +96,7 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
 import { mainServices } from "@/services/mainServices";
+import { analyticsServices } from "@/services/analyticsService";
 import { usaStates } from "@/utils/usaStates";
 import { storeToRefs } from "pinia";
 import PriorHeader from "@/components/PriorHeader";
@@ -165,6 +165,7 @@ async function getPriorAuthRequirements() {
       coverageBlock.value = false;
       priorAuthRequirementsResult.value = null;
       priorAuthRequirementsResult.value = await mainServices.searchRequirements(searchFormData.value);
+      analyticsServices.logRequirementsSearchAction(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
       const coverageBlockView = document.getElementById("coverage");

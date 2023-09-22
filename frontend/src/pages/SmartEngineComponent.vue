@@ -7,7 +7,7 @@
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
         <input :id="`item-${index}-${itemIndex}`" v-model="item.checked" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
-        <span v-if="submitClicked && !item.checked" class="error-message">Please, check the item</span>
+        <span v-if="submitClicked && !item.checked" class="error-message">{{ item.validation }}</span>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
@@ -101,12 +101,12 @@ const smartEngineCheckList = computed(() => {
 
 function copyAdditionalInfoToClipboard(content) {
   copyAdditionalInfoButtonText.value = "Copied!";
-
   try {
     navigator.clipboard.writeText(content);
   } catch (error) {
     copyAdditionalInfoButtonText.value = "Copy Paragraph";
   }
+  setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph"), 3000);
 }
 
 function redirectToHomePage() {

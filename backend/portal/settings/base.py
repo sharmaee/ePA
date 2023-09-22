@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django_otp',
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_static',
+    'rangefilter',
 ]
 
 MIGRATION_MODULES = {'portal': 'portal.models.migrations'}
@@ -144,7 +145,7 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
 # Static files (CSS, JavaScript, Images)

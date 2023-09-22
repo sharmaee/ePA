@@ -11,3 +11,8 @@ class PriorAuthDenial(PortalModelBase):
     member_details = models.ForeignKey(MemberDetails, on_delete=models.CASCADE, related_name='denials')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='denials')
     notes = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Denial'
+        verbose_name_plural = 'Denials'
+        ordering = ['-submission_date']

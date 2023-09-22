@@ -1,5 +1,6 @@
 from typing import Any
 from rest_framework import views
+from rest_framework.generics import CreateAPIView
 from jwt import InvalidTokenError
 
 from rest_framework.permissions import BasePermission, IsAuthenticated
@@ -47,4 +48,8 @@ default_perms = (IsAuthenticated, IsTokenValid, Is2FAVerified) if mfa_enabled el
 
 
 class SecuredAPIView(views.APIView):
+    permission_classes = default_perms
+
+
+class SecuredCreateAPIView(CreateAPIView):
     permission_classes = default_perms
