@@ -1,8 +1,8 @@
 <template>
   <PriorHeader />
   <div class="graph-page-wrapper">
-    <h1 v-if="showRequirementsHeader">Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
-    <p v-if="requirementsData && requirementsData.description && showRequirementsHeader">
+    <h1 v-if="!successPage">Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
+    <p v-if="requirementsData && requirementsData.description && successPage">
       {{ requirementsData.description }}
     </p>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
@@ -16,12 +16,15 @@
         @filter-smart-engine-data="filterSmartEngineData" />
     </div>
   </div>
-  <div v-if="smartEngine" id="smart-engine-wrapper">
+  <div v-if="smartEngine && !successPage" id="smart-engine-wrapper">
     <SmartEngineComponent
       :diagnosis-filter-data="diagnosisFilterData"
       :step-verify-docs="requirementsData.smartEngineChecklist"
       :smart-engine-key-data="smartEngineKeyData"
-      @hide-requirements-page-header="hideHeader" />
+      @show-success-engine-page="showSuccessEnginePage" />
+  </div>
+  <div v-if="successPage">
+    <SuccessSmartEnginPage />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -38,6 +41,7 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
 import SmartEngineComponent from "@/pages/SmartEngineComponent";
+import SuccessSmartEnginPage from "./SuccessSmartEnginPage";
 
 const route = useRoute();
 
@@ -46,7 +50,7 @@ const preloader = ref(false);
 const smartEngine = ref(false);
 const smartEngineKeyData = ref(null);
 const diagnosisFilterData = ref([]);
-const showRequirementsHeader = ref(true);
+const successPage = ref(false);
 
 onMounted(() => {
   if (route.params.id) {
@@ -76,8 +80,9 @@ async function getPriorAuthRequirements(id) {
   preloader.value = false;
 }
 
-function hideHeader() {
-  showRequirementsHeader.value = false;
+function showSuccessEnginePage() {
+  console.log("okay");
+  successPage.value = false;
 }
 </script>
 

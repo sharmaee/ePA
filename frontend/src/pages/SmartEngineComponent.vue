@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!showFinalWindow" class="smart-engine-wrapper">
+  <div class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
 
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
@@ -42,19 +42,6 @@
     <div class="smart-engine-submit">
       <button class="smart" @click="checkCheckboxes">Submit</button>
     </div>
-    <!-- <div class="smart-engine-start-new-patient">
-      <span @click="redirectToHomePage">Start New Patient >></span>
-    </div> -->
-  </div>
-  <div v-else class="smart-engine-success-wrapper">
-    <div class="smart-engine-success-img">
-      <img src="@/assets/images/modal-green-checkmark.svg" alt="success" />
-    </div>
-    <h2>Complete!</h2>
-    <p>Thanks to your efforts, our patients are one step closer to achieving their health goals.</p>
-    <div class="smart-engine-start-new-patient">
-      <button @click="redirectToHomePage">Start New Patient</button>
-    </div>
   </div>
 </template>
 
@@ -62,12 +49,11 @@
 import { ref, computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
 
 const submitClicked = ref(false);
-const allCheckboxesFilled = ref(true);
-const showFinalWindow = ref(false);
-const router = useRouter();
+const showSuccessEnginePage = ref(false);
+// const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
 const props = defineProps({
   diagnosisFilterData: {
@@ -84,7 +70,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["hide-requirements-page-header"]);
+const emit = defineEmits(["show-success-engine-page"]);
 
 const filteredByDiagnosisData = computed(() => {
   return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
@@ -109,30 +95,12 @@ function copyAdditionalInfoToClipboard(content) {
   setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph"), 3000);
 }
 
-function redirectToHomePage() {
-  router.push({ name: "home-page" });
-}
-
 function checkCheckboxes() {
   submitClicked.value = true;
 
-  for (const section of smartEngineCheckList.value) {
-    for (const item of section.items) {
-      if (!item.checked) {
-        allCheckboxesFilled.value = false;
-      }
-    }
+  if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
+    emit("show-success-engine-page");
   }
-
-  if (allCheckboxesFilled.value) {
-    emit("hide-requirements-page-header");
-    sendData();
-    showFinalWindow.value = true;
-  }
-}
-
-async function sendData() {
-  console.log("hey");
 }
 </script>
 
