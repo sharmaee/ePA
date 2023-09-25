@@ -3,51 +3,47 @@
     "header": "Search and Attach Any of the Following as Evidence Supporting Pre-Diabetes.",
     "items": [
       {
-        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient’s Chart",
-        "validation": ""
+        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient's Chart",
+        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
       },
       {
         "label": "A1C Lab Result of 5.7% or Higher",
-        "validation": ""
+        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
       },
       {
         "label": "Fasting Glucose Levels of 100mg/dL or Higher",
-        "validation": ""
-      },
-      {
-        "label": "ICD-10 Code R73.03 Added as the Secondary Diagnosis in CoverMyMeds",
-        "validation": ""
+        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
       }
     ]
   },
   {
-    "header": "Add a Statement of Medical Necessity to the Patient’s Documentation",
+    "header": "Add a Statement of Medical Necessity to the Patient's Documentation",
     "items": [
       {
         "label": "Copy and Paste the Paragraph Below",
-        "validation": ""
+        "validation": "Copy and replace the "
       },
       {
         "label": "Request Prescribing Doctor to Add in the Patient's Chart or in a Signed Letter of Medical Necessity",
-        "validation": ""
+        "validation": "Obtaining approval without making it clear how the treatment will affect the patient is unlikely."
       }
     ],
-    "additional_info": "On Examination, the Patient's Symptoms at Their Most Severe Included: [Insert Symptoms from Patient’s Chart], and Causing Marked Difficulty in Performing Daily Activities. It Is of Vital Importance to Underline That the Patient's Condition Has Reached a Critical Stage Where Immediate Intervention Is No Longer Optional but a Necessity. Failure to Prescribe the Indicated Medication and Initiate Comprehensive Care Will Likely Lead to Catastrophic Consequences for the Patient's Health. This Assessment Is in Accordance with Clinical Guidelines and Best Practice Standards, as Evidenced by the Documents and Research Studies That My Assistant Will Attach to This Note. Should Appropriate Care Not Be Initiated Promptly, the Patient Is at Imminent Risk for Serious Complications Such as Heart Attack, Stroke, Renal Failure, Severe Infection, Loss of Limb Due to Peripheral Arterial Disease, and Other Life-Threatening Conditions. The Urgency of This Matter Cannot Be Overstated, and I Strongly Urge That the Necessary Steps Be Taken Without Delay to Prevent Further Deterioration of the Patient's Health."
+    "additional_info": "On Examination, the Patient's Symptoms at Their Most Severe Included: [Insert Symptoms from Patient's Chart], and Causing Marked Difficulty in Performing Daily Activities. It Is of Vital Importance to Underline That the Patient's Condition Has Reached a Critical Stage Where Immediate Intervention Is No Longer Optional but a Necessity. Failure to Prescribe the Indicated Medication and Initiate Comprehensive Care Will Likely Lead to Catastrophic Consequences for the Patient's Health. This Assessment Is in Accordance with Clinical Guidelines and Best Practice Standards, as Evidenced by the Documents and Research Studies That My Assistant Will Attach to This Note. Should Appropriate Care Not Be Initiated Promptly, the Patient Is at Imminent Risk for Serious Complications Such as Heart Attack, Stroke, Renal Failure, Severe Infection, Loss of Limb Due to Peripheral Arterial Disease, and Other Life-Threatening Conditions. The Urgency of This Matter Cannot Be Overstated, and I Strongly Urge That the Necessary Steps Be Taken Without Delay to Prevent Further Deterioration of the Patient's Health."
   },
   {
     "header": "Add Evidence of the Risk Factors in the Table Below",
     "items": [
       {
         "label": "Add the Chart Notes Mentioning the Patient's Risk Factors",
-        "validation": ""
+        "validation": "The clinical need for the patient needs to be made clear for approval."
       },
       {
         "label": "Download and Add the Clinical Study Documents Provided",
-        "validation": ""
+        "validation": "Supporting studies must be added for review to help increase chance of approval."
       },
       {
         "label": "Confirm All Risk Factors Are Listed in Your CoverMyMeds Submission",
-        "validation": ""
+        "validation": "The clinical need for the patient needs to be made clear for approval."
       }
     ]
   }
