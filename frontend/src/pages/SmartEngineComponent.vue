@@ -40,7 +40,7 @@
       </table>
     </div>
     <div class="smart-engine-submit">
-      <button class="smart" @click="checkCheckboxes">Submit</button>
+      <button class="smart" @click="validateCheckList">Submit</button>
     </div>
   </div>
 </template>
@@ -93,7 +93,7 @@ function copyAdditionalInfoToClipboard(content) {
   setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph"), 3000);
 }
 
-function checkCheckboxes() {
+function validateCheckList() {
   submitClicked.value = true;
 
   if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
