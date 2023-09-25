@@ -26,7 +26,7 @@
       @show-success-engine-page="showSuccessEnginePage" />
   </div>
   <div v-if="successPage">
-    <SuccessSmartEnginPage />
+    <SuccessSmartEnginePage />
   </div>
   <ContentUsefulnessQuestionnaire v-if="smartEngine" />
   <PriorFooter />
@@ -43,7 +43,7 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import QuestionnairePage from "@/pages/QuestionnairePage";
 import ContentUsefulnessQuestionnaire from "@/components/ContentUsefulnessQuestionnaire";
 import SmartEngineComponent from "@/pages/SmartEngineComponent";
-import SuccessSmartEnginPage from "./SuccessSmartEnginPage";
+import SuccessSmartEnginePage from "./SuccessSmartEnginePage";
 
 const route = useRoute();
 
