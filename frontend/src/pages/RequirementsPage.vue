@@ -1,10 +1,12 @@
 <template>
   <PriorHeader />
   <div class="graph-page-wrapper">
-    <h1 v-if="!successPage">Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
-    <p v-if="requirementsData && requirementsData.description && successPage">
-      {{ requirementsData.description }}
-    </p>
+    <div v-if="!successPage" class="reqirements-title-wrapper">
+      <h1>Prepare Prior Authorization for <span class="blue-text">Approval</span></h1>
+      <p v-if="requirementsData && requirementsData.description">
+        {{ requirementsData.description }}
+      </p>
+    </div>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
     <div class="shadow-ellipse shadow-ellipse-left"></div>
 
@@ -81,8 +83,7 @@ async function getPriorAuthRequirements(id) {
 }
 
 function showSuccessEnginePage() {
-  console.log("okay");
-  successPage.value = false;
+  successPage.value = true;
 }
 </script>
 

@@ -13,9 +13,15 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 function redirectToHomePage() {
   router.push({ name: "home-page" });
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../styles/pages/_smart-engine-container.scss";
+</style>

@@ -106,8 +106,4 @@ function checkCheckboxes() {
 
 <style lang="scss" scoped>
 @import "../styles/pages/_smart-engine-container.scss";
-.error-message {
-  color: red;
-  font-size: 14px;
-}
 </style>

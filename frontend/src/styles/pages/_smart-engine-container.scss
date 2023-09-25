@@ -130,6 +130,12 @@
                 font-weight: 400;
                 cursor: pointer;    
             }
+
+            .error-message {
+                display: block;
+                color: red;
+                font-size: 14px;
+              }
         }
 
         .smart-engine-list-header {
