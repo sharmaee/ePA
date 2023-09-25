@@ -49,12 +49,10 @@
 import { ref, computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
-// import { useRouter } from "vue-router";
 
 const submitClicked = ref(false);
-const showSuccessEnginePage = ref(false);
-// const router = useRouter();
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
+
 const props = defineProps({
   diagnosisFilterData: {
     type: Object,
