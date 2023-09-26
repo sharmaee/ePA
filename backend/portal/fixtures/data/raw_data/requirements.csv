@@ -1,2 +1,17 @@
 Drug,Insurance Provider,Insurance Plan Type (Group),States,Checklist
+Wegovy (semaglutide),United Healthcare,Commercial; Medicaid; Medicare Advantage,Alabama; Alaska; Arizona; Arkansas; Colorado; Connecticut; Delaware; District Of Columbia; Florida; Georgia; Hawaii; Idaho; Illinois; Iowa; Kansas; Maine; Maryland; Massachusetts; Michigan; Minnesota; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York,wegovy-united-healthcare.json
+Wegovy (semaglutide),Centene,Commercial; Medicaid; Medicare Advantage,Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Hawaii; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming,wegovy-centene.json
+Wegovy (semaglutide),CVS Health,Commercial; Medicaid; Medicare Advantage,,wegovy-cvs-caremark.json
+Wegovy (semaglutide),Molina,Commercial; Medicaid; Medicare Advantage,Arizona; California; Florida; Idaho; Illinois; Kentucky; Massachusetts; Michigan; Mississippi; Ohio; New Mexico; New York; South Carolina; Texas; Utah; Virginia; Washington; Wisconsin,wegovy-molina.json
 Wegovy (semaglutide),Cigna,Commercial; Medicaid; Medicare Advantage,Arizona; California; Colorado; Connecticut; Florida; Georgia; Maryland; Missouri; North Carolina; South Carolina; Tennessee; Texas,wegovy-cigna.json
+Wegovy (semaglutide),Kaiser Permanente,Commercial; Medicaid; Medicare Advantage,California; Colorado; Georgia; Hawaii; Maryland; Oregon; Virginia; Washington,wegovy-kaiser-permanente.json
+Wegovy (semaglutide),Aetna,Commercial; Medicaid; Medicare Advantage,Arkansas; California; Colorado; Connecticut; Illinois; Indiana; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; New Jersey; New York; Rhode Island; South Carolina; Texas; Utah; Vermont; Washington; West Virginia,wegovy-aetna.json
+Wegovy (semaglutide),Blue Cross Blue Shield (BCBS) North Carolina,Commercial; Medicaid; Medicare Advantage,North Carolina,wegovy-bcbs-north-carolina.json
+Wegovy (semaglutide),Blue Cross Blue Shield (BCBS) Alabama,Commercial; Medicaid; Medicare Advantage,Alabama,wegovy-bcbs-alabama.json
+Wegovy (semaglutide),Blue Cross Blue Shield (BCBS) Massachusetts,Commercial; Medicaid; Medicare Advantage,Massachusetts,wegovy-bcbs-ma.json
+Wegovy (semaglutide),Blue Cross Blue Shield (BCBS) Minnesota,Commercial; Medicaid; Medicare Advantage,Minnesota,wegovy-bcbs-minnesota.json
+Wegovy (semaglutide),Elevance Health (Anthem),Commercial; Medicaid,California; Indiana; Kentucky; Nevada; Ohio; Virginia; Wisconsin,wegovy-elevance-health-anthem.json
+Wegovy (semaglutide),HCSC - Blue Cross Blue Shield,Commercial; Medicaid; Medicare Advantage,Illinois; Montana; New Mexico; Oklahoma; Texas,wegovy-hcsc-bcbs.json
+Wegovy (semaglutide),Elevance Health (Anthem),Medicare Advantage,California; Colorado; Connecticut; Georgia; Indiana; Kentucky; Maine; Missouri; Nevada; New Hampshire; New York; Ohio; Virginia; Wisconsin,wegovy-elevance-health-anthem.json
+Wegovy (semaglutide),Blue Cross Blue Shield (BCBS) Michigan,Commercial; Medicaid; Medicare Advantage,Michigan,wegovy-bcbs-michigan.json
+Wegovy (semaglutide),,,,wegovy-hcsc-bcbs.json
