@@ -335,7 +335,7 @@
             }
         ]
     },
-    "below_18_initiation_with_weightloss_agent_bmi_>85": {
+    "below_18_initiation_with_weightloss_agent_bmi_over_85": {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
@@ -376,7 +376,7 @@
             }
         ]
     },
-    "below_18_initiation_with_weightloss_agent_bmi_>95": {
+    "below_18_initiation_with_weightloss_agent_bmi_over_95": {
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {

@@ -5,8 +5,11 @@
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
       <span class="smart-engine-list-header">Step {{ index + 1 }}: {{ section.header }}</span>
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
-        <input :id="`item-${index}-${itemIndex}`" type="checkbox" />
+        <input :id="`item-${index}-${itemIndex}`" v-model="item.checked" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
+        <span v-if="submitClicked && !item.checked" class="error-message">
+          {{ item.validation }}
+        </span>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
@@ -38,8 +41,8 @@
         </tbody>
       </table>
     </div>
-    <div class="smart-engine-start-new-patient">
-      <span @click="redirectToHomePage">Start New Patient >></span>
+    <div class="smart-engine-submit">
+      <button class="smart" @click="validateCheckList">Submit</button>
     </div>
   </div>
 </template>
@@ -48,10 +51,10 @@
 import { ref, computed } from "vue";
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
-import { useRouter } from "vue-router";
 
-const router = useRouter();
+const submitClicked = ref(false);
 const copyAdditionalInfoButtonText = ref("Copy Paragraph");
+
 const props = defineProps({
   diagnosisFilterData: {
     type: Object,
@@ -67,16 +70,28 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["show-success-engine-page"]);
+
 const filteredByDiagnosisData = computed(() => {
   return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
 });
 
+const staticCheckboxContent = ref([]);
+staticCheckboxContent.value = [...smartEngineCheckboxContent];
+
 const smartEngineCheckList = computed(() => {
-  const smartEngineCheckList = [...smartEngineCheckboxContent];
-  smartEngineCheckList.splice(1, 0, props.stepVerifyDocs[props.smartEngineKeyData]);
+  const smartEngineCheckList = staticCheckboxContent.value;
+  smartEngineCheckList.splice(2, 0, props.stepVerifyDocs[props.smartEngineKeyData]);
   if (props.diagnosisFilterData.includes("Type 2 diabetes (DM)")) {
     smartEngineCheckList.shift();
+  } else {
+    smartEngineCheckList.splice(1, 1);
   }
+  smartEngineCheckList.forEach((section) => {
+    section.items.forEach((item) => {
+      item.checked = false;
+    });
+  });
   return smartEngineCheckList;
 });
 
@@ -90,8 +105,21 @@ function copyAdditionalInfoToClipboard(content) {
   setTimeout(() => (copyAdditionalInfoButtonText.value = "Copy Paragraph"), 3000);
 }
 
-function redirectToHomePage() {
-  router.push({ name: "home-page" });
+function validateCheckList() {
+  submitClicked.value = true;
+
+  if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
+    emit("show-success-engine-page");
+  } else {
+    const firstFailedValidation = smartEngineCheckList.value.find((section) =>
+      section.items.find((item) => !item.checked)
+    );
+    const firstFailedValidationIndex = smartEngineCheckList.value.indexOf(firstFailedValidation);
+    const firstFailedValidationItemIndex = firstFailedValidation.items.findIndex((item) => !item.checked);
+    const firstFailedValidationItemId = `item-${firstFailedValidationIndex}-${firstFailedValidationItemIndex}`;
+    const firstFailedValidationItem = document.getElementById(firstFailedValidationItemId);
+    firstFailedValidationItem.scrollIntoView({ behavior: "smooth" });
+  }
 }
 </script>
 

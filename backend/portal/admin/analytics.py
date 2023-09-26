@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from portal.models.analytics import RequirementsSearchAction
+from portal.models.analytics import RequirementsSearchAction, ServiceEmailLogAction
 from portal.models.auth import User
 from import_export.admin import ExportActionModelAdmin
 from rangefilter.filter import DateRangeFilter
@@ -47,3 +47,22 @@ class RequirementsSearchActionAdmin(ExportActionModelAdmin):
 
 
 admin.site.register(RequirementsSearchAction, RequirementsSearchActionAdmin)
+
+
+@admin.register(ServiceEmailLogAction)
+class ServiceEmailLogActionAdmin(admin.ModelAdmin):
+    list_display = (
+        'email_type',
+        'email_to',
+        'email_body',
+        'created_on',
+    )
+    list_filter = (
+        'email_type',
+        'created_on',
+    )
+    search_fields = (
+        'email_type',
+        'email_to',
+        'email_body',
+    )

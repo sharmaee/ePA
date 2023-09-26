@@ -41,3 +41,10 @@ class RequestNewPriorAuthRequirements(PortalModelBase):
         verbose_name = 'Request for More Info'
         verbose_name_plural = 'Requests for More Info'
         ordering = ['-submission_date']
+
+
+class PriorAuthSubmission(PortalModelBase):
+    cover_my_meds_key = models.TextField(primary_key=True, db_index=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='requirements_alignment_completion')
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)

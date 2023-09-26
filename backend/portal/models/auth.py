@@ -3,24 +3,9 @@ import uuid
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
-from django.dispatch import receiver
-from django_rest_passwordreset.signals import reset_password_token_created
 from django.utils import timezone
 
 from ._common import PortalModelBase
-from portal.utils.send_emails import send_service_email, NotificationType
-
-
-@receiver(reset_password_token_created)
-def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
-    user = reset_password_token.user
-    send_service_email(
-        NotificationType.PASSWORD_RESET,
-        user.first_name,
-        user.last_name,
-        user.email,
-        reset_password_token.key,
-    )
 
 
 class UserManager(BaseUserManager):
