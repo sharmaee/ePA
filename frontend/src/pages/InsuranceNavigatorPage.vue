@@ -66,8 +66,9 @@
     <div id="searchResultsBlock"></div>
     <GreenCirclePreloader v-if="preloader" />
 
-    <div id="coverage" class="coverage">
-      <div v-if="coverageBlock">
+    <span id="coverage"></span>
+    <div v-if="coverageBlock" class="coverage">
+      <div v-if="priorAuthRequirementsResult.length > 0">
         <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
           <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
           <span>{{ item.description }}</span>
@@ -78,17 +79,19 @@
           </div>
         </div>
       </div>
-      <div class="request-text missing-requirements-block">
-        <span class="bold"> Not seeing the plan you’re looking for? </span>
-        <span>Let’s get the exact steps you need. </span>
+      <div v-else class="request-text missing-requirements-block">
+        <span class="bold"> Prior Authorization Criteria </span>
+        <span> This insurance is not common. The steps will be more precise as we gather more data. </span>
         <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'request-missing-requirements' }" class="btn-blue">
-            Request Call for Criteria
+          <router-link :to="{ name: 'check-my-coverage', params: { id: defaultChecklistId } }" class="btn-blue">
+            Get Steps
           </router-link>
         </div>
       </div>
     </div>
-    <p v-if="errMessage">Try it later please: {{ errMessage }}</p>
+    <span v-if="errors.length > 0" class="input-error-notification">
+      <span v-for="error in errors" :key="error">{{ error }}</span>
+    </span>
   </div>
   <PriorFooter />
 </template>
@@ -122,9 +125,10 @@ const availableSearchOptions = ref(null);
 
 const coverageBlock = ref(false);
 const preloader = ref(false);
-const errMessage = ref(null);
 
 const states = ref([]);
+
+const defaultChecklistId = "8f9e5febd5e6b3fa";
 
 onMounted(() => {
   getAvailableSearchOptions();
@@ -173,7 +177,6 @@ async function getPriorAuthRequirements() {
     } catch (err) {
       clearTheForm();
       preloader.value = false;
-      errMessage.value = err;
       errors.value = tryParseApiErrors(err);
     }
   }
