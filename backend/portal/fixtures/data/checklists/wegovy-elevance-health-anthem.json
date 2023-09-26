@@ -26,7 +26,7 @@
                                             "label": "BMI ≥ 30 kg/m^2",
                                             "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "over_12_initiation_30",
+                                            "smart_engine": "over_18_initiation_30",
                                             "children": [
                                                 {
                                                     "label": "Which Weight-Related Risk Factors Does the Patient Have?",
@@ -88,7 +88,7 @@
                                             "label": "BMI ≥ 27 kg/m^2",
                                             "node_type": "radio",
                                             "node_value": false,
-                                            "smart_engine": "over_12_initiation_27",
+                                            "smart_engine": "over_18_initiation_27",
                                             "children": [
                                                 {
                                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least Two, Select All That Apply)",

@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 
 import authService from "@/services/authService";
+import router from "@/router";
 
 const userStorageKey = "user-auth-info";
 
@@ -48,6 +49,10 @@ export const useAuthStore = defineStore("auth", () => {
     } catch (error) {
       // refresh failed. clear local auth info
       clearUserInfo();
+      // if refresh token is invalid, user is logged out, redirect to login page
+      if ([401, 403].includes(error.response.status)) {
+        router.push({ name: "login" });
+      }
     }
   }
 

@@ -7,7 +7,9 @@
       <span v-for="(item, itemIndex) in section.items" :key="itemIndex" class="check-item">
         <input :id="`item-${index}-${itemIndex}`" v-model="item.checked" type="checkbox" />
         <label :for="`item-${index}-${itemIndex}`">{{ item.label }}</label>
-        <span v-if="submitClicked && !item.checked" class="error-message">{{ item.validation }}</span>
+        <span v-if="submitClicked && !item.checked" class="error-message">
+          {{ item.validation }}
+        </span>
       </span>
       <div v-if="section.additional_info" class="additional-info-wrapper">
         {{ section.additional_info }}
@@ -74,12 +76,22 @@ const filteredByDiagnosisData = computed(() => {
   return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
 });
 
+const staticCheckboxContent = ref([]);
+staticCheckboxContent.value = [...smartEngineCheckboxContent];
+
 const smartEngineCheckList = computed(() => {
-  const smartEngineCheckList = [...smartEngineCheckboxContent];
-  smartEngineCheckList.splice(1, 0, props.stepVerifyDocs[props.smartEngineKeyData]);
+  const smartEngineCheckList = staticCheckboxContent.value;
+  smartEngineCheckList.splice(2, 0, props.stepVerifyDocs[props.smartEngineKeyData]);
   if (props.diagnosisFilterData.includes("Type 2 diabetes (DM)")) {
     smartEngineCheckList.shift();
+  } else {
+    smartEngineCheckList.splice(1, 1);
   }
+  smartEngineCheckList.forEach((section) => {
+    section.items.forEach((item) => {
+      item.checked = false;
+    });
+  });
   return smartEngineCheckList;
 });
 
@@ -98,6 +110,15 @@ function validateCheckList() {
 
   if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
     emit("show-success-engine-page");
+  } else {
+    const firstFailedValidation = smartEngineCheckList.value.find((section) =>
+      section.items.find((item) => !item.checked)
+    );
+    const firstFailedValidationIndex = smartEngineCheckList.value.indexOf(firstFailedValidation);
+    const firstFailedValidationItemIndex = firstFailedValidation.items.findIndex((item) => !item.checked);
+    const firstFailedValidationItemId = `item-${firstFailedValidationIndex}-${firstFailedValidationItemIndex}`;
+    const firstFailedValidationItem = document.getElementById(firstFailedValidationItemId);
+    firstFailedValidationItem.scrollIntoView({ behavior: "smooth" });
   }
 }
 </script>

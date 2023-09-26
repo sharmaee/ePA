@@ -1,18 +1,55 @@
 [
   {
-    "header": "Search and Attach Any of the Following as Evidence Supporting Pre-Diabetes.",
+    "header": "Use the following checklist to look for evidence of pre-diabetes. If you find any, make sure all the requirements are completed and prepare a PA for Ozempic.",
     "items": [
       {
-        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient's Chart",
-        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
+        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient's Chart.",
+        "validation": "Attach this chart note to your PA submission."
       },
       {
-        "label": "A1C Lab Result of 5.7% or Higher",
-        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
+        "label": "A1C Lab Result of 5.7% or Higher.",
+        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days. "
       },
       {
-        "label": "Fasting Glucose Levels of 100mg/dL or Higher",
-        "validation": "If the patient has been treated with metformin, prepare a prior authorization for Ozempic. If they have not let the provider know insurance will most likely deny Ozempic unless Metformin has been tried briefly first. Include ICD-10 Code R73.03 as the primary diagnosis in CoverMyMeds for Ozempic. Attach a chart note that includes reasons Metformin was not suitable for the patient."
+        "label": "Fasting Glucose Levels of 100mg/dL or Higher.",
+        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days."
+      },
+      {
+        "label": "Patient diagnosis includes ICD-10 Code R73.03. Enter as the primary diagnosis in CoverMyMeds.",
+        "validation": "Pre-diabetes is more likely to be covered."
+      },
+      {
+        "label": "Document patient has been treated with Metformin.",
+        "validation": "Let the provider know diabetic or pre-diabetic patients need to have tried Metformin before insurance will cover them for Ozempic. Ask the provider to document a reason Metformin was stopped for the patient."
+      }
+    ]
+  },
+  {
+    "header": "Document the following for a diagnosis of Diabetes.",
+    "items": [
+      {
+        "label": "Doctor Has Mentioned Diabetes in the Patient's Chart.",
+        "validation": "Attach this chart note to your PA submission."
+      },
+      {
+        "label": "A1C Lab Result of 5.7% or Higher.",
+        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days. "
+      },
+      {
+        "label": "Fasting Glucose Levels of 100mg/dL or Higher.",
+        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days."
+      },
+      {
+        "label": "Patient diagnosis includes ICD-10 Code R73.03. Enter as the primary diagnosis in CoverMyMeds.",
+        "validation": "Diabetes is more likely to be covered than weight-loss or other weight loss risk factors."
+      },
+      {
+        "label": "Document patient has been treated with Metformin.",
+        "validation": "Let the provider know diabetic or pre-diabetic patients need to have tried Metformin before insurance will cover them for Ozempic. Document the reason metformin was stopped for the patient."
+      },
+      {
+        "label": "Prepare prior authorization for Ozempic.",
+        "validation": "Ozempic is more likely to get covered if the patient is diabetic."
       }
     ]
   },
@@ -21,7 +58,7 @@
     "items": [
       {
         "label": "Copy and Paste the Paragraph Below",
-        "validation": "Copy and replace the "
+        "validation": "The paragraph below must be personalized and included."
       },
       {
         "label": "Request Prescribing Doctor to Add in the Patient's Chart or in a Signed Letter of Medical Necessity",
