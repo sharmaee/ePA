@@ -5,6 +5,7 @@ from .views import (
     PriorAuthRequirementSearchView,
     PriorAuthRequirementDetailView,
     RequestNewPriorAuthRequirementsView,
+    PriorAuthSubmissionView,
 )
 
 requirements_urls = [
@@ -12,4 +13,5 @@ requirements_urls = [
     path('search/', PriorAuthRequirementSearchView.as_view()),
     path('detail/<slug:url_slug>/', PriorAuthRequirementDetailView.as_view()),
     path('request-requirements/', RequestNewPriorAuthRequirementsView.as_view()),
+    path('complete/', PriorAuthSubmissionView.as_view()),
 ]

@@ -15,7 +15,22 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from portal.models.auth import User, ClientCompany
 from portal.utils.send_emails import NotificationType, send_service_email
 
+from django.dispatch import receiver
+from django_rest_passwordreset.signals import reset_password_token_created
+
 UserModel = get_user_model()
+
+
+@receiver(reset_password_token_created)
+def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
+    user = reset_password_token.user
+    send_service_email(
+        NotificationType.PASSWORD_RESET,
+        user.first_name,
+        user.last_name,
+        user.email,
+        reset_password_token.key,
+    )
 
 
 class UserSerializer(serializers.ModelSerializer):

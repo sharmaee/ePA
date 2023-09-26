@@ -27,4 +27,11 @@ footer {
 
     }   
 
+    .center-footer {
+        color: $gray-900;
+
+        @media (max-width: 605px) {
+            margin-top: 20px;
+        }
+    }
 }

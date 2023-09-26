@@ -55,34 +55,6 @@
     </div>
 
     <div v-if="route.name === 'request-missing-requirements'">
-      <div v-if="!searchFormData.insuranceProvider" class="row-with-two-input">
-        <div class="insurance-plan-number">
-          <label for="insurance-provider">Insurance Provider</label>
-          <input
-            id="insurance-provider"
-            v-model="data.insuranceProvider"
-            type="text"
-            placeholder="Insurance provider"
-            @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)" />
-          <span v-if="!isInsuranceProviderValid && formButtonClicked" class="input-error-notification">
-            Please enter ALL fields to search.
-          </span>
-        </div>
-        <div v-if="!searchFormData.insuranceCoverageState" class="insurance-state">
-          <label for="insurance-state">State</label>
-          <select
-            id="insurance-state"
-            v-model="data.insuranceCoverageState"
-            class="custom-select-arrow"
-            @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
-            <option v-for="state in states" :key="state">{{ state }}</option>
-          </select>
-          <span v-if="!isInsuranceCoverageStateValid && formButtonClicked" class="input-error-notification">
-            Please enter ALL fields to search.
-          </span>
-        </div>
-      </div>
-
       <div class="row-with-one-input">
         <div class="patient-member-id">
           <label for="medication-name">Medication Name*</label>
@@ -101,9 +73,9 @@
     </div>
     <button @click="sendRequirements">{{ btnText }}</button>
     <br />
-    <span v-if="errMessage" class="input-error-notification"
-      >Sorry, something went wrong. Please contact us at
-      <a href="mailto:dev@lamarhealth.com"> dev@lamarhealth.com</a> or try again later
+    <span v-if="errors.length > 0" class="input-error-notification">
+      Sorry, something went wrong. Please contact us at
+      <a href="mailto:founders@lamarhealth.com"> founders@lamarhealth.com</a> or try again later
     </span>
   </div>
 </template>
@@ -117,7 +89,7 @@ import { useSearchFormStore } from "@/stores/searchFormStore";
 import { useUiElementsStore } from "@/stores/uiElementsStore";
 import { useRoute } from "vue-router";
 import { usaStates } from "@/utils/usaStates";
-import { sendFormByEnterClicking } from "@/utils";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const route = useRoute();
@@ -133,7 +105,9 @@ const { showPreloader, successModalWindow } = storeToRefs(useUiElementsStore());
 const btnText = route.name === "request-missing-requirements" ? "Email me steps" : "Submit";
 
 const formButtonClicked = ref(false);
-const errMessage = ref(false);
+const errors = ref([]);
+
+const appVersion = process.env.VUE_APP_VERSION;
 
 const data = ref({
   medication: searchFormData.value.medication,
@@ -143,7 +117,7 @@ const data = ref({
   lastName: "",
   dob: "",
   memberId: "",
-  releaseVersion: "0.0.1",
+  releaseVersion: appVersion,
 });
 
 const medications = ["Saxenda", "Mounjaro", "Ozempic", "Victoza", "Rybelsus", "Wegovy"];
@@ -172,16 +146,6 @@ const isMedicationValid = computed(() => {
 
 const isLastNameValid = computed(() => data.value.lastName.trim() !== "");
 
-const isInsuranceProviderValid = computed(() => {
-  const value = searchFormData.value.insuranceProvider;
-  return value !== null && value.trim() !== "";
-});
-
-const isInsuranceCoverageStateValid = computed(() => {
-  const value = searchFormData.value.insuranceCoverageState;
-  return value !== null && value.trim() !== "";
-});
-
 async function sendRequirements() {
   formButtonClicked.value = true;
 
@@ -195,9 +159,7 @@ async function sendRequirements() {
     isCoverMyMedsKeyValid.value &&
     isLastNameValid.value &&
     isPatientMemberIdValid.value &&
-    isMedicationValid.value &&
-    isInsuranceProviderValid.value &&
-    isInsuranceCoverageStateValid.value
+    isMedicationValid.value
   ) {
     try {
       showPreloader.value = true;
@@ -208,13 +170,13 @@ async function sendRequirements() {
       );
 
       formButtonClicked.value = false;
+      errors.value = [];
       clearTheForm();
+      successModalWindow.value = true;
     } catch (err) {
-      clearTheForm();
-      errMessage.value = err;
+      errors.value = tryParseApiErrors(err);
     }
     showPreloader.value = false;
-    successModalWindow.value = true;
   }
 }
 
@@ -223,6 +185,7 @@ function clearTheForm() {
   data.value.lastName = "";
   data.value.dob = "";
   data.value.memberId = "";
+  data.value.medication = "";
 }
 </script>
 
