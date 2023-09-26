@@ -61,6 +61,6 @@ class PortalException(APIException):
         # unknown error. providing original info for debug purposes
         return PortalException(
             "Something went wrong. Please contact us at founders@lamarhealth.com",
-            {error_props.DETAILED_MSG: exc.detail},
+            {error_props.DETAILED_MSG: exc.__class__.__name__},
             code,
         )

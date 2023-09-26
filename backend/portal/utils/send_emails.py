@@ -2,13 +2,15 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from portal.utils.async_tasks import background_tasks_supported, try_run_in_background
 from portal.tasks import send_notification_task
+from portal.models.analytics import ServiceEmailLogAction
 from enum import Flag
 
 
 class ServiceEmail:
-    def __init__(self, subject, message, from_email, to_email, bcc=[]):
+    def __init__(self, subject, message, core_message, from_email, to_email, bcc=[]):
         self.subject = subject
         self.message = message
+        self.core_message = core_message
         self.from_email = from_email
         self.to_email = to_email
         self.bcc = bcc
@@ -16,6 +18,11 @@ class ServiceEmail:
     def send_email(self):
         email = EmailMessage(self.subject, self.message, self.from_email, self.to_email, self.bcc)
         email.send()
+
+    def log_service_email(self, notification_type):
+        ServiceEmailLogAction.objects.create(
+            email_type=notification_type, email_to=self.to_email, email_body=self.core_message
+        )
 
 
 class ActivationEmail(ServiceEmail):
@@ -30,7 +37,8 @@ class ActivationEmail(ServiceEmail):
             Best regards,
             The Do Prior Auth Team
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
+        core_message = f"{first_name} {last_name} | {settings.WEBSITE_URL}confirm-email/{user_id_code}/{token}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
 class PasswordResetEmail(ServiceEmail):
@@ -45,7 +53,8 @@ class PasswordResetEmail(ServiceEmail):
             Best regards,
             The Do Prior Auth Team
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
+        core_message = f"{first_name} {last_name} | {settings.WEBSITE_URL}password-reset/{reset_password_token_key}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
 class NotRegisteredPromoEmail(ServiceEmail):
@@ -61,7 +70,10 @@ class NotRegisteredPromoEmail(ServiceEmail):
             Best Regards,
             The Do Prior Auth Team
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email], ["founders@lamarhealth.com"])
+        core_message = f"{first_name} {last_name} | {email}"
+        super().__init__(
+            subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [email], ["founders@lamarhealth.com"]
+        )
 
 
 class RanOutOfSeatsEmail(ServiceEmail):
@@ -78,11 +90,12 @@ class RanOutOfSeatsEmail(ServiceEmail):
             Best regards,
             The Do Prior Auth Team
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [email])
+        core_message = f"{first_name} {last_name} | {email}, {client_company}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [email])
 
 
 class DenialRequestEmail(ServiceEmail):
-    def __init__(self, medication, cmm_key, release_version, submission_date):
+    def __init__(self, medication, cmm_key, release_version, submission_date, email):
         subject = "Denial Details Submitted"
         message = f"""
         DoPriorAuth user submitted denial details.\n\n
@@ -90,25 +103,25 @@ class DenialRequestEmail(ServiceEmail):
         CoverMyMeds Key: {cmm_key}\n
         App Release Version: {release_version}\n
         Submission Date: {submission_date}\n
+        User: {email}
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
+        core_message = f"{medication} | {cmm_key} | {release_version} | {submission_date} | {email}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
 
 
 class NewRequestEmail(ServiceEmail):
-    def __init__(
-        self, medication, insurance_provider, insurance_coverage_state, cmm_key, release_version, submission_date
-    ):
+    def __init__(self, medication, cmm_key, release_version, submission_date, email):
         subject = "Request for New Prior Auth Requirements"
         message = f"""
         DoPriorAuth user requested new prior auth requirements.\n\n
         Medication: {medication}\n
-        Insurance Provider: {insurance_provider}\n
-        Insurance Coverage State: {insurance_coverage_state}\n
         CoverMyMeds Key: {cmm_key}\n
         App Release Version: {release_version}\n
         Submission Date: {submission_date}\n
+        User: {email}
         """
-        super().__init__(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
+        core_message = f"{medication} | {cmm_key} | {release_version} | {submission_date} | {email}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
 
 
 class NotificationType(Flag):
@@ -123,6 +136,7 @@ class NotificationType(Flag):
 def send_notification(notification_type, *args):
     email = NotificationType[notification_type].value(*args)
     email.send_email()
+    email.log_service_email(ServiceEmailLogAction.ServiceEmailTypes[notification_type])
 
 
 def send_service_email(notification_type, *args):

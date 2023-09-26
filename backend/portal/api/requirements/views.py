@@ -8,10 +8,11 @@ from .serializers import (
     PriorAuthRequirementDetailSerializer,
     RequestNewPriorAuthRequirementsSerializer,
     MemberDetailsSerializer,
+    PriorAuthSubmissionSerializer,
 )
-from portal.api.utils import SecuredAPIView
+from portal.api.utils import SecuredAPIView, SecuredCreateAPIView
 from portal.logic.search.search_requirements import run_search, get_available_search_options
-from portal.models import PriorAuthRequirement
+from portal.models.requirements import PriorAuthRequirement, PriorAuthSubmission
 
 
 class PriorAuthRequirementsView(SecuredAPIView):
@@ -51,11 +52,15 @@ class RequestNewPriorAuthRequirementsView(SecuredAPIView):
                 send_service_email(
                     NotificationType.NEW_REQUEST,
                     new_request.medication,
-                    new_request.insurance_provider,
-                    new_request.insurance_coverage_state,
                     new_request.member_details.cover_my_meds_key,
                     new_request.release_version,
                     new_request.submission_date,
+                    self.request.user.email,
                 )
                 return Response(request_new_prior_auth_requirements.data, status=status.HTTP_200_OK)
         return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PriorAuthSubmissionView(SecuredCreateAPIView):
+    serializer_class = PriorAuthSubmissionSerializer
+    queryset = PriorAuthSubmission.objects.all()

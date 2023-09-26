@@ -22,6 +22,7 @@ class SubmitDenialView(SecuredAPIView):
                     denial.member_details.cover_my_meds_key,
                     denial.release_version,
                     denial.submission_date,
+                    self.request.user.email,
                 )
                 return Response(pa_denial_serializer.data, status=status.HTTP_200_OK)
         return Response(pa_denial_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
