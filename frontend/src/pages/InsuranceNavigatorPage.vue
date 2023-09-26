@@ -174,7 +174,7 @@ async function getPriorAuthRequirements() {
       clearTheForm();
       preloader.value = false;
       errMessage.value = err;
-      errors.value = tryParseApiErrors(error);
+      errors.value = tryParseApiErrors(err);
     }
   }
 }

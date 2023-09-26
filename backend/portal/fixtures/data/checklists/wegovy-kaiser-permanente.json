@@ -114,7 +114,7 @@
                             "outcome": "The requested drug, Wegovy™ (semaglutide), may be covered if the patient meets other criteria.",
                             "node_type": "radio",
                             "node_value": false,
-                            "smart_engine": "over_18_not_diabetic",
+                            "smart_engine": "over_18_initiation_not_diabetic",
                             "children": [
                                 {
                                     "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One, Select All That Apply)",
