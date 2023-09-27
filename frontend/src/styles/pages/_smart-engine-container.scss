@@ -255,6 +255,42 @@
 
     }
 
+    .cover-my-meds-wrapper {
+        width: 520px;
+        padding: 55px;
+        border: 1px solid $blue;
+        border-radius: 34px;
+        margin-top: 74px;
+
+        .cover-my-meds-header {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        hr {
+            height: 1px;
+            background-color: $blue;
+            border: none;
+            margin: 16px 0 32px 0;
+        }
+
+        .cover-my-meds-key {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        input {
+            width: 300px;
+
+            &::placeholder {
+                font-size: 16px;
+                color: $gray-400;              
+            }
+          
+        }
+    }
+
     .smart-engine-start-new-patient {
         margin-top: 50px;
         text-align: left;

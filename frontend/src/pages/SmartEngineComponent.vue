@@ -41,20 +41,20 @@
         </tbody>
       </table>
     </div>
-    <div class="form">
-      <div class="row-with-one-input">
-        <div class="cover-my-meds-key">
-          <label for="cover-my-meds-key">CoverMyMeds Key</label>
-          <input
-            id="cover-my-meds-key"
-            v-model="data.coverMyMedsKey"
-            type="text"
-            placeholder="B4HL4T2E"
-            @keyup="(event) => sendFormByEnterClicking(event, validateCheckList)" />
-          <span v-if="!isCoverMyMedsKeyValid && submitClicked" class="input-error-notification">
-            Please enter a valid CoverMyMeds Key.
-          </span>
-        </div>
+    <div class="cover-my-meds-wrapper">
+      <span class="cover-my-meds-header">Step 5: Enter CoverMyMeds ID</span>
+      <hr />
+      <div class="form">
+        <label class="cover-my-meds-key" for="cover-my-meds-key">Cover My Meds Key</label>
+        <input
+          id="cover-my-meds-key"
+          v-model="data.coverMyMedsKey"
+          type="text"
+          placeholder="e.g. B4HL4T2E"
+          @keyup="(event) => sendFormByEnterClicking(event, validateCheckList)" />
+        <span v-if="!isCoverMyMedsKeyValid && submitClicked" class="input-error-notification">
+          Please enter a valid CoverMyMeds Key.
+        </span>
       </div>
     </div>
     <div class="smart-engine-submit">
