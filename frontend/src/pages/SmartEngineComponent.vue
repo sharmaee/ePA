@@ -42,7 +42,7 @@
       </table>
     </div>
     <div class="cover-my-meds-wrapper">
-      <span class="cover-my-meds-header">Step 5: Enter CoverMyMeds ID</span>
+      <span class="cover-my-meds-header">Step {{ smartEngineCheckList.length + 1 }}: Enter CoverMyMeds ID</span>
       <hr />
       <div class="form">
         <label class="cover-my-meds-key" for="cover-my-meds-key">Cover My Meds Key</label>
