@@ -1,6 +1,6 @@
 <template>
   <PriorHeader />
-  <div class="insurance-navigator-wrapper">
+  <div id="insurance-navigator-wrapper" class="insurance-navigator-wrapper">
     <h1 :class="{ hide: screenWidth < 835 }">
       Prepare Prior Authorization For <span class="blue-text">Approval</span>
     </h1>
@@ -175,12 +175,15 @@ async function getPriorAuthRequirements() {
       analyticsServices.logRequirementsSearchAction(searchFormData.value);
       preloader.value = false;
       coverageBlock.value = true;
-      const coverageBlockView = document.getElementById("coverage");
-      coverageBlockView.scrollIntoView({ behavior: "smooth" });
     } catch (err) {
       clearTheForm();
       preloader.value = false;
       error.value = true;
+    } finally {
+      const coverageBlockView = document.getElementById("coverage");
+      setTimeout(() => {
+        coverageBlockView.scrollIntoView({ block: "start", behavior: "smooth" });
+      }, 0);
     }
   }
 }
