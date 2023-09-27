@@ -215,7 +215,7 @@
                             "smart_engine": "under_18_initiation",
                             "children": [
                                 {
-                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least Two, Select All That Apply)",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have?",
                                     "node_type": "fieldset",
                                     "children": [
                                         {
