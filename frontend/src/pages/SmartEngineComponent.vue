@@ -41,14 +41,38 @@
         </tbody>
       </table>
     </div>
-    <div class="smart-engine-submit">
-      <button class="smart" @click="validateCheckList">Submit</button>
+    <div class="form">
+      <div class="row-with-one-input">
+        <div class="cover-my-meds-key">
+          <label for="cover-my-meds-key">CoverMyMeds Key</label>
+          <input
+            id="cover-my-meds-key"
+            v-model="data.coverMyMedsKey"
+            type="text"
+            placeholder="B4HL4T2E"
+            @keyup="(event) => sendFormByEnterClicking(event, validateCheckList)" />
+          <span v-if="!isCoverMyMedsKeyValid && submitClicked" class="input-error-notification">
+            Please enter a valid CoverMyMeds Key.
+          </span>
+        </div>
+      </div>
     </div>
+    <div class="smart-engine-submit">
+      <button class="smart" @click="validateCheckList">Complete</button>
+    </div>
+    <span v-if="errors.length > 0" class="input-error-notification">
+      <span v-for="error in errors" :key="error">{{ error }}</span>
+      Sorry, something went wrong. Please contact us at
+      <a href="mailto:founders@lamarhealth.com"> founders@lamarhealth.com</a> or try again later
+    </span>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
+import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { mainServices } from "@/services/mainServices";
+
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
 
@@ -75,6 +99,18 @@ const emit = defineEmits(["show-success-engine-page"]);
 const filteredByDiagnosisData = computed(() => {
   return smartEngineTable.filter((element) => props.diagnosisFilterData.includes(element.diagnosis));
 });
+
+const data = ref({
+  coverMyMedsKey: "",
+});
+
+const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
+
+const isCoverMyMedsKeyValid = computed(() => {
+  return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
+});
+
+const errors = ref([]);
 
 const staticCheckboxContent = ref([]);
 staticCheckboxContent.value = [...smartEngineCheckboxContent];
@@ -107,18 +143,30 @@ function copyAdditionalInfoToClipboard(content) {
 
 function validateCheckList() {
   submitClicked.value = true;
+  if (isCoverMyMedsKeyValid.value) {
+    sendPriorAuthorization();
+    if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
+      emit("show-success-engine-page");
+    } else {
+      const firstFailedValidation = smartEngineCheckList.value.find((section) =>
+        section.items.find((item) => !item.checked)
+      );
+      const firstFailedValidationIndex = smartEngineCheckList.value.indexOf(firstFailedValidation);
+      const firstFailedValidationItemIndex = firstFailedValidation.items.findIndex((item) => !item.checked);
+      const firstFailedValidationItemId = `item-${firstFailedValidationIndex}-${firstFailedValidationItemIndex}`;
+      const firstFailedValidationItem = document.getElementById(firstFailedValidationItemId);
+      firstFailedValidationItem.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}
 
-  if (smartEngineCheckList.value.every((section) => section.items.every((item) => item.checked))) {
-    emit("show-success-engine-page");
-  } else {
-    const firstFailedValidation = smartEngineCheckList.value.find((section) =>
-      section.items.find((item) => !item.checked)
-    );
-    const firstFailedValidationIndex = smartEngineCheckList.value.indexOf(firstFailedValidation);
-    const firstFailedValidationItemIndex = firstFailedValidation.items.findIndex((item) => !item.checked);
-    const firstFailedValidationItemId = `item-${firstFailedValidationIndex}-${firstFailedValidationItemIndex}`;
-    const firstFailedValidationItem = document.getElementById(firstFailedValidationItemId);
-    firstFailedValidationItem.scrollIntoView({ behavior: "smooth" });
+async function sendPriorAuthorization() {
+  try {
+    await mainServices.submitPriorAuthorization(data.value);
+    errors.value = [];
+  } catch (err) {
+    // errors.value = tryParseApiErrors(err);
+    console.log(err);
   }
 }
 </script>

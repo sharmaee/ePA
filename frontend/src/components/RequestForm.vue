@@ -62,7 +62,7 @@
             id="insurance-state"
             v-model="data.medication"
             class="custom-select-arrow"
-            @keyup="(event) => sendFormByEnterClicking(event, getPriorAuthRequirements)">
+            @keyup="(event) => sendFormByEnterClicking(event, sendRequirements)">
             <option v-for="medication in medications" :key="medication" :value="medication">{{ medication }}</option>
           </select>
           <span v-if="!isMedicationValid && formButtonClicked" class="input-error-notification">

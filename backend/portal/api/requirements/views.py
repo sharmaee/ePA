@@ -10,7 +10,7 @@ from .serializers import (
     MemberDetailsSerializer,
     PriorAuthSubmissionSerializer,
 )
-from portal.api.utils import SecuredAPIView, SecuredCreateAPIView
+from portal.api.utils import SecuredAPIView
 from portal.logic.search.search_requirements import run_search, get_available_search_options
 from portal.models.requirements import PriorAuthRequirement, PriorAuthSubmission
 
@@ -61,6 +61,12 @@ class RequestNewPriorAuthRequirementsView(SecuredAPIView):
         return Response(request_new_prior_auth_requirements.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class PriorAuthSubmissionView(SecuredCreateAPIView):
-    serializer_class = PriorAuthSubmissionSerializer
-    queryset = PriorAuthSubmission.objects.all()
+class PriorAuthSubmissionView(SecuredAPIView):
+    def post(self, request):
+        cover_my_meds_key = self.request.data.get("cover_my_meds_key", None)
+        if cover_my_meds_key is None:
+            return Response({"cover_my_meds_key": ["This field is required."]}, status=status.HTTP_400_BAD_REQUEST)
+        obj, created = PriorAuthSubmission.objects.update_or_create(
+            cover_my_meds_key=cover_my_meds_key, user=self.request.user
+        )
+        return Response(PriorAuthSubmissionSerializer(obj).data, status=status.HTTP_200_OK)

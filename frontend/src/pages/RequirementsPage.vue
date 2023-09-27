@@ -28,7 +28,7 @@
   <div v-if="successPage">
     <SuccessSmartEnginePage />
   </div>
-  <ContentUsefulnessQuestionnaire v-if="smartEngine" />
+  <ContentUsefulnessQuestionnaire v-if="smartEngine && !successPage" />
   <PriorFooter />
 </template>
 

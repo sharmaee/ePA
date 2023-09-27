@@ -19,8 +19,8 @@ export function tryParseApiErrors(error) {
     for (let key in validationErrors) {
       resultErrors.push(...validationErrors[key]);
     }
-  } else if (error.response.data.source_error) {
-    resultErrors = [error.response.data.source_error];
+  } else if (error.response.data.error_details) {
+    resultErrors = [error.response.data.error_details.detail];
   } else {
     resultErrors = [FORM_ERRORS_TEXT.UNKNOWN_SERVER_ERROR];
   }

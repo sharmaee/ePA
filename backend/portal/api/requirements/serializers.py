@@ -49,11 +49,3 @@ class PriorAuthSubmissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = PriorAuthSubmission
         fields = '__all__'
-
-    def create(self, validated_data):
-        request = self.context.get("request", None)
-        user = request.user if request and hasattr(request, "user") else None
-        obj, created = PriorAuthSubmission.objects.update_or_create(
-            cover_my_meds_key=validated_data.get("cover_my_meds_key", None), user=user
-        )
-        return obj
