@@ -286,8 +286,11 @@
             &::placeholder {
                 font-size: 16px;
                 color: $gray-400;              
-            }
-          
+            }          
+        }
+
+        .input-error-notification {
+            display: block;
         }
     }
 
@@ -304,8 +307,6 @@
     }
 
     .smart-engine-submit {
-        display: flex;
-        justify-content: center;
         margin-top: 50px;
     }
 }
