@@ -165,8 +165,7 @@ async function sendPriorAuthorization() {
     await mainServices.submitPriorAuthorization(data.value);
     errors.value = [];
   } catch (err) {
-    // errors.value = tryParseApiErrors(err);
-    console.log(err);
+    errors.value = tryParseApiErrors(err);
   }
 }
 </script>
