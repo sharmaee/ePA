@@ -66,31 +66,33 @@
     <div id="searchResultsBlock"></div>
     <GreenCirclePreloader v-if="preloader" />
 
-    <span id="coverage"></span>
-    <div v-if="coverageBlock" class="coverage">
-      <div v-if="priorAuthRequirementsResult.length > 0">
-        <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
-          <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
-          <span>{{ item.description }}</span>
+    <div id="coverage" class="coverage">
+      <div v-if="coverageBlock" class="coverage-block-with-border">
+        <div v-if="priorAuthRequirementsResult.length > 0">
+          <div v-for="item in priorAuthRequirementsResult" :key="item.requirementsFlow" class="request-text">
+            <span class="bold">{{ item.insuranceProvider }} | {{ item.insurancePlanType }}</span>
+            <span>{{ item.description }}</span>
+            <div class="coverage-btn-wrapper">
+              <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
+                Get Steps
+              </router-link>
+            </div>
+          </div>
+        </div>
+        <div v-else class="request-text missing-requirements-block">
+          <span class="bold"> Prior Authorization Criteria </span>
+          <span> This insurance is not common. The steps will be more precise as we gather more data. </span>
           <div class="coverage-btn-wrapper">
-            <router-link :to="{ name: 'check-my-coverage', params: { id: item.urlSlug } }" class="btn-blue">
+            <router-link :to="{ name: 'check-my-coverage', params: { id: defaultChecklistId } }" class="btn-blue">
               Get Steps
             </router-link>
           </div>
         </div>
       </div>
-      <div v-else class="request-text missing-requirements-block">
-        <span class="bold"> Prior Authorization Criteria </span>
-        <span> This insurance is not common. The steps will be more precise as we gather more data. </span>
-        <div class="coverage-btn-wrapper">
-          <router-link :to="{ name: 'check-my-coverage', params: { id: defaultChecklistId } }" class="btn-blue">
-            Get Steps
-          </router-link>
-        </div>
-      </div>
     </div>
-    <span v-if="errors.length > 0" class="input-error-notification">
-      <span v-for="error in errors" :key="error">{{ error }}</span>
+    <span v-if="error" class="input-error-notification">
+      Sorry, something went wrong. Please contact us at
+      <a href="mailto:founders@lamarhealth.com"> founders@lamarhealth.com</a> or try again later
     </span>
   </div>
   <PriorFooter />
@@ -106,9 +108,10 @@ import PriorHeader from "@/components/PriorHeader";
 import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useSearchFormStore } from "@/stores/searchFormStore";
+import { sendFormByEnterClicking } from "@/utils";
 const { searchFormData } = storeToRefs(useSearchFormStore());
-import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
-const errors = ref([]);
+
+const error = ref(false);
 const priorAuthRequirementsResult = ref(null);
 const screenWidth = ref(null);
 const formButtonClicked = ref(false);
@@ -177,7 +180,7 @@ async function getPriorAuthRequirements() {
     } catch (err) {
       clearTheForm();
       preloader.value = false;
-      errors.value = tryParseApiErrors(err);
+      error.value = true;
     }
   }
 }

@@ -6,6 +6,30 @@
         font-weight: 700;
     }
 
+    .shadow-ellipse {
+        position: absolute;
+        width: 663px;
+        height: 664px;
+        z-index: -1;
+        border-radius: 663px;
+        background: rgba(225, 255, 253, 0.26);
+        filter: blur(53.5px);
+
+        @media (max-width: 940px) {
+            display: none;
+        }
+    }
+
+    .shadow-ellipse-left {
+        top: 150px;
+        left: 0;
+    }
+
+    .shadow-ellipse-right {
+        top: -250px;
+        right: 0;
+    }
+
     .smart-engine-list {
         margin: 50px 0;
 
@@ -255,6 +279,46 @@
 
     }
 
+    .cover-my-meds-wrapper {
+        width: 520px;
+        padding: 55px;
+        border: 1px solid $blue;
+        border-radius: 34px;
+        margin-top: 74px;
+        background-color: $white;
+
+        .cover-my-meds-header {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        hr {
+            height: 1px;
+            background-color: $blue;
+            border: none;
+            margin: 16px 0 32px 0;
+        }
+
+        .cover-my-meds-key {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        input {
+            width: 300px;
+
+            &::placeholder {
+                font-size: 16px;
+                color: $gray-400;              
+            }          
+        }
+
+        .input-error-notification {
+            display: block;
+        }
+    }
+
     .smart-engine-start-new-patient {
         margin-top: 50px;
         text-align: left;
@@ -268,8 +332,6 @@
     }
 
     .smart-engine-submit {
-        display: flex;
-        justify-content: center;
         margin-top: 50px;
     }
 }
@@ -278,7 +340,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15vh;
+    margin-bottom: 15vh;
 
     h2 {
         font-size: 48px;
