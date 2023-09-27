@@ -1,6 +1,8 @@
 <template>
   <div class="smart-engine-wrapper">
     <h3>Follow these steps to increase the chance of approval:</h3>
+    <div class="shadow-ellipse shadow-ellipse-right"></div>
+    <div class="shadow-ellipse shadow-ellipse-left"></div>
 
     <div v-for="(section, index) in smartEngineCheckList" :key="index" class="smart-engine-list">
       <span class="smart-engine-list-header">Step {{ index + 1 }}: {{ section.header }}</span>
