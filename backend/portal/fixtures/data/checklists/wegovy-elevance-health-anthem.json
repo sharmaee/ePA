@@ -29,7 +29,7 @@
                                             "smart_engine": "over_18_initiation_30",
                                             "children": [
                                                 {
-                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have?",
+                                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                                     "node_type": "fieldset",
                                                     "children": [
                                                         {
@@ -215,7 +215,7 @@
                             "smart_engine": "under_18_initiation",
                             "children": [
                                 {
-                                    "label": "Which Weight-Related Risk Factors Does the Patient Have?",
+                                    "label": "Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)",
                                     "node_type": "fieldset",
                                     "children": [
                                         {
