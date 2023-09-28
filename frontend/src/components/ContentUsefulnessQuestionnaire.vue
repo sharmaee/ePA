@@ -44,7 +44,7 @@
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import { userExperienceService } from "@/services/userExperienceService";
-import { tryParseApiErrors } from "@/utils";
+// import { tryParseApiErrors } from "@/utils";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 
 const appVersion = process.env.VUE_APP_VERSION;
@@ -52,6 +52,7 @@ const isHelpfullButtonClicked = ref(false);
 const route = useRoute();
 const errors = ref([]);
 const requestSentSuccessfuly = ref(false);
+const showPreloader = ref(false);
 
 const feedbackData = ref({
   isHelpful: "",
@@ -72,7 +73,8 @@ async function sendQuestionnaireResult() {
     requestSentSuccessfuly.value = true;
     errors.value = [];
   } catch (error) {
-    errors.value = tryParseApiErrors(error);
+    console.log(error);
+    // errors.value = tryParseApiErrors(error);
   }
 
   showPreloader.value = false;
