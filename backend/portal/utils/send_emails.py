@@ -125,7 +125,9 @@ class NewRequestEmail(ServiceEmail):
 
 
 class NegativeUXFeedbackEmail(ServiceEmail):
-    def __init__(self, comment, release_version, created_on, insurance_provider, insurance_plan_type, insurance_coverage_state):
+    def __init__(
+        self, comment, release_version, created_on, insurance_provider, insurance_plan_type, insurance_coverage_state
+    ):
         subject = "User Experience Feedback"
         message = f"""
         DoPriorAuth user submitted feedback.\n\n

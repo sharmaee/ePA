@@ -10,14 +10,13 @@ from import_export.widgets import ForeignKeyWidget
 
 
 class UXFeedbackResource(resources.ModelResource):
-    user = fields.Field(
-        column_name='user', attribute='user', widget=ForeignKeyWidget(User, field='email')
-    )
+    user = fields.Field(column_name='user', attribute='user', widget=ForeignKeyWidget(User, field='email'))
     prior_auth_requirements = fields.Field(
         column_name='prior_auth_requirements',
-        attribute='prior_auth_requirements', 
-        widget=ForeignKeyWidget(PriorAuthRequirement, field='insurance_provider')
+        attribute='prior_auth_requirements',
+        widget=ForeignKeyWidget(PriorAuthRequirement, field='insurance_provider'),
     )
+
     class Meta:
         model = UXFeedback
         fields = ('is_helpful', 'comment', 'created_on', 'release_version', 'prior_auth_requirements', 'user')
@@ -59,14 +58,15 @@ class RequirementsSearchActionAdmin(ExportActionModelAdmin):
 
     def insurance_provider(self, obj):
         return obj.prior_auth_requirements.insurance_provider
-    
+
     def insurance_coverage_state(self, obj):
         return obj.prior_auth_requirements.insurance_coverage_state
-    
+
     def insurance_plan_type(self, obj):
         return obj.prior_auth_requirements.insurance_plan_type
-    
+
     def medication(self, obj):
         return obj.prior_auth_requirements.medication
+
 
 admin.site.register(UXFeedback, RequirementsSearchActionAdmin)
