@@ -24,10 +24,11 @@
         .action-btn {
             display: flex;
             align-items: center;
+            border: 1px solid $blue;
             cursor: pointer;
             padding: 12px 32px;
-            background-color: $blue;
-            border-radius: 5px;
+            background-color: $snowy-whte;
+            border-radius: 50px;
             margin: 10px;
 
             
@@ -36,7 +37,7 @@
             }
 
             span {
-                color: $white;
+                color: $blue;
                 font-weight: 500;
                 font-size: 16px;
                 margin-left: 3px;
@@ -49,12 +50,51 @@
             }
         }
 
-        .green {
-            background-color: $green;
+        .active-questionnaire-btn {
+            background-color: $blue;
+
+            span {
+                color: $snowy-whte;
+            }
+        }        
+    }
+
+    .questionnaire-text-wrapper {
+        position: relative;
+        margin: 47px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 816px;
+        border: 1px solid $blue;
+        background-color: $white;
+        border-radius: 15px;
+        padding: 32px;
+
+        .textarea {
+            width: 95%;
+            border: 1px solid $gray-600;
+            border-radius: 15px;
+            padding: 15px;
+
+            &::placeholder {
+                font-size: 16px;
+                color: $gray-400;  
+            }
         }
 
-        .red {
-            background-color: $red;
+        .questionnaire-text-btn-wrapper {
+            margin-top: 30px;   
+
+            .action-btn {      
+                align-items: center;
+                cursor: pointer;
+                padding: 12px 32px;
+                background-color: $blue;
+                border-radius: 50px;
+                margin: 10px;
+                color: $snowy-whte;
+            }
         }
     }
 }
