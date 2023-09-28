@@ -27,6 +27,7 @@ class ServiceEmailLogAction(PortalModelBase):
         ACTIVATION = "User Activation"
         NOT_REGISTERED_PROMO = "Domain Not Registered"
         RAN_OUT_OF_SEATS = "Ran Out of Seats"
+        NEGATIVE_UX_FEEDBACK = "Negative UX Feedback"
 
     email_type = models.TextField(choices=ServiceEmailTypes.choices)
     email_to = models.JSONField()
