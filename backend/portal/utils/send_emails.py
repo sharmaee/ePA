@@ -124,6 +124,22 @@ class NewRequestEmail(ServiceEmail):
         super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
 
 
+class NegativeUXFeedbackEmail(ServiceEmail):
+    def __init__(self, comment, release_version, created_on, insurance_provider, insurance_plan_type, insurance_coverage_state):
+        subject = "User Experience Feedback"
+        message = f"""
+        DoPriorAuth user submitted feedback.\n\n
+        How can we improve: {comment}\n\n
+        App Release Version: {release_version}\n
+        Submission Date: {created_on}\n
+        Insurance Provider: {insurance_provider}\n
+        Plan Type: {insurance_plan_type}\n
+        Coverage State: {insurance_coverage_state}\n
+        """
+        core_message = f"{comment} | {release_version} | {created_on} | {insurance_provider} | {insurance_plan_type} | {insurance_coverage_state}"
+        super().__init__(subject, message, core_message, settings.DEFAULT_FROM_EMAIL, [settings.DEFAULT_TO_EMAIL])
+
+
 class NotificationType(Flag):
     NEW_REQUEST = NewRequestEmail
     DENIAL = DenialRequestEmail
@@ -131,6 +147,7 @@ class NotificationType(Flag):
     ACTIVATION = ActivationEmail
     NOT_REGISTERED_PROMO = NotRegisteredPromoEmail
     RAN_OUT_OF_SEATS = RanOutOfSeatsEmail
+    NEGATIVE_UX_FEEDBACK = NegativeUXFeedbackEmail
 
 
 def send_notification(notification_type, *args):
