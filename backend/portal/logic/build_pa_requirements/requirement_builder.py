@@ -2,7 +2,7 @@ from dataclasses import dataclass, asdict, field
 
 
 @dataclass
-class SmartEngineNode():
+class SmartEngineNode:
     label: str
     validation: str
 
@@ -15,18 +15,18 @@ class PriorAuthRequirementsNode:
 
 
 @dataclass
+class OptionNode(PriorAuthRequirementsNode):
+    rule_name: str
+    rule_set: list = field(default_factory=list)
+    node_value: bool = False
+
+
+@dataclass
 class FieldsetNode(PriorAuthRequirementsNode):
     node_type = "fieldset"
     question_rule_name: str
     question_rule_set: list = field(default_factory=list)
     children: list[OptionNode] = field(default_factory=list)
-
-
-@dataclass
-class OptionNode(PriorAuthRequirementsNode):
-    rule_name: str
-    rule_set: list = field(default_factory=list)
-    node_value: bool = False
 
 
 @dataclass
