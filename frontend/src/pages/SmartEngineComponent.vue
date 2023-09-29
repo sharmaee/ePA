@@ -19,6 +19,11 @@
       <button v-if="section.additional_info" @click="copyAdditionalInfoToClipboard(section.additional_info)">
         {{ copyAdditionalInfoButtonText }}
       </button>
+      <ul v-if="section.bullet_list" class="bullet-list-wrapper">
+        <li v-for="(bulletItem, bulletItemIndex) in section.bullet_list" :key="bulletItemIndex">
+          {{ bulletItem }}
+        </li>
+      </ul>
     </div>
 
     <div class="smart-engine-table-wrapper">
