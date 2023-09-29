@@ -77,7 +77,7 @@ const isEmailValid = computed(() => {
 
 const isPasswordValid = computed(() => {
   const password = credentials.value.password;
-  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{11,}$/;
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{11,}$/;
 
   return passwordPattern.test(password);
 });
