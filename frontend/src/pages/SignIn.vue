@@ -27,7 +27,8 @@
           Please enter a password.
         </span>
         <span v-else-if="!isPasswordValid && formButtonClicked" class="input-error-notification">
-          Please enter a valid password.
+          Please enter a valid password (at least 11 characters, at least 1 uppercase and 1 lowercase letter, 1 number,
+          and 1 symbol).
         </span>
       </div>
       <button @click="loginUser">Login</button>
