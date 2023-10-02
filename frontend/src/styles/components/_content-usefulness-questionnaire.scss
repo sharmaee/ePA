@@ -3,6 +3,7 @@
     padding: 27px 0 27px 0;
     background-color: $blue-200;
     margin: 120px auto 50px auto;
+    border-radius: 12px;
     
     h2 {
         font-size: 24px;
@@ -76,6 +77,7 @@
             border: 1px solid $gray-600;
             border-radius: 15px;
             padding: 15px;
+            font-size: 16px;
 
             &::placeholder {
                 font-size: 16px;
@@ -103,6 +105,5 @@
         font-weight: 700;
         color: $blue;
         text-align: center;
-        margin-bottom: 50px;
     }
 }
