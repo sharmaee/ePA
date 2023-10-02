@@ -42,9 +42,7 @@ const screenWidth = ref(null);
 
 const modalContent = {
   header: "",
-  content: `You will get an email with the best medication to provide as an alternative 
-            and help prevent the denial from happening next time. You are helping yourself 
-            and medical assistants everywhere fight denials.`,
+  content: `You’ll get an email with the best alternative medication for this patient to prevent future denials.`,
 };
 
 function displayWindowSize() {
