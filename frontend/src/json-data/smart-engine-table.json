@@ -38,7 +38,7 @@
   },
   {
     "icd_10_codes": ["I25", "I48", "I50", "I63", "I65", "I67", "I73"],
-    "diagnosis": "Congenital heart disease (CHD)",
+    "diagnosis": "Coronary heart disease (CHD)",
     "lab_results_to_attach": [
       "EKG",
       "CT scan",

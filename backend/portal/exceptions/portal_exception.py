@@ -42,7 +42,6 @@ class PortalException(APIException):
         """
         Adapts some known errors to the common API error format.
         """
-
         # skip entirely if the error is already in the right format
         if isinstance(exc, PortalException):
             return exc

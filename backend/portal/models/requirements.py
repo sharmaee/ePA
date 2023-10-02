@@ -16,6 +16,9 @@ class PriorAuthRequirement(PortalModelBase):
     date_created = models.DateTimeField(auto_now_add=True, db_index=True)
     date_modified = models.DateTimeField(auto_now=True, db_index=True)
 
+    def __str__(self):
+        return f'{self.insurance_provider} - {self.insurance_plan_type} - {self.insurance_coverage_state} - {self.medication}'
+
 
 class MemberDetails(PortalModelBase):
     cover_my_meds_key = AES256EncryptedField(blank=True, null=True)
