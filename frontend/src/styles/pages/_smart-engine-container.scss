@@ -168,6 +168,19 @@
             font-weight: 700;
         }
 
+        .bullet-list-wrapper {
+            margin-top: 20px;
+            margin-left: 30px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            li {
+                margin-bottom: 10px;
+                list-style-type: disc;
+                list-style-position: inside;
+            }
+        }
+
         .additional-info-wrapper {
             height: 60px;
             overflow: hidden;

@@ -1,27 +1,18 @@
 [
   {
-    "header": "Use the following checklist to look for evidence of pre-diabetes. If you find any, make sure all the requirements are completed and prepare a PA for Ozempic.",
+    "header": "Can you prove your patient is pre-diabetic? Pre-diabetic patients are more likely to be approved for Ozempic.",
     "items": [
       {
-        "label": "Doctor Has Mentioned Pre-Diabetes in the Patient's Chart.",
-        "validation": "Attach this chart note to your PA submission."
-      },
-      {
-        "label": "A1C Lab Result of 5.7% or Higher.",
-        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days. "
-      },
-      {
-        "label": "Fasting Glucose Levels of 100mg/dL or Higher.",
-        "validation": "Attach this lab result in your PA submission if it was taken within the last 30 days. Otherwise let the ordering provider know the lab result must be completed within the last 30 days."
-      },
-      {
-        "label": "Patient diagnosis includes ICD-10 Code R73.03. Enter as the primary diagnosis in CoverMyMeds.",
-        "validation": "Pre-diabetes is more likely to be covered."
-      },
-      {
-        "label": "Document patient has been treated with Metformin.",
-        "validation": "Let the provider know diabetic or pre-diabetic patients need to have tried Metformin before insurance will cover them for Ozempic. Ask the provider to document a reason Metformin was stopped for the patient."
+        "label": "I have checked the list below, my patient is not pre-diabetic.",
+        "validation": "Do a prior authorization for Ozempic for pre-diabetic patients."
       }
+    ],
+    "bullet_list": [
+      "Doctor Has Mentioned Pre-Diabetes in the Patient's Chart.",
+      "AIC Lab Result of 5.7% or Higher (within last 30 days).",
+      "Fasting Glucose Levels of 100mg/dL or Higher.",
+      "Patient diagnosis includes ICD-10 Code R73.03. Enter as the primary diagnosis in CoverMyMeds.",
+      "Patient tried Metformin with a documented reason for discontinuing treatment (not effective, side effects, adherence)."
     ]
   },
   {
