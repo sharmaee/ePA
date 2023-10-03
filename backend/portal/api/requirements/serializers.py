@@ -23,12 +23,6 @@ class PriorAuthRequirementSerializer(serializers.ModelSerializer):
         read_only_fields = fields
 
 
-class PriorAuthRequirementDetailSerializer(PriorAuthRequirementSerializer):
-    class Meta:
-        model = PriorAuthRequirement
-        fields = PriorAuthRequirementSerializer.Meta.fields + ('requirements_checklist', 'smart_engine_checklist')
-
-
 class AvailableSearchOptionsSerializer(ObjSerializer):
     insurance_providers = serializers.ListField(child=serializers.CharField())
 

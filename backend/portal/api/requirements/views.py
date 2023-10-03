@@ -5,7 +5,7 @@ from portal.utils.send_emails import send_service_email, NotificationType
 from .serializers import (
     PriorAuthRequirementSerializer,
     AvailableSearchOptionsSerializer,
-    PriorAuthRequirementDetailSerializer,
+    # PriorAuthRequirementDetailSerializer,
     RequestNewPriorAuthRequirementsSerializer,
     MemberDetailsSerializer,
     PriorAuthSubmissionSerializer,
@@ -29,13 +29,13 @@ class PriorAuthRequirementSearchView(SecuredAPIView):
         return Response(result, status=status.HTTP_200_OK)
 
 
-class PriorAuthRequirementDetailView(SecuredAPIView):
-    def get(self, request, url_slug):
-        try:
-            requirement = PriorAuthRequirementDetailSerializer(PriorAuthRequirement.objects.get(url_slug=url_slug)).data
-        except PriorAuthRequirement.DoesNotExist:
-            requirement = None
-        return Response(requirement, status=status.HTTP_200_OK)
+# class PriorAuthRequirementDetailView(SecuredAPIView):
+#     def get(self, request, url_slug):
+#         try:
+#             requirement = PriorAuthRequirementDetailSerializer(PriorAuthRequirement.objects.get(url_slug=url_slug)).data
+#         except PriorAuthRequirement.DoesNotExist:
+#             requirement = None
+#         return Response(requirement, status=status.HTTP_200_OK)
 
 
 class RequestNewPriorAuthRequirementsView(SecuredAPIView):
