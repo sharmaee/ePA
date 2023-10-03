@@ -18,6 +18,10 @@
         @media (max-width: 1280px) {
             font-size: 56px;
         }
+
+        @media (max-width: 768px) {
+            font-size: 42px;
+        }
     }
     
     .forgot-pass-sub-title {
@@ -36,7 +40,7 @@
         align-items: center;
 
         .envelop-wrapper {
-            margin: 20px 175px 0 175px;
+            margin: 0 auto;
             text-align: center;
         }
 
@@ -58,6 +62,10 @@
         background-color: $white;
         z-index: 100;
         width: 446px;
+
+        @media (max-width: 768px) {
+            width: 67%;
+        }
 
 
         p {
@@ -103,5 +111,9 @@
                 }
             }
         }
+    }
+
+    .password-reset-request-form {
+        margin: 0 auto;
     }
 }

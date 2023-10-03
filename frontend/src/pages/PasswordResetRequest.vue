@@ -13,7 +13,7 @@
     </div>
     <div v-else-if="!showPreloader && !passwordRequestEmailSent">
       <p class="forgot-pass-sub-title">Forgot your password? No problem!</p>
-      <div class="form">
+      <div class="form password-reset-request-form">
         <p>Enter your registered email address below, and we'll send you a link to reset your password</p>
         <div class="your-email">
           <input

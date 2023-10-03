@@ -26,6 +26,12 @@
         @media (max-width: 885px) {
             line-height: 1;
         }
+
+        @media (max-width: 768px) {
+            font-size: 42px;
+            width: 85%;
+            margin-bottom: 30px;
+        }
     }
 
     p {
