@@ -22,42 +22,54 @@
         margin: 0 auto;
         font-size: 16px;
 
+        @media (max-width: 494px) {
+            flex-direction: column;
+        }
+
         .action-btn {
             display: flex;
             align-items: center;
-            border: 1px solid $blue;
-            cursor: pointer;
-            padding: 12px 32px;
-            background-color: $snowy-whte;
-            border-radius: 50px;
             margin: 10px;
 
+            @media (max-width: 494px) {
+                margin: 10px auto;
+            }
             
-            img {
-                margin-right: 2px;
+            .like-button, .dislike-button {
+                border: 1px solid $blue;
+                cursor: pointer;
+                padding: 12px 32px;
+                background-color: $snowy-whte;
+                border-radius: 50px;
+
+                img {
+                    margin-right: 2px;
+                }
+                
+                span {
+                    color: $blue;
+                    font-weight: 500;
+                    font-size: 16px;
+                    margin-left: 3px;
+                }
             }
 
-            span {
-                color: $blue;
-                font-weight: 500;
-                font-size: 16px;
-                margin-left: 3px;
+            .dislike-button {
+                img {
+                    transform: rotate(180deg);
+                }
             }
+    
+            .active-questionnaire-btn {
+                background-color: $blue;
+    
+                span {
+                    color: $snowy-whte;
+                }
+            }     
         }
 
-        .dislike-button {
-            img {
-                transform: rotate(180deg);
-            }
-        }
-
-        .active-questionnaire-btn {
-            background-color: $blue;
-
-            span {
-                color: $snowy-whte;
-            }
-        }        
+          
     }
 
     .questionnaire-text-wrapper {
@@ -71,6 +83,11 @@
         background-color: $white;
         border-radius: 15px;
         padding: 32px;
+        box-sizing: border-box;
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
 
         .textarea {
             width: 95%;
