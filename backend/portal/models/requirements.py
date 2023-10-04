@@ -5,7 +5,7 @@ from portal.models.auth import User
 
 
 class Medication(PortalModelBase):
-    medication_name = models.TextField(primary_key=True, db_index=True)
+    medication = models.TextField(primary_key=True, db_index=True)
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -14,10 +14,9 @@ class Medication(PortalModelBase):
 
 class State(PortalModelBase):
     state = models.TextField(primary_key=True, db_index=True)
-    abbreviation = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.state}, {self.abbreviation}'
+        return f'{self.state}'
 
 
 class InsurancePlanType(PortalModelBase):
