@@ -34,7 +34,6 @@ class InsuranceProvider(PortalModelBase):
 
 
 class PriorAuthRequirement(PortalModelBase):
-    url_slug = models.TextField(primary_key=True, db_index=True)    # xxhash medication + _ + insurance_provider
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='prior_auth_requirements')
     insurance_provider = models.ForeignKey(InsuranceProvider, on_delete=models.CASCADE, related_name='prior_auth_requirements')
     insurance_plan_types = models.ManyToManyField(InsurancePlanType, related_name='prior_auth_requirements')
