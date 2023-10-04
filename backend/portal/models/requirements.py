@@ -6,26 +6,43 @@ from portal.models.auth import User
 
 class Medication(PortalModelBase):
     medication_name = models.TextField(primary_key=True, db_index=True)
-    description = models.TextField(blank=True, null=True, db_index=True)
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.medication_name}'
 
 
-class PriorAuthRequirement(PortalModelBase):
-    url_slug = models.TextField(primary_key=True, db_index=True)
-    description = models.TextField(blank=True, null=True, db_index=True)
-    insurance_provider = models.TextField(blank=True, null=True, db_index=True)
-    insurance_plan_type = models.TextField(blank=True, null=True, db_index=True)
-    insurance_coverage_state = models.TextField(blank=True, null=True, db_index=True)
-    medication = models.ForeignKey(
-        Medication, on_delete=models.CASCADE, related_name='prior_auth_requirements', blank=True, null=True
-    )
-    date_created = models.DateTimeField(auto_now_add=True, db_index=True)
-    date_modified = models.DateTimeField(auto_now=True, db_index=True)
+class State(PortalModelBase):
+    state = models.TextField(primary_key=True, db_index=True)
+    abbreviation = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.insurance_provider} - {self.insurance_plan_type} - {self.insurance_coverage_state} - {self.medication}'
+        return f'{self.state}, {self.abbreviation}'
+
+
+class InsurancePlanType(PortalModelBase):
+    insurance_plan_type = models.TextField(primary_key=True, db_index=True)
+
+    def __str__(self):
+        return f'{self.insurance_plan_type}'
+
+
+class InsuranceProvider(PortalModelBase):
+    insurance_provider = models.TextField(primary_key=True, db_index=True)
+
+    def __str__(self):
+        return f'{self.insurance_provider}'
+
+
+class PriorAuthRequirement(PortalModelBase):
+    url_slug = models.TextField(primary_key=True, db_index=True)    # xxhash medication + _ + insurance_provider
+    medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='prior_auth_requirements')
+    insurance_provider = models.ForeignKey(InsuranceProvider, on_delete=models.CASCADE, related_name='prior_auth_requirements')
+    insurance_plan_types = models.ManyToManyField(InsurancePlanType, related_name='prior_auth_requirements')
+    insurance_coverage_states = models.ManyToManyField(State, related_name='prior_auth_requirements')
+
+    def __str__(self):
+        return f'{self.insurance_provider} - {self.medication}'
 
 
 class MemberDetails(PortalModelBase):
@@ -35,7 +52,7 @@ class MemberDetails(PortalModelBase):
     member_id = AES256EncryptedField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.cover_my_meds_key} - {self.last_name} - {self.dob} - {self.member_id} - {self.ma_email}'
+        return f'{self.cover_my_meds_key} - {self.last_name} - {self.dob} - {self.member_id}'
 
 
 class RequestNewPriorAuthRequirements(PortalModelBase):
@@ -71,19 +88,27 @@ class InputNodeTypes(models.TextChoices):
 
 
 class RequirementTemplate(PortalModelBase):
-    requirement_rule_name = models.TextField(primary_key=True, db_index=True)
+    requirement_template = models.TextField(primary_key=True, db_index=True)    # xxhash medication + _ + requirement_rule_name
+    requirement_rule_name = models.TextField(editable=False)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='requirement_templates')
     node_type = models.TextField(choices=NodeTypes.choices, default=NodeTypes.FIELDSET)
     label = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.label}'    
+
 
 class RequirementOptionTemplate(PortalModelBase):
-    option_rule_name = models.TextField(primary_key=True, db_index=True)
+    requirement_option_template = models.TextField(primary_key=True, db_index=True)    # xxhash medication + _ + option_rule_name
+    option_rule_name = models.TextField(editable=False)
     requirement_template = models.ForeignKey(
         RequirementTemplate, on_delete=models.CASCADE, related_name='requirement_option_templates'
     )
     node_type = models.TextField(choices=InputNodeTypes.choices, default=InputNodeTypes.RADIO)
     label = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.label}'
 
 
 class SmartEngineItem(PortalModelBase):
@@ -97,6 +122,9 @@ class SmartEngineItem(PortalModelBase):
     label = models.TextField(blank=True, null=True)
     validation = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.label}'
+
 
 class Requirement(PortalModelBase):
     prior_auth_requirement = models.ForeignKey(
@@ -108,9 +136,6 @@ class Requirement(PortalModelBase):
 
 
 class RequirementOption(PortalModelBase):
-    prior_auth_requirement = models.ForeignKey(
-        PriorAuthRequirement, on_delete=models.CASCADE, related_name='requirement_options'
-    )
     requirement = models.ForeignKey(Requirement, on_delete=models.CASCADE, related_name='requirement_options')
     requirement_option_template = models.ForeignKey(
         RequirementOptionTemplate, on_delete=models.CASCADE, related_name='requirement_options'
