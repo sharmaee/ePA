@@ -1,6 +1,5 @@
-from portal.logic.load_csv_data.common import read_data_from_csv, get_raw_requirements
-from portal.models._common import slugify, custom_bulk_update_or_create
-from portal.models.requirements import PriorAuthRequirement
+from portal.logic.load_csv_data.common import read_data_from_csv, get_rows_from_csv_data
+from portal.models.requirements import PriorAuthRequirement, State, InsurancePlanType, InsuranceProvider, Medication
 
 
 HEADER_FIELDS = [
@@ -11,49 +10,28 @@ HEADER_FIELDS = [
 ]
 
 
-def get_cleaned_requirements(requirements):
-    requirements_cleaned = {}
-    for r in requirements:
-        states = r['state'].split('; ')
-        for state in states:
-            insurance_plan_types = r['plan_type'].split('; ')
-            for plan_type in insurance_plan_types:
-                url_slug = slugify(r['medication'] + '_' + r['provider'] + '_' + plan_type + '_' + state)
-                requirements_cleaned[url_slug] = get_requirement_dict(
-                    url_slug, plan_type, state, r['provider'], r['medication']
-                )
-    return requirements_cleaned
+def create_requirements_main_reference(requirement):
+    medication = Medication.objects.get_or_create(medication=requirement['medication'])[0]
+    insurance_provider = InsuranceProvider.objects.get_or_create(insurance_provider=requirement['provider'])[0]
+    requirement_main_reference = PriorAuthRequirement(medication=medication, insurance_provider=insurance_provider)
+    requirement_main_reference.save()
+    print(requirement_main_reference)
+    for state in requirement['state'].split('; '):
+        if state is not None:
+            print(state)
+            s = State.objects.get_or_create(state=state)[0]
+            requirement_main_reference.insurance_coverage_states.add(s)
+    for plan_type in requirement['plan_type'].split('; '):
+        if plan_type is not None:
+            print(plan_type)
+            p = InsurancePlanType.objects.get_or_create(insurance_plan_type=plan_type)[0]
+            requirement_main_reference.insurance_plan_types.add(p)
+    requirement_main_reference.save()
 
-
-def get_requirement_dict(url_slug, plan_type, state, provider, medication):
-    description = (
-        f'{provider} Prior Authorization Requirements for {medication} in the state of {state}'
-        if state
-        else f'{provider} Prior Authorization Requirements for {medication}'
-    )
-    return {
-        'url_slug': url_slug,
-        'medication_id': medication,
-        'description': description,
-        'insurance_provider': provider,
-        'insurance_plan_type': plan_type,
-        'insurance_coverage_state': state,
-    }
 
 
 def generate_pa_requirements_objects():
     csv_data = read_data_from_csv('portal/fixtures/data/raw_data/prior_auth_requirements.csv')
-    requirements = get_raw_requirements(csv_data, HEADER_FIELDS, 'Drug')
-    requirements_cleaned = get_cleaned_requirements(requirements)
-
-    existing_requirements = PriorAuthRequirement.objects.values_list("url_slug", flat=True)
-    updated_fields = [
-        'medication_id',
-        'description',
-        'insurance_provider',
-        'insurance_plan_type',
-        'insurance_coverage_state',
-    ]
-    custom_bulk_update_or_create(
-        requirements_cleaned, PriorAuthRequirement, existing_requirements, 'url_slug', updated_fields
-    )
+    requirements = get_rows_from_csv_data(csv_data, HEADER_FIELDS, 'Drug')
+    for row in requirements:
+        create_requirements_main_reference(row)

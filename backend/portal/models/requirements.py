@@ -1,5 +1,5 @@
 from django.db import models
-from portal.models._common import PortalModelBase
+from portal.models._common import PortalModelBase, slugify
 from portal.models.field import AES256EncryptedField
 from portal.models.auth import User
 
@@ -9,7 +9,7 @@ class Medication(PortalModelBase):
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.medication_name}'
+        return f'{self.medication}'
 
 
 class State(PortalModelBase):
@@ -34,6 +34,7 @@ class InsuranceProvider(PortalModelBase):
 
 
 class PriorAuthRequirement(PortalModelBase):
+    url_slug = models.TextField(primary_key=True, db_index=True)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='prior_auth_requirements')
     insurance_provider = models.ForeignKey(InsuranceProvider, on_delete=models.CASCADE, related_name='prior_auth_requirements')
     insurance_plan_types = models.ManyToManyField(InsurancePlanType, related_name='prior_auth_requirements')
@@ -41,6 +42,11 @@ class PriorAuthRequirement(PortalModelBase):
 
     def __str__(self):
         return f'{self.insurance_provider} - {self.medication}'
+    
+    def save(self, *args, **kwargs):
+        if not self.url_slug:
+            self.url_slug = slugify()
+        super().save(*args, **kwargs)
 
 
 class MemberDetails(PortalModelBase):

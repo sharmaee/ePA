@@ -4,7 +4,7 @@ def read_data_from_csv(filepath):
     return raw_data
 
 
-def get_raw_requirements(raw_data, header_fields, header_start):
+def get_rows_from_csv_data(raw_data, header_fields, header_start):
     requirements = []
     for line in raw_data:
         if line.startswith(header_start):
