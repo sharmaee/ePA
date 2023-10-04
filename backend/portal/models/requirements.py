@@ -37,8 +37,8 @@ class PriorAuthRequirement(PortalModelBase):
     url_slug = models.TextField(primary_key=True, db_index=True)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='prior_auth_requirements')
     insurance_provider = models.ForeignKey(InsuranceProvider, on_delete=models.CASCADE, related_name='prior_auth_requirements')
-    insurance_plan_types = models.ManyToManyField(InsurancePlanType, related_name='prior_auth_requirements')
-    insurance_coverage_states = models.ManyToManyField(State, related_name='prior_auth_requirements')
+    insurance_plan_types = models.ManyToManyField(InsurancePlanType, related_name='+', db_table='requirements__insuranceplantype_to_priorauthrequirement')
+    insurance_coverage_states = models.ManyToManyField(State, related_name='+', db_table='requirements__insurancecoveragestate_to_priorauthrequirement')
 
     def __str__(self):
         return f'{self.insurance_provider} - {self.medication}'
@@ -135,7 +135,7 @@ class Requirement(PortalModelBase):
         PriorAuthRequirement, on_delete=models.CASCADE, related_name='requirements'
     )
     requirement_template = models.ForeignKey(RequirementTemplate, on_delete=models.CASCADE, related_name='requirements')
-    smart_engine_items = models.ManyToManyField(SmartEngineItem, related_name='requirements')
+    smart_engine_items = models.ManyToManyField(SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement')
     requirement_rule_set = models.JSONField(blank=True, null=True)
 
 
@@ -144,5 +144,5 @@ class RequirementOption(PortalModelBase):
     requirement_option_template = models.ForeignKey(
         RequirementOptionTemplate, on_delete=models.CASCADE, related_name='requirement_options'
     )
-    smart_engine_items = models.ManyToManyField(SmartEngineItem, related_name='requirement_options')
+    smart_engine_items = models.ManyToManyField(SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement_option')
     option_rule_set = models.JSONField(blank=True, null=True)

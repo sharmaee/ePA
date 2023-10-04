@@ -13,13 +13,15 @@ HEADER_FIELDS = [
 def create_requirements_main_reference(requirement):
     medication = Medication.objects.get_or_create(medication=requirement['medication'])[0]
     insurance_provider = InsuranceProvider.objects.get_or_create(insurance_provider=requirement['provider'])[0]
-    requirement_main_reference = PriorAuthRequirement(medication=medication, insurance_provider=insurance_provider)
+    requirement_main_reference = PriorAuthRequirement.objects.create(
+        medication=medication, insurance_provider=insurance_provider
+    )
     requirement_main_reference.save()
     print(requirement_main_reference)
-    for state in requirement['state'].split('; '):
-        if state is not None:
-            print(state)
-            s = State.objects.get_or_create(state=state)[0]
+    for insurance_coverage_state in requirement['state'].split('; '):
+        print(insurance_coverage_state)
+        if insurance_coverage_state is not None:
+            s = State.objects.get_or_create(state=insurance_coverage_state)[0]
             requirement_main_reference.insurance_coverage_states.add(s)
     for plan_type in requirement['plan_type'].split('; '):
         if plan_type is not None:
