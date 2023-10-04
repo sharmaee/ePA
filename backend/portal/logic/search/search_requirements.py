@@ -1,24 +1,15 @@
-from portal.models.requirements import PriorAuthRequirement
+from portal.models.requirements import InsuranceCoverageCriteria, InsuranceProvider, Medication
 
 
 def run_search(search_params):
-    return (
-        PriorAuthRequirement.objects.filter(medication=search_params['medication'])
-        .filter(insurance_coverage_state=search_params['insurance_coverage_state'])
-        .filter(insurance_provider__icontains=search_params['insurance_provider'])
-        .only(
-            "url_slug",
-            "description",
-            "insurance_provider",
-            "insurance_plan_type",
-            "insurance_coverage_state",
-            "medication",
-        )
+    return InsuranceCoverageCriteria.objects.filter(
+        medication__medication__icontains=search_params["medication"],
+        insurance_provider__insurance_provider__icontains=search_params["insurance_provider"],
+        states__state=search_params["insurance_coverage_state"],
     )
 
 
 def get_available_search_options():
-    insurance_providers = list(
-        PriorAuthRequirement.objects.all().values_list("insurance_provider", flat=True).distinct()
-    )
-    return {"insurance_providers": insurance_providers}
+    insurance_providers = list(InsuranceProvider.objects.all().values_list("insurance_provider", flat=True))
+    medications = list(Medication.objects.all().values_list("medication", flat=True))
+    return {"insurance_providers": insurance_providers, "medications": medications}
