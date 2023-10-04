@@ -1,7 +1,7 @@
 <template>
   <PriorHeader />
   <div class="missing-requirements-wrapper">
-    <h1 :class="{ hide: screenWidth < 835 }">Denial Report</h1>
+    <h1 :class="{ hide: screenWidth < 835 }">Get the Preferred Medication</h1>
     <div class="shadow-ellipse shadow-ellipse-right"></div>
     <div v-if="showPreloader" class="preloader-wrapper">
       <GreenCirclePreloader />
@@ -13,7 +13,7 @@
 
     <div class="request-missing-requirements-form-wrapper">
       <div v-if="!showPreloader && !successModalWindow" class="missing-requirements-form">
-        <h2>Get updated criteria for improving first time approval rates.</h2>
+        <h2>Get the preferred medication to help your patient receive care faster.</h2>
         <hr />
         <RequestForm />
       </div>
