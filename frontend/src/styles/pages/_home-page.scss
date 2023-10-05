@@ -25,6 +25,20 @@
         @media (max-width: 885px) {
             line-height: 1;
         }
+
+        @media (max-width: 768px) {
+            font-size: 42px;
+        }
+
+        @media (max-width: 360px) {
+            font-size: 38px;
+            word-break: break-word;
+        }
+
+        @media (max-width: 340px) {
+            word-break: break-word;
+        }
+
     }
 
     .home-page-btn-wrapper {
@@ -32,7 +46,11 @@
         justify-content: flex-end;
         justify-content: space-between;
         margin: 30px 0 120px 0;
-        width: 300px;
+        width: 350px;
+
+        @media (max-width: 390px) {
+            flex-direction: column;
+        }
 
         .btn-blue {
             text-decoration: none;
@@ -43,6 +61,11 @@
             border-radius: 46px;
             padding: 11px 20px;
             cursor: pointer;
+
+            @media (max-width: 390px) {
+                text-align: center;
+                margin: 0 auto 10px auto;
+            }
         }
     }
 

@@ -18,7 +18,12 @@
             @media (max-width: 1440px) {
                 font-size: 56px;
             }
-    
+
+            @media (max-width: 768px) {
+                font-size: 42px;
+                width: 85%;
+            }
+
             .blue-text {
                 color: $blue;
             }
@@ -32,7 +37,12 @@
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
+
+            @media (max-width: 768px) {           
+                width: 90%;
+            }
         }
+
     }
    
 
@@ -96,7 +106,7 @@
     }
 
     .questionaire-wrapper {
-        width: 100%;
+        width: 85%;
         min-height: 45vh;
     }
 }
