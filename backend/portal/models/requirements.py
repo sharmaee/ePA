@@ -97,6 +97,7 @@ class InsuranceCoverageCriteria(PortalModelBase):
         State, related_name='insurance_coverage_criteria', db_table='requirements__state_to_insurancecoveragecriteria'
     )
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.insurance_provider} - {self.medication}'
@@ -117,7 +118,7 @@ class InputNodeTypes(models.TextChoices):
 
 
 class RequirementTemplate(PortalModelBase):
-    requirement_rule_name = models.TextField(editable=False, unique=True)
+    requirement_rule_name = models.TextField(primary_key=True, db_index=True)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='requirement_templates')
     node_type = models.TextField(choices=NodeTypes.choices, default=NodeTypes.FIELDSET)
     label = models.TextField(blank=True, null=True)
@@ -127,7 +128,7 @@ class RequirementTemplate(PortalModelBase):
 
 
 class RequirementOptionTemplate(PortalModelBase):
-    option_rule_name = models.TextField(editable=False, unique=True)
+    option_rule_name = models.TextField(primary_key=True, db_index=True)
     requirement_template = models.ForeignKey(
         RequirementTemplate, on_delete=models.CASCADE, related_name='requirement_option_templates'
     )

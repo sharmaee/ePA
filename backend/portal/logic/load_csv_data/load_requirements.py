@@ -1,4 +1,5 @@
 from portal.logic.load_csv_data.common import read_data_from_csv, get_rows_from_csv_data
+from portal.models._common import custom_bulk_update_or_create
 from portal.models.requirements import (
     InsuranceCoverageCriteria,
     State,
@@ -12,9 +13,9 @@ from portal.models.requirements import (
 
 
 INSURANCE_COVERAGE_CRITERIA_FIELDS = ["medication", "provider", "plan_type", "state"]
-REQUIREMENT_TEMPLATE_FIELDS = ["medication", "rule_name", "label"]
+REQUIREMENT_TEMPLATE_FIELDS = ["medication", "requirement_rule_name", "label"]
 REQUIREMENT_OPTION_TEMPLATE_FIELDS = ["option_rule_name", "requirement_rule_name", "node_type", "label"]
-SMART_ENGINE_FIELDS = ["medication", "rule_name", "option_rule_name", "label", "validation"]
+SMART_ENGINE_FIELDS = ["medication", "requirement_rule_name", "option_rule_name", "label", "validation"]
 
 
 def add_missing_records_to_database(model, pk_field, data):
@@ -40,42 +41,55 @@ def create_requirements_main_reference(requirement):
 
 def generate_insurance_coverage_criteria_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/prior_auth_requirements.csv")
-    requirements = get_rows_from_csv_data(csv_data, INSURANCE_COVERAGE_CRITERIA_FIELDS, "Drug")
+    requirements = get_rows_from_csv_data(csv_data, INSURANCE_COVERAGE_CRITERIA_FIELDS)
     for row in requirements:
         create_requirements_main_reference(row)
 
 
 def generate_requirement_template_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/requirement_templates.csv")
-    requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_TEMPLATE_FIELDS, "Medication")
+    requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_TEMPLATE_FIELDS)
+    requirement_templates = {}
     for row in requirements:
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
-        RequirementTemplate.objects.create(
-            medication=medication, requirement_rule_name=row["rule_name"], label=row["label"]
-        )
+        requirement = {}
+        requirement["requirement_rule_name"] = row["requirement_rule_name"]
+        requirement["medication_id"] = medication.pk
+        requirement["label"] = row["label"]
+        requirement_templates[row["requirement_rule_name"]] = requirement
+    existing_templates = RequirementTemplate.objects.values_list("requirement_rule_name", flat=True)
+    updated_fields = ["label"]
+    custom_bulk_update_or_create(
+        requirement_templates, RequirementTemplate, existing_templates, "requirement_rule_name", updated_fields
+    )
 
 
 def generate_requirement_option_template_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/requirement_option_templates.csv")
-    requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_OPTION_TEMPLATE_FIELDS, "Option")
+    requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_OPTION_TEMPLATE_FIELDS)
+    option_templates = {}
     for row in requirements:
-        requirement_template = RequirementTemplate.objects.get(requirement_rule_name=row["requirement_rule_name"])
-        RequirementOptionTemplate.objects.create(
-            requirement_template=requirement_template,
-            option_rule_name=row["option_rule_name"],
-            node_type=row["node_type"],
-            label=row["label"],
-        )
+        option = {}
+        option["requirement_rule_name_id"] = row["requirement_rule_name"]
+        option["option_rule_name"] = row["option_rule_name"]
+        option["node_type"] = row["node_type"]
+        option["label"] = row["label"]
+        option[row["option_rule_name"]] = option
+    existing_templates = RequirementOptionTemplate.objects.values_list("option_rule_name", flat=True)
+    updated_fields = ["label"]
+    custom_bulk_update_or_create(
+        option_templates, RequirementOptionTemplate, existing_templates, "option_rule_name", updated_fields
+    )
 
 
 def generate_smart_engine_item_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/prior_auth_requirements.csv")
-    requirements = get_rows_from_csv_data(csv_data, SMART_ENGINE_FIELDS, "Medication")
+    requirements = get_rows_from_csv_data(csv_data, SMART_ENGINE_FIELDS)
     for row in requirements:
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
         requirement_template = (
-            RequirementTemplate.objects.get(requirement_rule_name=row["rule_name"])
-            if row["rule_name"] is not None
+            RequirementTemplate.objects.get(requirement_rule_name=row["requirement_rule_name"])
+            if row["requirement_rule_name"] is not None
             else None
         )
         requirement_option_template = (
