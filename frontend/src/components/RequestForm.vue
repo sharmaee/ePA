@@ -90,6 +90,8 @@ import { useUiElementsStore } from "@/stores/uiElementsStore";
 import { useRoute } from "vue-router";
 import { usaStates } from "@/utils/usaStates";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
+
 const { searchFormData } = storeToRefs(useSearchFormStore());
 
 const route = useRoute();
@@ -123,20 +125,16 @@ const data = ref({
 const medications = ["Saxenda", "Mounjaro", "Ozempic", "Victoza", "Rybelsus", "Wegovy"];
 
 // Validators
-const dobPattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
-const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
-const patientMemberIdPattern = /^[A-Za-z0-9]{3,20}$/;
-
 const isDobValid = computed(() => {
-  return dobPattern.test(data.value.dob);
+  return FORM_VALIDATION_PATTERNS.DOB_PATTERN.test(data.value.dob);
 });
 
 const isCoverMyMedsKeyValid = computed(() => {
-  return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
+  return FORM_VALIDATION_PATTERNS.COVER_MY_MEDS_KEY_PATTERN.test(data.value.coverMyMedsKey);
 });
 
 const isPatientMemberIdValid = computed(() => {
-  return patientMemberIdPattern.test(data.value.memberId);
+  return FORM_VALIDATION_PATTERNS.PATIENT_MEMBER_ID_PATTERN.test(data.value.memberId);
 });
 
 const isMedicationValid = computed(() => {

@@ -51,6 +51,7 @@ import authService from "@/services/authService";
 import { useRoute, useRouter } from "vue-router";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
 
 const errors = ref([]);
 const showPreloader = ref(false);
@@ -67,9 +68,7 @@ const passwordConfirmation = ref("");
 // Validators
 const isPasswordValid = computed(() => {
   const password = newPassword.value;
-  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{11,}$/;
-
-  return passwordPattern.test(password);
+  return FORM_VALIDATION_PATTERNS.PASSWORD_PATTERN.test(password);
 });
 
 const isPasswordMatchValid = computed(() => {

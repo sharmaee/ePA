@@ -44,6 +44,7 @@ import PriorFooter from "@/components/PriorFooter";
 import authService from "@/services/authService";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
 
 const errors = ref([]);
 const showPreloader = ref(false);
@@ -54,9 +55,8 @@ const formButtonClicked = ref(false);
 
 // Validators
 const isEmailValid = computed(() => {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = userEmail.value;
-  return email !== "" && emailPattern.test(email);
+  return email !== "" && FORM_VALIDATION_PATTERNS.EMAIL_PATTERN.test(email);
 });
 
 const passwordSending = async () => {
