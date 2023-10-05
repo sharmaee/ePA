@@ -96,6 +96,7 @@ import PriorFooter from "@/components/PriorFooter";
 import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import authService from "@/services/authService";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
 
 const userInfo = ref({
   first_name: "",
@@ -115,16 +116,13 @@ const isFirstNameValid = computed(() => userInfo.value.first_name.trim() !== "")
 const isLastNameValid = computed(() => userInfo.value.last_name.trim() !== "");
 
 const isEmailValid = computed(() => {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = userInfo.value.email;
-  return email !== "" && emailPattern.test(email);
+  return email !== "" && FORM_VALIDATION_PATTERNS.EMAIL_PATTERN.test(email);
 });
 
 const isPasswordValid = computed(() => {
   const password = userInfo.value.password;
-  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{11,}$/;
-
-  return passwordPattern.test(password);
+  return FORM_VALIDATION_PATTERNS.PASSWORD_PATTERN.test(password);
 });
 
 const isPasswordMatchValid = computed(() => {

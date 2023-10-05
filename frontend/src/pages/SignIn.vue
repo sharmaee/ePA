@@ -55,6 +55,7 @@ import GreenCirclePreloader from "@/components/GreenCirclePreloader";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
 
 const errors = ref([]);
 const formButtonClicked = ref(false);
@@ -71,16 +72,13 @@ const credentials = ref({
 
 // Validators
 const isEmailValid = computed(() => {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = credentials.value.email;
-  return email !== "" && emailPattern.test(email);
+  return email !== "" && FORM_VALIDATION_PATTERNS.EMAIL_PATTERN.test(email);
 });
 
 const isPasswordValid = computed(() => {
   const password = credentials.value.password;
-  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{11,}$/;
-
-  return passwordPattern.test(password);
+  return FORM_VALIDATION_PATTERNS.PASSWORD_PATTERN.test(password);
 });
 
 const loginUser = async () => {

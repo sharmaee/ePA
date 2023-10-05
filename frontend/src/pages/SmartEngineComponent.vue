@@ -79,6 +79,7 @@
 import { ref, computed } from "vue";
 import { tryParseApiErrors, sendFormByEnterClicking } from "@/utils";
 import { mainServices } from "@/services/mainServices";
+import { FORM_VALIDATION_PATTERNS } from "@/utils/constants";
 
 import smartEngineTable from "@/json-data/smart-engine-table";
 import smartEngineCheckboxContent from "@/json-data/smart-engine-checkbox-content";
@@ -111,10 +112,8 @@ const data = ref({
   coverMyMedsKey: "",
 });
 
-const coverMyMedsKeyPattern = /^[A-Za-z0-9]{6,8}$/;
-
 const isCoverMyMedsKeyValid = computed(() => {
-  return coverMyMedsKeyPattern.test(data.value.coverMyMedsKey);
+  return FORM_VALIDATION_PATTERNS.COVER_MY_MEDS_KEY_PATTERN.test(data.value.coverMyMedsKey);
 });
 
 const errors = ref([]);
