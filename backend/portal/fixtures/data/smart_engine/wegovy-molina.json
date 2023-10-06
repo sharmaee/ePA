@@ -3,40 +3,40 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 27 kg/m^2.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 27 kg/m^2 (within last 30 days).",
+                "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
             },
             {
                 "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2, or history of pancreatitis, malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document no history of an eating disorder (e.g., anorexia, bulimia).",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, an exercise regimen and a calorie/fat-restricted diet) in the past 6 months and will continue to follow as part of the treatment plan.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Documentation of current medical status including nutritional or dietetic assessment.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Documentation of current therapy for all medical conditions (including obesity), identifying specific treatments including medications.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document current accurate height and weight measurements (within 30 days)",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document current weight loss plan or program including diet and exercise plan",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document member is not concurrently on Victoza or Ozempic or other GLP-1 inhibitors.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
     },
@@ -44,40 +44,40 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 30 kg/m^2.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 30 kg/m^2 (within last 30 days).",
+                "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
             },
             {
                 "label": "Document that the patient does NOT have a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2, or history of pancreatitis, malabsorption syndromes, cholestasis, pregnancy, and/or lactation",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document no history of an eating disorder (e.g., anorexia, bulimia).",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document previous failure of a weight loss treatment plan (e.g., nutritional counseling, an exercise regimen and a calorie/fat-restricted diet) in the past 6 months and will continue to follow as part of the treatment plan.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Documentation of current medical status including nutritional or dietetic assessment.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Documentation of current therapy for all medical conditions (including obesity), identifying specific treatments including medications.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document current accurate height and weight measurements (within 30 days)",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document current weight loss plan or program including diet and exercise plan",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             },
             {
                 "label": "Document member is not concurrently on Victoza or Ozempic or other GLP-1 inhibitors.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission."
             }
         ]
     },
@@ -86,11 +86,11 @@
         "items": [
             {
                 "label": "Document patient has achieved weight loss of at least 5% of initial baseline weight.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
             },
             {
-                "label": "Document the patient's current BMI is > 24 kg/m^2.",
-                "validation": "Stop and Ask Clinical Staff to Make a Referral. (This Does Not Require Documentation)."
+                "label": "Document the patient's current BMI is > 24 kg/m^2 (within last 30 days).",
+                "validation": "A current BMI of less than 24 kg/m^2 is unlikely to be approved."
             }
         ]
     }
