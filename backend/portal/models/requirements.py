@@ -83,7 +83,7 @@ class InsuranceProvider(PortalModelBase):
 
 
 class InsuranceCoverageCriteria(PortalModelBase):
-    url_slug = models.TextField(primary_key=True, db_index=True)
+    url_slug = models.CharField(primary_key=True, db_index=True, max_length=32)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='insurance_coverage_criteria')
     insurance_provider = models.ForeignKey(
         InsuranceProvider, on_delete=models.CASCADE, related_name='insurance_coverage_criteria'
@@ -104,12 +104,7 @@ class InsuranceCoverageCriteria(PortalModelBase):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.insurance_provider} - {self.medication}'
-
-    def save(self, *args, **kwargs):
-        if not self.url_slug:
-            self.url_slug = slugify()
-        super().save(*args, **kwargs)
+        return f'{self.url_slug}'
 
 
 class NodeTypes(models.TextChoices):
@@ -144,12 +139,16 @@ class RequirementOptionTemplate(PortalModelBase):
 
 
 class SmartEngineItem(PortalModelBase):
+    smart_engine_item_id = models.TextField(primary_key=True, db_index=True)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE, related_name='smart_engine_items')
     requirement_template = models.ForeignKey(
         RequirementTemplate, on_delete=models.CASCADE, related_name='smart_engine_items', blank=True, null=True
     )
-    requirement_option_template = models.ForeignKey(
-        RequirementOptionTemplate, on_delete=models.CASCADE, related_name='smart_engine_items', blank=True, null=True
+    requirement_option_template = models.ManyToManyField(
+        RequirementOptionTemplate,
+        related_name='smart_engine_items',
+        db_table='requirements__requirementoptiontemplate_to_smartengineitem',
+        blank=True,
     )
     label = models.TextField(blank=True, null=True)
     validation = models.TextField(blank=True, null=True)
@@ -163,9 +162,6 @@ class Requirement(PortalModelBase):
         InsuranceCoverageCriteria, on_delete=models.CASCADE, related_name='requirements'
     )
     requirement_template = models.ForeignKey(RequirementTemplate, on_delete=models.CASCADE, related_name='requirements')
-    smart_engine_items = models.ManyToManyField(
-        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement', blank=True
-    )
     requirement_rule_set = models.ManyToManyField(
         RequirementTemplate, related_name='+', db_table='requirements__requirementtemplate_to_requirement', blank=True
     )
@@ -178,9 +174,6 @@ class RequirementOption(PortalModelBase):
     requirement = models.ForeignKey(Requirement, on_delete=models.CASCADE, related_name='requirement_options')
     requirement_option_template = models.ForeignKey(
         RequirementOptionTemplate, on_delete=models.CASCADE, related_name='requirement_options'
-    )
-    smart_engine_items = models.ManyToManyField(
-        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement_option', blank=True
     )
     option_rule_set = models.ManyToManyField(
         RequirementOptionTemplate,

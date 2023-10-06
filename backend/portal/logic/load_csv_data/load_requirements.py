@@ -9,16 +9,25 @@ from portal.models.requirements import (
     RequirementTemplate,
     RequirementOptionTemplate,
     SmartEngineItem,
+    Requirement,
+    RequirementOption,
 )
 
 
-INSURANCE_COVERAGE_CRITERIA_FIELDS = ["medication", "provider", "plan_type", "state"]
+INSURANCE_COVERAGE_CRITERIA_FIELDS = ["id", "medication", "provider", "plan_type", "state"]
 REQUIREMENT_TEMPLATE_FIELDS = ["medication", "requirement_rule_name", "label"]
 REQUIREMENT_OPTION_TEMPLATE_FIELDS = ["option_rule_name", "requirement_rule_name", "node_type", "label"]
-SMART_ENGINE_FIELDS = ["medication", "requirement_rule_name", "option_rule_name", "label", "validation"]
+SMART_ENGINE_FIELDS = ["medication", "requirement_rule_name", "option_rule_name", "id", "label", "validation"]
+REQUIREMENT_OPTION_FIELDS = [
+    "id",
+    "requirement_rule_name",
+    "requirement_rule_set",
+    "option_rule_name",
+    "option_rule_set",
+]
 
 
-def add_missing_records_to_database(model, pk_field, data):
+def bulk_get_or_create(model, pk_field, data):
     data_list = list(filter(None, data.split("; ")))
     existing_records = model.objects.filter(**{pk_field + "__in": data_list})
     existing_records_list = list(existing_records.values_list(pk_field, flat=True))
@@ -27,14 +36,16 @@ def add_missing_records_to_database(model, pk_field, data):
     return existing_records
 
 
-def create_requirements_main_reference(requirement):
+def create_or_update_insurance_coverage_criteria(requirement):
     medication = Medication.objects.get_or_create(medication=requirement["medication"])[0]
     insurance_provider = InsuranceProvider.objects.get_or_create(insurance_provider=requirement["provider"])[0]
-    requirement_main_reference = InsuranceCoverageCriteria(medication=medication, insurance_provider=insurance_provider)
-    requirement_main_reference.save()
-    states = add_missing_records_to_database(State, "state", requirement["state"])
+    requirement_main_reference = InsuranceCoverageCriteria.objects.filter(url_slug=requirement["id"]).first()
+    if requirement_main_reference is None:
+        requirement_main_reference = InsuranceCoverageCriteria(medication=medication, insurance_provider=insurance_provider)
+        requirement_main_reference.save()
+    states = bulk_get_or_create(State, "state", requirement["state"])
     requirement_main_reference.states.add(*states)
-    plan_types = add_missing_records_to_database(InsurancePlanType, "insurance_plan_type", requirement["plan_type"])
+    plan_types = bulk_get_or_create(InsurancePlanType, "insurance_plan_type", requirement["plan_type"])
     requirement_main_reference.insurance_plan_types.add(*plan_types)
     requirement_main_reference.save()
 
@@ -43,7 +54,7 @@ def generate_insurance_coverage_criteria_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/prior_auth_requirements.csv")
     requirements = get_rows_from_csv_data(csv_data, INSURANCE_COVERAGE_CRITERIA_FIELDS)
     for row in requirements:
-        create_requirements_main_reference(row)
+        create_or_update_insurance_coverage_criteria(row)
 
 
 def generate_requirement_template_objects():
@@ -85,12 +96,49 @@ def generate_requirement_option_template_objects():
 def generate_smart_engine_item_objects():
     csv_data = read_data_from_csv("portal/fixtures/data/raw_data/smart_engine_items.csv")
     requirements = get_rows_from_csv_data(csv_data, SMART_ENGINE_FIELDS)
+    smart_engine_items = {}
     for row in requirements:
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
-        SmartEngineItem.objects.create(
-            medication=medication,
-            requirement_template_id=row["requirement_rule_name"] if row["requirement_rule_name"] else None,
-            requirement_option_template_id=row["option_rule_name"] if row["option_rule_name"] else None,
-            label=row["label"].replace(";", ","),
-            validation=row["validation"].replace(";", ","),
+        smart_engine_item = {}
+        smart_engine_item["medication_id"] = medication.pk
+        smart_engine_item["requirement_template_id"] = row["requirement_rule_name"]
+        smart_engine_item["smart_engine_item_id"] = row["id"]
+        smart_engine_item["label"] = row["label"].replace(";", ",")
+        smart_engine_item["validation"] = row["validation"].replace(";", ",")
+    existing_smart_engine_items = SmartEngineItem.objects.values_list("smart_engine_item_id", flat=True)
+    updated_fields = ["label", "validation", "requirement_template_id"]
+    custom_bulk_update_or_create(
+        smart_engine_items, SmartEngineItem, existing_smart_engine_items, "option_rule_name", updated_fields
+    )
+    for row in requirements:
+        smart_engine_item = SmartEngineItem.objects.get(smart_engine_item_id=row["id"])
+        option_template_ids = row["option_rule_name"].split("; ")
+        option_templates = RequirementOptionTemplate.objects.filter(option_rule_name__in=option_template_ids)
+        smart_engine_item.requirement_option_template.add(*option_templates)
+
+
+def generate_requirement_option_objects():
+    csv_data = read_data_from_csv("portal/fixtures/data/raw_data/requirements.csv")
+    requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_OPTION_FIELDS)
+    for row in requirements:
+        requirement = Requirement.objects.filter(
+            insurance_coverage_criteria_id=row["id"],
+            requirement_template_id=row["requirement_rule_name"],
+        ).first()
+        if requirement is None:
+            requirement = Requirement.objects.create(
+                insurance_coverage_criteria_id=row["id"],
+                requirement_template_id=row["requirement_rule_name"],
+            )
+        requirement_rules = row["requirement_rule_set"].split("; ")
+        requirement_rule_set = RequirementTemplate.objects.filter(requirement_rule_name__in=requirement_rules)
+        requirement.requirement_rule_set.add(*requirement_rule_set)
+        requirement.save()
+        option = RequirementOption.objects.create(
+            requirement_id=requirement.pk,
+            requirement_option_template_id=row["option_rule_name"],
         )
+        option_rules = row["option_rule_set"].split("; ")
+        option_rule_set = RequirementOptionTemplate.objects.filter(option_rule_name__in=option_rules)
+        option.option_rule_set.add(*option_rule_set)
+        option.save()

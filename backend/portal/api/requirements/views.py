@@ -1,6 +1,8 @@
 from rest_framework import status
 from rest_framework.response import Response
 from portal.utils.send_emails import send_service_email, NotificationType
+from django.utils.encoding import force_str
+from django.utils.http import urlsafe_base64_decode
 
 from .serializers import (
     AvailableSearchOptionsSerializer,
@@ -65,7 +67,8 @@ class PriorAuthSubmissionView(SecuredAPIView):
 
 class InsuranceCoverageCriteriaRequirementsView(SecuredAPIView):
     def get(self, request, url_slug):
-        requirements = Requirement.objects.filter(insurance_coverage_criteria=url_slug).select_related(
+        url_slug_decoded = force_str(urlsafe_base64_decode(url_slug))
+        requirements = Requirement.objects.filter(insurance_coverage_criteria=url_slug_decoded).select_related(
             'requirement_template'
         )
         result = RequirementSerializer(requirements, many=True).data
