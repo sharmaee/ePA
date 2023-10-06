@@ -133,7 +133,7 @@ def generate_requirement_option_objects():
                 insurance_coverage_criteria_id=row["insurance_coverage_criteria_id"],
                 requirement_template_id=row["requirement_rule_name"],
             )
-        requirement_rules = row["requirement_rule_set"].split("; ")
+        requirement_rules = list(filter(None, row["requirement_rule_set"].split("; ")))
         requirement_rule_set = RequirementTemplate.objects.filter(requirement_rule_name__in=requirement_rules)
         requirement.requirement_rule_set.add(*requirement_rule_set)
         requirement.save()
@@ -141,7 +141,7 @@ def generate_requirement_option_objects():
             requirement_id=requirement.pk,
             requirement_option_template_id=row["option_rule_name"],
         )
-        option_rules = row["option_rule_set"].split("; ")
+        option_rules = list(filter(None, row["option_rule_set"].split("; ")))
         option_rule_set = RequirementOptionTemplate.objects.filter(option_rule_name__in=option_rules)
         option.option_rule_set.add(*option_rule_set)
         option.save()
