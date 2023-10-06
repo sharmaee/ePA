@@ -3,7 +3,7 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 27 kg/m^2.",
+                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 27 kg/m^2 (within last 30 days).",
                 "validation": "An initial BMI of less than 27 kg/m^2 is unlikely to be approved."
             },
             {
@@ -44,7 +44,7 @@
         "header": "Verify Prescriber and Patient Documentation",
         "items": [
             {
-                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 30 kg/m^2.",
+                "label": "Document baseline body mass index greater than 60 kg and and initial (BMI) ≥ 30 kg/m^2 (within last 30 days).",
                 "validation": "An initial BMI of less than 30 kg/m^2 is unlikely to be approved."
             },
             {
@@ -89,7 +89,7 @@
                 "validation": "Stop and contact provider to document this in the patient's chart. Add to your PA submission.."
             },
             {
-                "label": "Document the patient's current BMI is > 24 kg/m^2.",
+                "label": "Document the patient's current BMI is > 24 kg/m^2 (within last 30 days).",
                 "validation": "A current BMI of less than 24 kg/m^2 is unlikely to be approved."
             }
         ]
