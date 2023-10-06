@@ -8,10 +8,11 @@ from .serializers import (
     MemberDetailsSerializer,
     PriorAuthSubmissionSerializer,
     InsuranceCoverageCriteriaSerializer,
+    RequirementSerializer,
 )
 from portal.api.utils import SecuredAPIView
 from portal.logic.search.search_requirements import run_search, get_available_search_options
-from portal.models.requirements import PriorAuthRequirement, PriorAuthSubmission
+from portal.models.requirements import PriorAuthSubmission, Requirement, RequirementOption
 
 
 class PriorAuthRequirementsView(SecuredAPIView):
@@ -60,3 +61,12 @@ class PriorAuthSubmissionView(SecuredAPIView):
             cover_my_meds_key=cover_my_meds_key, user=self.request.user
         )
         return Response(PriorAuthSubmissionSerializer(obj).data, status=status.HTTP_200_OK)
+
+
+class InsuranceCoverageCriteriaRequirementsView(SecuredAPIView):
+    def get(self, request, url_slug):
+        requirements = Requirement.objects.filter(insurance_coverage_criteria=url_slug).select_related(
+            'requirement_template'
+        )
+        result = RequirementSerializer(requirements, many=True).data
+        return Response(result, status=status.HTTP_200_OK)

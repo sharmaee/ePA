@@ -106,24 +106,39 @@ class RequirementOptionTemplateSerializer(serializers.ModelSerializer):
 class SmartEngineItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = SmartEngineItem
-        fields = '__all__'
+        fields = (
+            'label',
+            'validation',
+        )
+
+
+class RequirementOptionSerializer(serializers.ModelSerializer):
+    requirement_option_template = RequirementOptionTemplateSerializer()
+    smart_engine_items = SmartEngineItemSerializer(many=True)
+
+    class Meta:
+        model = RequirementOption
+        fields = (
+            'requirement_option_template',
+            'smart_engine_items',
+            'option_rule_set',
+        )
 
 
 class RequirementSerializer(serializers.ModelSerializer):
     requirement_template = RequirementTemplateSerializer()
     smart_engine_items = SmartEngineItemSerializer(many=True)
-    insurance_coverage_criteria = InsuranceCoverageCriteriaSerializer()
+    options = serializers.SerializerMethodField()
 
     class Meta:
         model = Requirement
-        fields = '__all__'
+        fields = (
+            'requirement_template',
+            'smart_engine_items',
+            'requirement_rule_set',
+            'options',
+        )
 
-
-class RequirementOptionSerializer(serializers.ModelSerializer):
-    requirement_option_template = RequirementOptionTemplateSerializer()
-    requirement = RequirementSerializer()
-    smart_engine_items = SmartEngineItemSerializer(many=True)
-
-    class Meta:
-        model = RequirementOption
-        fields = '__all__'
+    def get_options(self, obj):
+        options = RequirementOption.objects.filter(requirement=obj).select_related('requirement_option_template')
+        return RequirementOptionSerializer(options, many=True).data

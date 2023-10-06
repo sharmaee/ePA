@@ -1,0 +1,48 @@
+Option Rule Name,Requirement Rule Name,Node Type,Label
+over_18,age,radio,Patient is 18 years or older
+over_12_under_18,age,radio,Patient is 12 to 17 years old
+initiation,stage_of_therapy,radio,Start of therapy
+continuation,stage_of_therapy,radio,Continuation of therapy
+asian,asian_descent,radio,Yes
+non_asian,asian_descent,radio,No
+bmi_over_27,bmi,radio,BMI ≥ 27 kg/m^2
+bmi_over_30,bmi,radio,BMI ≥ 30 kg/m^2
+bmi_over_95_percentile_or_over_30,bmi,radio,BMI ≥ 95th percentile for age and gender or BMI ≥ 30 kg/m^2
+bmi_over_85_percentile,bmi,radio,BMI ≥ 85th percentile for age and gender
+with_weight_loss_agent,weight_loss_agents,radio,Yes
+no_weight_loss_agent,weight_loss_agents,radio,No
+over_52_weeks,therapy_duration,radio,More than 52 weeks (1 year)
+less_than_52_weeks,therapy_duration,radio,Less than 52 weeks
+established_cardiovascular_disease_or_stroke,risk_factors,checkbox,Established cardiovascular disease or stroke
+hypertension,risk_factors,checkbox,Hypertension
+type_2_diabetes,risk_factors,checkbox,Type 2 diabetes (DM)
+chronic_kidney_disease,risk_factors,checkbox,Chronic kidney disease (CKD)
+coronary_heart_disease,risk_factors,checkbox,Coronary heart disease (CHD)
+obstructive_sleep_apnea,risk_factors,checkbox,Obstructive sleep apnea
+polycystic_ovarian_syndrome,risk_factors,checkbox,Polycystic ovarian syndrome
+dyslipidemia,risk_factors,checkbox,Dyslipidemia
+non_alcoholic_fatty_liver_disease,risk_factors,checkbox,Non-alcoholic fatty liver disease
+idiopathic_intracranial_hypertension,risk_factors,checkbox,Idiopathic intracranial hypertension
+osteoarthritis_in_weight_bearing_joints,risk_factors,checkbox,Osteoarthritis in weight-bearing joints
+established_cardiovascular_disease_or_stroke_at_least_1,risk_factors_at_least_1,checkbox,Established cardiovascular disease or stroke
+hypertension_at_least_1,risk_factors_at_least_1,checkbox,Hypertension
+type_2_diabetes_at_least_1,risk_factors_at_least_1,checkbox,Type 2 diabetes (DM)
+chronic_kidney_disease_at_least_1,risk_factors_at_least_1,checkbox,Chronic kidney disease (CKD)
+coronary_heart_disease_at_least_1,risk_factors_at_least_1,checkbox,Coronary heart disease (CHD)
+obstructive_sleep_apnea_at_least_1,risk_factors_at_least_1,checkbox,Obstructive sleep apnea
+polycystic_ovarian_syndrome_at_least_1,risk_factors_at_least_1,checkbox,Polycystic ovarian syndrome
+dyslipidemia_at_least_1,risk_factors_at_least_1,checkbox,Dyslipidemia
+non_alcoholic_fatty_liver_disease_at_least_1,risk_factors_at_least_1,checkbox,Non-alcoholic fatty liver disease
+idiopathic_intracranial_hypertension_at_least_1,risk_factors_at_least_1,checkbox,Idiopathic intracranial hypertension
+osteoarthritis_in_weight_bearing_joints_at_least_1,risk_factors_at_least_1,checkbox,Osteoarthritis in weight-bearing joints
+established_cardiovascular_disease_or_stroke_at_least_2,risk_factors_at_least_2,checkbox,Established cardiovascular disease or stroke
+hypertension_at_least_2,risk_factors_at_least_2,checkbox,Hypertension
+type_2_diabetes_at_least_2,risk_factors_at_least_2,checkbox,Type 2 diabetes (DM)
+chronic_kidney_disease_at_least_2,risk_factors_at_least_2,checkbox,Chronic kidney disease (CKD)
+coronary_heart_disease_at_least_2,risk_factors_at_least_2,checkbox,Coronary heart disease (CHD)
+obstructive_sleep_apnea_at_least_2,risk_factors_at_least_2,checkbox,Obstructive sleep apnea
+polycystic_ovarian_syndrome_at_least_2,risk_factors_at_least_2,checkbox,Polycystic ovarian syndrome
+dyslipidemia_at_least_2,risk_factors_at_least_2,checkbox,Dyslipidemia
+non_alcoholic_fatty_liver_disease_at_least_2,risk_factors_at_least_2,checkbox,Non-alcoholic fatty liver disease
+idiopathic_intracranial_hypertension_at_least_2,risk_factors_at_least_2,checkbox,Idiopathic intracranial hypertension
+osteoarthritis_in_weight_bearing_joints_at_least_2,risk_factors_at_least_2,checkbox,Osteoarthritis in weight-bearing joints

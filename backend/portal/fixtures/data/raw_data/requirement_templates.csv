@@ -1,0 +1,10 @@
+Medication,Requirement Rule Name,Label
+Wegovy (semaglutide),age,What is the patient's age?
+Wegovy (semaglutide),stage_of_therapy,Is this request for initiation or continuation of therapy with Wegovy (semaglutide)?
+Wegovy (semaglutide),asian_descent,The patient is of South Asian; Southeast Asian; or East Asian descent?
+Wegovy (semaglutide),bmi,What is the patient's initial BMI (baseline body mass index)?
+Wegovy (semaglutide),weight_loss_agents,Patient has tried a targeted weight loss agent in the last 12 months?
+Wegovy (semaglutide),therapy_duration,How long has patient received treatment of Wegovy (semaglutide)?
+Wegovy (semaglutide),risk_factors,Which Weight-Related Risk Factors Does the Patient Have? (Select All That Apply)
+Wegovy (semaglutide),risk_factors_at_least_1,Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least One; At Select All That Apply)
+Wegovy (semaglutide),risk_factors_at_least_2,Which Weight-Related Risk Factors Does the Patient Have? (Must Have at Least Two; At Select All That Apply)

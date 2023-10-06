@@ -55,7 +55,7 @@ def generate_requirement_template_objects():
         requirement = {}
         requirement["requirement_rule_name"] = row["requirement_rule_name"]
         requirement["medication_id"] = medication.pk
-        requirement["label"] = row["label"]
+        requirement["label"] = row["label"].replace(";", ",")
         requirement_templates[row["requirement_rule_name"]] = requirement
     existing_templates = RequirementTemplate.objects.values_list("requirement_rule_name", flat=True)
     updated_fields = ["label"]
@@ -70,11 +70,11 @@ def generate_requirement_option_template_objects():
     option_templates = {}
     for row in requirements:
         option = {}
-        option["requirement_rule_name_id"] = row["requirement_rule_name"]
+        option["requirement_template_id"] = row["requirement_rule_name"]
         option["option_rule_name"] = row["option_rule_name"]
         option["node_type"] = row["node_type"]
-        option["label"] = row["label"]
-        option[row["option_rule_name"]] = option
+        option["label"] = row["label"].replace(";", ",")
+        option_templates[row["option_rule_name"]] = option
     existing_templates = RequirementOptionTemplate.objects.values_list("option_rule_name", flat=True)
     updated_fields = ["label"]
     custom_bulk_update_or_create(
@@ -83,24 +83,14 @@ def generate_requirement_option_template_objects():
 
 
 def generate_smart_engine_item_objects():
-    csv_data = read_data_from_csv("portal/fixtures/data/raw_data/prior_auth_requirements.csv")
+    csv_data = read_data_from_csv("portal/fixtures/data/raw_data/smart_engine_items.csv")
     requirements = get_rows_from_csv_data(csv_data, SMART_ENGINE_FIELDS)
     for row in requirements:
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
-        requirement_template = (
-            RequirementTemplate.objects.get(requirement_rule_name=row["requirement_rule_name"])
-            if row["requirement_rule_name"] is not None
-            else None
-        )
-        requirement_option_template = (
-            RequirementOptionTemplate.objects.get(option_rule_name=row["option_rule_name"])
-            if row["option_rule_name"] is not None
-            else None
-        )
         SmartEngineItem.objects.create(
             medication=medication,
-            requirement_template=requirement_template,
-            requirement_option_template=requirement_option_template,
-            label=row["label"],
-            validation=row["validation"],
+            requirement_template_id=row["requirement_rule_name"] if row["requirement_rule_name"] else None,
+            requirement_option_template_id=row["option_rule_name"] if row["option_rule_name"] else None,
+            label=row["label"].replace(";", ","),
+            validation=row["validation"].replace(";", ","),
         )

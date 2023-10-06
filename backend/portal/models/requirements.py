@@ -92,9 +92,13 @@ class InsuranceCoverageCriteria(PortalModelBase):
         InsurancePlanType,
         related_name='insurance_coverage_criteria',
         db_table='requirements__insuranceplantype_to_insurancecoveragecriteria',
+        blank=True,
     )
     states = models.ManyToManyField(
-        State, related_name='insurance_coverage_criteria', db_table='requirements__state_to_insurancecoveragecriteria'
+        State,
+        related_name='insurance_coverage_criteria',
+        db_table='requirements__state_to_insurancecoveragecriteria',
+        blank=True,
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -160,9 +164,14 @@ class Requirement(PortalModelBase):
     )
     requirement_template = models.ForeignKey(RequirementTemplate, on_delete=models.CASCADE, related_name='requirements')
     smart_engine_items = models.ManyToManyField(
-        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement'
+        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement', blank=True
     )
-    requirement_rule_set = models.JSONField(blank=True, null=True)
+    requirement_rule_set = models.ManyToManyField(
+        RequirementTemplate, related_name='+', db_table='requirements__requirementtemplate_to_requirement', blank=True
+    )
+
+    def __str__(self):
+        return f'{self.requirement_template} | {self.insurance_coverage_criteria}'
 
 
 class RequirementOption(PortalModelBase):
@@ -171,6 +180,14 @@ class RequirementOption(PortalModelBase):
         RequirementOptionTemplate, on_delete=models.CASCADE, related_name='requirement_options'
     )
     smart_engine_items = models.ManyToManyField(
-        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement_option'
+        SmartEngineItem, related_name='+', db_table='requirements__smartengineitem_to_requirement_option', blank=True
     )
-    option_rule_set = models.JSONField(blank=True, null=True)
+    option_rule_set = models.ManyToManyField(
+        RequirementOptionTemplate,
+        related_name='+',
+        db_table='requirements__requirementoptiontemplate_to_requirement',
+        blank=True,
+    )
+
+    def __str__(self):
+        return f'{self.requirement_option_template} | {self.requirement.insurance_coverage_criteria}'
