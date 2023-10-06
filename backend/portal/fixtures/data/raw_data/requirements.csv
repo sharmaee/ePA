@@ -11,8 +11,10 @@ Wegovy BCBS Minnesota,bmi,age; stage_of_therapy,bmi_over_95_percentile_or_over_3
 Wegovy BCBS Minnesota,bmi,age; stage_of_therapy,bmi_over_85_percentile,over_12_under_18; initiation
 Wegovy BCBS Minnesota,weight_loss_agents,stage_of_therapy,with_weight_loss_agent,initiation
 Wegovy BCBS Minnesota,weight_loss_agents,stage_of_therapy,no_weight_loss_agent,initiation
-Wegovy BCBS Minnesota,therapy_duration,stage_of_therapy,over_52_weeks,continuation
-Wegovy BCBS Minnesota,therapy_duration,stage_of_therapy,less_than_52_weeks,continuation
+Wegovy BCBS Minnesota,therapy_duration,age; stage_of_therapy,over_52_weeks_adolescent,over_12_under_18; continuation
+Wegovy BCBS Minnesota,therapy_duration,age; stage_of_therapy,less_than_52_weeks_adolescent,over_12_under_18; continuation
+Wegovy BCBS Minnesota,therapy_duration,age; stage_of_therapy,over_52_weeks,over_18; continuation
+Wegovy BCBS Minnesota,therapy_duration,age; stage_of_therapy,less_than_52_weeks,over_18; continuation
 Wegovy BCBS Minnesota,risk_factors,,established_cardiovascular_disease_or_stroke,
 Wegovy BCBS Minnesota,risk_factors,,hypertension,
 Wegovy BCBS Minnesota,risk_factors,,type_2_diabetes,

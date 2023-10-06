@@ -12,7 +12,9 @@ bmi_over_85_percentile,bmi,radio,BMI ≥ 85th percentile for age and gender
 with_weight_loss_agent,weight_loss_agents,radio,Yes
 no_weight_loss_agent,weight_loss_agents,radio,No
 over_52_weeks,therapy_duration,radio,More than 52 weeks (1 year)
+over_52_weeks_adolescent,therapy_duration,radio,More than 52 weeks (1 year)
 less_than_52_weeks,therapy_duration,radio,Less than 52 weeks
+less_than_52_weeks_adolescent,therapy_duration,radio,Less than 52 weeks
 established_cardiovascular_disease_or_stroke,risk_factors,checkbox,Established cardiovascular disease or stroke
 hypertension,risk_factors,checkbox,Hypertension
 type_2_diabetes,risk_factors,checkbox,Type 2 diabetes (DM)
