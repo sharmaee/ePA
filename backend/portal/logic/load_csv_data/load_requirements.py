@@ -42,7 +42,7 @@ def create_or_update_insurance_coverage_criteria(requirement):
     requirement_main_reference = InsuranceCoverageCriteria.objects.filter(url_slug=requirement["id"]).first()
     if requirement_main_reference is None:
         requirement_main_reference = InsuranceCoverageCriteria(
-            medication=medication, insurance_provider=insurance_provider
+            url_slug=requirement["id"], medication=medication, insurance_provider=insurance_provider
         )
         requirement_main_reference.save()
     states = bulk_get_or_create(State, "state", requirement["state"])
@@ -103,19 +103,20 @@ def generate_smart_engine_item_objects():
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
         smart_engine_item = {}
         smart_engine_item["medication_id"] = medication.pk
-        smart_engine_item["requirement_template_id"] = row["requirement_rule_name"]
+        smart_engine_item["requirement_template_id"] = row["requirement_rule_name"] if row["requirement_rule_name"] else None
         smart_engine_item["smart_engine_item_id"] = row["id"]
         smart_engine_item["label"] = row["label"].replace(";", ",")
         smart_engine_item["validation"] = row["validation"].replace(";", ",")
+        smart_engine_items[row["id"]] = smart_engine_item
     existing_smart_engine_items = SmartEngineItem.objects.values_list("smart_engine_item_id", flat=True)
     updated_fields = ["label", "validation", "requirement_template_id"]
     custom_bulk_update_or_create(
-        smart_engine_items, SmartEngineItem, existing_smart_engine_items, "option_rule_name", updated_fields
+        smart_engine_items, SmartEngineItem, existing_smart_engine_items, "smart_engine_item_id", updated_fields
     )
     for row in requirements:
         smart_engine_item = SmartEngineItem.objects.get(smart_engine_item_id=row["id"])
         option_template_ids = row["option_rule_name"].split("; ")
-        option_templates = RequirementOptionTemplate.objects.filter(option_rule_name__in=option_template_ids)
+        option_templates = RequirementOptionTemplate.objects.filter(option_rule_name__in=list(filter(None, option_template_ids)))
         smart_engine_item.requirement_option_template.add(*option_templates)
 
 

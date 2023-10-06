@@ -60,7 +60,7 @@ class PriorAuthSubmissionSerializer(serializers.ModelSerializer):
 class MedicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Medication
-        fields = '__all__'
+        fields = ('medication',)
 
 
 class StateSerializer(serializers.ModelSerializer):
@@ -90,7 +90,13 @@ class InsuranceCoverageCriteriaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = InsuranceCoverageCriteria
-        fields = '__all__'
+        fields = (
+            'url_slug',
+            'medication',
+            'insurance_provider',
+            'states',
+            'insurance_plan_types',
+        )
 
     def get_url_slug(self, obj):
         return urlsafe_base64_encode(force_bytes(obj.url_slug))
