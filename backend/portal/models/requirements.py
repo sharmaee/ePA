@@ -1,5 +1,5 @@
 from django.db import models
-from portal.models._common import PortalModelBase, slugify
+from portal.models._common import PortalModelBase
 from portal.models.field import AES256EncryptedField
 from portal.models.auth import User
 
@@ -144,11 +144,8 @@ class SmartEngineItem(PortalModelBase):
     requirement_template = models.ForeignKey(
         RequirementTemplate, on_delete=models.CASCADE, related_name='smart_engine_items', blank=True, null=True
     )
-    requirement_option_template = models.ManyToManyField(
-        RequirementOptionTemplate,
-        related_name='smart_engine_items',
-        db_table='requirements__requirementoptiontemplate_to_smartengineitem',
-        blank=True,
+    requirement_option_template = models.ForeignKey(
+        RequirementOptionTemplate, on_delete=models.CASCADE, related_name='smart_engine_items', blank=True, null=True
     )
     label = models.TextField(blank=True, null=True)
     validation = models.TextField(blank=True, null=True)

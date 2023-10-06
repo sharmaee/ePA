@@ -103,21 +103,21 @@ def generate_smart_engine_item_objects():
         medication = Medication.objects.get_or_create(medication=row["medication"])[0]
         smart_engine_item = {}
         smart_engine_item["medication_id"] = medication.pk
-        smart_engine_item["requirement_template_id"] = row["requirement_rule_name"] if row["requirement_rule_name"] else None
+        smart_engine_item["requirement_template_id"] = (
+            row["requirement_rule_name"] if row["requirement_rule_name"] else None
+        )
+        smart_engine_item["requirement_option_template_id"] = (
+            row["option_rule_name"] if row["option_rule_name"] else None
+        )
         smart_engine_item["smart_engine_item_id"] = row["id"]
         smart_engine_item["label"] = row["label"].replace(";", ",")
         smart_engine_item["validation"] = row["validation"].replace(";", ",")
         smart_engine_items[row["id"]] = smart_engine_item
     existing_smart_engine_items = SmartEngineItem.objects.values_list("smart_engine_item_id", flat=True)
-    updated_fields = ["label", "validation", "requirement_template_id"]
+    updated_fields = ["label", "validation", "requirement_template_id", "requirement_option_template_id"]
     custom_bulk_update_or_create(
         smart_engine_items, SmartEngineItem, existing_smart_engine_items, "smart_engine_item_id", updated_fields
     )
-    for row in requirements:
-        smart_engine_item = SmartEngineItem.objects.get(smart_engine_item_id=row["id"])
-        option_template_ids = row["option_rule_name"].split("; ")
-        option_templates = RequirementOptionTemplate.objects.filter(option_rule_name__in=list(filter(None, option_template_ids)))
-        smart_engine_item.requirement_option_template.add(*option_templates)
 
 
 def generate_requirement_option_objects():
