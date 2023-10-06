@@ -19,7 +19,7 @@ REQUIREMENT_TEMPLATE_FIELDS = ["medication", "requirement_rule_name", "label"]
 REQUIREMENT_OPTION_TEMPLATE_FIELDS = ["option_rule_name", "requirement_rule_name", "node_type", "label"]
 SMART_ENGINE_FIELDS = ["medication", "requirement_rule_name", "option_rule_name", "id", "label", "validation"]
 REQUIREMENT_OPTION_FIELDS = [
-    "id",
+    "insurance_coverage_criteria_id",
     "requirement_rule_name",
     "requirement_rule_set",
     "option_rule_name",
@@ -125,12 +125,12 @@ def generate_requirement_option_objects():
     requirements = get_rows_from_csv_data(csv_data, REQUIREMENT_OPTION_FIELDS)
     for row in requirements:
         requirement = Requirement.objects.filter(
-            insurance_coverage_criteria_id=row["id"],
+            insurance_coverage_criteria_id=row["insurance_coverage_criteria_id"],
             requirement_template_id=row["requirement_rule_name"],
         ).first()
         if requirement is None:
             requirement = Requirement.objects.create(
-                insurance_coverage_criteria_id=row["id"],
+                insurance_coverage_criteria_id=row["insurance_coverage_criteria_id"],
                 requirement_template_id=row["requirement_rule_name"],
             )
         requirement_rules = row["requirement_rule_set"].split("; ")
