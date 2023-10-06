@@ -1,0 +1,26 @@
+Insurance,Question,Question Rule Set,Options,Option Rule Set
+Wegovy BCBS Minnesota,age,,over_18,
+Wegovy BCBS Minnesota,age,,over_12_under_18,
+Wegovy BCBS Minnesota,stage_of_therapy,,initiation,
+Wegovy BCBS Minnesota,stage_of_therapy,,continuation,
+Wegovy BCBS Minnesota,asian_descent,age; stage_of_therapy,asian,over_18; initiation
+Wegovy BCBS Minnesota,asian_descent,age; stage_of_therapy,non_asian,over_18; initiation
+Wegovy BCBS Minnesota,bmi,age; stage_of_therapy; asian_descent,bmi_over_27,over_18; initiation; non_asian
+Wegovy BCBS Minnesota,bmi,age; stage_of_therapy; asian_descent,bmi_over_30,over_18; initiation; non_asian
+Wegovy BCBS Minnesota,bmi,age; stage_of_therapy,bmi_over_95_percentile_or_over_30,over_12_under_18; initiation
+Wegovy BCBS Minnesota,bmi,age; stage_of_therapy,bmi_over_85_percentile,over_12_under_18; initiation
+Wegovy BCBS Minnesota,weight_loss_agents,stage_of_therapy,with_weight_loss_agent,initiation
+Wegovy BCBS Minnesota,weight_loss_agents,stage_of_therapy,no_weight_loss_agent,initiation
+Wegovy BCBS Minnesota,therapy_duration,stage_of_therapy,over_52_weeks,continuation
+Wegovy BCBS Minnesota,therapy_duration,stage_of_therapy,less_than_52_weeks,continuation
+Wegovy BCBS Minnesota,risk_factors,,established_cardiovascular_disease_or_stroke,
+Wegovy BCBS Minnesota,risk_factors,,hypertension,
+Wegovy BCBS Minnesota,risk_factors,,type_2_diabetes,
+Wegovy BCBS Minnesota,risk_factors,,chronic_kidney_disease,
+Wegovy BCBS Minnesota,risk_factors,,coronary_heart_disease,
+Wegovy BCBS Minnesota,risk_factors,,obstructive_sleep_apnea,
+Wegovy BCBS Minnesota,risk_factors,,polycystic_ovarian_syndrome,
+Wegovy BCBS Minnesota,risk_factors,,dyslipidemia,
+Wegovy BCBS Minnesota,risk_factors,,non_alcoholic_fatty_liver_disease,
+Wegovy BCBS Minnesota,risk_factors,,idiopathic_intracranial_hypertension,
+Wegovy BCBS Minnesota,risk_factors,,osteoarthritis_in_weight_bearing_joints,

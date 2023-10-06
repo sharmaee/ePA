@@ -91,7 +91,7 @@ class InsuranceCoverageCriteriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = InsuranceCoverageCriteria
         fields = '__all__'
-    
+
     def get_url_slug(self, obj):
         return urlsafe_base64_encode(force_bytes(obj.url_slug))
 
@@ -116,7 +116,7 @@ class RequirementTemplateSerializer(serializers.ModelSerializer):
             'label',
             'smart_engine_items',
         )
-    
+
     def get_smart_engine_items(self, obj):
         smart_engine_items = SmartEngineItem.objects.filter(requirement_template=obj).only('label', 'validation')
         return SmartEngineItemSerializer(smart_engine_items, many=True).data
@@ -133,7 +133,7 @@ class RequirementOptionTemplateSerializer(serializers.ModelSerializer):
             'label',
             'smart_engine_items',
         )
-    
+
     def get_smart_engine_items(self, obj):
         smart_engine_items = SmartEngineItem.objects.filter(requirement_option_template=obj).only('label', 'validation')
         return SmartEngineItemSerializer(smart_engine_items, many=True).data
@@ -142,9 +142,7 @@ class RequirementOptionTemplateSerializer(serializers.ModelSerializer):
 class RequirementOptionRuleSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = RequirementOptionTemplate
-        fields = (
-            'option_rule_name',
-        )
+        fields = ('option_rule_name',)
 
 
 class RequirementOptionSerializer(serializers.ModelSerializer):
@@ -162,9 +160,8 @@ class RequirementOptionSerializer(serializers.ModelSerializer):
 class RequirementRuleSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = RequirementTemplate
-        fields = (
-            'requirement_rule_name',
-        )
+        fields = ('requirement_rule_name',)
+
 
 class RequirementSerializer(serializers.ModelSerializer):
     requirement_template = RequirementTemplateSerializer()

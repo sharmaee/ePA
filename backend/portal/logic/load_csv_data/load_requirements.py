@@ -41,7 +41,9 @@ def create_or_update_insurance_coverage_criteria(requirement):
     insurance_provider = InsuranceProvider.objects.get_or_create(insurance_provider=requirement["provider"])[0]
     requirement_main_reference = InsuranceCoverageCriteria.objects.filter(url_slug=requirement["id"]).first()
     if requirement_main_reference is None:
-        requirement_main_reference = InsuranceCoverageCriteria(medication=medication, insurance_provider=insurance_provider)
+        requirement_main_reference = InsuranceCoverageCriteria(
+            medication=medication, insurance_provider=insurance_provider
+        )
         requirement_main_reference.save()
     states = bulk_get_or_create(State, "state", requirement["state"])
     requirement_main_reference.states.add(*states)
