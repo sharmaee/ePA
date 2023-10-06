@@ -68,8 +68,13 @@ class PriorAuthSubmissionView(SecuredAPIView):
 class InsuranceCoverageCriteriaRequirementsView(SecuredAPIView):
     def get(self, request, url_slug):
         url_slug_decoded = force_str(urlsafe_base64_decode(url_slug))
-        requirements = Requirement.objects.filter(insurance_coverage_criteria=url_slug_decoded).select_related(
-            'requirement_template'
+        requirements = (
+            Requirement.objects.filter(insurance_coverage_criteria=url_slug_decoded)
+            .prefetch_related('requirement_template')
+            .prefetch_related('requirement_template__smart_engine_items')
+            .prefetch_related('requirement_options')
+            .prefetch_related('requirement_options__requirement_option_template')
+            .prefetch_related('requirement_options__requirement_option_template__smart_engine_items')
         )
         result = RequirementSerializer(requirements, many=True).data
         return Response(result, status=status.HTTP_200_OK)

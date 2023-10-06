@@ -83,10 +83,6 @@ class InsuranceProviderSerializer(serializers.ModelSerializer):
 
 class InsuranceCoverageCriteriaSerializer(serializers.ModelSerializer):
     url_slug = serializers.SerializerMethodField()
-    medication = MedicationSerializer()
-    insurance_provider = InsuranceProviderSerializer()
-    states = StateSerializer(many=True)
-    insurance_plan_types = InsurancePlanTypeSerializer(many=True)
 
     class Meta:
         model = InsuranceCoverageCriteria
@@ -112,7 +108,7 @@ class SmartEngineItemSerializer(serializers.ModelSerializer):
 
 
 class RequirementTemplateSerializer(serializers.ModelSerializer):
-    smart_engine_items = serializers.SerializerMethodField()
+    smart_engine_items = SmartEngineItemSerializer(many=True)
 
     class Meta:
         model = RequirementTemplate
@@ -123,13 +119,9 @@ class RequirementTemplateSerializer(serializers.ModelSerializer):
             'smart_engine_items',
         )
 
-    def get_smart_engine_items(self, obj):
-        smart_engine_items = SmartEngineItem.objects.filter(requirement_template=obj).only('label', 'validation')
-        return SmartEngineItemSerializer(smart_engine_items, many=True).data
-
 
 class RequirementOptionTemplateSerializer(serializers.ModelSerializer):
-    smart_engine_items = serializers.SerializerMethodField()
+    smart_engine_items = SmartEngineItemSerializer(many=True)
 
     class Meta:
         model = RequirementOptionTemplate
@@ -140,10 +132,6 @@ class RequirementOptionTemplateSerializer(serializers.ModelSerializer):
             'smart_engine_items',
         )
 
-    def get_smart_engine_items(self, obj):
-        smart_engine_items = SmartEngineItem.objects.filter(requirement_option_template=obj).only('label', 'validation')
-        return SmartEngineItemSerializer(smart_engine_items, many=True).data
-
 
 class RequirementOptionRuleSetSerializer(serializers.ModelSerializer):
     class Meta:
@@ -153,7 +141,6 @@ class RequirementOptionRuleSetSerializer(serializers.ModelSerializer):
 
 class RequirementOptionSerializer(serializers.ModelSerializer):
     requirement_option_template = RequirementOptionTemplateSerializer()
-    option_rule_set = RequirementOptionRuleSetSerializer(many=True)
 
     class Meta:
         model = RequirementOption
@@ -171,17 +158,12 @@ class RequirementRuleSetSerializer(serializers.ModelSerializer):
 
 class RequirementSerializer(serializers.ModelSerializer):
     requirement_template = RequirementTemplateSerializer()
-    requirement_rule_set = RequirementRuleSetSerializer(many=True)
-    options = serializers.SerializerMethodField()
+    requirement_options = RequirementOptionSerializer(many=True)
 
     class Meta:
         model = Requirement
         fields = (
             'requirement_template',
             'requirement_rule_set',
-            'options',
+            'requirement_options',
         )
-
-    def get_options(self, obj):
-        options = RequirementOption.objects.filter(requirement=obj).select_related('requirement_option_template')
-        return RequirementOptionSerializer(options, many=True).data
