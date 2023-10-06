@@ -41,7 +41,7 @@
         </span>
       </div>
       <div class="patient-member-id">
-        <label for="patient-member-id">Patient Member ID</label>
+        <label for="patient-member-id">Patient Insurance Member ID</label>
         <input
           id="patient-member-id"
           v-model="data.memberId"
